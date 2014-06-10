@@ -76,24 +76,3 @@ a:hover {
 a.scrollup{
 	background:#35A49C;
 }
-
-span.logo{
-    display: block;
-    background:url('../img/logo.png') no-repeat 50% 50%;
-    background-size: contain;
-    height:100px;
-    width: 555px;
-}
-#forkongithub {
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 20000;
-}
-#forkongithub a {
-    background: url("../img/ForkMeOnGithub.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    display: block;
-    height: 149px;
-    text-indent: -100000px;
-    width: 149px;
-}
