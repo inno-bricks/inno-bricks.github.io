@@ -41,7 +41,7 @@
                 "BricksUI": 1
             },
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1327
+            "line": 1328
         },
         "bricks-i18n": {
             "name": "bricks-i18n",
@@ -84,6 +84,7 @@
             "namespace": "",
             "file": "live-dist/bricksui/bricksui.js",
             "line": 691,
+            "description": "I18n lang locale package",
             "type": "{Object}"
         },
         "bricksui-metal": {
@@ -102,7 +103,7 @@
             "module": "bricksui",
             "namespace": "",
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1327,
+            "line": 1328,
             "description": "BricksUI ,a widget library on ember.js"
         }
     },
@@ -153,7 +154,7 @@
             "submodule": "bricksui-metal",
             "namespace": "",
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1022,
+            "line": 1023,
             "description": "BricksUI ,a widget library on ember.js",
             "statis": "",
             "version": "0.0.1-beta.1+canary.c41856cc"
@@ -170,7 +171,7 @@
             "submodule": "bricksui-metal",
             "namespace": "BricksUI",
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1327
+            "line": 1328
         }
     },
     "classitems": [
@@ -332,15 +333,16 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 698,
+            "line": 699,
             "description": "en :en-us en-hk en-au\nde :de-dk de-ch de-lu\nzh-cn : zh-cn\nzh-tw : zh-tw",
+            "default": "\"zh-cn\"",
             "class": "BricksUI.I18n",
             "module": "bricksui-i18n",
             "submodule": "bricks-i18n-lang"
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 862,
+            "line": 863,
             "description": "语言切换,用户可以通过传入的语言标识符进行语言切换\n需要在对应的项目下有对应的语言包\napp\n     lang\n         en.js\n         zh-cn.js\n 传入的标识符即为lang下的对应的文件名",
             "itemtype": "method",
             "name": "setLang",
@@ -358,7 +360,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 899,
+            "line": 900,
             "description": "继承自Ember-Validations,拓展语言切换支持。通过该方法可做到即时的语言切换，缺点在于很难与默认的t.i18n进行交互\n该方法订阅 'i18nChange' 事件，在事件触发后，调用自身 validate方法",
             "class": "BricksUI.I18n",
             "module": "bricksui-i18n",
@@ -367,7 +369,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1031,
+            "line": 1032,
             "itemtype": "property",
             "name": "VERSION",
             "type": "String",
@@ -379,7 +381,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1040,
+            "line": 1041,
             "description": "是否将语言选择持久化到cookie中，如果设置为true，则将优先获取cookie设置的语言",
             "class": "BricksUI",
             "module": "bricksui",
@@ -387,7 +389,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1048,
+            "line": 1049,
             "description": "Bricks变量配置\nI18NCOOKIEPERSISTENT : true",
             "class": "BricksUI",
             "module": "bricksui",
@@ -395,7 +397,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1067,
+            "line": 1068,
             "description": "Ember.View 本身的实现过程就是一个状态机的流转过程\nEmber 事件绑定流程:\n Application.eventDispatcher\n Application.setupEventDispatcher\n     -->eventDispatcher.setup\n     -->eventDispatcher.setupHandler     //统一绑定在rootElement下\n\n Ember事件触发流程:\n jQuery.event.dispatch\n     -->Ember setupHandler\n     -->eventDispatcher._findNearestEventManager\n 在findNearestEventManager会查找视图是否具有事件管理器\n 属性名称为:eventManager\n     yes--> 事件统一交给事件管理器可处理的事件处理\n     no --> 逐级冒泡事件\n 为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成\n 将在View上新增eventManager属性,用于统一管理",
             "class": "BricksUI",
             "module": "bricksui",
@@ -403,7 +405,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1124,
+            "line": 1125,
             "description": "用户可进行扩展和修改",
             "type": "",
             "class": "BricksUI",
@@ -412,7 +414,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1140,
+            "line": 1141,
             "description": "辅助键配合其他按键的修改操作",
             "type": "",
             "class": "BricksUI",
@@ -421,7 +423,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1157,
+            "line": 1158,
             "description": "当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响\n如果不是,则引用类型不应该放在这里,而应该直接实例化",
             "class": "BricksUI",
             "module": "bricksui",
@@ -429,7 +431,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1227,
+            "line": 1228,
             "description": "分开维护",
             "type": "{{}}",
             "class": "BricksUI",
@@ -438,7 +440,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1301,
+            "line": 1302,
             "description": "状态处理器\n在extend时将states属性移到_states属性,\n继承该接口,可以实现states在子父类间继承\n\n App.DemoView=BricksUI.View.extend({\n     states:{\n\n     }\n });\n\n App.DemoView=BricksUI.View.extend({\n     states:function(){\n         return {\n\n         };\n     }\n });\n TODO\n 1.状态继承需要处理",
             "class": "BricksUI",
             "module": "bricksui",
@@ -446,7 +448,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1357,
+            "line": 1358,
             "description": "TODO\n1.从Event入手\n2.从Action入手,Action也是有Event入手,但是不用管理Event\n     需要在模板里面显示指定action\n     模板也是组件的内部属性,所以模板操作state是合理的\n Ember target 有两个内置关键字:controller和 view\n 现在多加一个内置关键字:states,让用户可以从模板触发\n {{action unfold target=\"states\"}}",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -455,7 +457,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1374,
+            "line": 1375,
             "description": "有限状态机(Finite State Machine)\n  有限状态机对行为建模\n     1、事件：程序对事件进行响应\n     2、状态：程序在事件间的状态\n     3、转移：对应于事件，状态间的转移\n     4、动作：转移过程中采取动作\n     5、变量：变量保存事件间的动作所需的值\n  状态设计要点：\n     1、在该状态下，该事件是否可能发生\n     2、采取什么动作来处理事件\n     3、事件过后转移到什么状态\n     4、在事件之间需要记录什么变量（数据）\n\n 现代的UI组件大都是具有可交互性的,不再简单的支持输入输出,总是有内在的状态转换\n 事件触发,执行动作和行为转换\n 组件通常都是粗粒度的,有自己内部机制,组合机制等等,BricksUI采用FSM分离行为,作为默认的组合机制\n 当设计组件时,切面能够帮助有效地帮助切分组件的功能以及帮助开发者精心考虑组件的重用的可能性",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -464,7 +466,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1396,
+            "line": 1397,
             "type": "{void|*}",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -473,7 +475,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1401,
+            "line": 1402,
             "description": "初始状态",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -482,7 +484,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1405,
+            "line": 1406,
             "description": "公有属性,用户需要以此获得当前状态\n当前状态,",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -491,7 +493,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1410,
+            "line": 1411,
             "description": "触发状态上的事件",
             "params": [
                 {
@@ -514,7 +516,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1423,
+            "line": 1424,
             "description": "状态过度方法",
             "params": [
                 {
@@ -529,7 +531,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1458,
+            "line": 1459,
             "description": "当前状态没有对应事件，则直接抛出异常",
             "params": [
                 {
@@ -554,7 +556,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1477,
+            "line": 1478,
             "description": "根据指定对象，扩展，类似于具备功能的接口扩展\n非深度",
             "params": [
                 {
@@ -577,7 +579,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1490,
+            "line": 1491,
             "description": "由于状态机不止组件可以使用,其他可以拆分为各种状态的都可以使用,所以该方法需要是公开的API\n装配状态\n每个状态都添加parentState的引用\n每个状态都增加全状态路径名称\nroot\n    empty    -->root.empty\n    deleted  -->root.deleted",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -586,7 +588,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1525,
+            "line": 1526,
             "description": "Ember.View的创建过程是一个状态机的流转过程,具体如下:\nEmber.View.states:\n  x: _default    默认方法集合,作为其他状态的基类,不作为具体状态使用\n    preRender   初始化状态,渲染之前\n    inBuffer    渲染状态,此时正在生成相应的html标签和属性\n    inDom       已经成为dom节点状态,已经生成并且插入到页面中\n    hasElement  一切准备就绪,等待接受用户操作\n    destroying  正在移除中,视图销毁\n以上状态是逐个向下的状态\n\n目前用于所使用的标签都是由W3C制定的,存在一定的局限性\nEmber Component提供了一种方式来增强自定义标签,增强HTML功能,\n而且Ember的这一实现与W3C目前的Custom Elements 工作一致,并且尽可能保持同步\n在未来的浏览器版本,一旦Custom Elements普及,则Ember实现的这一套机制本身就与标准看齐,所以可以方便地集成\n\nBricksUI View 要点\n1.FSM 分离用户行为和组件行为\n2.AOP进行事件切片,以及权限和操作行为控制\n3.与W3C Custom Elements (TODO 研究)\nTODO:制定组件的生命周期以及使用方式,及与外部交互的基础",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -595,7 +597,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1548,
+            "line": 1549,
             "description": "基类具备状态机管理功能\n如何将事件传播到state中,执行对应的action\n在模板里面添加states的action-->{{action unfoldmenu target=\"states\"}}\n\nmouseDown(click)-> view.states[\"activeState\"][\"unfoldmenu\"]\nrecord.loadingData->record.currentState[\"loadingData\"]",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -604,7 +606,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1558,
+            "line": 1559,
             "description": "TODO\n1.用Component来实现组件\n2.用模板和action结合来实现组件行为",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -613,7 +615,7 @@
         },
         {
             "file": "live-dist/bricksui/bricksui.js",
-            "line": 1577,
+            "line": 1578,
             "description": "构建主入口文件",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -624,19 +626,19 @@
     "warnings": [
         {
             "message": "unknown tag: statis",
-            "line": " live-dist/bricksui/bricksui.js:1022"
+            "line": " live-dist/bricksui/bricksui.js:1023"
         },
         {
             "message": "unknown tag: version",
-            "line": " live-dist/bricksui/bricksui.js:1022"
+            "line": " live-dist/bricksui/bricksui.js:1023"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " live-dist/bricksui/bricksui.js:1410"
+            "line": " live-dist/bricksui/bricksui.js:1411"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " live-dist/bricksui/bricksui.js:1477"
+            "line": " live-dist/bricksui/bricksui.js:1478"
         },
         {
             "message": "Missing item type\n在收到通知需进行销毁后，销毁chsen组建",
@@ -664,99 +666,99 @@
         },
         {
             "message": "Missing item type\nen :en-us en-hk en-au\nde :de-dk de-ch de-lu\nzh-cn : zh-cn\nzh-tw : zh-tw",
-            "line": " live-dist/bricksui/bricksui.js:698"
+            "line": " live-dist/bricksui/bricksui.js:699"
         },
         {
             "message": "Missing item type\n继承自Ember-Validations,拓展语言切换支持。通过该方法可做到即时的语言切换，缺点在于很难与默认的t.i18n进行交互\n该方法订阅 'i18nChange' 事件，在事件触发后，调用自身 validate方法",
-            "line": " live-dist/bricksui/bricksui.js:899"
+            "line": " live-dist/bricksui/bricksui.js:900"
         },
         {
             "message": "Missing item type\n是否将语言选择持久化到cookie中，如果设置为true，则将优先获取cookie设置的语言",
-            "line": " live-dist/bricksui/bricksui.js:1040"
+            "line": " live-dist/bricksui/bricksui.js:1041"
         },
         {
             "message": "Missing item type\nBricks变量配置\nI18NCOOKIEPERSISTENT : true",
-            "line": " live-dist/bricksui/bricksui.js:1048"
+            "line": " live-dist/bricksui/bricksui.js:1049"
         },
         {
             "message": "Missing item type\nEmber.View 本身的实现过程就是一个状态机的流转过程\nEmber 事件绑定流程:\n Application.eventDispatcher\n Application.setupEventDispatcher\n     -->eventDispatcher.setup\n     -->eventDispatcher.setupHandler     //统一绑定在rootElement下\n\n Ember事件触发流程:\n jQuery.event.dispatch\n     -->Ember setupHandler\n     -->eventDispatcher._findNearestEventManager\n 在findNearestEventManager会查找视图是否具有事件管理器\n 属性名称为:eventManager\n     yes--> 事件统一交给事件管理器可处理的事件处理\n     no --> 逐级冒泡事件\n 为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成\n 将在View上新增eventManager属性,用于统一管理",
-            "line": " live-dist/bricksui/bricksui.js:1067"
+            "line": " live-dist/bricksui/bricksui.js:1068"
         },
         {
             "message": "Missing item type\n用户可进行扩展和修改",
-            "line": " live-dist/bricksui/bricksui.js:1124"
+            "line": " live-dist/bricksui/bricksui.js:1125"
         },
         {
             "message": "Missing item type\n辅助键配合其他按键的修改操作",
-            "line": " live-dist/bricksui/bricksui.js:1140"
+            "line": " live-dist/bricksui/bricksui.js:1141"
         },
         {
             "message": "Missing item type\n当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响\n如果不是,则引用类型不应该放在这里,而应该直接实例化",
-            "line": " live-dist/bricksui/bricksui.js:1157"
+            "line": " live-dist/bricksui/bricksui.js:1158"
         },
         {
             "message": "Missing item type\n分开维护",
-            "line": " live-dist/bricksui/bricksui.js:1227"
+            "line": " live-dist/bricksui/bricksui.js:1228"
         },
         {
             "message": "Missing item type\n状态处理器\n在extend时将states属性移到_states属性,\n继承该接口,可以实现states在子父类间继承\n\n App.DemoView=BricksUI.View.extend({\n     states:{\n\n     }\n });\n\n App.DemoView=BricksUI.View.extend({\n     states:function(){\n         return {\n\n         };\n     }\n });\n TODO\n 1.状态继承需要处理",
-            "line": " live-dist/bricksui/bricksui.js:1301"
+            "line": " live-dist/bricksui/bricksui.js:1302"
         },
         {
             "message": "Missing item type\nTODO\n1.从Event入手\n2.从Action入手,Action也是有Event入手,但是不用管理Event\n     需要在模板里面显示指定action\n     模板也是组件的内部属性,所以模板操作state是合理的\n Ember target 有两个内置关键字:controller和 view\n 现在多加一个内置关键字:states,让用户可以从模板触发\n {{action unfold target=\"states\"}}",
-            "line": " live-dist/bricksui/bricksui.js:1357"
+            "line": " live-dist/bricksui/bricksui.js:1358"
         },
         {
             "message": "Missing item type\n有限状态机(Finite State Machine)\n  有限状态机对行为建模\n     1、事件：程序对事件进行响应\n     2、状态：程序在事件间的状态\n     3、转移：对应于事件，状态间的转移\n     4、动作：转移过程中采取动作\n     5、变量：变量保存事件间的动作所需的值\n  状态设计要点：\n     1、在该状态下，该事件是否可能发生\n     2、采取什么动作来处理事件\n     3、事件过后转移到什么状态\n     4、在事件之间需要记录什么变量（数据）\n\n 现代的UI组件大都是具有可交互性的,不再简单的支持输入输出,总是有内在的状态转换\n 事件触发,执行动作和行为转换\n 组件通常都是粗粒度的,有自己内部机制,组合机制等等,BricksUI采用FSM分离行为,作为默认的组合机制\n 当设计组件时,切面能够帮助有效地帮助切分组件的功能以及帮助开发者精心考虑组件的重用的可能性",
-            "line": " live-dist/bricksui/bricksui.js:1374"
+            "line": " live-dist/bricksui/bricksui.js:1375"
         },
         {
             "message": "Missing item type",
-            "line": " live-dist/bricksui/bricksui.js:1396"
+            "line": " live-dist/bricksui/bricksui.js:1397"
         },
         {
             "message": "Missing item type\n初始状态",
-            "line": " live-dist/bricksui/bricksui.js:1401"
+            "line": " live-dist/bricksui/bricksui.js:1402"
         },
         {
             "message": "Missing item type\n公有属性,用户需要以此获得当前状态\n当前状态,",
-            "line": " live-dist/bricksui/bricksui.js:1405"
+            "line": " live-dist/bricksui/bricksui.js:1406"
         },
         {
             "message": "Missing item type\n触发状态上的事件",
-            "line": " live-dist/bricksui/bricksui.js:1410"
+            "line": " live-dist/bricksui/bricksui.js:1411"
         },
         {
             "message": "Missing item type\n状态过度方法",
-            "line": " live-dist/bricksui/bricksui.js:1423"
+            "line": " live-dist/bricksui/bricksui.js:1424"
         },
         {
             "message": "Missing item type\n当前状态没有对应事件，则直接抛出异常",
-            "line": " live-dist/bricksui/bricksui.js:1458"
+            "line": " live-dist/bricksui/bricksui.js:1459"
         },
         {
             "message": "Missing item type\n根据指定对象，扩展，类似于具备功能的接口扩展\n非深度",
-            "line": " live-dist/bricksui/bricksui.js:1477"
+            "line": " live-dist/bricksui/bricksui.js:1478"
         },
         {
             "message": "Missing item type\n由于状态机不止组件可以使用,其他可以拆分为各种状态的都可以使用,所以该方法需要是公开的API\n装配状态\n每个状态都添加parentState的引用\n每个状态都增加全状态路径名称\nroot\n    empty    -->root.empty\n    deleted  -->root.deleted",
-            "line": " live-dist/bricksui/bricksui.js:1490"
+            "line": " live-dist/bricksui/bricksui.js:1491"
         },
         {
             "message": "Missing item type\nEmber.View的创建过程是一个状态机的流转过程,具体如下:\nEmber.View.states:\n  x: _default    默认方法集合,作为其他状态的基类,不作为具体状态使用\n    preRender   初始化状态,渲染之前\n    inBuffer    渲染状态,此时正在生成相应的html标签和属性\n    inDom       已经成为dom节点状态,已经生成并且插入到页面中\n    hasElement  一切准备就绪,等待接受用户操作\n    destroying  正在移除中,视图销毁\n以上状态是逐个向下的状态\n\n目前用于所使用的标签都是由W3C制定的,存在一定的局限性\nEmber Component提供了一种方式来增强自定义标签,增强HTML功能,\n而且Ember的这一实现与W3C目前的Custom Elements 工作一致,并且尽可能保持同步\n在未来的浏览器版本,一旦Custom Elements普及,则Ember实现的这一套机制本身就与标准看齐,所以可以方便地集成\n\nBricksUI View 要点\n1.FSM 分离用户行为和组件行为\n2.AOP进行事件切片,以及权限和操作行为控制\n3.与W3C Custom Elements (TODO 研究)\nTODO:制定组件的生命周期以及使用方式,及与外部交互的基础",
-            "line": " live-dist/bricksui/bricksui.js:1525"
+            "line": " live-dist/bricksui/bricksui.js:1526"
         },
         {
             "message": "Missing item type\n基类具备状态机管理功能\n如何将事件传播到state中,执行对应的action\n在模板里面添加states的action-->{{action unfoldmenu target=\"states\"}}\n\nmouseDown(click)-> view.states[\"activeState\"][\"unfoldmenu\"]\nrecord.loadingData->record.currentState[\"loadingData\"]",
-            "line": " live-dist/bricksui/bricksui.js:1548"
+            "line": " live-dist/bricksui/bricksui.js:1549"
         },
         {
             "message": "Missing item type\nTODO\n1.用Component来实现组件\n2.用模板和action结合来实现组件行为",
-            "line": " live-dist/bricksui/bricksui.js:1558"
+            "line": " live-dist/bricksui/bricksui.js:1559"
         },
         {
             "message": "Missing item type\n构建主入口文件",
-            "line": " live-dist/bricksui/bricksui.js:1577"
+            "line": " live-dist/bricksui/bricksui.js:1578"
         }
     ]
 }
