@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>live-dist/bricksui/bricksui.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="" src="../assets/css/logo.png" style="max-height: 65%;" title="">
+        
+            
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b></b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BricksUI", "classes/BricksUI.I18n", "classes/BricksUI.StateHandler", "classes/Ember.BuEditor", "modules/BricksUI", "modules/bricksui", "modules/BricksUI-I18n", "modules/bricksui-metal"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <h3>APIs</h3>
+    <div id="sidebar">
+        <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+            <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+            <li><a href="#modules" data-toggle="tab">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" placeholder="Type to filter APIs">
+        </div>
+
+        <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+            <div class="tab-pane active" id="classes">
+                <ul id="api-classes" class="nav nav-list">
+                    
+                        <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+                    
+                        <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+                    
+                        <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+                    
+                        <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="tab-pane" id="modules">
+                <ul id="api-modules" class="nav nav-list">
+                    
+                        <li><a href="../modules/BricksUI.html">BricksUI</a></li>
+                    
+                        <li><a href="../modules/bricksui.html">bricksui</a></li>
+                    
+                        <li><a href="../modules/BricksUI-I18n.html">BricksUI-I18n</a></li>
+                    
+                        <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>live-dist/bricksui/bricksui.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/*!
+ * @overview  Bricks - a widget library based on Ember
+ * @copyright Copyright 2014-2014 Tilde Inc. and contributors
+ * @license   Licensed under MIT license
+ *            See https://raw.github.com/innobricks/bricksui/master/LICENSE
+ * @version   0.0.1-beta.1+canary.38d909b2
+ */
+
+(function() {
+var define, requireModule, require, requirejs, BricksUI;
+
+(function() {
+    BricksUI = this.BricksUI = this.BricksUI || {};
+  if (typeof BricksUI === &#x27;undefined&#x27;) { BricksUI = {} };
+
+  if (typeof BricksUI.__loader === &#x27;undefined&#x27;) {
+    var registry = {}, seen = {};
+
+    define = function(name, deps, callback) {
+      registry[name] = { deps: deps, callback: callback };
+    };
+
+    requirejs = require = requireModule = function(name) {
+      if (seen.hasOwnProperty(name)) { return seen[name]; }
+      seen[name] = {};
+
+      if (!registry[name]) {
+        throw new Error(&quot;Could not find module &quot; + name);
+      }
+
+      var mod = registry[name],
+      deps = mod.deps,
+      callback = mod.callback,
+      reified = [],
+      exports;
+
+      for (var i=0, l=deps.length; i&lt;l; i++) {
+        if (deps[i] === &#x27;exports&#x27;) {
+          reified.push(exports = {});
+        } else {
+          reified.push(requireModule(resolve(deps[i])));
+        }
+      }
+
+      var value = callback.apply(this, reified);
+      return seen[name] = exports || value;
+
+      function resolve(child) {
+        if (child.charAt(0) !== &#x27;.&#x27;) { return child; }
+        var parts = child.split(&quot;/&quot;);
+        var parentBase = name.split(&quot;/&quot;).slice(0, -1);
+
+        for (var i=0, l=parts.length; i&lt;l; i++) {
+          var part = parts[i];
+
+          if (part === &#x27;..&#x27;) { parentBase.pop(); }
+          else if (part === &#x27;.&#x27;) { continue; }
+          else { parentBase.push(part); }
+        }
+
+        return parentBase.join(&quot;/&quot;);
+      }
+    };
+    requirejs._eak_seen = registry;
+
+      BricksUI.__loader = {define: define, require: require, registry: registry};
+  } else {
+    define = BricksUI.__loader.define;
+    requirejs = require = requireModule = BricksUI.__loader.require;
+  }
+})();
+
+define(&quot;bricksui-form&quot;,
+  [&quot;bricksui-form/initializer&quot;,&quot;bricksui-form/form-config&quot;,&quot;bricksui-form/helpers/checkbox&quot;,&quot;bricksui-form/helpers/radio&quot;,&quot;bricksui-form/bu-editor&quot;,&quot;bricksui-form/chosen-select&quot;,&quot;bricksui-form/checkbox&quot;,&quot;bricksui-form/radio&quot;,&quot;bricksui-form/radio-button&quot;],
+  function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __dependency6__, __dependency7__, __dependency8__, __dependency9__) {
+    &quot;use strict&quot;;
+
+
+    var Checkbox = __dependency7__[&quot;default&quot;];
+    var Radio = __dependency8__[&quot;default&quot;];
+    var RadioButton = __dependency9__[&quot;default&quot;];
+
+    Ember.EasyForm.Checkbox = Checkbox;
+    Ember.EasyForm.Radio = Radio;
+    Ember.RadioButton = RadioButton;
+  });
+define(&quot;bricksui-form/bu-editor&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    var get = Ember.get, set = Ember.set;
+    /**
+     基于ember与[百度富文本编辑器umeditor](http://ueditor.baidu.com/website/umeditor.html)
+     主要增加了数据绑定的功能，config配置项与umeditor一致
+     @class BuEditor
+     @namespace Ember
+     @extends Ember.Component
+     @uses Ember.TextSupport
+     */
+    var BuEditor = Ember.Component.extend({
+
+      /**
+       value类型，分别为content和contentTxt,content包含其中的段落标签
+       @property valueType
+       @type string
+       */
+      valueType: &quot;content&quot;,
+
+      _valueHandler: {
+        content: function (editor) {
+          return editor.getContent();
+        },
+        contentTxt: function (editor) {
+          return editor.getContentTxt();
+        }
+      },
+
+
+      /**
+       用户配置文件
+       @property options
+       @type object
+       */
+      options: {},
+
+      /**
+       富文本框默认配置文件
+       @property defaultSetting
+       @type object
+       */
+      defaultOptions: {
+        //这里可以选择自己需要的工具按钮名称
+        toolbar: [&#x27;fullscreen undo redo bold italic underline&#x27;],
+        //focus时自动清空初始化时的内容
+        autoClearinitialContent: true,
+        //关闭字数统计
+        wordCount: false,
+        //关闭elementPath
+        elementPathEnabled: false,
+        //默认的编辑区域高度
+        initialFrameHeight: 300
+        //更多其他参数，请参考umeditor.config.js中的配置项
+      },
+
+
+      /**
+       绑定到文本域的字段
+       @property value
+       @type String
+       @default null
+       */
+      value: &quot;&quot;,
+
+      /**
+       占位符编号，可根据该编号取得全局唯一编辑器实例
+       @property holderId
+       @type String
+       @default bu-editor+父级ID编号
+       */
+      holderId: function () {
+        return &#x27;bu-editor&#x27; + Ember.get(this, &#x27;elementId&#x27;);
+      }.property(&#x27;elementId&#x27;),
+
+      /**
+       为UMeditor添加事件监听
+       @private
+       @method _attachEvent
+       @param editor UMeditor实例
+       */
+      _attachEvent: function (editor) {
+
+        editor.addListener(&#x27;ready&#x27;, function () {
+          var value = get(this, &#x27;value&#x27;);
+          if (!Ember.isEmpty(value)) editor.setContent(value);
+
+          this.$(&#x27;.edui-container&#x27;).css({width: &#x27;100%&#x27;});
+
+        }.bind(this));
+
+        editor.addListener(&#x27;contentChange&#x27;, function () {
+          var
+            value = get(this, &#x27;value&#x27;),
+            elementValue = this._valueHandler[this.valueType](this._editor);
+
+          if (value !== elementValue) this._updateValue(elementValue);
+
+        }.bind(this));
+
+      },
+
+      _updateElementValue: Ember.observer(&#x27;value&#x27;, function () {
+        // We do this check so cursor position doesn&#x27;t get affected in IE
+        var value = get(this, &#x27;value&#x27;),
+          elementValue = this._valueHandler[this.valueType](this._editor);
+
+        if (elementValue !== value) this._editor.setContent(value);
+
+      }),
+
+
+      /**
+       将textarea转换未UMeditor实例
+       @private
+       @method _updateDom
+       */
+      _updateDom: function () {
+        var
+          options = get(this, &#x27;options&#x27;),
+          defaultOptions = get(this, &#x27;defaultOptions&#x27;),
+          editor;
+
+        if (typeof options === &#x27;string&#x27;) {
+          options = JSON.parse(options);
+        }
+        //TODO toolbar属性合并
+        options = $.extend(true, {}, options, defaultOptions);
+
+        editor = this._editor = UM.getEditor(this.get(&#x27;holderId&#x27;), options);
+
+        this._attachEvent(editor);
+      }.on(&#x27;didInsertElement&#x27;),
+
+
+      /**
+       在富文本框编辑器内容发生改变时同步value值
+       @private
+       @method _updateValue
+       @param value 富文本编辑器改变后的值
+       */
+      _updateValue: function (value) {
+        set(this, &#x27;value&#x27;, value);
+      },
+
+
+      /**
+       销毁富文本编辑器，销毁组件
+       @private
+       @method _destroyEditor
+       */
+      _destroyEditor: function () {
+        this._editor.destroy();
+        this._editor = null;
+      }.on(&#x27;willDestroyElement&#x27;)
+    });
+
+    __exports__[&quot;default&quot;] = BuEditor;
+  });
+define(&quot;bricksui-form/checkbox&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    var Checkbox = Ember.EasyForm.Input.extend({
+        init: function () {
+            this._super.apply(this, arguments);
+            this.set(&#x27;templateName&#x27;, this.get(&#x27;wrapperConfig.checkboxTemplate&#x27;));
+            this.set(&#x27;context&#x27;, this);
+            this.set(&#x27;controller&#x27;, this);
+        },
+        /* The property to be used as label */
+        labelPath: null,
+        /* The model */
+        model: null,
+        /* The has many property from the model */
+        propertyPath: null,
+        /* All possible elements, to be selected */
+        elements: null,
+        elementsOfProperty: function () {
+            return this.get(&#x27;model.&#x27; + this.get(&#x27;propertyPath&#x27;));
+        }.property()
+
+    });
+
+    __exports__[&quot;default&quot;] = Checkbox;
+  });
+define(&quot;bricksui-form/chosen-select&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    __exports__[&quot;default&quot;] = Ember.EasyForm.Select.reopen({
+
+      classNames: [&#x27;form-control&#x27;],
+      attributeBindings:[&#x27;data-placeholder&#x27;],
+
+      init:function(){
+        this._super();
+        this.set(&#x27;prompt&#x27;,&#x27; &#x27;);  //对于chosen组件，需要存在一个为空的promt
+
+        //once elements trigger blur event,the parentView will show validated result,
+        //aim to defer validation
+        var parentView=this.get(&#x27;parentView&#x27;);
+        parentView.focusOut=function(){
+          parentView.set(parentView.set(&#x27;hasFocusedOut&#x27;, true));
+        };
+
+      },
+
+      /**
+       * @description 在收到通知需进行销毁后，销毁chsen组建
+       * @private
+       */
+      _elementDestroy:function(){
+        this.$().chosen(&#x27;destroy&#x27;);
+      }.on(&#x27;willDestroyElement&#x27;),
+
+
+      /**
+       * @description 在select的context发生变化后，通知chosen进行视图更新
+       * @private
+       */
+      _updateItem:function(){
+        Ember.run.scheduleOnce(&#x27;afterRender&#x27;,this,function(){
+          this.$().trigger(&#x27;chosen:updated&#x27;);
+        });
+      }.observes(&#x27;content.@each&#x27;),
+
+      _doShowFocus:function(){
+        this.get(&#x27;parentView&#x27;).showValidationError();
+      },
+
+      _validation:function(){
+        var callback=this._doShowFocus.bind(this);
+        this.get(&#x27;parentView.formForModel&#x27;).validate().then(callback,callback);
+      },
+
+      /**
+       * @description 在视图渲染完成后，将select组件转换为chosen组件
+       * @private
+       */
+      _updateDom:function(){
+
+        Ember.run.scheduleOnce(&#x27;afterRender&#x27;,this,function(){
+          //在select视图渲染成成后，将其转换为chosen下拉框，并监听change事件
+          this.$().chosen()
+            .on(&#x27;change chosen:hiding_dropdown&#x27;,function(){
+              //为了取得数组正确的变化，将validate推迟到下一生命周期运行
+              Ember.run.next(this,&#x27;_validation&#x27;);
+            }.bind(this))
+          ;
+        });
+      }.on(&#x27;didInsertElement&#x27;)
+    });
+  });
+define(&quot;bricksui-form/controllers/checkbox_item&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    var CheckboxItemController = Ember.ObjectController.extend({
+        selected: function () {
+            var content = this.get(&#x27;content&#x27;);
+            var list = this.get(&#x27;parentController.elementsOfProperty&#x27;);
+            return list.contains(content);
+        }.property(),
+        label: function () {
+            return this.get(&#x27;model.&#x27; + this.get(&#x27;parentController.labelPath&#x27;));
+        }.property(),
+        selectedChanged: function () {
+            var content = this.get(&#x27;content&#x27;);
+            var list = this.get(&#x27;parentController.elementsOfProperty&#x27;);
+            if (this.get(&#x27;selected&#x27;)) {
+                list.pushObject(content);
+            } else {
+                list.removeObject(content);
+            }
+            //TODO 暂时处理:调用model计算一边
+            //原因:property为数组类型,需要监听数组方法
+            var parent = this.get(&#x27;parentController.model&#x27;);
+            parent.validate();
+        }.observes(&#x27;selected&#x27;)
+    });
+    __exports__[&quot;default&quot;] = CheckboxItemController;
+  });
+define(&quot;bricksui-form/controllers/radio_item&quot;,
+  [&quot;./checkbox_item&quot;,&quot;exports&quot;],
+  function(__dependency1__, __exports__) {
+    &quot;use strict&quot;;
+    var CheckboxItemController = __dependency1__[&quot;default&quot;];
+    var RadioItemController = CheckboxItemController.extend({
+        selected: function () {
+            return this.get(&#x27;content&#x27;) === this.get(&#x27;parentController.elementsOfProperty&#x27;);
+        }.property(),
+        selectedChanged: function () {
+            var content = this.get(&#x27;content&#x27;);
+            var parent = this.get(&#x27;parentController&#x27;);
+            var model = this.get(&#x27;parentController.model&#x27;);
+            model.set(parent.get(&#x27;propertyPath&#x27;), content);
+            model.validate();
+        }.observes(&#x27;selected&#x27;)
+    });
+
+    __exports__[&quot;default&quot;] = RadioItemController;
+  });
+define(&quot;bricksui-form/form-config&quot;,
+  [],
+  function() {
+    &quot;use strict&quot;;
+    /**
+     * @description bootstrap横排样式
+     * 布局分隔为100%撑满，
+     * Label在input左方，验证信息在input下方
+     */
+    Ember.EasyForm.Config.registerWrapper(&#x27;bootstrap-horizontal&#x27;, {
+        inputTemplate: &#x27;bootstrap-input&#x27;,
+        checkboxTemplate: &quot;bootstrap-checkbox&quot;,
+        radioTemplate: &quot;bootstrap-radio&quot;,
+        controlsWrapperClass: &#x27;col-sm-6&#x27;,
+        formClass: &#x27;form-horizontal form-bordered&#x27;,
+        fieldErrorClass: &#x27;has-error&#x27;,
+        errorClass: &#x27;text-danger&#x27;,
+        hintClass: &#x27;help-block&#x27;,
+        labelClass: &#x27;col-sm-3 control-label&#x27;,
+        inputClass: &#x27;form-group&#x27;,
+        buttonClass: &#x27;btn btn-primary&#x27;,
+        validationLayout:&#x27;bootstrap-validation-input&#x27;
+    });
+
+    /**
+     * @description bootstrap默认样式
+     * 布局分隔为100%撑满，
+     * Label在input上方，验证信息在input下方
+     */
+    Ember.EasyForm.Config.registerWrapper(&#x27;bootstrap&#x27;, {
+      checkboxTemplate: &quot;bootstrap-checkbox&quot;,
+      radioTemplate: &quot;bootstrap-radio&quot;,
+      labelClass: &#x27;control-label&#x27;,
+      inputClass: &#x27;form-group&#x27;,
+      buttonClass: &#x27;btn btn-primary&#x27;,
+      fieldErrorClass: &#x27;has-error&#x27;,
+      errorClass: &#x27;help-block&#x27;,
+      validationLayout:&#x27;validation-layout&#x27;
+    });
+
+
+    //禁用submit 按钮的默认disabled属性
+    //TODO 改用样式控制
+    Ember.EasyForm.Submit.reopen({
+        disabled: function () {
+            return false;
+        }.property(&#x27;formForModel.isValid&#x27;)
+    });
+    //所有组件扩展validate方法,方便form表单submit时统一调度
+    Ember.EasyForm.Input.reopen({
+        validate: function () {
+            this.focusOut();
+        }
+    });
+    //在默认form的submit方法调用完成后,统一调用各个组件的验证方法,先后顺序有待验证
+    Ember.EasyForm.Form.reopen({
+        submit: function () {
+            this._super.apply(this, arguments);
+            this.forEachChildView(function (subview) {
+                if (subview.validate) {
+                    subview.validate();
+                }
+            });
+        }
+    });
+    //TODO 这里需要根据控件进行修改
+    Ember.EasyForm.TextField.reopen({
+        classNames: [&quot;form-control&quot;]
+    });
+    Ember.EasyForm.TextArea.reopen({
+        classNames: [&quot;form-control&quot;]
+    });
+
+    /**
+     * @description 拓展校验字段
+     */
+    Ember.EasyForm.Input.reopen({
+      init:function(){
+        this._super();
+        if(this.isBlock &amp;&amp; this.get(&#x27;withValidation&#x27;)){
+          this.set(&#x27;layoutName&#x27;,this.get(&#x27;wrapperConfig.validationLayout&#x27;));
+        }
+      }
+    });
+  });
+define(&quot;bricksui-form/form-setup&quot;,
+  [&quot;./controllers/checkbox_item&quot;,&quot;./controllers/radio_item&quot;,&quot;./bu-editor&quot;,&quot;exports&quot;],
+  function(__dependency1__, __dependency2__, __dependency3__, __exports__) {
+    &quot;use strict&quot;;
+    var CheckboxItemController = __dependency1__[&quot;default&quot;];
+    var RadioItemController = __dependency2__[&quot;default&quot;];
+    var BuEditor = __dependency3__[&quot;default&quot;];
+
+    __exports__[&quot;default&quot;] = function initFormController(container, application) {
+        container.register(&#x27;controller:checkboxItem&#x27;, CheckboxItemController);
+        container.register(&#x27;controller:radioItem&#x27;, RadioItemController);
+        container.register(&#x27;component:bu-editor&#x27;,BuEditor);
+    }
+  });
+define(&quot;bricksui-form/helpers/checkbox&quot;,
+  [],
+  function() {
+    &quot;use strict&quot;;
+    //checkbox组
+    Ember.Handlebars.registerHelper(&#x27;checkbox&#x27;, function (property, options) {
+        options = Ember.EasyForm.processOptions(property, options);
+
+        if (options.hash.propertyBinding) {
+            options.hash.property = Ember.Handlebars.get(this, options.hash.propertyBinding, options);
+        }
+
+        if (options.hash.inputOptionsBinding) {
+            options.hash.inputOptions = Ember.Handlebars.get(this, options.hash.inputOptionsBinding, options);
+        }
+
+        var modelPath = Ember.Handlebars.get(this, &#x27;formForModelPath&#x27;, options);
+        options.hash.modelPath = modelPath;
+
+        property = options.hash.property;
+
+        var modelPropertyPath = function (property) {
+            if (!property) {
+                return null;
+            }
+
+            var startsWithKeyword = !!options.data.keywords[property.split(&#x27;.&#x27;)[0]];
+
+            if (startsWithKeyword) {
+                return property;
+            }
+
+            if (modelPath) {
+                return modelPath + &#x27;.&#x27; + property;
+            } else {
+                return property;
+            }
+        };
+        var multiple = false;
+        if (options.hash.contentBinding) {
+            multiple = true;
+        }
+        options.hash[(multiple ? &quot;value&quot; : &quot;checked&quot;) + &quot;Binding&quot;] = modelPropertyPath(property);
+
+        var context = this;
+
+        options.hash.viewName = &#x27;input-field-&#x27; + options.data.view.elementId;
+
+        if (options.hash.inputOptions) {
+            var inputOptions = options.hash.inputOptions, optionName;
+            for (optionName in inputOptions) {
+                if (inputOptions.hasOwnProperty(optionName)) {
+                    options.hash[optionName] = inputOptions[optionName];
+                }
+            }
+            delete options.hash.inputOptions;
+        }
+
+        options.hash.isBlock = !!(options.fn);
+
+        return Ember.Handlebars.helpers.view.call(this, Ember.EasyForm.Checkbox, options);
+    });
+  });
+define(&quot;bricksui-form/helpers/radio&quot;,
+  [],
+  function() {
+    &quot;use strict&quot;;
+    Ember.Handlebars.registerHelper(&#x27;radio&#x27;, function (property, options) {
+        options = Ember.EasyForm.processOptions(property, options);
+
+        if (options.hash.propertyBinding) {
+            options.hash.property = Ember.Handlebars.get(this, options.hash.propertyBinding, options);
+        }
+
+        if (options.hash.inputOptionsBinding) {
+            options.hash.inputOptions = Ember.Handlebars.get(this, options.hash.inputOptionsBinding, options);
+        }
+
+        var modelPath = Ember.Handlebars.get(this, &#x27;formForModelPath&#x27;, options);
+        options.hash.modelPath = modelPath;
+
+        property = options.hash.property;
+
+        var modelPropertyPath = function (property) {
+            if (!property) {
+                return null;
+            }
+
+            var startsWithKeyword = !!options.data.keywords[property.split(&#x27;.&#x27;)[0]];
+
+            if (startsWithKeyword) {
+                return property;
+            }
+
+            if (modelPath) {
+                return modelPath + &#x27;.&#x27; + property;
+            } else {
+                return property;
+            }
+        };
+        var multiple = false;
+        if (options.hash.contentBinding) {
+            multiple = true;
+        }
+        options.hash[(multiple ? &quot;value&quot; : &quot;checked&quot;) + &quot;Binding&quot;] = modelPropertyPath(property);
+
+        var context = this;
+
+        options.hash.viewName = &#x27;input-field-&#x27; + options.data.view.elementId;
+
+        if (options.hash.inputOptions) {
+            var inputOptions = options.hash.inputOptions, optionName;
+            for (optionName in inputOptions) {
+                if (inputOptions.hasOwnProperty(optionName)) {
+                    options.hash[optionName] = inputOptions[optionName];
+                }
+            }
+            delete options.hash.inputOptions;
+        }
+
+        options.hash.isBlock = !!(options.fn);
+
+        return Ember.Handlebars.helpers.view.call(this, Ember.EasyForm.Radio, options);
+    });
+  });
+define(&quot;bricksui-form/initializer&quot;,
+  [&quot;./form-setup&quot;],
+  function(__dependency1__) {
+    &quot;use strict&quot;;
+    var formController = __dependency1__[&quot;default&quot;];
+
+    Ember.onLoad(&quot;Ember.Application&quot;, function (Application) {
+
+        Application.initializer({
+            name: &quot;form-controller&quot;,
+            initialize: formController
+        });
+    });
+  });
+define(&quot;bricksui-form/radio-button&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    var RadioButton = Ember.View.extend({
+        tagName: &quot;input&quot;,
+        type: &quot;radio&quot;,
+        attributeBindings: [ &quot;name&quot;, &quot;type&quot;, &quot;value&quot;, &quot;checked:checked:&quot; ],
+        click: function () {
+            this.set(&quot;selection&quot;, this.$().val());
+        },
+        checked: function () {
+            return this.get(&quot;value&quot;) === this.get(&quot;selection&quot;);
+        }.property()
+    });
+
+    __exports__[&quot;default&quot;] = RadioButton;
+  });
+define(&quot;bricksui-form/radio&quot;,
+  [&quot;./checkbox&quot;,&quot;exports&quot;],
+  function(__dependency1__, __exports__) {
+    &quot;use strict&quot;;
+    var Checkbox = __dependency1__[&quot;default&quot;];
+
+    var Radio = Checkbox.extend({
+        init: function () {
+            this._super.apply(this, arguments);
+            this.set(&#x27;templateName&#x27;, this.get(&#x27;wrapperConfig.radioTemplate&#x27;));
+        }
+    });
+
+    __exports__[&quot;default&quot;] = Radio;
+  });
+define(&quot;bricksui-i18n&quot;,
+  [&quot;bricksui-metal/core&quot;,&quot;bricksui-i18n/initializer&quot;,&quot;bricksui-i18n/i18n-support&quot;,&quot;bricksui-i18n/i18n-validator&quot;,&quot;bricksui-i18n/lang/en&quot;,&quot;bricksui-i18n/lang/zh-cn&quot;,&quot;bricksui-i18n/helpers/translation&quot;],
+  function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __dependency6__, __dependency7__) {
+    &quot;use strict&quot;;
+    var BricksUI = __dependency1__[&quot;default&quot;];
+
+    var setLang = __dependency3__.setLang;
+    var i18nValidator = __dependency4__[&quot;default&quot;];
+
+    //BEGIN IMPORT LANGUAGE
+    var en = __dependency5__[&quot;default&quot;];
+    var zhCN = __dependency6__[&quot;default&quot;];
+
+    //END IMPORT LANGUAGE
+
+
+    var translationHelper = __dependency7__.translationHelper;
+    /**
+     @module BricksUI
+     @submodule BricksUI-I18n
+     @description 国际化支持
+     */
+    /**
+     * @class I18n
+     * @namespace BricksUI
+     * @type {{}}
+     */
+    var I18n = {};
+
+    I18n.lang = {};
+
+    /**
+     * en :en-us en-hk en-au
+     * de :de-dk de-ch de-lu
+     * zh-cn : zh-cn
+     * zh-tw : zh-tw
+     */
+    I18n.lang[&#x27;en&#x27;] = en;
+    I18n.lang[&#x27;zh-cn&#x27;] = zhCN;
+
+    I18n.I18nableValidationMixin = i18nValidator;
+
+    I18n.setLang = setLang;
+
+    Handlebars.registerHelper(&quot;t&quot;, translationHelper);
+
+
+    BricksUI.I18n = I18n;
+  });
+define(&quot;bricksui-i18n/helpers/translation&quot;,
+  [&quot;bricksui-metal/core&quot;,&quot;exports&quot;],
+  function(__dependency1__, __exports__) {
+    &quot;use strict&quot;;
+    var BricksUI = __dependency1__[&quot;default&quot;];
+
+    var I18n = BricksUI.I18n;
+    var isBinding = /(.+)Binding$/,
+        uniqueElementId = (function () {
+            var id = Ember.uuid || 0;
+            return function () {
+                var elementId = &#x27;i18n-&#x27; + id++;
+                return elementId;
+            };
+        })();
+    var get = Ember.get,
+        EmHandlebars = Ember.Handlebars
+        ;
+    __exports__[&quot;default&quot;] = function (key, options) {
+        var attrs, context, data, elementID, result, tagName, view;
+        context = this;
+        attrs = options.hash;
+        data = options.data;
+        view = data.view;
+        tagName = attrs.tagName || &#x27;span&#x27;;
+        delete attrs.tagName;
+        elementID = uniqueElementId();
+
+        Ember.keys(attrs).forEach(function (property) {
+            var bindPath, currentValue, invoker, isBindingMatch, normalized, normalizedPath, observer, propertyName, root, _ref;
+            isBindingMatch = property.match(isBinding);
+
+            if (isBindingMatch) {
+                propertyName = isBindingMatch[1];
+                bindPath = attrs[property];
+                currentValue = get(context, bindPath, options);
+                attrs[propertyName] = currentValue;
+                invoker = null;
+                normalized = EmHandlebars.normalizePath(context, bindPath, data);
+                _ref = [normalized.root, normalized.path], root = _ref[0], normalizedPath = _ref[1];
+
+                observer = function () {
+                    var elem, newValue;
+                    if (view.$() == null) {
+                        Ember.removeObserver(root, normalizedPath, invoker);
+                        return;
+                    }
+                    newValue = get(context, bindPath, options);
+                    elem = view.$(&quot;#&quot; + elementID);
+                    attrs[propertyName] = newValue;
+                    return elem.html(I18n.t(key, attrs));
+                };
+                Ember.subscribe(&quot;i18nChange&quot;, {
+                    after: observer
+                });
+
+                invoker = function () {
+                    Ember.run.scheduleOnce(&#x27;afterRender&#x27;, observer);
+                };
+
+                return Ember.addObserver(root, normalizedPath, invoker);
+            }
+        });
+        var observer = function () {
+            var elem;
+            elem = view.$(&quot;#&quot; + elementID);
+            return elem.html(I18n.t(key, attrs));
+        };
+        Ember.subscribe(&quot;i18nChange&quot;, {
+            after: observer
+        });
+        result = &#x27;&lt;%@ id=&quot;%@&quot;&gt;%@&lt;/%@&gt;&#x27;.fmt(tagName, elementID, I18n.t(key, attrs), tagName);
+        return new EmHandlebars.SafeString(result);
+    }
+  });
+define(&quot;bricksui-i18n/i18n-support&quot;,
+  [&quot;bricksui-metal/core&quot;,&quot;exports&quot;],
+  function(__dependency1__, __exports__) {
+    &quot;use strict&quot;;
+    var BricksUI = __dependency1__[&quot;default&quot;];
+
+    var langKey = &quot;bricksui-lang&quot;;
+
+    var loadLang = function () {
+        try {
+            return JSON.parse(Ember.$.cookie(langKey));
+        } catch (e) {
+            return null;
+        }
+    };
+
+    var parseLanguage = function () {
+        var language = (window.navigator.language || window.navigator.browserLanguage).toLowerCase(),
+            match
+            ;
+        match = language.match(/(.*)-(.*)/);
+        return {
+            fullName: match[0],
+            language: match[1],
+            area: match[2]
+        };
+    };
+    var requireLang = function (parsedName) {
+        var require = window.require;
+        if (typeof parsedName === &quot;string&quot;) {
+            parsedName = {
+                language: parsedName
+            };
+        }
+        var localeLang = require([BricksUI.ENV.MODULE_PREFIX, BricksUI.ENV.LANG_FOLDER_NAME, parsedName.language].join(&quot;/&quot;));
+        var localeName = parsedName.language;
+        if (!localeLang) {
+            localeLang = require([BricksUI.ENV.MODULE_PREFIX, BricksUI.ENV.LANG_FOLDER_NAME, parsedName.fullName].join(&quot;/&quot;));
+            localeName = parsedName.fullName;
+        }
+        if (localeLang &amp;&amp; localeLang[&#x27;default&#x27;]) {
+            localeLang = localeLang[&#x27;default&#x27;];
+        }
+
+        return {
+            localeName: localeName,
+            localeLang: localeLang
+        };
+    };
+    var saveLang = function (lang) {
+        if (BricksUI.ENV.PERSISTENT_I18N) {
+            Ember.$.cookie(langKey, JSON.stringify(lang), { expires: 7 });
+        }
+    };
+    var mergeLang = function (locale) {
+        var localeName = locale.localeName;
+        var localeLang = locale.localeLang;
+        var bricksLocale = BricksUI.I18n.lang[localeName];
+        Ember.$.extend(true, bricksLocale, localeLang);
+        Ember.$.extend(true, Ember.I18n.translations, bricksLocale);
+    };
+    var initLang = function () {
+        var parsedName;
+        if (BricksUI.ENV.PERSISTENT_I18N) {
+            parsedName = loadLang() || parseLanguage();
+        }
+        var locale = requireLang(parsedName);
+        mergeLang(locale);
+        saveLang(parsedName);
+    };
+    /**
+     * 语言切换,用户可以通过传入的语言标识符进行语言切换
+     * 需要在对应的项目下有对应的语言包
+     * app
+     *      lang
+     *          en.js
+     *          zh-cn.js
+     *  传入的标识符即为lang下的对应的文件名
+     * @method setLang
+     * @for BricksUI.I18n
+     * @param {String} lang language string ,&quot;en&quot; &quot;zh-cn&quot;
+     */
+    var setLang = function (lang) {
+        var locale = requireLang(lang);
+        mergeLang(locale);
+        saveLang({
+            fullName: lang,
+            language: lang,
+            area: lang
+        });
+
+        var translations = Ember.I18n.translations;
+        for (var prop in translations) {
+            if (Ember.canInvoke(translations, prop)) {
+                delete translations[prop];
+            }
+        }
+        Ember.instrument(&quot;i18nChange&quot;);
+    };
+
+    __exports__.initLang = initLang;
+    __exports__.setLang = setLang;
+  });
+define(&quot;bricksui-i18n/i18n-validator&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    /**
+     * @description 继承自Ember-Validations,拓展语言切换支持。通过该方法可做到即时的语言切换，缺点在于很难与默认的t.i18n进行交互
+     * 该方法订阅 &#x27;i18nChange&#x27; 事件，在事件触发后，调用自身 validate方法
+     */
+    var I18nableValidationMixin = Ember.Mixin.create(Ember.Validations.Mixin,{
+      init: function () {
+        this._super();
+
+        var validatorMixin = this;
+        Ember.subscribe(&quot;i18nChange&quot;, {
+          after: function (name, timestamp, payload) {
+            validatorMixin.validate();
+          }
+        });
+      }
+    });
+    __exports__[&quot;default&quot;] = I18nableValidationMixin;
+  });
+define(&quot;bricksui-i18n/initializer&quot;,
+  [&quot;bricksui-metal/core&quot;,&quot;./i18n-support&quot;],
+  function(__dependency1__, __dependency2__) {
+    &quot;use strict&quot;;
+    var BricksUI = __dependency1__[&quot;default&quot;];
+    var initLang = __dependency2__.initLang;
+
+    Ember.onLoad(&quot;Ember.Application&quot;, function (Application) {
+
+        Application.initializer({
+            name: &quot;i18n-setup&quot;,
+            initialize: function (container, application) {
+                BricksUI.ENV.MODULE_PREFIX = application.modulePrefix;
+                initLang();
+            }
+        });
+    });
+  });
+define(&quot;bricksui-i18n/lang/en&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    var en = {
+      errors: {
+        inclusion: &quot;is not included in the list&quot;,
+        exclusion: &quot;is reserved&quot;,
+        invalid: &quot;is invalid&quot;,
+        confirmation: &quot;doesn&#x27;t match {{attribute}}&quot;,
+        accepted: &quot;must be accepted&quot;,
+        empty: &quot;can&#x27;t be empty&quot;,
+        blank: &quot;can&#x27;t be blank&quot;,
+        present: &quot;must be blank&quot;,
+        tooLong: &quot;is too long (maximum is {{count}} characters)&quot;,
+        tooShort: &quot;is too short (minimum is {{count}} characters)&quot;,
+        wrongLength: &quot;is the wrong length (should be {{count}} characters)&quot;,
+        notANumber: &quot;is not a number&quot;,
+        notAnInteger: &quot;must be an integer&quot;,
+        greaterThan: &quot;must be greater than {{count}}&quot;,
+        greaterThanOrEqualTo: &quot;must be greater than or equal to {{count}}&quot;,
+        equalTo: &quot;must be equal to {{count}}&quot;,
+        lessThan: &quot;must be less than {{count}}&quot;,
+        lessThanOrEqualTo: &quot;must be less than or equal to {{count}}&quot;,
+        otherThan: &quot;must be other than {{count}}&quot;,
+        odd: &quot;must be odd&quot;,
+        even: &quot;must be even&quot;,
+        url: &quot;is not a valid URL&quot;
+      }
+    };
+    __exports__[&quot;default&quot;] = en;
+  });
+define(&quot;bricksui-i18n/lang/zh-cn&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    var zhCN = {
+      errors: {
+        inclusion: &quot;is not included in the list&quot;,
+        exclusion: &quot;is reserved&quot;,
+        invalid: &quot;is invalid&quot;,
+        confirmation: &quot;不匹配 {{attribute}}&quot;,
+        accepted: &quot;必须接受&quot;,
+        empty: &quot;输入不可为空&quot;,
+        blank: &quot;输入不可为空&quot;,
+        present: &quot;输入不可为空&quot;,
+        tooLong: &quot;长度错误 (最大值为 {{count}} 字符)&quot;,
+        tooShort: &quot;长度错误 (最小为 {{count}} 字符)&quot;,
+        wrongLength: &quot;长度错误 (必须为 {{count}} 字符)&quot;,
+        notANumber: &quot;请输入数值&quot;,
+        notAnInteger: &quot;请输入整数&quot;,
+        greaterThan: &quot;输入值必须大于 {{count}}&quot;,
+        greaterThanOrEqualTo: &quot;输入值必须不小于 {{count}}&quot;,
+        equalTo: &quot;输入值必须等于 {{count}}&quot;,
+        lessThan: &quot;输入值必须小于 {{count}}&quot;,
+        lessThanOrEqualTo: &quot;输入值必须不大于 {{count}}&quot;,
+        otherThan: &quot;请输入不同的值 {{count}}&quot;,
+        odd: &quot;请输入奇数&quot;,
+        even: &quot;请输入偶数&quot;,
+        url: &quot;请输入正确的URL地址&quot;
+      }
+    };
+    __exports__[&quot;default&quot;] = zhCN;
+  });
+define(&quot;bricksui-metal&quot;,
+  [&quot;bricksui-metal/core&quot;,&quot;bricksui-metal/event_manager&quot;,&quot;bricksui-metal/state_handler&quot;,&quot;bricksui-metal/stateable&quot;],
+  function(__dependency1__, __dependency2__, __dependency3__, __dependency4__) {
+    &quot;use strict&quot;;
+    var BricksUI = __dependency1__[&quot;default&quot;];
+    var EventManager = __dependency2__[&quot;default&quot;];
+    var StateHandler = __dependency3__[&quot;default&quot;];
+    var Stateable = __dependency4__[&quot;default&quot;];
+
+    BricksUI.EventManager = EventManager;
+    BricksUI.Stateable = Stateable;
+    BricksUI.StateHandler = StateHandler;
+  });
+define(&quot;bricksui-metal/core&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    /*globals BricksUI:true */
+    /**
+     * @module bricksui
+     * @submodule bricksui-metal
+     */
+    
+    /**
+     *  BricksUI ,a widget library on ember.js
+     *  @class BricksUI
+     *  @statis
+     *  @version 0.0.1-beta.1+canary.38d909b2
+     */
+    if (&quot;undefined&quot; === typeof BricksUI) {
+      BricksUI = Ember.Namespace.create();
+    }
+    /**
+     @property VERSION
+     @type String
+     @default &#x27;0.0.1-beta.1+canary.38d909b2&#x27;
+     @static
+     */
+    BricksUI.VERSION = &#x27;0.0.1-beta.1+canary.38d909b2&#x27;;
+    
+    var DEFAULT_ENV = {
+      /**
+       * @description 是否将语言选择持久化到cookie中，如果设置为true，则将优先获取cookie设置的语言
+       */
+      PERSISTENT_I18N: true,
+      MODULE_PREFIX:&#x27;appkit&#x27;,
+      LANG_FOLDER_NAME:&quot;lang&quot;
+    };
+    
+    /**
+     * @description Bricks变量配置
+     * I18NCOOKIEPERSISTENT : true
+     *
+     */
+    if (&quot;undefined&quot; === typeof BricksUI.ENV) {
+      BricksUI.ENV = DEFAULT_ENV;
+    } else {
+      Ember.$.extend(true, BricksUI.ENV, DEFAULT_ENV);
+    }
+    
+    __exports__[&quot;default&quot;] = BricksUI;
+  });
+define(&quot;bricksui-metal/event_manager&quot;,
+  [&quot;bricksui-metal/core&quot;,&quot;exports&quot;],
+  function(__dependency1__, __exports__) {
+    &quot;use strict&quot;;
+    var BricksUI = __dependency1__[&quot;default&quot;];
+    var Em = window.Ember;
+    /**
+     * Ember.View 本身的实现过程就是一个状态机的流转过程
+     * Ember 事件绑定流程:
+     *  Application.eventDispatcher
+     *  Application.setupEventDispatcher
+     *      --&gt;eventDispatcher.setup
+     *      --&gt;eventDispatcher.setupHandler     //统一绑定在rootElement下
+     *
+     *  Ember事件触发流程:
+     *  jQuery.event.dispatch
+     *      --&gt;Ember setupHandler
+     *      --&gt;eventDispatcher._findNearestEventManager
+     *  在findNearestEventManager会查找视图是否具有事件管理器
+     *  属性名称为:eventManager
+     *      yes--&gt; 事件统一交给事件管理器可处理的事件处理
+     *      no --&gt; 逐级冒泡事件
+     *  为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成
+     *  将在View上新增eventManager属性,用于统一管理
+     */
+
+    var eventHandlers = {
+        interpreKeyEvents: function (event) {
+            //TODO 将mapping写成用户可以扩展的形式
+            var mapping = event.shiftKey ? ModifiedKeyBindings : KeyBindings;
+            var eventName = mapping[event.keyCode];
+            if (eventName &amp;&amp; this[eventName]) {
+                var handler = this[eventName];
+                if (Ember.typeOf(handler) === &quot;function&quot;) {
+                    return handler.call(this, event, this);
+                }
+                return false;
+            }
+        },
+        handleKeyEvent: function (event, view) {
+            var emberEvent = null;
+            switch (event.type) {
+                case &quot;keydown&quot;:
+                    emberEvent = &quot;keyDown&quot;;
+                    break;
+                case &quot;keypress&quot;:
+                    emberEvent = &quot;keyPress&quot;;
+                    break;
+            }
+            var handler = emberEvent ? this.get(emberEvent) : null;
+            if (handler) {
+                return !handler.call(BricksUI.keyResponderStack.current(), event, BricksUI.keyResponderStack.current());
+            } else if (emberEvent === &quot;keyDown&quot; &amp;&amp; this.interpreKeyEvents(event)) {
+                return false;
+            } else if (this.get(&quot;parentView&quot;)) {
+                return this.get(&quot;parentView&quot;).handleKeyEvent(event, view);
+            }
+        }
+    };
+    //TODO 需要仔细研究Ember内部这个的相关机制,才好扩展,
+    Ember.View.reopen(eventHandlers);
+    Ember.TextSupport.reopen(eventHandlers);
+
+    /**
+     * 用户可进行扩展和修改
+     * @type
+     */
+    var KeyBindings = BricksUI.KeyBindings = {
+        8: &#x27;deleteBackward&#x27;,
+        9: &#x27;insertTab&#x27;,
+        13: &#x27;insertNewline&#x27;,
+        27: &#x27;cancel&#x27;,
+        32: &#x27;insertSpace&#x27;,
+        37: &#x27;moveLeft&#x27;,
+        38: &#x27;moveUp&#x27;,
+        39: &#x27;moveRight&#x27;,
+        40: &#x27;moveDown&#x27;,
+        46: &#x27;deleteForward&#x27;
+    };
+    /**
+     * 辅助键配合其他按键的修改操作
+     * @type
+     */
+    var ModifiedKeyBindings = BricksUI.ModifiedKeyBindings = {
+        8: &#x27;deleteForward&#x27;,
+        9: &#x27;insertBacktab&#x27;,
+        37: &#x27;moveLeftAndModifySelection&#x27;,
+        38: &#x27;moveUpAndModifySelection&#x27;,
+        39: &#x27;moveRightAndModifySelection&#x27;,
+        40: &#x27;moveDownAndModifySelection&#x27;
+    };
+
+
+    Ember.mixin(BricksUI, {
+        mouseResponderView: null,
+        keyResponderStack: Em.Object.extend({
+            /**
+             * 当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响
+             * 如果不是,则引用类型不应该放在这里,而应该直接实例化
+             */
+            _stack: [],
+            currentKeyResponder: function () {
+                return this.current();
+            }.property().volatile(),
+            current: function () {
+                var length = this._stack.get(&#x27;length&#x27;);
+                return length &gt; 0 ? this._stack.objectAt(length - 1) : null;
+            },
+            push: function (view) {
+                if (!Ember.none(view)) {
+                    if (view.willBecomeKeyResponder) view.willBecomKeyResponder();
+                    //TODO 需要兼容旧版本浏览器才用这种方式添加样式
+                    if (view.set &amp;&amp; !view.isDestroyed) view.set(&#x27;isFocused&#x27;, true);
+                    this._stack.push(view);
+                    if (view.didBecomeKeyResponder) view.didBecomeKeyResponder();
+                    this.propertyDidChange(&#x27;currentKeyResponder&#x27;);
+                }
+                return view;
+            },
+            pop: function () {
+                if (this._stack.get(&#x27;length&#x27;) &gt; 0) {
+                    var current = this.current();
+                    if (current &amp;&amp; current.willLoseKeyResponder) current.willLoseKeyResponder();
+                    var view = this._stack.pop();
+
+                    if (view.set &amp;&amp; !view.isDestroyed) view.set(&#x27;isFocused&#x27;, false);
+                    if (view.didLoseKeyResponder) view.didLoseKeyResponder();
+                    this.propertyDidChange(&#x27;currentKeyResponder&#x27;);
+                    return view;
+                }
+                else return null;
+            },
+
+            replace: function (view) {
+                if (this.current() !== view) {
+                    this.pop();
+                    return this.push(view);
+                }
+            }
+        }).create()
+    });
+
+
+    var EventManager = {
+        acceptKeyResponder: false,
+
+        becomeKeyResponder: function (replace) {
+            if (this.get(&#x27;acceptsKeyResponder&#x27;) !== false &amp;&amp; !this.get(&#x27;isDisabled&#x27;)) {
+                if (replace === undefined || replace === true) {
+                    BricksUI.keyResponderStack.replace(this);
+                } else {
+                    BricksUI.keyResponderStack.push(this);
+                }
+            } else {
+                var parent = this.get(&#x27;parentView&#x27;);
+                if (parent &amp;&amp; parent.becomeKeyResponder) {
+                    return parent.becomeKeyResponder(replace);
+                }
+            }
+        },
+
+        resignKeyResponder: function () {
+            BricksUI.keyResponderStack.pop();
+        }
+    };
+    BricksUI.ALLOW_BROWSER_DEFAULT_HANDLING = {};
+    /**
+     * 分开维护
+     * @type {{}}
+     */
+    EventManager[&quot;eventManager&quot;] = {
+        mouseDown: function (event, view) {
+            view.becomeKeyResponder();  // Becoming a key responder is independent of mouseDown handling
+            BricksUI.set(&#x27;mouseResponderView&#x27;, undefined);
+            var handlingView = this._dispatch(&#x27;mouseDown&#x27;, event, view);
+            if (handlingView) {
+                BricksUI.set(&#x27;mouseResponderView&#x27;, handlingView);
+            }
+            return !handlingView;
+        },
+
+        mouseUp: function (event, view) {
+            if (BricksUI.get(&#x27;mouseResponderView&#x27;) !== undefined) {
+                view = BricksUI.get(&#x27;mouseResponderView&#x27;);
+                BricksUI.set(&#x27;mouseResponderView&#x27;, undefined);
+            }
+            return !this._dispatch(&#x27;mouseUp&#x27;, event, view);
+        },
+
+        mouseMove: function (event, view) {
+            if (BricksUI.get(&#x27;mouseResponderView&#x27;) !== undefined) {
+                view = BricksUI.get(&#x27;mouseResponderView&#x27;);
+            }
+            return !this._dispatch(&#x27;mouseMove&#x27;, event, view);
+        },
+
+        doubleClick: function (event, view) {
+            if (BricksUI.get(&#x27;mouseResponderView&#x27;) !== undefined) {
+                view = BricksUI.get(&#x27;mouseResponderView&#x27;);
+            }
+            return !this._dispatch(&#x27;doubleClick&#x27;, event, view);
+        },
+
+        keyDown: function (event) {
+            if (BricksUI.keyResponderStack.current() !== undefined &amp;&amp; BricksUI.keyResponderStack.current().get(&#x27;isVisible&#x27;)) {
+                return BricksUI.keyResponderStack.current().handleKeyEvent(event, BricksUI.keyResponderStack.current());
+            }
+            return true;
+        },
+
+        keyPress: function (event) {
+            if (BricksUI.keyResponderStack.current() !== undefined &amp;&amp; BricksUI.keyResponderStack.current().get(&#x27;isVisible&#x27;)) {
+                return BricksUI.keyResponderStack.current().handleKeyEvent(event, BricksUI.keyResponderStack.current());
+            }
+            return true;
+        },
+
+        // For the passed in view, calls the method with the name of the event, if defined. If that method
+        // returns true, returns the view. If the method returns false, recurses on the parent view. If no
+        // view handles the event, returns false.
+        _dispatch: function (eventName, event, view) {
+            var handler = view.get(eventName);
+            if (handler) {
+                var result = handler.call(view, event, view);
+                //TODO
+                if (result === BricksUI.ALLOW_BROWSER_DEFAULT_HANDLING) return false;
+                else if (result) return view;
+            }
+            var parentView = view.get(&#x27;parentView&#x27;);
+            if (parentView) return this._dispatch(eventName, event, parentView);
+            else return false;
+        }
+    };
+
+    __exports__[&quot;default&quot;] = EventManager;
+  });
+define(&quot;bricksui-metal/state_handler&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    /**
+     * 状态处理器
+     * 在extend时将states属性移到_states属性,
+     * 继承该接口,可以实现states在子父类间继承
+     *
+     *  App.DemoView=BricksUI.View.extend({
+     *      states:{
+     *
+     *      }
+     *  });
+     *
+     *  App.DemoView=BricksUI.View.extend({
+     *      states:function(){
+     *          return {
+     *
+     *          };
+     *      }
+     *  });
+     *  TODO
+     *  1.状态继承需要处理
+     */
+    var merge = Ember.merge,
+        Mixin = Ember.Mixin,
+        get = Ember.get,
+        typeOf = Ember.typeOf
+        ;
+    /**
+     * @class StateHandler
+     * @namespace BricksUI
+     */
+    var StateHandler = Mixin.create({
+        mergedProperties: [&quot;_states&quot;],
+
+        willMergeMixin: function (props) {
+            //TODO 处理 super 方法
+            var hashName;
+            if (!props._states) {
+                if (typeof (props.states) === &quot;function&quot;) {
+                    props.states = props.states();
+                }
+                if (typeof (props.states) === &quot;object&quot;) {
+                    hashName = &quot;states&quot;;
+                }
+                if (hashName) {
+                    props._states = Ember.merge(props._states || {}, props[hashName]);
+                }
+                //这里处理了states属性,后续就不再需要处理,所以删除
+                delete props[hashName];
+            }
+        }
+        /*
+         send:function(actionName){
+         //TODO
+         }
+         */
+    });
+    /**
+     * TODO
+     * 1.从Event入手
+     * 2.从Action入手,Action也是有Event入手,但是不用管理Event
+     *      需要在模板里面显示指定action
+     *      模板也是组件的内部属性,所以模板操作state是合理的
+     *  Ember target 有两个内置关键字:controller和 view
+     *  现在多加一个内置关键字:states,让用户可以从模板触发
+     *  {{action unfold target=&quot;states&quot;}}
+     */
+
+    __exports__[&quot;default&quot;] = StateHandler;
+  });
+define(&quot;bricksui-metal/stateable&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    /**
+     * 有限状态机(Finite State Machine)
+     *   有限状态机对行为建模
+     *      1、事件：程序对事件进行响应
+     *      2、状态：程序在事件间的状态
+     *      3、转移：对应于事件，状态间的转移
+     *      4、动作：转移过程中采取动作
+     *      5、变量：变量保存事件间的动作所需的值
+     *   状态设计要点：
+     *      1、在该状态下，该事件是否可能发生
+     *      2、采取什么动作来处理事件
+     *      3、事件过后转移到什么状态
+     *      4、在事件之间需要记录什么变量（数据）
+     *
+     *  现代的UI组件大都是具有可交互性的,不再简单的支持输入输出,总是有内在的状态转换
+     *  事件触发,执行动作和行为转换
+     *  组件通常都是粗粒度的,有自己内部机制,组合机制等等,BricksUI采用FSM分离行为,作为默认的组合机制
+     *  当设计组件时,切面能够帮助有效地帮助切分组件的功能以及帮助开发者精心考虑组件的重用的可能性
+     */
+    var get = Ember.get,
+        set = Ember.set
+        ;
+    /**
+     *
+     * @type {void|*}
+     */
+    var Stateable = Ember.Mixin.create({
+        /**
+         * 初始状态
+         */
+        initialState: null,
+        /**
+         * 公有属性,用户需要以此获得当前状态
+         * 当前状态,
+         */
+        activeState: null,
+        /**
+         *  触发状态上的事件
+         * @param name
+         * @param context
+         * @returns {*}
+         */
+        send: function (name, context) {
+            var currentState = get(this, &#x27;currentState&#x27;);
+            if (!currentState[name]) {
+                this._unhandledEvent(currentState, name, context);
+            }
+            return currentState[name](this, context);
+        },
+        /**
+         * 状态过度方法
+         * @param name
+         */
+        transitionTo: function (name) {
+            var pivotName = name.split(&quot;.&quot;, 1),
+                currentState = get(this, &#x27;currentState&#x27;),
+                state = currentState;
+            do {
+                if (state.exit) {
+                    state.exit(this);
+                }
+                state = state.parentState;
+            } while (!state.hasOwnProperty(pivotName));
+    
+            var path = name.split(&quot;.&quot;);
+            var setups = [], enters = [], i, l;
+            for (i = 0, l = path.length; i &lt; l; i++) {
+                state = state[path[i]];
+                if (state.enter) {
+                    enters.push(state);
+                }
+                if (state.setup) {
+                    setups.push(state);
+                }
+            }
+    
+            for (i = 0, l = enters.length; i &lt; l; i++) {
+                enters[i].enter(this);
+            }
+            set(this, &#x27;currentState&#x27;, state);
+            for (i = 0, l = setups.length; i &lt; l; i++) {
+                setups[i].setup(this);
+            }
+        },
+        /**
+         * 当前状态没有对应事件，则直接抛出异常
+         * @param state
+         * @param name
+         * @param context
+         * @private
+         */
+        _unhandleEvent: function (state, name, context) {
+            var errorMessage = &quot;Attempted to handle event &#x60;&quot; + name + &quot;&#x60; &quot;;
+            errorMessage += &quot;on &quot; + String(this) + &quot; while in state &quot;;
+            errorMessage += state.stateName + &quot;. &quot;;
+    
+            if (context !== undefined) {
+                errorMessage += &quot;Called with &quot; + Ember.inspect(context) + &quot;.&quot;;
+            }
+    
+            throw new Ember.Error(errorMessage);
+        }
+    });
+    /**
+     * 根据指定对象，扩展，类似于具备功能的接口扩展
+     * 非深度
+     * @param original
+     * @param hash
+     * @returns {*}
+     */
+    function mixin(original, hash) {
+        for (var prop in hash) {
+            original[prop] = hash[prop];
+        }
+        return original;
+    }
+    /**
+     * 由于状态机不止组件可以使用,其他可以拆分为各种状态的都可以使用,所以该方法需要是公开的API
+     * 装配状态
+     * 每个状态都添加parentState的引用
+     * 每个状态都增加全状态路径名称
+     * root
+     *     empty    --&gt;root.empty
+     *     deleted  --&gt;root.deleted
+     */
+    function wireState(object, parent, name) {
+        object = mixin(parent ? Ember.create(parent) : {}, object);
+        object.parentState = parent;
+        object.stateName = name;
+    
+        for (var prop in object) {
+            if (!object.hasOwnProperty(prop) || prop === &quot;parentState&quot; || prop === &quot;stateName&quot;) {
+                continue;
+            }
+            if (typeof object[prop] === &quot;object&quot;) {
+                object[prop] = wireState(object[prop], object, name + &quot;.&quot; + prop);
+            }
+        }
+    }
+    
+    
+    __exports__.Stateable = Stateable;
+    __exports__.wireState = wireState;
+  });
+define(&quot;bricksui-metal/view&quot;,
+  [&quot;bricksui-metal/core&quot;,&quot;bricksui-metal/statechart&quot;,&quot;bricksui-metal/event_manager&quot;,&quot;exports&quot;],
+  function(__dependency1__, __dependency2__, __dependency3__, __exports__) {
+    &quot;use strict&quot;;
+    var BricksUI = __dependency1__[&quot;default&quot;];
+    var Stateable = __dependency2__[&quot;default&quot;];
+    var EventManager = __dependency3__[&quot;default&quot;];
+    /**
+     *  Ember.View的创建过程是一个状态机的流转过程,具体如下:
+     *  Ember.View.states:
+     *    x: _default    默认方法集合,作为其他状态的基类,不作为具体状态使用
+     *      preRender   初始化状态,渲染之前
+     *      inBuffer    渲染状态,此时正在生成相应的html标签和属性
+     *      inDom       已经成为dom节点状态,已经生成并且插入到页面中
+     *      hasElement  一切准备就绪,等待接受用户操作
+     *      destroying  正在移除中,视图销毁
+     *  以上状态是逐个向下的状态
+     *
+     *  目前用于所使用的标签都是由W3C制定的,存在一定的局限性
+     *  Ember Component提供了一种方式来增强自定义标签,增强HTML功能,
+     *  而且Ember的这一实现与W3C目前的Custom Elements 工作一致,并且尽可能保持同步
+     *  在未来的浏览器版本,一旦Custom Elements普及,则Ember实现的这一套机制本身就与标准看齐,所以可以方便地集成
+     *
+     *  BricksUI View 要点
+     *  1.FSM 分离用户行为和组件行为
+     *  2.AOP进行事件切片,以及权限和操作行为控制
+     *  3.与W3C Custom Elements (TODO 研究)
+     *  TODO:制定组件的生命周期以及使用方式,及与外部交互的基础
+     */
+    //TODO ES6
+    /**
+     * 基类具备状态机管理功能
+     * 如何将事件传播到state中,执行对应的action
+     * 在模板里面添加states的action--&gt;{{action unfoldmenu target=&quot;states&quot;}}
+     *
+     * mouseDown(click)-&gt; view.states[&quot;activeState&quot;][&quot;unfoldmenu&quot;]
+     * record.loadingData-&gt;record.currentState[&quot;loadingData&quot;]
+     */
+
+    var Em = window.Ember;
+    /**
+     * TODO
+     * 1.用Component来实现组件
+     * 2.用模板和action结合来实现组件行为
+     */
+    var View = Em.View.extend(Stateable, EventManager, {
+        init: function () {
+            this._super();
+        }
+        //TODO
+
+    });
+
+    __exports__.View = View;
+  });
+define(&quot;bricksui&quot;,
+  [&quot;bricksui-metal&quot;,&quot;bricksui-form&quot;,&quot;bricksui-i18n&quot;],
+  function(__dependency1__, __dependency2__, __dependency3__) {
+    &quot;use strict&quot;;
+    /**
+     * @description 构建主入口文件
+     */
+  });
+Ember.TEMPLATES[&#x27;bootstrap-checkbox&#x27;] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,&#x27;&gt;= 1.0.0&#x27;];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = &#x27;&#x27;, stack1, helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = &#x27;&#x27;;
+  data.buffer.push(&quot;\n        &lt;div class=\&quot;checkbox block\&quot;&gt;\n            &lt;label&gt;\n                &quot;);
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, &quot;Ember.Checkbox&quot;, {hash:{
+    &#x27;checkedBinding&#x27;: (&quot;selected&quot;)
+  },hashTypes:{&#x27;checkedBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;checkedBinding&#x27;: depth0},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\n                &quot;);
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, &quot;label&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\n            &lt;/label&gt;\n        &lt;/div&gt;\n    &quot;);
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = &#x27;&#x27;, helper, options;
+  data.buffer.push(&quot;\n        &quot;);
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;error-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;error-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;error-field&quot;, options))));
+  data.buffer.push(&quot;\n    &quot;);
+  return buffer;
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = &#x27;&#x27;, helper, options;
+  data.buffer.push(&quot;\n        &quot;);
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;hint-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;hint-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;textBinding&#x27;: (&quot;view.hint&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;,&#x27;textBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0,&#x27;textBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;hint-field&quot;, options))));
+  data.buffer.push(&quot;\n    &quot;);
+  return buffer;
+  }
+
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;label-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;label-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;textBinding&#x27;: (&quot;view.fieldLabel&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;,&#x27;textBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0,&#x27;textBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;label-field&quot;, options))));
+  data.buffer.push(&quot;\n&lt;div class=\&quot;&quot;);
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, &quot;view.wrapperConfig.controlsWrapperClass&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\&quot;&gt;\n    &quot;);
+  stack1 = helpers.each.call(depth0, &quot;item&quot;, &quot;in&quot;, &quot;view.elements&quot;, {hash:{
+    &#x27;itemController&#x27;: (&quot;checkboxItem&quot;)
+  },hashTypes:{&#x27;itemController&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;itemController&#x27;: depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:[&quot;ID&quot;,&quot;ID&quot;,&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n\n    &quot;);
+  stack1 = helpers[&#x27;if&#x27;].call(depth0, &quot;view.showError&quot;, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:[&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n    &quot;);
+  stack1 = helpers[&#x27;if&#x27;].call(depth0, &quot;view.hint&quot;, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:[&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n&lt;/div&gt;&quot;);
+  return buffer;
+  
+});
+
+Ember.TEMPLATES[&#x27;bootstrap-input&#x27;] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,&#x27;&gt;= 1.0.0&#x27;];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = &#x27;&#x27;, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;label-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;label-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;textBinding&#x27;: (&quot;view.label&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;,&#x27;textBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0,&#x27;textBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;label-field&quot;, options))));
+  data.buffer.push(&quot;\n&lt;div class=\&quot;&quot;);
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, &quot;view.wrapperConfig.controlsWrapperClass&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\&quot;&gt;\n    &quot;);
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 &amp;&amp; depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;STRING&quot;],data:data},helper ? helper.call(depth0, &quot;easyForm/inputControls&quot;, options) : helperMissing.call(depth0, &quot;partial&quot;, &quot;easyForm/inputControls&quot;, options))));
+  data.buffer.push(&quot;\n&lt;/div&gt;&quot;);
+  return buffer;
+  
+});
+
+Ember.TEMPLATES[&#x27;bootstrap-radio&#x27;] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,&#x27;&gt;= 1.0.0&#x27;];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = &#x27;&#x27;, stack1, helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = &#x27;&#x27;;
+  data.buffer.push(&quot;\n        &lt;div class=\&quot;radio\&quot;&gt;\n            &lt;label&gt;\n                &quot;);
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, &quot;Ember.RadioButton&quot;, {hash:{
+    &#x27;nameBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;checkedBinding&#x27;: (&quot;selected&quot;),
+    &#x27;selectionBinding&#x27;: (&quot;selected&quot;),
+    &#x27;valueBinding&#x27;: (&quot;item.name&quot;)
+  },hashTypes:{&#x27;nameBinding&#x27;: &quot;STRING&quot;,&#x27;checkedBinding&#x27;: &quot;STRING&quot;,&#x27;selectionBinding&#x27;: &quot;STRING&quot;,&#x27;valueBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;nameBinding&#x27;: depth0,&#x27;checkedBinding&#x27;: depth0,&#x27;selectionBinding&#x27;: depth0,&#x27;valueBinding&#x27;: depth0},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\n                &quot;);
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, &quot;label&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\n            &lt;/label&gt;\n        &lt;/div&gt;\n    &quot;);
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = &#x27;&#x27;, helper, options;
+  data.buffer.push(&quot;\n        &quot;);
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;error-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;error-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;error-field&quot;, options))));
+  data.buffer.push(&quot;\n    &quot;);
+  return buffer;
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = &#x27;&#x27;, helper, options;
+  data.buffer.push(&quot;\n        &quot;);
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;hint-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;hint-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;textBinding&#x27;: (&quot;view.hint&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;,&#x27;textBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0,&#x27;textBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;hint-field&quot;, options))));
+  data.buffer.push(&quot;\n    &quot;);
+  return buffer;
+  }
+
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;label-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;label-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;textBinding&#x27;: (&quot;view.fieldLabel&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;,&#x27;textBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0,&#x27;textBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;label-field&quot;, options))));
+  data.buffer.push(&quot;\n&lt;div class=\&quot;&quot;);
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, &quot;view.wrapperConfig.controlsWrapperClass&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\&quot;&gt;\n    &quot;);
+  stack1 = helpers.each.call(depth0, &quot;item&quot;, &quot;in&quot;, &quot;view.elements&quot;, {hash:{
+    &#x27;itemController&#x27;: (&quot;radioItem&quot;)
+  },hashTypes:{&#x27;itemController&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;itemController&#x27;: depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:[&quot;ID&quot;,&quot;ID&quot;,&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n\n    &quot;);
+  stack1 = helpers[&#x27;if&#x27;].call(depth0, &quot;view.showError&quot;, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:[&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n    &quot;);
+  stack1 = helpers[&#x27;if&#x27;].call(depth0, &quot;view.hint&quot;, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:[&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n&lt;/div&gt;&quot;);
+  return buffer;
+  
+});
+
+Ember.TEMPLATES[&#x27;bootstrap-validation-input&#x27;] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,&#x27;&gt;= 1.0.0&#x27;];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = &#x27;&#x27;, stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = &#x27;&#x27;, helper, options;
+  data.buffer.push(&quot;\n        &quot;);
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;error-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;error-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;error-field&quot;, options))));
+  data.buffer.push(&quot;\n    &quot;);
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = &#x27;&#x27;, helper, options;
+  data.buffer.push(&quot;\n        &quot;);
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;hint-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;hint-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;textBinding&#x27;: (&quot;view.hint&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;,&#x27;textBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0,&#x27;textBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;hint-field&quot;, options))));
+  data.buffer.push(&quot;\n    &quot;);
+  return buffer;
+  }
+
+  data.buffer.push(escapeExpression((helper = helpers[&#x27;label-field&#x27;] || (depth0 &amp;&amp; depth0[&#x27;label-field&#x27;]),options={hash:{
+    &#x27;propertyBinding&#x27;: (&quot;view.property&quot;),
+    &#x27;textBinding&#x27;: (&quot;view.label&quot;)
+  },hashTypes:{&#x27;propertyBinding&#x27;: &quot;STRING&quot;,&#x27;textBinding&#x27;: &quot;STRING&quot;},hashContexts:{&#x27;propertyBinding&#x27;: depth0,&#x27;textBinding&#x27;: depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, &quot;label-field&quot;, options))));
+  data.buffer.push(&quot;\n&lt;div class=\&quot;&quot;);
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, &quot;view.wrapperConfig.controlsWrapperClass&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\&quot;&gt;\n    &quot;);
+  stack1 = helpers._triageMustache.call(depth0, &quot;yield&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n    &quot;);
+  stack1 = helpers[&#x27;if&#x27;].call(depth0, &quot;view.showError&quot;, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:[&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n    &quot;);
+  stack1 = helpers[&#x27;if&#x27;].call(depth0, &quot;view.hint&quot;, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:[&quot;ID&quot;],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(&quot;\n&lt;/div&gt;&quot;);
+  return buffer;
+  
+});
+
+Ember.TEMPLATES[&#x27;components/bu-editor&#x27;] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,&#x27;&gt;= 1.0.0&#x27;];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = &#x27;&#x27;, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push(&quot;&lt;textarea id=\&quot;&quot;);
+  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, &quot;view.holderId&quot;, {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:[&quot;ID&quot;],data:data})));
+  data.buffer.push(&quot;\&quot;&gt;&lt;/textarea&gt;&quot;);
+  return buffer;
+  
+});
+
+requireModule(&quot;bricksui&quot;);
+
+})();
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

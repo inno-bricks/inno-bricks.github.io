@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ember.BuEditor</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="" src="../assets/css/logo.png" style="max-height: 65%;" title="">
+        
+            
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b></b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BricksUI", "classes/BricksUI.I18n", "classes/BricksUI.StateHandler", "classes/Ember.BuEditor", "modules/BricksUI", "modules/bricksui", "modules/BricksUI-I18n", "modules/bricksui-metal"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <h3>APIs</h3>
+    <div id="sidebar">
+        <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+            <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+            <li><a href="#modules" data-toggle="tab">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" placeholder="Type to filter APIs">
+        </div>
+
+        <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+            <div class="tab-pane active" id="classes">
+                <ul id="api-classes" class="nav nav-list">
+                    
+                        <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+                    
+                        <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+                    
+                        <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+                    
+                        <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="tab-pane" id="modules">
+                <ul id="api-modules" class="nav nav-list">
+                    
+                        <li><a href="../modules/BricksUI.html">BricksUI</a></li>
+                    
+                        <li><a href="../modules/bricksui.html">bricksui</a></li>
+                    
+                        <li><a href="../modules/BricksUI-I18n.html">BricksUI-I18n</a></li>
+                    
+                        <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>Ember.BuEditor <small>Class</small></h1>
+</div>
+
+<div class="well well-small">
+    
+        <div class="uses">
+            Uses
+            <ul class="inline commas">
+                
+                    <li><a href="Ember.TextSupport.html">Ember.TextSupport</a></li>
+                
+            </ul>
+        </div>
+    
+
+    
+        <div class="extends">
+            Extends Ember.Component
+        </div>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/live-dist_bricksui_bricksui.js.html#l92"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:92</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/BricksUI-I18n.html">BricksUI-I18n</a><br>
+            Parent Module: <a href="../modules/BricksUI.html">BricksUI</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="well well-small">
+    <p>基于ember与<a href="http://ueditor.baidu.com/website/umeditor.html">百度富文本编辑器umeditor</a>
+主要增加了数据绑定的功能，config配置项与umeditor一致</p>
+
+</div>
+
+
+
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+
+        
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
+        
+        
+            <li><a data-toggle="tab" href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                        
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__attachEvent" data-tablink="_attachEvent">_attachEvent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__destroyEditor" data-tablink="_destroyEditor">_destroyEditor</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__updateDom" data-tablink="_updateDom">_updateDom</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__updateValue" data-tablink="_updateValue">_updateValue</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_defaultSetting" data-tablink="defaultSetting">defaultSetting</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_holderId" data-tablink="holderId">holderId</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_options" data-tablink="options">options</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_value" data-tablink="value">value</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_valueType" data-tablink="valueType">valueType</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method__attachEvent" class="method item private">
+    <h3 class="name"><code>_attachEvent</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>editor</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l164"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:164</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>为UMeditor添加事件监听</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">editor</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>UMeditor实例</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__destroyEditor" class="method item private">
+    <h3 class="name"><code>_destroyEditor</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l235"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:235</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>销毁富文本编辑器，销毁组件</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__updateDom" class="method item private">
+    <h3 class="name"><code>_updateDom</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l201"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:201</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>将textarea转换未UMeditor实例</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__updateValue" class="method item private">
+    <h3 class="name"><code>_updateValue</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>value</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l224"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:224</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>在富文本框编辑器内容发生改变时同步value值</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>富文本编辑器改变后的值</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="tab-pane">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_defaultSetting" class="property item">
+    <h3 class="name"><code>defaultSetting</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l126"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:126</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>富文本框默认配置文件</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_holderId" class="property item">
+    <h3 class="name"><code>holderId</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l154"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:154</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>占位符编号，可根据该编号取得全局唯一编辑器实例</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> bu-editor+父级ID编号</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_options" class="property item">
+    <h3 class="name"><code>options</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l119"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:119</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>用户配置文件</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_value" class="property item">
+    <h3 class="name"><code>value</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l146"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:146</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>绑定到文本域的字段</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_valueType" class="property item">
+    <h3 class="name"><code>valueType</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/live-dist_bricksui_bricksui.js.html#l102"><code>live-dist&#x2F;bricksui&#x2F;bricksui.js:102</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>value类型，分别为content和contentTxt,content包含其中的段落标签</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
