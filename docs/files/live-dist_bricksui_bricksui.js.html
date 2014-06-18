@@ -28,7 +28,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BricksUI", "classes/BricksUI.I18n", "classes/BricksUI.StateHandler", "classes/Ember.BuEditor", "modules/BricksUI", "modules/bricksui", "modules/BricksUI-I18n", "modules/bricksui-metal"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BricksUI", "classes/BricksUI.I18n", "classes/BricksUI.StateHandler", "classes/Ember.BuEditor", "modules/bricks-i18n", "modules/bricks-i18n-lang", "modules/bricksui", "modules/bricksui-i18n", "modules/bricksui-metal"]'>
         </form>
     </div>
 </div>
@@ -65,11 +65,13 @@
             <div class="tab-pane" id="modules">
                 <ul id="api-modules" class="nav nav-list">
                     
-                        <li><a href="../modules/BricksUI.html">BricksUI</a></li>
+                        <li><a href="../modules/bricks-i18n.html">bricks-i18n</a></li>
+                    
+                        <li><a href="../modules/bricks-i18n-lang.html">bricks-i18n-lang</a></li>
                     
                         <li><a href="../modules/bricksui.html">bricksui</a></li>
                     
-                        <li><a href="../modules/BricksUI-I18n.html">BricksUI-I18n</a></li>
+                        <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
                     
                         <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
                     
@@ -119,7 +121,7 @@
  * @copyright Copyright 2014-2014 Tilde Inc. and contributors
  * @license   Licensed under MIT license
  *            See https://raw.github.com/innobricks/bricksui/master/LICENSE
- * @version   0.0.1-beta.1+canary.38d909b2
+ * @version   0.0.1-beta.1+canary.c41856cc
  */
 
 (function() {
@@ -794,17 +796,21 @@ define(&quot;bricksui-i18n&quot;,
 
     var translationHelper = __dependency7__.translationHelper;
     /**
-     @module BricksUI
-     @submodule BricksUI-I18n
+     @module bricksui
+     @submodule bricks-i18n
      @description 国际化支持
      */
     /**
      * @class I18n
      * @namespace BricksUI
-     * @type {{}}
+     * @type {Object}
      */
     var I18n = {};
-
+    /**
+     * @module bricksui-i18n
+     * @submodule bricks-i18n-lang
+     * @type {Object}
+     */
     I18n.lang = {};
 
     /**
@@ -812,6 +818,7 @@ define(&quot;bricksui-i18n&quot;,
      * de :de-dk de-ch de-lu
      * zh-cn : zh-cn
      * zh-tw : zh-tw
+     *
      */
     I18n.lang[&#x27;en&#x27;] = en;
     I18n.lang[&#x27;zh-cn&#x27;] = zhCN;
@@ -1134,7 +1141,7 @@ define(&quot;bricksui-metal/core&quot;,
      *  BricksUI ,a widget library on ember.js
      *  @class BricksUI
      *  @statis
-     *  @version 0.0.1-beta.1+canary.38d909b2
+     *  @version 0.0.1-beta.1+canary.c41856cc
      */
     if (&quot;undefined&quot; === typeof BricksUI) {
       BricksUI = Ember.Namespace.create();
@@ -1142,10 +1149,10 @@ define(&quot;bricksui-metal/core&quot;,
     /**
      @property VERSION
      @type String
-     @default &#x27;0.0.1-beta.1+canary.38d909b2&#x27;
+     @default &#x27;0.0.1-beta.1+canary.c41856cc&#x27;
      @static
      */
-    BricksUI.VERSION = &#x27;0.0.1-beta.1+canary.38d909b2&#x27;;
+    BricksUI.VERSION = &#x27;0.0.1-beta.1+canary.c41856cc&#x27;;
     
     var DEFAULT_ENV = {
       /**

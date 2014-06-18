@@ -7,24 +7,29 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.BuEditor"
     ],
     "modules": [
-        "BricksUI",
-        "BricksUI-I18n",
+        "bricks-i18n",
+        "bricks-i18n-lang",
         "bricksui",
+        "bricksui-i18n",
         "bricksui-metal"
     ],
     "allModules": [
         {
-            "displayName": "BricksUI",
-            "name": "BricksUI"
+            "displayName": "bricks-i18n",
+            "name": "bricks-i18n",
+            "description": "国际化支持"
+        },
+        {
+            "displayName": "bricks-i18n-lang",
+            "name": "bricks-i18n-lang"
         },
         {
             "displayName": "bricksui",
             "name": "bricksui"
         },
         {
-            "displayName": "BricksUI-I18n",
-            "name": "BricksUI-I18n",
-            "description": "国际化支持"
+            "displayName": "bricksui-i18n",
+            "name": "bricksui-i18n"
         },
         {
             "displayName": "bricksui-metal",
