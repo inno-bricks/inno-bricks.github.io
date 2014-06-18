@@ -22,7 +22,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "bricks-i18n-lang",
             "name": "bricks-i18n-lang",
-            "description": "I18n lang locale"
+            "description": "I18n lang locale package"
         },
         {
             "displayName": "bricksui",

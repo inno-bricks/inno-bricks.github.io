@@ -84,7 +84,7 @@
             "namespace": "",
             "file": "live-dist/bricksui/bricksui.js",
             "line": 691,
-            "description": "I18n lang locale",
+            "description": "I18n lang locale package",
             "type": "{Object}"
         },
         "bricksui-metal": {
