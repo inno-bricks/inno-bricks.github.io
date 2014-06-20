@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>bricksui-metal</title>
+    <title>packages/bricksui-metal/lib/core.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -106,62 +106,75 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>bricksui-metal Module</h1>
-<div class="clearfix meta">
-    
+                        <h1 class="file-heading">File: packages/bricksui-metal/lib/core.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*globals BricksUI:true */
+/**
+ * @module bricksui
+ * @submodule bricksui-metal
+ */
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-metal_lib_state_handler.js.html#l32"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;state_handler.js:32</code></a>
-        </div>
-    
+/**
+ *  BricksUI ,a widget library on ember.js
+ *  @class BricksUI
+ *  @static
+ *  @version VERSION_STRING_PLACEHOLDER
+ */
+if (&quot;undefined&quot; === typeof BricksUI) {
+    BricksUI = Ember.Namespace.create();
+}
+/**
+ @property VERSION
+ @type String
+ @default &#x27;VERSION_STRING_PLACEHOLDER&#x27;
+ @static
+ */
+BricksUI.VERSION = &#x27;VERSION_STRING_PLACEHOLDER&#x27;;
 
-    
-</div>
+var DEFAULT_ENV = {
+    /**
+     * 是否将语言选择持久化到cookie中，如果设置为true，则将优先获取cookie设置的语言
+     * @property PERSISTENT_I18N
+     * @for BricksUI.ENV
+     * @type Boolean
+     * @default true
+     */
+    PERSISTENT_I18N: true,
+    /**
+     * 应用前缀
+     * @property MODULE_PREFIX
+     * @for BricksUI.ENV
+     * @type String
+     * @default appkit
+     */
+    MODULE_PREFIX: &#x27;appkit&#x27;,
+    /**
+     * 语言包存放路径
+     * @property LANG_FOLDER_NAME
+     * @for BricksUI.ENV
+     * @type String
+     * @default lang
+     */
+    LANG_FOLDER_NAME: &quot;lang&quot;
+};
 
+/**
+ *  @description Bricks变量配置
+ *  @class ENV
+ *  @namespace BricksUI
+ *  @type Hash
+ */
+if (&quot;undefined&quot; === typeof BricksUI.ENV) {
+    BricksUI.ENV = DEFAULT_ENV;
+} else {
+    Ember.$.extend(true, BricksUI.ENV, DEFAULT_ENV);
+}
 
-<h3>Summary</h3>
-<div class="intro">
-    <p>BricksUI ,a widget library on ember.js</p>
-
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.html">
-                        BricksUI
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.ENV.html">
-                        BricksUI.ENV
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.StateHandler.html">
-                        BricksUI.StateHandler
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+export default
+    BricksUI;
+    </pre>
 </div>
 
                     </div>

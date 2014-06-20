@@ -1,69 +1,146 @@
 {
     "project": {},
     "files": {
-        "live-dist/bricksui/bricksui.js": {
-            "name": "live-dist/bricksui/bricksui.js",
-            "modules": {
-                "bricks-i18n": 1,
-                "bricks-i18n-lang": 1,
-                "bricksui-metal": 1
-            },
+        "packages/bricksui/lib/main.js": {
+            "name": "packages/bricksui/lib/main.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-metal/lib/core.js": {
+            "name": "packages/bricksui-metal/lib/core.js",
+            "modules": {},
             "classes": {
-                "Ember.BuEditor": 1,
-                "BricksUI.I18n": 1,
                 "BricksUI": 1,
-                "BricksUI.StateHandler": 1
+                "BricksUI.ENV": 1
             },
             "fors": {
-                "BricksUI.I18n": 1
+                "BricksUI.ENV": 1
             },
             "namespaces": {
-                "Ember": 1,
                 "BricksUI": 1
             }
-        }
-    },
-    "modules": {
-        "bricksui": {
-            "name": "bricksui",
-            "submodules": {
-                "bricks-i18n-lang": 1,
-                "bricksui-metal": 1
-            },
+        },
+        "packages/bricksui-metal/lib/event_manager.js": {
+            "name": "packages/bricksui-metal/lib/event_manager.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-metal/lib/main.js": {
+            "name": "packages/bricksui-metal/lib/main.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-metal/lib/state_handler.js": {
+            "name": "packages/bricksui-metal/lib/state_handler.js",
+            "modules": {},
             "classes": {
-                "BricksUI.I18n": 1,
-                "Ember.BuEditor": 1,
-                "BricksUI": 1,
                 "BricksUI.StateHandler": 1
             },
             "fors": {},
             "namespaces": {
                 "BricksUI": 1
-            },
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1328
+            }
         },
-        "bricks-i18n": {
-            "name": "bricks-i18n",
-            "submodules": {},
+        "packages/bricksui-metal/lib/stateable.js": {
+            "name": "packages/bricksui-metal/lib/stateable.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-metal/lib/view.js": {
+            "name": "packages/bricksui-metal/lib/view.js",
+            "modules": {
+                "bricksui-metal": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-form/lib/bu-editor.js": {
+            "name": "packages/bricksui-form/lib/bu-editor.js",
+            "modules": {
+                "bricksui-form": 1
+            },
             "classes": {
                 "Ember.BuEditor": 1
             },
             "fors": {},
-            "is_submodule": 1,
             "namespaces": {
-                "BricksUI": 1
-            },
-            "module": "bricksui-i18n",
-            "namespace": "",
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 92,
-            "description": "国际化支持"
+                "Ember": 1
+            }
         },
-        "bricksui-i18n": {
-            "name": "bricksui-i18n",
-            "submodules": {
-                "bricks-i18n": 1
+        "packages/bricksui-form/lib/checkbox.js": {
+            "name": "packages/bricksui-form/lib/checkbox.js",
+            "modules": {},
+            "classes": {
+                "Ember.EasyForm.Checkbox": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember.EasyForm": 1
+            }
+        },
+        "packages/bricksui-form/lib/chosen-select.js": {
+            "name": "packages/bricksui-form/lib/chosen-select.js",
+            "modules": {},
+            "classes": {
+                "Ember.EasyForm.Select": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember.EasyForm": 1
+            }
+        },
+        "packages/bricksui-form/lib/form-config.js": {
+            "name": "packages/bricksui-form/lib/form-config.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-form/lib/form-setup.js": {
+            "name": "packages/bricksui-form/lib/form-setup.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-form/lib/main.js": {
+            "name": "packages/bricksui-form/lib/main.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-form/lib/radio-button.js": {
+            "name": "packages/bricksui-form/lib/radio-button.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-form/lib/radio.js": {
+            "name": "packages/bricksui-form/lib/radio.js",
+            "modules": {},
+            "classes": {
+                "Ember.EasyForm.Radio": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember.EasyForm": 1
+            }
+        },
+        "packages/bricksui-i18n/lib/i18n-support.js": {
+            "name": "packages/bricksui-i18n/lib/i18n-support.js",
+            "modules": {
+                "bricksui-i18n": 1
             },
             "classes": {},
             "fors": {
@@ -71,77 +148,132 @@
             },
             "namespaces": {}
         },
-        "bricks-i18n-lang": {
-            "name": "bricks-i18n-lang",
-            "submodules": {},
-            "classes": {},
+        "packages/bricksui-i18n/lib/i18n-validator.js": {
+            "name": "packages/bricksui-i18n/lib/i18n-validator.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.I18n.I18nableValidationMixin": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI.I18n": 1
+            }
+        },
+        "packages/bricksui-i18n/lib/main.js": {
+            "name": "packages/bricksui-i18n/lib/main.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.I18n": 1,
+                "BricksUI.I18n.lang": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1,
+                "BricksUI.I18n": 1
+            }
+        }
+    },
+    "modules": {
+        "bricksui": {
+            "name": "bricksui",
+            "submodules": {
+                "bricksui-metal": 1,
+                "bricksui-form": 1,
+                "bricksui-i18n": 1
+            },
+            "classes": {
+                "BricksUI": 1,
+                "BricksUI.ENV": 1,
+                "BricksUI.StateHandler": 1,
+                "Ember.BuEditor": 1,
+                "Ember.EasyForm.Checkbox": 1,
+                "Ember.EasyForm.Select": 1,
+                "Ember.EasyForm.Radio": 1,
+                "BricksUI.I18n": 1,
+                "BricksUI.I18n.I18nableValidationMixin": 1,
+                "BricksUI.I18n.lang": 1
+            },
             "fors": {
+                "BricksUI.ENV": 1,
                 "BricksUI.I18n": 1
             },
-            "is_submodule": 1,
-            "namespaces": {},
-            "module": "bricksui",
-            "namespace": "",
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 691,
-            "description": "I18n lang locale package",
-            "type": "{Object}"
+            "namespaces": {
+                "BricksUI": 1,
+                "Ember": 1,
+                "Ember.EasyForm": 1,
+                "BricksUI.I18n": 1
+            },
+            "file": "packages/bricksui-i18n/lib/main.js",
+            "line": 31
         },
         "bricksui-metal": {
             "name": "bricksui-metal",
             "submodules": {},
             "classes": {
-                "BricksUI.I18n": 1,
                 "BricksUI": 1,
+                "BricksUI.ENV": 1,
                 "BricksUI.StateHandler": 1
             },
-            "fors": {},
+            "fors": {
+                "BricksUI.ENV": 1
+            },
             "is_submodule": 1,
             "namespaces": {
                 "BricksUI": 1
             },
             "module": "bricksui",
             "namespace": "",
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1328,
+            "file": "packages/bricksui-metal/lib/state_handler.js",
+            "line": 32,
+            "tag": "module",
             "description": "BricksUI ,a widget library on ember.js"
+        },
+        "bricksui-form": {
+            "name": "bricksui-form",
+            "submodules": {},
+            "classes": {
+                "Ember.BuEditor": 1,
+                "Ember.EasyForm.Checkbox": 1,
+                "Ember.EasyForm.Select": 1,
+                "Ember.EasyForm.Radio": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "Ember": 1,
+                "Ember.EasyForm": 1
+            },
+            "module": "bricksui",
+            "namespace": "",
+            "file": "packages/bricksui-form/lib/radio.js",
+            "line": 7,
+            "description": "BricksUI表单支持模块，对Ember-Easy-Form进行功能拓展，整合Validation与I18n"
+        },
+        "bricksui-i18n": {
+            "name": "bricksui-i18n",
+            "submodules": {},
+            "classes": {
+                "BricksUI.I18n": 1,
+                "BricksUI.I18n.I18nableValidationMixin": 1,
+                "BricksUI.I18n.lang": 1
+            },
+            "fors": {
+                "BricksUI.I18n": 1
+            },
+            "is_submodule": 1,
+            "namespaces": {
+                "BricksUI.I18n": 1,
+                "BricksUI": 1
+            },
+            "module": "bricksui",
+            "namespace": "",
+            "file": "packages/bricksui-i18n/lib/main.js",
+            "line": 31,
+            "description": "国际化支持",
+            "is_constructor": 1
         }
     },
     "classes": {
-        "Ember.BuEditor": {
-            "name": "Ember.BuEditor",
-            "shortname": "Ember.BuEditor",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "bricksui",
-            "namespace": "Ember",
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 92,
-            "description": "基于ember与[百度富文本编辑器umeditor](http://ueditor.baidu.com/website/umeditor.html)\n主要增加了数据绑定的功能，config配置项与umeditor一致",
-            "extends": "Ember.Component",
-            "uses": [
-                "Ember.TextSupport"
-            ],
-            "submodule": "bricks-i18n"
-        },
-        "BricksUI.I18n": {
-            "name": "BricksUI.I18n",
-            "shortname": "BricksUI.I18n",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI",
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 685,
-            "type": "{Object}"
-        },
         "BricksUI": {
             "name": "BricksUI",
             "shortname": "BricksUI",
@@ -153,11 +285,27 @@
             "module": "bricksui",
             "submodule": "bricksui-metal",
             "namespace": "",
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1023,
+            "file": "packages/bricksui-metal/lib/core.js",
+            "line": 7,
             "description": "BricksUI ,a widget library on ember.js",
-            "statis": "",
-            "version": "0.0.1-beta.1+canary.c41856cc"
+            "static": 1,
+            "version": "VERSION_STRING_PLACEHOLDER"
+        },
+        "BricksUI.ENV": {
+            "name": "BricksUI.ENV",
+            "shortname": "BricksUI.ENV",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-metal",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-metal/lib/core.js",
+            "line": 51,
+            "description": "Bricks变量配置",
+            "type": "Hash"
         },
         "BricksUI.StateHandler": {
             "name": "BricksUI.StateHandler",
@@ -170,285 +318,235 @@
             "module": "bricksui",
             "submodule": "bricksui-metal",
             "namespace": "BricksUI",
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1328
+            "file": "packages/bricksui-metal/lib/state_handler.js",
+            "line": 32
+        },
+        "Ember.BuEditor": {
+            "name": "Ember.BuEditor",
+            "shortname": "Ember.BuEditor",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember",
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 7,
+            "description": "基于ember与[百度富文本编辑器umeditor](http://ueditor.baidu.com/website/umeditor.html)\n主要增加了数据绑定的功能，config配置项与umeditor一致\n继承自Ember.Component，用法上与Ember.Component保持一致\n使用方式如:\n```handlebars\n{{bu-editor value=title valueType=\"contentTxt\"}}\n```",
+            "extends": "Ember.Component",
+            "uses": [
+                "Ember.TextSupport"
+            ]
+        },
+        "Ember.EasyForm.Checkbox": {
+            "name": "Ember.EasyForm.Checkbox",
+            "shortname": "Ember.EasyForm.Checkbox",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm",
+            "file": "packages/bricksui-form/lib/checkbox.js",
+            "line": 5,
+            "description": "拓展Ember.EasyForm.Input的CheckBox功能\n提供复选框按钮组的功能\n使用方式如:\n```handlebars\n{{checkbox something modelBinding=\"model\" propertyPath=\"something\" elementsBinding=\"fruits\" labelPath=\"name\"}}\n```",
+            "extends": "Ember.EasyForm.Input"
+        },
+        "Ember.EasyForm.Select": {
+            "name": "Ember.EasyForm.Select",
+            "shortname": "Ember.EasyForm.Select",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm",
+            "file": "packages/bricksui-form/lib/chosen-select.js",
+            "line": 6,
+            "description": "重置Ember.EasyForm下拉组建行为，将下拉框组件行为转换未chosen组建，用户通常无需直接使用该组建，\n应通过Ember-EasyForm的方式使用该组件\n可选的参数有 data-placeholder，表示下拉组建的占位符\n使用方式如\n```handlebars\n{{#form-for model wrapper=\"bootstrap\"}}\n{{input author\nas='select'\ndata-placeholder=\"请选择作者\"\ncollection=\"category\"\noptionLabelPath=\"content.value\"\n}}\n{{input tags as='select'\ndata-placeholder=\"请选标签\"\nmultiple=true\ncollection=\"category\"\noptionLabelPath=\"content.value\"\n}}\n{{/form-for}}\n```"
+        },
+        "Ember.EasyForm.Radio": {
+            "name": "Ember.EasyForm.Radio",
+            "shortname": "Ember.EasyForm.Radio",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm",
+            "file": "packages/bricksui-form/lib/radio.js",
+            "line": 7,
+            "description": "拓展Ember.EasyForm.Input的Radio功能\n提供单选按钮组的功能\n```handlebars\n{{radio something modelBinding=\"model\" propertyPath=\"something\" elementsBinding=\"fruits\" labelPath=\"name\"}}\n```",
+            "extends": "Ember.EasyForm.Checkbox"
+        },
+        "BricksUI.I18n": {
+            "name": "BricksUI.I18n",
+            "shortname": "BricksUI.I18n",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-i18n",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-i18n/lib/main.js",
+            "line": 24,
+            "type": "{Object}",
+            "static": 1
+        },
+        "BricksUI.I18n.I18nableValidationMixin": {
+            "name": "BricksUI.I18n.I18nableValidationMixin",
+            "shortname": "BricksUI.I18n.I18nableValidationMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-i18n",
+            "namespace": "BricksUI.I18n",
+            "file": "packages/bricksui-i18n/lib/i18n-validator.js",
+            "line": 7,
+            "extends": "Ember.Validations.Mixin",
+            "description": "继承自Ember-Validations,拓展语言切换支持。通过该方法可做到即时的语言切换，缺点在于很难与默认的t.i18n进行交互\n该方法订阅 'i18nChange' 事件，在事件触发后，调用自身 validate方法\n使用方法为在需要使用校验的对象中参入I18nableValidationMixin\n如：\n```javascript\n var Post=DS.Model.extend(BricksUI.I18n.I18nableValidationMixin,{\n   title:DS.attr('string')\n   validations: {\n     title:{\n       presence: true,\n       length: { minimum: 5 }\n     }\n   }\n})\n```"
+        },
+        "BricksUI.I18n.lang": {
+            "name": "BricksUI.I18n.lang",
+            "shortname": "BricksUI.I18n.lang",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-i18n",
+            "namespace": "BricksUI.I18n",
+            "file": "packages/bricksui-i18n/lib/main.js",
+            "line": 31,
+            "description": "I18n语言包Hash.\n```javascript\nen :en-us en-hk en-au\nde :de-dk de-ch de-lu\nzh-cn : zh-cn\nzh-tw : zh-tw\n```",
+            "static": 1,
+            "type": "{Object}",
+            "default": "zh-cn"
         }
     },
     "classitems": [
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 102,
-            "description": "value类型，分别为content和contentTxt,content包含其中的段落标签",
-            "itemtype": "property",
-            "name": "valueType",
-            "type": "string",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
+            "file": "packages/bricksui/lib/main.js",
+            "line": 1,
+            "description": "构建主入口文件",
+            "class": "BricksUI"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 119,
-            "description": "用户配置文件",
-            "itemtype": "property",
-            "name": "options",
-            "type": "object",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 126,
-            "description": "富文本框默认配置文件",
-            "itemtype": "property",
-            "name": "defaultSetting",
-            "type": "object",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 146,
-            "description": "绑定到文本域的字段",
-            "itemtype": "property",
-            "name": "value",
-            "type": "String",
-            "default": "null",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 154,
-            "description": "占位符编号，可根据该编号取得全局唯一编辑器实例",
-            "itemtype": "property",
-            "name": "holderId",
-            "type": "String",
-            "default": "bu-editor+父级ID编号",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 164,
-            "description": "为UMeditor添加事件监听",
-            "access": "private",
-            "tagname": "",
-            "itemtype": "method",
-            "name": "_attachEvent",
-            "params": [
-                {
-                    "name": "editor",
-                    "description": "UMeditor实例"
-                }
-            ],
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 201,
-            "description": "将textarea转换未UMeditor实例",
-            "access": "private",
-            "tagname": "",
-            "itemtype": "method",
-            "name": "_updateDom",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 224,
-            "description": "在富文本框编辑器内容发生改变时同步value值",
-            "access": "private",
-            "tagname": "",
-            "itemtype": "method",
-            "name": "_updateValue",
-            "params": [
-                {
-                    "name": "value",
-                    "description": "富文本编辑器改变后的值"
-                }
-            ],
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 235,
-            "description": "销毁富文本编辑器，销毁组件",
-            "access": "private",
-            "tagname": "",
-            "itemtype": "method",
-            "name": "_destroyEditor",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 297,
-            "description": "在收到通知需进行销毁后，销毁chsen组建",
-            "access": "private",
-            "tagname": "",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 306,
-            "description": "在select的context发生变化后，通知chosen进行视图更新",
-            "access": "private",
-            "tagname": "",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 325,
-            "description": "在视图渲染完成后，将select组件转换为chosen组件",
-            "access": "private",
-            "tagname": "",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 396,
-            "description": "bootstrap横排样式\n布局分隔为100%撑满，\nLabel在input左方，验证信息在input下方",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 416,
-            "description": "bootstrap默认样式\n布局分隔为100%撑满，\nLabel在input上方，验证信息在input下方",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 465,
-            "description": "拓展校验字段",
-            "class": "Ember.BuEditor",
-            "namespace": "Ember"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 699,
-            "description": "en :en-us en-hk en-au\nde :de-dk de-ch de-lu\nzh-cn : zh-cn\nzh-tw : zh-tw",
-            "default": "\"zh-cn\"",
-            "class": "BricksUI.I18n",
-            "module": "bricksui-i18n",
-            "submodule": "bricks-i18n-lang"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 863,
-            "description": "语言切换,用户可以通过传入的语言标识符进行语言切换\n需要在对应的项目下有对应的语言包\napp\n     lang\n         en.js\n         zh-cn.js\n 传入的标识符即为lang下的对应的文件名",
-            "itemtype": "method",
-            "name": "setLang",
-            "params": [
-                {
-                    "name": "lang",
-                    "description": "language string ,\"en\" \"zh-cn\"",
-                    "type": "String"
-                }
-            ],
-            "class": "BricksUI.I18n",
-            "module": "bricksui-i18n",
-            "submodule": "bricks-i18n-lang",
-            "namespace": "BricksUI"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 900,
-            "description": "继承自Ember-Validations,拓展语言切换支持。通过该方法可做到即时的语言切换，缺点在于很难与默认的t.i18n进行交互\n该方法订阅 'i18nChange' 事件，在事件触发后，调用自身 validate方法",
-            "class": "BricksUI.I18n",
-            "module": "bricksui-i18n",
-            "submodule": "bricks-i18n-lang",
-            "namespace": "BricksUI"
-        },
-        {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1032,
+            "file": "packages/bricksui-metal/lib/core.js",
+            "line": 16,
             "itemtype": "property",
             "name": "VERSION",
             "type": "String",
-            "default": "'0.0.1-beta.1+canary.c41856cc'",
+            "default": "'VERSION_STRING_PLACEHOLDER'",
             "static": 1,
             "class": "BricksUI",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1041,
+            "file": "packages/bricksui-metal/lib/core.js",
+            "line": 25,
             "description": "是否将语言选择持久化到cookie中，如果设置为true，则将优先获取cookie设置的语言",
-            "class": "BricksUI",
+            "itemtype": "property",
+            "name": "PERSISTENT_I18N",
+            "type": "Boolean",
+            "default": "true",
+            "class": "BricksUI.ENV",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1049,
-            "description": "Bricks变量配置\nI18NCOOKIEPERSISTENT : true",
-            "class": "BricksUI",
+            "file": "packages/bricksui-metal/lib/core.js",
+            "line": 33,
+            "description": "应用前缀",
+            "itemtype": "property",
+            "name": "MODULE_PREFIX",
+            "type": "String",
+            "default": "appkit",
+            "class": "BricksUI.ENV",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1068,
+            "file": "packages/bricksui-metal/lib/core.js",
+            "line": 41,
+            "description": "语言包存放路径",
+            "itemtype": "property",
+            "name": "LANG_FOLDER_NAME",
+            "type": "String",
+            "default": "lang",
+            "class": "BricksUI.ENV",
+            "module": "bricksui",
+            "submodule": "bricksui-metal"
+        },
+        {
+            "file": "packages/bricksui-metal/lib/event_manager.js",
+            "line": 8,
             "description": "Ember.View 本身的实现过程就是一个状态机的流转过程\nEmber 事件绑定流程:\n Application.eventDispatcher\n Application.setupEventDispatcher\n     -->eventDispatcher.setup\n     -->eventDispatcher.setupHandler     //统一绑定在rootElement下\n\n Ember事件触发流程:\n jQuery.event.dispatch\n     -->Ember setupHandler\n     -->eventDispatcher._findNearestEventManager\n 在findNearestEventManager会查找视图是否具有事件管理器\n 属性名称为:eventManager\n     yes--> 事件统一交给事件管理器可处理的事件处理\n     no --> 逐级冒泡事件\n 为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成\n 将在View上新增eventManager属性,用于统一管理",
-            "class": "BricksUI",
+            "class": "BricksUI.StateHandler",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1125,
+            "file": "packages/bricksui-metal/lib/event_manager.js",
+            "line": 65,
             "description": "用户可进行扩展和修改",
             "type": "",
-            "class": "BricksUI",
+            "class": "BricksUI.StateHandler",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1141,
+            "file": "packages/bricksui-metal/lib/event_manager.js",
+            "line": 81,
             "description": "辅助键配合其他按键的修改操作",
             "type": "",
-            "class": "BricksUI",
+            "class": "BricksUI.StateHandler",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1158,
+            "file": "packages/bricksui-metal/lib/event_manager.js",
+            "line": 98,
             "description": "当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响\n如果不是,则引用类型不应该放在这里,而应该直接实例化",
-            "class": "BricksUI",
+            "class": "BricksUI.StateHandler",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1228,
+            "file": "packages/bricksui-metal/lib/event_manager.js",
+            "line": 168,
             "description": "分开维护",
             "type": "{{}}",
-            "class": "BricksUI",
+            "class": "BricksUI.StateHandler",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1302,
+            "file": "packages/bricksui-metal/lib/state_handler.js",
+            "line": 6,
             "description": "状态处理器\n在extend时将states属性移到_states属性,\n继承该接口,可以实现states在子父类间继承\n\n App.DemoView=BricksUI.View.extend({\n     states:{\n\n     }\n });\n\n App.DemoView=BricksUI.View.extend({\n     states:function(){\n         return {\n\n         };\n     }\n });\n TODO\n 1.状态继承需要处理",
-            "class": "BricksUI",
+            "class": "BricksUI.StateHandler",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1358,
+            "file": "packages/bricksui-metal/lib/state_handler.js",
+            "line": 62,
             "description": "TODO\n1.从Event入手\n2.从Action入手,Action也是有Event入手,但是不用管理Event\n     需要在模板里面显示指定action\n     模板也是组件的内部属性,所以模板操作state是合理的\n Ember target 有两个内置关键字:controller和 view\n 现在多加一个内置关键字:states,让用户可以从模板触发\n {{action unfold target=\"states\"}}",
             "class": "BricksUI.StateHandler",
             "module": "bricksui",
@@ -456,44 +554,40 @@
             "namespace": "BricksUI"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1375,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 6,
             "description": "有限状态机(Finite State Machine)\n  有限状态机对行为建模\n     1、事件：程序对事件进行响应\n     2、状态：程序在事件间的状态\n     3、转移：对应于事件，状态间的转移\n     4、动作：转移过程中采取动作\n     5、变量：变量保存事件间的动作所需的值\n  状态设计要点：\n     1、在该状态下，该事件是否可能发生\n     2、采取什么动作来处理事件\n     3、事件过后转移到什么状态\n     4、在事件之间需要记录什么变量（数据）\n\n 现代的UI组件大都是具有可交互性的,不再简单的支持输入输出,总是有内在的状态转换\n 事件触发,执行动作和行为转换\n 组件通常都是粗粒度的,有自己内部机制,组合机制等等,BricksUI采用FSM分离行为,作为默认的组合机制\n 当设计组件时,切面能够帮助有效地帮助切分组件的功能以及帮助开发者精心考虑组件的重用的可能性",
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1397,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 28,
             "type": "{void|*}",
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1402,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 33,
             "description": "初始状态",
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1406,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 37,
             "description": "公有属性,用户需要以此获得当前状态\n当前状态,",
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1411,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 42,
             "description": "触发状态上的事件",
             "params": [
                 {
@@ -509,14 +603,13 @@
                 "description": "",
                 "type": "*"
             },
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1424,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 55,
             "description": "状态过度方法",
             "params": [
                 {
@@ -524,14 +617,13 @@
                     "description": ""
                 }
             ],
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1459,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 90,
             "description": "当前状态没有对应事件，则直接抛出异常",
             "params": [
                 {
@@ -549,14 +641,13 @@
             ],
             "access": "private",
             "tagname": "",
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1478,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 109,
             "description": "根据指定对象，扩展，类似于具备功能的接口扩展\n非深度",
             "params": [
                 {
@@ -572,193 +663,578 @@
                 "description": "",
                 "type": "*"
             },
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1491,
+            "file": "packages/bricksui-metal/lib/stateable.js",
+            "line": 122,
             "description": "由于状态机不止组件可以使用,其他可以拆分为各种状态的都可以使用,所以该方法需要是公开的API\n装配状态\n每个状态都添加parentState的引用\n每个状态都增加全状态路径名称\nroot\n    empty    -->root.empty\n    deleted  -->root.deleted",
-            "class": "BricksUI.StateHandler",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1526,
+            "file": "packages/bricksui-metal/lib/view.js",
+            "line": 8,
             "description": "Ember.View的创建过程是一个状态机的流转过程,具体如下:\nEmber.View.states:\n  x: _default    默认方法集合,作为其他状态的基类,不作为具体状态使用\n    preRender   初始化状态,渲染之前\n    inBuffer    渲染状态,此时正在生成相应的html标签和属性\n    inDom       已经成为dom节点状态,已经生成并且插入到页面中\n    hasElement  一切准备就绪,等待接受用户操作\n    destroying  正在移除中,视图销毁\n以上状态是逐个向下的状态\n\n目前用于所使用的标签都是由W3C制定的,存在一定的局限性\nEmber Component提供了一种方式来增强自定义标签,增强HTML功能,\n而且Ember的这一实现与W3C目前的Custom Elements 工作一致,并且尽可能保持同步\n在未来的浏览器版本,一旦Custom Elements普及,则Ember实现的这一套机制本身就与标准看齐,所以可以方便地集成\n\nBricksUI View 要点\n1.FSM 分离用户行为和组件行为\n2.AOP进行事件切片,以及权限和操作行为控制\n3.与W3C Custom Elements (TODO 研究)\nTODO:制定组件的生命周期以及使用方式,及与外部交互的基础",
-            "class": "BricksUI.StateHandler",
-            "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "class": "Ember.BuEditor",
+            "module": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1549,
+            "file": "packages/bricksui-metal/lib/view.js",
+            "line": 31,
             "description": "基类具备状态机管理功能\n如何将事件传播到state中,执行对应的action\n在模板里面添加states的action-->{{action unfoldmenu target=\"states\"}}\n\nmouseDown(click)-> view.states[\"activeState\"][\"unfoldmenu\"]\nrecord.loadingData->record.currentState[\"loadingData\"]",
-            "class": "BricksUI.StateHandler",
-            "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "class": "Ember.BuEditor",
+            "module": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1559,
+            "file": "packages/bricksui-metal/lib/view.js",
+            "line": 41,
             "description": "TODO\n1.用Component来实现组件\n2.用模板和action结合来实现组件行为",
-            "class": "BricksUI.StateHandler",
-            "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "class": "Ember.BuEditor",
+            "module": "bricksui-metal"
         },
         {
-            "file": "live-dist/bricksui/bricksui.js",
-            "line": 1578,
-            "description": "构建主入口文件",
-            "class": "BricksUI.StateHandler",
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 22,
+            "description": "value类型，分别为content和contentTxt,content包含其中的段落标签,contentTxt则指纯文本内容",
+            "itemtype": "property",
+            "name": "valueType",
+            "type": "string",
+            "default": "\"content\"",
+            "class": "Ember.BuEditor",
             "module": "bricksui",
-            "submodule": "bricksui-metal",
-            "namespace": "BricksUI"
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 40,
+            "description": "用户配置文件",
+            "itemtype": "property",
+            "name": "options",
+            "type": "object",
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 47,
+            "description": "富文本框默认配置文件",
+            "itemtype": "property",
+            "name": "defaultSetting",
+            "type": "object",
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 67,
+            "description": "绑定到文本域的字段",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "default": "null",
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 75,
+            "description": "占位符编号，可根据该编号取得全局唯一编辑器实例",
+            "itemtype": "property",
+            "name": "holderId",
+            "type": "String",
+            "default": "bu-editor+父级ID编号",
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 85,
+            "description": "为UMeditor添加事件监听",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_attachEvent",
+            "params": [
+                {
+                    "name": "editor",
+                    "description": "UMeditor实例"
+                }
+            ],
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 122,
+            "description": "将textarea转换未UMeditor实例",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_updateDom",
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 145,
+            "description": "在富文本框编辑器内容发生改变时同步value值",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_updateValue",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "富文本编辑器改变后的值"
+                }
+            ],
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-editor.js",
+            "line": 156,
+            "description": "销毁富文本编辑器，销毁组件",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_destroyEditor",
+            "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/checkbox.js",
+            "line": 17,
+            "description": "初始化操作，模仿Ember.Component,将视图上下文设置未自身，并从Ember.EasyForm.Config中获取模板",
+            "itemtype": "method",
+            "name": "init",
+            "class": "Ember.EasyForm.Checkbox",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/checkbox.js",
+            "line": 27,
+            "description": "标签属性\n如 elements为 [{key:1,value:\"123\"},{key:2,value:\"234\"}]需要将value值作为label展示，则只需设置labelPath为value",
+            "itemtype": "property",
+            "name": "labelPath",
+            "default": "null",
+            "type": "string",
+            "class": "Ember.EasyForm.Checkbox",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/checkbox.js",
+            "line": 36,
+            "description": "绑定的Ember Data模型",
+            "default": "null",
+            "itemtype": "property",
+            "name": "model",
+            "type": "object",
+            "class": "Ember.EasyForm.Checkbox",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/checkbox.js",
+            "line": 44,
+            "description": "绑定模型中的hasMany属性，在elements复选框选中的对象将push到该属性中",
+            "itemtype": "property",
+            "name": "propertyPath",
+            "type": "string",
+            "default": "null",
+            "class": "Ember.EasyForm.Checkbox",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/checkbox.js",
+            "line": 52,
+            "description": "复选框的模型，必须为一个数组类型\n如 elements为 [{key:1,value:\"123\"},{key:2,value:\"234\"}]",
+            "itemtype": "property",
+            "name": "elements",
+            "default": "null",
+            "type": "object",
+            "class": "Ember.EasyForm.Checkbox",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/checkbox.js",
+            "line": 61,
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.EasyForm.Checkbox",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/chosen-select.js",
+            "line": 48,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_elementDestroy",
+            "description": "在收到通知需进行销毁后，销毁chsen组建",
+            "class": "Ember.EasyForm.Select",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/chosen-select.js",
+            "line": 58,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_updateItem",
+            "description": "在select的context发生变化后，通知chosen进行视图更新",
+            "class": "Ember.EasyForm.Select",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/chosen-select.js",
+            "line": 78,
+            "description": "在视图渲染完成后，将select组件转换为chosen组件",
+            "itemtype": "method",
+            "name": "_updateDom",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.EasyForm.Select",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/form-config.js",
+            "line": 1,
+            "description": "bootstrap横排样式\n布局分隔为100%撑满，\nLabel在input左方，验证信息在input下方",
+            "class": "Ember.EasyForm.Radio",
+            "module": "bricksui",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/form-config.js",
+            "line": 21,
+            "description": "bootstrap默认样式\n布局分隔为100%撑满，\nLabel在input上方，验证信息在input下方",
+            "class": "Ember.EasyForm.Radio",
+            "module": "bricksui",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/form-config.js",
+            "line": 70,
+            "description": "拓展校验字段",
+            "class": "Ember.EasyForm.Radio",
+            "module": "bricksui",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/form-setup.js",
+            "line": 5,
+            "description": "向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor",
+            "class": "Ember.EasyForm.Radio",
+            "module": "bricksui",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 9,
+            "description": "从cookie中获取已保留的语言选择情况",
+            "return": {
+                "description": "如果语言选择已经保存在cookie中，则返回已保存的语言结构，如果不存在则返回空",
+                "type": "*"
+            },
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 21,
+            "description": "获取并解析客户端语言",
+            "return": {
+                "description": "}",
+                "type": "FullName: *, language, area"
+            },
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 36,
+            "description": "根据命名约定，从项目文件中加载语言包",
+            "params": [
+                {
+                    "name": "parsedName",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "|*|set.language|parseLanguage.language|language|string), localeLang: *}}",
+                "type": "LocaleName: (language: *"
+            },
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 64,
+            "description": "持久化用户所保存的语言选择",
+            "params": [
+                {
+                    "name": "lang",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 74,
+            "description": "将语言对象合并到BricksUI.I18n.lang Hash下，并同步到Ember.I18n.translations对象下",
+            "params": [
+                {
+                    "name": "locale",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 86,
+            "description": "在项目载入时进行I18n的选择，并根据是否开启语言选择持久化，保存语言选择",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "initLang",
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 101,
+            "description": "语言切换,用户可以通过传入的语言标识符进行语言切换\n需要在对应的项目下有对应的语言包\napp\n     lang\n         en.js\n         zh-cn.js\n 传入的标识符即为lang下的对应的文件名",
+            "itemtype": "method",
+            "name": "setLang",
+            "params": [
+                {
+                    "name": "lang",
+                    "description": "language string ,\"en\" \"zh-cn\"",
+                    "type": "String"
+                }
+            ],
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/main.js",
+            "line": 47,
+            "itemtype": "property",
+            "name": "en",
+            "type": "Hash",
+            "class": "BricksUI.I18n.lang",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n",
+            "namespace": "BricksUI.I18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/main.js",
+            "line": 52,
+            "itemtype": "property",
+            "name": "zh-cn",
+            "type": "Hash",
+            "class": "BricksUI.I18n.lang",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n",
+            "namespace": "BricksUI.I18n"
         }
     ],
     "warnings": [
         {
-            "message": "unknown tag: statis",
-            "line": " live-dist/bricksui/bricksui.js:1023"
-        },
-        {
             "message": "unknown tag: version",
-            "line": " live-dist/bricksui/bricksui.js:1023"
+            "line": " packages/bricksui-metal/lib/core.js:7"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " live-dist/bricksui/bricksui.js:1411"
+            "line": " packages/bricksui-metal/lib/stateable.js:42"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " live-dist/bricksui/bricksui.js:1478"
+            "line": " packages/bricksui-metal/lib/stateable.js:109"
         },
         {
-            "message": "Missing item type\n在收到通知需进行销毁后，销毁chsen组建",
-            "line": " live-dist/bricksui/bricksui.js:297"
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:9"
         },
         {
-            "message": "Missing item type\n在select的context发生变化后，通知chosen进行视图更新",
-            "line": " live-dist/bricksui/bricksui.js:306"
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:21"
         },
         {
-            "message": "Missing item type\n在视图渲染完成后，将select组件转换为chosen组件",
-            "line": " live-dist/bricksui/bricksui.js:325"
-        },
-        {
-            "message": "Missing item type\nbootstrap横排样式\n布局分隔为100%撑满，\nLabel在input左方，验证信息在input下方",
-            "line": " live-dist/bricksui/bricksui.js:396"
-        },
-        {
-            "message": "Missing item type\nbootstrap默认样式\n布局分隔为100%撑满，\nLabel在input上方，验证信息在input下方",
-            "line": " live-dist/bricksui/bricksui.js:416"
-        },
-        {
-            "message": "Missing item type\n拓展校验字段",
-            "line": " live-dist/bricksui/bricksui.js:465"
-        },
-        {
-            "message": "Missing item type\nen :en-us en-hk en-au\nde :de-dk de-ch de-lu\nzh-cn : zh-cn\nzh-tw : zh-tw",
-            "line": " live-dist/bricksui/bricksui.js:699"
-        },
-        {
-            "message": "Missing item type\n继承自Ember-Validations,拓展语言切换支持。通过该方法可做到即时的语言切换，缺点在于很难与默认的t.i18n进行交互\n该方法订阅 'i18nChange' 事件，在事件触发后，调用自身 validate方法",
-            "line": " live-dist/bricksui/bricksui.js:900"
-        },
-        {
-            "message": "Missing item type\n是否将语言选择持久化到cookie中，如果设置为true，则将优先获取cookie设置的语言",
-            "line": " live-dist/bricksui/bricksui.js:1041"
-        },
-        {
-            "message": "Missing item type\nBricks变量配置\nI18NCOOKIEPERSISTENT : true",
-            "line": " live-dist/bricksui/bricksui.js:1049"
-        },
-        {
-            "message": "Missing item type\nEmber.View 本身的实现过程就是一个状态机的流转过程\nEmber 事件绑定流程:\n Application.eventDispatcher\n Application.setupEventDispatcher\n     -->eventDispatcher.setup\n     -->eventDispatcher.setupHandler     //统一绑定在rootElement下\n\n Ember事件触发流程:\n jQuery.event.dispatch\n     -->Ember setupHandler\n     -->eventDispatcher._findNearestEventManager\n 在findNearestEventManager会查找视图是否具有事件管理器\n 属性名称为:eventManager\n     yes--> 事件统一交给事件管理器可处理的事件处理\n     no --> 逐级冒泡事件\n 为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成\n 将在View上新增eventManager属性,用于统一管理",
-            "line": " live-dist/bricksui/bricksui.js:1068"
-        },
-        {
-            "message": "Missing item type\n用户可进行扩展和修改",
-            "line": " live-dist/bricksui/bricksui.js:1125"
-        },
-        {
-            "message": "Missing item type\n辅助键配合其他按键的修改操作",
-            "line": " live-dist/bricksui/bricksui.js:1141"
-        },
-        {
-            "message": "Missing item type\n当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响\n如果不是,则引用类型不应该放在这里,而应该直接实例化",
-            "line": " live-dist/bricksui/bricksui.js:1158"
-        },
-        {
-            "message": "Missing item type\n分开维护",
-            "line": " live-dist/bricksui/bricksui.js:1228"
-        },
-        {
-            "message": "Missing item type\n状态处理器\n在extend时将states属性移到_states属性,\n继承该接口,可以实现states在子父类间继承\n\n App.DemoView=BricksUI.View.extend({\n     states:{\n\n     }\n });\n\n App.DemoView=BricksUI.View.extend({\n     states:function(){\n         return {\n\n         };\n     }\n });\n TODO\n 1.状态继承需要处理",
-            "line": " live-dist/bricksui/bricksui.js:1302"
-        },
-        {
-            "message": "Missing item type\nTODO\n1.从Event入手\n2.从Action入手,Action也是有Event入手,但是不用管理Event\n     需要在模板里面显示指定action\n     模板也是组件的内部属性,所以模板操作state是合理的\n Ember target 有两个内置关键字:controller和 view\n 现在多加一个内置关键字:states,让用户可以从模板触发\n {{action unfold target=\"states\"}}",
-            "line": " live-dist/bricksui/bricksui.js:1358"
-        },
-        {
-            "message": "Missing item type\n有限状态机(Finite State Machine)\n  有限状态机对行为建模\n     1、事件：程序对事件进行响应\n     2、状态：程序在事件间的状态\n     3、转移：对应于事件，状态间的转移\n     4、动作：转移过程中采取动作\n     5、变量：变量保存事件间的动作所需的值\n  状态设计要点：\n     1、在该状态下，该事件是否可能发生\n     2、采取什么动作来处理事件\n     3、事件过后转移到什么状态\n     4、在事件之间需要记录什么变量（数据）\n\n 现代的UI组件大都是具有可交互性的,不再简单的支持输入输出,总是有内在的状态转换\n 事件触发,执行动作和行为转换\n 组件通常都是粗粒度的,有自己内部机制,组合机制等等,BricksUI采用FSM分离行为,作为默认的组合机制\n 当设计组件时,切面能够帮助有效地帮助切分组件的功能以及帮助开发者精心考虑组件的重用的可能性",
-            "line": " live-dist/bricksui/bricksui.js:1375"
-        },
-        {
-            "message": "Missing item type",
-            "line": " live-dist/bricksui/bricksui.js:1397"
-        },
-        {
-            "message": "Missing item type\n初始状态",
-            "line": " live-dist/bricksui/bricksui.js:1402"
-        },
-        {
-            "message": "Missing item type\n公有属性,用户需要以此获得当前状态\n当前状态,",
-            "line": " live-dist/bricksui/bricksui.js:1406"
-        },
-        {
-            "message": "Missing item type\n触发状态上的事件",
-            "line": " live-dist/bricksui/bricksui.js:1411"
-        },
-        {
-            "message": "Missing item type\n状态过度方法",
-            "line": " live-dist/bricksui/bricksui.js:1424"
-        },
-        {
-            "message": "Missing item type\n当前状态没有对应事件，则直接抛出异常",
-            "line": " live-dist/bricksui/bricksui.js:1459"
-        },
-        {
-            "message": "Missing item type\n根据指定对象，扩展，类似于具备功能的接口扩展\n非深度",
-            "line": " live-dist/bricksui/bricksui.js:1478"
-        },
-        {
-            "message": "Missing item type\n由于状态机不止组件可以使用,其他可以拆分为各种状态的都可以使用,所以该方法需要是公开的API\n装配状态\n每个状态都添加parentState的引用\n每个状态都增加全状态路径名称\nroot\n    empty    -->root.empty\n    deleted  -->root.deleted",
-            "line": " live-dist/bricksui/bricksui.js:1491"
-        },
-        {
-            "message": "Missing item type\nEmber.View的创建过程是一个状态机的流转过程,具体如下:\nEmber.View.states:\n  x: _default    默认方法集合,作为其他状态的基类,不作为具体状态使用\n    preRender   初始化状态,渲染之前\n    inBuffer    渲染状态,此时正在生成相应的html标签和属性\n    inDom       已经成为dom节点状态,已经生成并且插入到页面中\n    hasElement  一切准备就绪,等待接受用户操作\n    destroying  正在移除中,视图销毁\n以上状态是逐个向下的状态\n\n目前用于所使用的标签都是由W3C制定的,存在一定的局限性\nEmber Component提供了一种方式来增强自定义标签,增强HTML功能,\n而且Ember的这一实现与W3C目前的Custom Elements 工作一致,并且尽可能保持同步\n在未来的浏览器版本,一旦Custom Elements普及,则Ember实现的这一套机制本身就与标准看齐,所以可以方便地集成\n\nBricksUI View 要点\n1.FSM 分离用户行为和组件行为\n2.AOP进行事件切片,以及权限和操作行为控制\n3.与W3C Custom Elements (TODO 研究)\nTODO:制定组件的生命周期以及使用方式,及与外部交互的基础",
-            "line": " live-dist/bricksui/bricksui.js:1526"
-        },
-        {
-            "message": "Missing item type\n基类具备状态机管理功能\n如何将事件传播到state中,执行对应的action\n在模板里面添加states的action-->{{action unfoldmenu target=\"states\"}}\n\nmouseDown(click)-> view.states[\"activeState\"][\"unfoldmenu\"]\nrecord.loadingData->record.currentState[\"loadingData\"]",
-            "line": " live-dist/bricksui/bricksui.js:1549"
-        },
-        {
-            "message": "Missing item type\nTODO\n1.用Component来实现组件\n2.用模板和action结合来实现组件行为",
-            "line": " live-dist/bricksui/bricksui.js:1559"
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:36"
         },
         {
             "message": "Missing item type\n构建主入口文件",
-            "line": " live-dist/bricksui/bricksui.js:1578"
+            "line": " packages/bricksui/lib/main.js:1"
+        },
+        {
+            "message": "Missing item type\nEmber.View 本身的实现过程就是一个状态机的流转过程\nEmber 事件绑定流程:\n Application.eventDispatcher\n Application.setupEventDispatcher\n     -->eventDispatcher.setup\n     -->eventDispatcher.setupHandler     //统一绑定在rootElement下\n\n Ember事件触发流程:\n jQuery.event.dispatch\n     -->Ember setupHandler\n     -->eventDispatcher._findNearestEventManager\n 在findNearestEventManager会查找视图是否具有事件管理器\n 属性名称为:eventManager\n     yes--> 事件统一交给事件管理器可处理的事件处理\n     no --> 逐级冒泡事件\n 为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成\n 将在View上新增eventManager属性,用于统一管理",
+            "line": " packages/bricksui-metal/lib/event_manager.js:8"
+        },
+        {
+            "message": "Missing item type\n用户可进行扩展和修改",
+            "line": " packages/bricksui-metal/lib/event_manager.js:65"
+        },
+        {
+            "message": "Missing item type\n辅助键配合其他按键的修改操作",
+            "line": " packages/bricksui-metal/lib/event_manager.js:81"
+        },
+        {
+            "message": "Missing item type\n当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响\n如果不是,则引用类型不应该放在这里,而应该直接实例化",
+            "line": " packages/bricksui-metal/lib/event_manager.js:98"
+        },
+        {
+            "message": "Missing item type\n分开维护",
+            "line": " packages/bricksui-metal/lib/event_manager.js:168"
+        },
+        {
+            "message": "Missing item type\n状态处理器\n在extend时将states属性移到_states属性,\n继承该接口,可以实现states在子父类间继承\n\n App.DemoView=BricksUI.View.extend({\n     states:{\n\n     }\n });\n\n App.DemoView=BricksUI.View.extend({\n     states:function(){\n         return {\n\n         };\n     }\n });\n TODO\n 1.状态继承需要处理",
+            "line": " packages/bricksui-metal/lib/state_handler.js:6"
+        },
+        {
+            "message": "Missing item type\nTODO\n1.从Event入手\n2.从Action入手,Action也是有Event入手,但是不用管理Event\n     需要在模板里面显示指定action\n     模板也是组件的内部属性,所以模板操作state是合理的\n Ember target 有两个内置关键字:controller和 view\n 现在多加一个内置关键字:states,让用户可以从模板触发\n {{action unfold target=\"states\"}}",
+            "line": " packages/bricksui-metal/lib/state_handler.js:62"
+        },
+        {
+            "message": "Missing item type\n有限状态机(Finite State Machine)\n  有限状态机对行为建模\n     1、事件：程序对事件进行响应\n     2、状态：程序在事件间的状态\n     3、转移：对应于事件，状态间的转移\n     4、动作：转移过程中采取动作\n     5、变量：变量保存事件间的动作所需的值\n  状态设计要点：\n     1、在该状态下，该事件是否可能发生\n     2、采取什么动作来处理事件\n     3、事件过后转移到什么状态\n     4、在事件之间需要记录什么变量（数据）\n\n 现代的UI组件大都是具有可交互性的,不再简单的支持输入输出,总是有内在的状态转换\n 事件触发,执行动作和行为转换\n 组件通常都是粗粒度的,有自己内部机制,组合机制等等,BricksUI采用FSM分离行为,作为默认的组合机制\n 当设计组件时,切面能够帮助有效地帮助切分组件的功能以及帮助开发者精心考虑组件的重用的可能性",
+            "line": " packages/bricksui-metal/lib/stateable.js:6"
+        },
+        {
+            "message": "Missing item type",
+            "line": " packages/bricksui-metal/lib/stateable.js:28"
+        },
+        {
+            "message": "Missing item type\n初始状态",
+            "line": " packages/bricksui-metal/lib/stateable.js:33"
+        },
+        {
+            "message": "Missing item type\n公有属性,用户需要以此获得当前状态\n当前状态,",
+            "line": " packages/bricksui-metal/lib/stateable.js:37"
+        },
+        {
+            "message": "Missing item type\n触发状态上的事件",
+            "line": " packages/bricksui-metal/lib/stateable.js:42"
+        },
+        {
+            "message": "Missing item type\n状态过度方法",
+            "line": " packages/bricksui-metal/lib/stateable.js:55"
+        },
+        {
+            "message": "Missing item type\n当前状态没有对应事件，则直接抛出异常",
+            "line": " packages/bricksui-metal/lib/stateable.js:90"
+        },
+        {
+            "message": "Missing item type\n根据指定对象，扩展，类似于具备功能的接口扩展\n非深度",
+            "line": " packages/bricksui-metal/lib/stateable.js:109"
+        },
+        {
+            "message": "Missing item type\n由于状态机不止组件可以使用,其他可以拆分为各种状态的都可以使用,所以该方法需要是公开的API\n装配状态\n每个状态都添加parentState的引用\n每个状态都增加全状态路径名称\nroot\n    empty    -->root.empty\n    deleted  -->root.deleted",
+            "line": " packages/bricksui-metal/lib/stateable.js:122"
+        },
+        {
+            "message": "Missing item type\nEmber.View的创建过程是一个状态机的流转过程,具体如下:\nEmber.View.states:\n  x: _default    默认方法集合,作为其他状态的基类,不作为具体状态使用\n    preRender   初始化状态,渲染之前\n    inBuffer    渲染状态,此时正在生成相应的html标签和属性\n    inDom       已经成为dom节点状态,已经生成并且插入到页面中\n    hasElement  一切准备就绪,等待接受用户操作\n    destroying  正在移除中,视图销毁\n以上状态是逐个向下的状态\n\n目前用于所使用的标签都是由W3C制定的,存在一定的局限性\nEmber Component提供了一种方式来增强自定义标签,增强HTML功能,\n而且Ember的这一实现与W3C目前的Custom Elements 工作一致,并且尽可能保持同步\n在未来的浏览器版本,一旦Custom Elements普及,则Ember实现的这一套机制本身就与标准看齐,所以可以方便地集成\n\nBricksUI View 要点\n1.FSM 分离用户行为和组件行为\n2.AOP进行事件切片,以及权限和操作行为控制\n3.与W3C Custom Elements (TODO 研究)\nTODO:制定组件的生命周期以及使用方式,及与外部交互的基础",
+            "line": " packages/bricksui-metal/lib/view.js:8"
+        },
+        {
+            "message": "Missing item type\n基类具备状态机管理功能\n如何将事件传播到state中,执行对应的action\n在模板里面添加states的action-->{{action unfoldmenu target=\"states\"}}\n\nmouseDown(click)-> view.states[\"activeState\"][\"unfoldmenu\"]\nrecord.loadingData->record.currentState[\"loadingData\"]",
+            "line": " packages/bricksui-metal/lib/view.js:31"
+        },
+        {
+            "message": "Missing item type\nTODO\n1.用Component来实现组件\n2.用模板和action结合来实现组件行为",
+            "line": " packages/bricksui-metal/lib/view.js:41"
+        },
+        {
+            "message": "Missing item type",
+            "line": " packages/bricksui-form/lib/checkbox.js:61"
+        },
+        {
+            "message": "Missing item type\nbootstrap横排样式\n布局分隔为100%撑满，\nLabel在input左方，验证信息在input下方",
+            "line": " packages/bricksui-form/lib/form-config.js:1"
+        },
+        {
+            "message": "Missing item type\nbootstrap默认样式\n布局分隔为100%撑满，\nLabel在input上方，验证信息在input下方",
+            "line": " packages/bricksui-form/lib/form-config.js:21"
+        },
+        {
+            "message": "Missing item type\n拓展校验字段",
+            "line": " packages/bricksui-form/lib/form-config.js:70"
+        },
+        {
+            "message": "Missing item type\n向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor",
+            "line": " packages/bricksui-form/lib/form-setup.js:5"
+        },
+        {
+            "message": "Missing item type\n从cookie中获取已保留的语言选择情况",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:9"
+        },
+        {
+            "message": "Missing item type\n获取并解析客户端语言",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:21"
+        },
+        {
+            "message": "Missing item type\n根据命名约定，从项目文件中加载语言包",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:36"
+        },
+        {
+            "message": "Missing item type\n持久化用户所保存的语言选择",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:64"
+        },
+        {
+            "message": "Missing item type\n将语言对象合并到BricksUI.I18n.lang Hash下，并同步到Ember.I18n.translations对象下",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:74"
         }
     ]
 }

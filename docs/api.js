@@ -2,35 +2,36 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "BricksUI",
+        "BricksUI.ENV",
         "BricksUI.I18n",
+        "BricksUI.I18n.I18nableValidationMixin",
+        "BricksUI.I18n.lang",
         "BricksUI.StateHandler",
-        "Ember.BuEditor"
+        "Ember.BuEditor",
+        "Ember.EasyForm.Checkbox",
+        "Ember.EasyForm.Radio",
+        "Ember.EasyForm.Select"
     ],
     "modules": [
-        "bricks-i18n",
-        "bricks-i18n-lang",
         "bricksui",
+        "bricksui-form",
         "bricksui-i18n",
         "bricksui-metal"
     ],
     "allModules": [
         {
-            "displayName": "bricks-i18n",
-            "name": "bricks-i18n",
-            "description": "国际化支持"
-        },
-        {
-            "displayName": "bricks-i18n-lang",
-            "name": "bricks-i18n-lang",
-            "description": "I18n lang locale package"
-        },
-        {
             "displayName": "bricksui",
             "name": "bricksui"
         },
         {
+            "displayName": "bricksui-form",
+            "name": "bricksui-form",
+            "description": "BricksUI表单支持模块，对Ember-Easy-Form进行功能拓展，整合Validation与I18n"
+        },
+        {
             "displayName": "bricksui-i18n",
-            "name": "bricksui-i18n"
+            "name": "bricksui-i18n",
+            "description": "国际化支持"
         },
         {
             "displayName": "bricksui-metal",

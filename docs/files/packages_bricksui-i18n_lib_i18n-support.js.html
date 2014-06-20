@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>bricksui-metal</title>
+    <title>packages/bricksui-i18n/lib/i18n-support.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -106,62 +106,149 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>bricksui-metal Module</h1>
-<div class="clearfix meta">
-    
+                        <h1 class="file-heading">File: packages/bricksui-i18n/lib/i18n-support.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+import BricksUI from  &quot;bricksui-metal/core&quot;;
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-metal_lib_state_handler.js.html#l32"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;state_handler.js:32</code></a>
-        </div>
-    
+/**
+ @module bricksui
+ @submodule bricksui-i18n
+ */
+var langKey = &quot;bricksui-lang&quot;;
 
-    
-</div>
+/**
+ * 从cookie中获取已保留的语言选择情况
+ * @returns {*} 如果语言选择已经保存在cookie中，则返回已保存的语言结构，如果不存在则返回空
+ */
+var loadLang = function () {
+    try {
+        return JSON.parse(Ember.$.cookie(langKey));
+    } catch (e) {
+        return null;
+    }
+};
 
+/**
+ * 获取并解析客户端语言
+ * @returns {{fullName: *, language, area}}
+ */
+var parseLanguage = function () {
+    var language = (window.navigator.language || window.navigator.browserLanguage).toLowerCase(),
+        match
+        ;
+    match = language.match(/(.*)-(.*)/);
+    return {
+        fullName: match[0],
+        language: match[1],
+        area: match[2]
+    };
+};
+/**
+ * 根据命名约定，从项目文件中加载语言包
+ * @param parsedName
+ * @returns {{localeName: ({language: *}|*|set.language|parseLanguage.language|language|string), localeLang: *}}
+ */
+var requireLang = function (parsedName) {
+    var require = window.require;
+    if (typeof parsedName === &quot;string&quot;) {
+        parsedName = {
+            language: parsedName
+        };
+    }
+    var localeLang = require([BricksUI.ENV.MODULE_PREFIX, BricksUI.ENV.LANG_FOLDER_NAME, parsedName.language].join(&quot;/&quot;));
+    var localeName = parsedName.language;
+    if (!localeLang) {
+        localeLang = require([BricksUI.ENV.MODULE_PREFIX, BricksUI.ENV.LANG_FOLDER_NAME, parsedName.fullName].join(&quot;/&quot;));
+        localeName = parsedName.fullName;
+    }
+    if (localeLang &amp;&amp; localeLang[&#x27;default&#x27;]) {
+        localeLang = localeLang[&#x27;default&#x27;];
+    }
 
-<h3>Summary</h3>
-<div class="intro">
-    <p>BricksUI ,a widget library on ember.js</p>
+    return {
+        localeName: localeName,
+        localeLang: localeLang
+    };
+};
 
-</div>
+/**
+ * 持久化用户所保存的语言选择
+ * @param {object} lang
+ */
+var saveLang = function (lang) {
+    if (BricksUI.ENV.PERSISTENT_I18N) {
+        Ember.$.cookie(langKey, JSON.stringify(lang), { expires: 7 });
+    }
+};
 
+/**
+ * 将语言对象合并到BricksUI.I18n.lang Hash下，并同步到Ember.I18n.translations对象下
+ * @param {object} locale
+ */
+var mergeLang = function (locale) {
+    var localeName = locale.localeName;
+    var localeLang = locale.localeLang;
+    var bricksLocale = BricksUI.I18n.lang[localeName];
+    Ember.$.extend(true, bricksLocale, localeLang);
+    Ember.$.extend(true, Ember.I18n.translations, bricksLocale);
+};
 
+/**
+ * 在项目载入时进行I18n的选择，并根据是否开启语言选择持久化，保存语言选择
+ * @private
+ * @method initLang
+ * @for BricksUI.I18n
+ */
+var initLang = function () {
+    var parsedName;
+    if (BricksUI.ENV.PERSISTENT_I18N) {
+        parsedName = loadLang() || parseLanguage();
+    }
+    var locale = requireLang(parsedName);
+    mergeLang(locale);
+    saveLang(parsedName);
+};
+/**
+ * 语言切换,用户可以通过传入的语言标识符进行语言切换
+ * 需要在对应的项目下有对应的语言包
+ * app
+ *      lang
+ *          en.js
+ *          zh-cn.js
+ *  传入的标识符即为lang下的对应的文件名
+ * @method setLang
+ * @for BricksUI.I18n
+ * @param {String} lang language string ,&quot;en&quot; &quot;zh-cn&quot;
+ */
+var setLang = function (lang) {
+    var locale = requireLang(lang);
+    mergeLang(locale);
+    saveLang({
+        fullName: lang,
+        language: lang,
+        area: lang
+    });
 
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
+    var translations = Ember.I18n.translations;
+    for (var prop in translations) {
+        if (Ember.canInvoke(translations, prop)) {
+            delete translations[prop];
+        }
+    }
+    Ember.instrument(&quot;i18nChange&quot;,null,function(){
+        Ember.Logger.warn(&quot;no listener for i18nChange! nothing changed!&quot;);
+    });
+};
 
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.html">
-                        BricksUI
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.ENV.html">
-                        BricksUI.ENV
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.StateHandler.html">
-                        BricksUI.StateHandler
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+export
+{
+    initLang,
+    setLang
+}
+;
+    </pre>
 </div>
 
                     </div>

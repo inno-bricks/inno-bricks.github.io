@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>Ember.EasyForm.Radio</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Ember.EasyForm.Radio</h1>
+<div class="meta">
+    
+
+    
+        <div class="extends">
+            Extends <a href="../classes/Ember.EasyForm.Checkbox.html" class="crosslink">Ember.EasyForm.Checkbox</a>
+        </div>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/packages_bricksui-form_lib_radio.js.html#l7"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;radio.js:7</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/bricksui-form.html">bricksui-form</a><br>
+            Parent Module: <a href="../modules/bricksui.html">bricksui</a>
+        
+    
+
+    
+    
+</div>
+
+
+
+<h3>Summary</h3>
+<div class="intro">
+    <p>拓展Ember.EasyForm.Input的Radio功能
+提供单选按钮组的功能</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{radio something modelBinding="model" propertyPath="something" elementsBinding="fruits" labelPath="name"}}</code></pre>
+
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_init">init</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_elements">elements</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_labelPath">labelPath</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_model">model</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_propertyPath">propertyPath</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_init" class="method item inherited">
+  <h3 class="blue-method-name">init</h3>
+
+  <div class="meta method-meta">
+    
+      
+      <p>Inherited from
+        <a href="../classes/Ember.EasyForm.Checkbox.html#method_init">Ember.EasyForm.Checkbox</a>:
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l17"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:17</code></a>
+    
+  </p>
+
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+  <h3 class="name"><code>init</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+    <div class="description">
+      <h3>Summary</h3>
+        <p>初始化操作，模仿Ember.Component,将视图上下文设置未自身，并从Ember.EasyForm.Config中获取模板</p>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_elements" class="property item inherited">
+
+  <h3 class="blue-method-name">elements</h3>
+  <div class="meta method-meta">
+    
+      
+      <p>Inherited from
+        <a href="../classes/Ember.EasyForm.Checkbox.html#property_elements">Ember.EasyForm.Checkbox</a>:
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l52"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:52</code></a>
+    
+  </p>
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+    <h3 class="name"><code>elements</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    </div>
+
+    <div class="description">
+      <h3>Summary</h3>
+        <p>复选框的模型，必须为一个数组类型
+如 elements为 [{key:1,value:"123"},{key:2,value:"234"}]</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+  
+
+  
+
+</div>
+
+                
+                    <div id="property_labelPath" class="property item inherited">
+
+  <h3 class="blue-method-name">labelPath</h3>
+  <div class="meta method-meta">
+    
+      
+      <p>Inherited from
+        <a href="../classes/Ember.EasyForm.Checkbox.html#property_labelPath">Ember.EasyForm.Checkbox</a>:
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l27"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:27</code></a>
+    
+  </p>
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+    <h3 class="name"><code>labelPath</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    </div>
+
+    <div class="description">
+      <h3>Summary</h3>
+        <p>标签属性
+如 elements为 [{key:1,value:"123"},{key:2,value:"234"}]需要将value值作为label展示，则只需设置labelPath为value</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+  
+
+  
+
+</div>
+
+                
+                    <div id="property_model" class="property item inherited">
+
+  <h3 class="blue-method-name">model</h3>
+  <div class="meta method-meta">
+    
+      
+      <p>Inherited from
+        <a href="../classes/Ember.EasyForm.Checkbox.html#property_model">Ember.EasyForm.Checkbox</a>:
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l36"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:36</code></a>
+    
+  </p>
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+    <h3 class="name"><code>model</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    </div>
+
+    <div class="description">
+      <h3>Summary</h3>
+        <p>绑定的Ember Data模型</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+  
+
+  
+
+</div>
+
+                
+                    <div id="property_propertyPath" class="property item inherited">
+
+  <h3 class="blue-method-name">propertyPath</h3>
+  <div class="meta method-meta">
+    
+      
+      <p>Inherited from
+        <a href="../classes/Ember.EasyForm.Checkbox.html#property_propertyPath">Ember.EasyForm.Checkbox</a>:
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l44"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:44</code></a>
+    
+  </p>
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+    <h3 class="name"><code>propertyPath</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    </div>
+
+    <div class="description">
+      <h3>Summary</h3>
+        <p>绑定模型中的hasMany属性，在elements复选框选中的对象将push到该属性中</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+  
+
+  
+
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

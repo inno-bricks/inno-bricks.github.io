@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>bricksui-metal</title>
+    <title>packages/bricksui-i18n/lib/i18n-validator.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -106,62 +106,50 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>bricksui-metal Module</h1>
-<div class="clearfix meta">
-    
+                        <h1 class="file-heading">File: packages/bricksui-i18n/lib/i18n-validator.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ @module bricksui
+ @submodule bricksui-i18n
+ @description 国际化支持
+ @constructor
+ */
+/**
+ * @class I18nableValidationMixin
+ * @extends Ember.Validations.Mixin
+ * @namespace BricksUI.I18n
+ * @description 继承自Ember-Validations,拓展语言切换支持。通过该方法可做到即时的语言切换，缺点在于很难与默认的t.i18n进行交互
+ * 该方法订阅 &#x27;i18nChange&#x27; 事件，在事件触发后，调用自身 validate方法
+ * 使用方法为在需要使用校验的对象中参入I18nableValidationMixin
+ * 如：
+ &#x60;&#x60;&#x60;javascript
+  var Post=DS.Model.extend(BricksUI.I18n.I18nableValidationMixin,{
+    title:DS.attr(&#x27;string&#x27;)
+    validations: {
+      title:{
+        presence: true,
+        length: { minimum: 5 }
+      }
+    }
+ })
+ &#x60;&#x60;&#x60;
+ */
+var I18nableValidationMixin = Ember.Mixin.create(Ember.Validations.Mixin,{
+  init: function () {
+    this._super();
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-metal_lib_state_handler.js.html#l32"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;state_handler.js:32</code></a>
-        </div>
-    
-
-    
-</div>
-
-
-<h3>Summary</h3>
-<div class="intro">
-    <p>BricksUI ,a widget library on ember.js</p>
-
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.html">
-                        BricksUI
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.ENV.html">
-                        BricksUI.ENV
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.StateHandler.html">
-                        BricksUI.StateHandler
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+    var validatorMixin = this;
+    Ember.subscribe(&quot;i18nChange&quot;, {
+      after: function (name, timestamp, payload) {
+        validatorMixin.validate();
+      }
+    });
+  }
+});
+export default I18nableValidationMixin;
+    </pre>
 </div>
 
                     </div>

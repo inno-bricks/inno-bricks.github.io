@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>bricksui-metal</title>
+    <title>packages/bricksui-form/lib/form-config.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -106,62 +106,91 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>bricksui-metal Module</h1>
-<div class="clearfix meta">
-    
+                        <h1 class="file-heading">File: packages/bricksui-form/lib/form-config.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * @description bootstrap横排样式
+ * 布局分隔为100%撑满，
+ * Label在input左方，验证信息在input下方
+ */
+Ember.EasyForm.Config.registerWrapper(&#x27;bootstrap-horizontal&#x27;, {
+    inputTemplate: &#x27;bootstrap-input&#x27;,
+    checkboxTemplate: &quot;bootstrap-checkbox&quot;,
+    radioTemplate: &quot;bootstrap-radio&quot;,
+    controlsWrapperClass: &#x27;col-sm-6&#x27;,
+    formClass: &#x27;form-horizontal form-bordered&#x27;,
+    fieldErrorClass: &#x27;has-error&#x27;,
+    errorClass: &#x27;text-danger&#x27;,
+    hintClass: &#x27;help-block&#x27;,
+    labelClass: &#x27;col-sm-3 control-label&#x27;,
+    inputClass: &#x27;form-group&#x27;,
+    buttonClass: &#x27;btn btn-primary&#x27;,
+    validationLayout:&#x27;bootstrap-validation-input&#x27;
+});
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-metal_lib_state_handler.js.html#l32"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;state_handler.js:32</code></a>
-        </div>
-    
+/**
+ * @description bootstrap默认样式
+ * 布局分隔为100%撑满，
+ * Label在input上方，验证信息在input下方
+ */
+Ember.EasyForm.Config.registerWrapper(&#x27;bootstrap&#x27;, {
+  checkboxTemplate: &quot;bootstrap-checkbox&quot;,
+  radioTemplate: &quot;bootstrap-radio&quot;,
+  labelClass: &#x27;control-label&#x27;,
+  inputClass: &#x27;form-group&#x27;,
+  buttonClass: &#x27;btn btn-primary&#x27;,
+  fieldErrorClass: &#x27;has-error&#x27;,
+  errorClass: &#x27;help-block&#x27;,
+  validationLayout:&#x27;validation-layout&#x27;
+});
 
-    
-</div>
 
+//禁用submit 按钮的默认disabled属性
+//TODO 改用样式控制
+Ember.EasyForm.Submit.reopen({
+    disabled: function () {
+        return false;
+    }.property(&#x27;formForModel.isValid&#x27;)
+});
+//所有组件扩展validate方法,方便form表单submit时统一调度
+Ember.EasyForm.Input.reopen({
+    validate: function () {
+        this.focusOut();
+    }
+});
+//在默认form的submit方法调用完成后,统一调用各个组件的验证方法,先后顺序有待验证
+Ember.EasyForm.Form.reopen({
+    submit: function () {
+        this._super.apply(this, arguments);
+        this.forEachChildView(function (subview) {
+            if (subview.validate) {
+                subview.validate();
+            }
+        });
+    }
+});
+//TODO 这里需要根据控件进行修改
+Ember.EasyForm.TextField.reopen({
+    classNames: [&quot;form-control&quot;]
+});
+Ember.EasyForm.TextArea.reopen({
+    classNames: [&quot;form-control&quot;]
+});
 
-<h3>Summary</h3>
-<div class="intro">
-    <p>BricksUI ,a widget library on ember.js</p>
-
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.html">
-                        BricksUI
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.ENV.html">
-                        BricksUI.ENV
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.StateHandler.html">
-                        BricksUI.StateHandler
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+/**
+ * @description 拓展校验字段
+ */
+Ember.EasyForm.Input.reopen({
+  init:function(){
+    this._super();
+    if(this.isBlock &amp;&amp; this.get(&#x27;withValidation&#x27;)){
+      this.set(&#x27;layoutName&#x27;,this.get(&#x27;wrapperConfig.validationLayout&#x27;));
+    }
+  }
+});
+    </pre>
 </div>
 
                     </div>

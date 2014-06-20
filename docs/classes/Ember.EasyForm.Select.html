@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>BricksUI.I18n</title>
+    <title>Ember.EasyForm.Select</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -106,7 +106,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>BricksUI.I18n</h1>
+                        <h1>Ember.EasyForm.Select</h1>
 <div class="meta">
     
 
@@ -114,20 +114,18 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-i18n_lib_main.js.html#l24"><code>packages&#x2F;bricksui-i18n&#x2F;lib&#x2F;main.js:24</code></a>
+            Defined in: <a href="../files/packages_bricksui-form_lib_chosen-select.js.html#l6"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;chosen-select.js:6</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/bricksui-i18n.html">bricksui-i18n</a><br>
+            Module: <a href="../modules/bricksui-form.html">bricksui-form</a><br>
             Parent Module: <a href="../modules/bricksui.html">bricksui</a>
         
     
 
     
-    
-        <p><span class="flag static">static</span></p>
     
 </div>
 
@@ -135,7 +133,25 @@
 
 <h3>Summary</h3>
 <div class="intro">
-    
+    <p>重置Ember.EasyForm下拉组建行为，将下拉框组件行为转换未chosen组建，用户通常无需直接使用该组建，
+应通过Ember-EasyForm的方式使用该组件
+可选的参数有 data-placeholder，表示下拉组建的占位符
+使用方式如</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{#form-for model wrapper="bootstrap"}}
+{{input author
+as=&#39;select&#39;
+data-placeholder="请选择作者"
+collection="category"
+optionLabelPath="content.value"
+}}
+{{input tags as=&#39;select&#39;
+data-placeholder="请选标签"
+multiple=true
+collection="category"
+optionLabelPath="content.value"
+}}
+{{/form-for}}</code></pre>
+
 </div>
 
 
@@ -163,14 +179,21 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method private">
-                                <a href="#method_initLang">initLang</a>
+                                <a href="#method__elementDestroy">_elementDestroy</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method">
-                                <a href="#method_setLang">setLang</a>
+                            <li class="index-item method private">
+                                <a href="#method__updateDom">_updateDom</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__updateItem">_updateItem</a>
 
                                 
                                 
@@ -192,8 +215,8 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_initLang" class="method item private">
-  <h3 class="blue-method-name">initLang</h3>
+                    <div id="method__elementDestroy" class="method item private">
+  <h3 class="blue-method-name">_elementDestroy</h3>
 
   <div class="meta method-meta">
     
@@ -206,7 +229,7 @@
       
     
     
-      <a href="../files/packages_bricksui-i18n_lib_i18n-support.js.html#l86"><code>packages&#x2F;bricksui-i18n&#x2F;lib&#x2F;i18n-support.js:86</code></a>
+      <a href="../files/packages_bricksui-form_lib_chosen-select.js.html#l48"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;chosen-select.js:48</code></a>
     
   </p>
 
@@ -218,7 +241,7 @@
 
   <h3>Syntax</h3>
   <div class="blue-method-syntax">
-  <h3 class="name"><code>initLang</code></h3>
+  <h3 class="name"><code>_elementDestroy</code></h3>
 
     
         <span class="paren">()</span>
@@ -243,7 +266,7 @@
   </div>
     <div class="description">
       <h3>Summary</h3>
-        <p>在项目载入时进行I18n的选择，并根据是否开启语言选择持久化，保存语言选择</p>
+        <p>在收到通知需进行销毁后，销毁chsen组建</p>
 
     </div>
 
@@ -258,8 +281,8 @@
 </div>
 
                 
-                    <div id="method_setLang" class="method item">
-  <h3 class="blue-method-name">setLang</h3>
+                    <div id="method__updateDom" class="method item private">
+  <h3 class="blue-method-name">_updateDom</h3>
 
   <div class="meta method-meta">
     
@@ -272,7 +295,7 @@
       
     
     
-      <a href="../files/packages_bricksui-i18n_lib_i18n-support.js.html#l101"><code>packages&#x2F;bricksui-i18n&#x2F;lib&#x2F;i18n-support.js:101</code></a>
+      <a href="../files/packages_bricksui-form_lib_chosen-select.js.html#l78"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;chosen-select.js:78</code></a>
     
   </p>
 
@@ -284,26 +307,18 @@
 
   <h3>Syntax</h3>
   <div class="blue-method-syntax">
-  <h3 class="name"><code>setLang</code></h3>
+  <h3 class="name"><code>_updateDom</code></h3>
 
     
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>lang</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
     
 
     
 
     
 
+    
+        <span class="flag private">private</span>
     
 
     
@@ -317,40 +332,76 @@
   </div>
     <div class="description">
       <h3>Summary</h3>
-        <p>语言切换,用户可以通过传入的语言标识符进行语言切换
-需要在对应的项目下有对应的语言包
-app
-     lang
-         en.js
-         zh-cn.js
- 传入的标识符即为lang下的对应的文件名</p>
+        <p>在视图渲染完成后，将select组件转换为chosen组件</p>
 
     </div>
 
     
-        <div class="params">
-            <h4>Parameters:</h4>
 
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">lang</code>
-                        <span class="type">String</span>
-                    
+    
 
-                    
+    
 
-                    <div class="param-description">
-                        <p>language string ,"en" "zh-cn"</p>
+    
 
-                    </div>
+</div>
 
-                    
-                </li>
-            
-            </ul>
-        </div>
+                
+                    <div id="method__updateItem" class="method item private">
+  <h3 class="blue-method-name">_updateItem</h3>
+
+  <div class="meta method-meta">
+    
+      
+        
+      <p>
+        
+          Defined in
+        
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_chosen-select.js.html#l58"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;chosen-select.js:58</code></a>
+    
+  </p>
+
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+  <h3 class="name"><code>_updateItem</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+    <div class="description">
+      <h3>Summary</h3>
+        <p>在select的context发生变化后，通知chosen进行视图更新</p>
+
+    </div>
+
     
 
     

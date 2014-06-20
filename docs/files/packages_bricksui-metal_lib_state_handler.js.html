@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>bricksui-metal</title>
+    <title>packages/bricksui-metal/lib/state_handler.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -106,62 +106,86 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>bricksui-metal Module</h1>
-<div class="clearfix meta">
-    
+                        <h1 class="file-heading">File: packages/bricksui-metal/lib/state_handler.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * @module bricksui
+ * @submodule bricksui-metal
+ */
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-metal_lib_state_handler.js.html#l32"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;state_handler.js:32</code></a>
-        </div>
-    
+/**
+ * 状态处理器
+ * 在extend时将states属性移到_states属性,
+ * 继承该接口,可以实现states在子父类间继承
+ *
+ *  App.DemoView=BricksUI.View.extend({
+ *      states:{
+ *
+ *      }
+ *  });
+ *
+ *  App.DemoView=BricksUI.View.extend({
+ *      states:function(){
+ *          return {
+ *
+ *          };
+ *      }
+ *  });
+ *  TODO
+ *  1.状态继承需要处理
+ */
+var merge = Ember.merge,
+    Mixin = Ember.Mixin,
+    get = Ember.get,
+    typeOf = Ember.typeOf
+    ;
+/**
+ * @class StateHandler
+ * @namespace BricksUI
+ */
+var StateHandler = Mixin.create({
+    mergedProperties: [&quot;_states&quot;],
 
-    
-</div>
+    willMergeMixin: function (props) {
+        //TODO 处理 super 方法
+        var hashName;
+        if (!props._states) {
+            if (typeof (props.states) === &quot;function&quot;) {
+                props.states = props.states();
+            }
+            if (typeof (props.states) === &quot;object&quot;) {
+                hashName = &quot;states&quot;;
+            }
+            if (hashName) {
+                props._states = Ember.merge(props._states || {}, props[hashName]);
+            }
+            //这里处理了states属性,后续就不再需要处理,所以删除
+            delete props[hashName];
+        }
+    }
+    /*
+     send:function(actionName){
+     //TODO
+     }
+     */
+});
+/**
+ * TODO
+ * 1.从Event入手
+ * 2.从Action入手,Action也是有Event入手,但是不用管理Event
+ *      需要在模板里面显示指定action
+ *      模板也是组件的内部属性,所以模板操作state是合理的
+ *  Ember target 有两个内置关键字:controller和 view
+ *  现在多加一个内置关键字:states,让用户可以从模板触发
+ *  {{action unfold target=&quot;states&quot;}}
+ */
 
+export default
+StateHandler;
 
-<h3>Summary</h3>
-<div class="intro">
-    <p>BricksUI ,a widget library on ember.js</p>
-
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.html">
-                        BricksUI
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.ENV.html">
-                        BricksUI.ENV
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.StateHandler.html">
-                        BricksUI.StateHandler
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+    </pre>
 </div>
 
                     </div>

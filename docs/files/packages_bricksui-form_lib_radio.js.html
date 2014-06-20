@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>bricksui-metal</title>
+    <title>packages/bricksui-form/lib/radio.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -106,62 +106,36 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>bricksui-metal Module</h1>
-<div class="clearfix meta">
-    
+                        <h1 class="file-heading">File: packages/bricksui-form/lib/radio.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+import Checkbox from &quot;./checkbox&quot;;
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-metal_lib_state_handler.js.html#l32"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;state_handler.js:32</code></a>
-        </div>
-    
+/**
+ @module bricksui
+ @submodule bricksui-form
+ */
+/**
+ 拓展Ember.EasyForm.Input的Radio功能
+ 提供单选按钮组的功能
+ &#x60;&#x60;&#x60;handlebars
+ {{radio something modelBinding=&quot;model&quot; propertyPath=&quot;something&quot; elementsBinding=&quot;fruits&quot; labelPath=&quot;name&quot;}}
+ &#x60;&#x60;&#x60;
+ @class Radio
+ @namespace Ember.EasyForm
+ @extends Ember.EasyForm.Checkbox
+ */
+var Radio = Checkbox.extend({
+    init: function () {
+        this._super.apply(this, arguments);
+        this.set(&#x27;templateName&#x27;, this.get(&#x27;wrapperConfig.radioTemplate&#x27;));
+    }
+});
 
-    
-</div>
-
-
-<h3>Summary</h3>
-<div class="intro">
-    <p>BricksUI ,a widget library on ember.js</p>
-
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.html">
-                        BricksUI
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.ENV.html">
-                        BricksUI.ENV
-                    </a>
-                </li>
-            
-                <li class="module-class">
-                    <a href="../classes/BricksUI.StateHandler.html">
-                        BricksUI.StateHandler
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+export default
+Radio;
+    </pre>
 </div>
 
                     </div>
