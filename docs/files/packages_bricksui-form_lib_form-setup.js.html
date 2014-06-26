@@ -41,6 +41,8 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
                 <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
@@ -51,13 +53,23 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
             
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
                 <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
             
             </ul>
 
@@ -113,7 +125,8 @@
 import CheckboxItemController from &#x27;./controllers/checkbox_item&#x27;;
 import RadioItemController from &#x27;./controllers/radio_item&#x27;;
 import BuEditor from &#x27;./bu-editor&#x27;;
-
+import BuDatePicker from &#x27;./bu-datepicker&#x27;;
+import BuDateRange from &#x27;./bu-daterange&#x27;;
 /**
  * 向模板中注册
  *  控制器
@@ -127,6 +140,8 @@ function initFormController(container, application) {
     container.register(&#x27;controller:checkboxItem&#x27;, CheckboxItemController);
     container.register(&#x27;controller:radioItem&#x27;, RadioItemController);
     container.register(&#x27;component:bu-editor&#x27;,BuEditor);
+    container.register(&#x27;component:bu-datepicker&#x27;,BuDatePicker);
+    container.register(&#x27;component:bu-daterange&#x27;,BuDateRange);
 }
     </pre>
 </div>

@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>packages/bricksui-form/lib/chosen-select.js</title>
+    <title>packages/bricksui-i18n/lib/i18n-docs.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -118,107 +118,151 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: packages/bricksui-form/lib/chosen-select.js</h1>
+                        <h1 class="file-heading">File: packages/bricksui-i18n/lib/i18n-docs.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /**
  @module bricksui
- @submodule bricksui-form
+ @submodule bricksui-i18n
  */
 
 /**
- * 重置Ember.EasyForm下拉组件行为，将下拉框组件行为转换为chosen组件，用户通常无需直接使用该组件，
- * 应通过Ember-EasyForm的方式使用该组件
- * 可选的参数有 data-placeholder，表示下拉组件的占位符
- * 使用方式如
- &#x60;&#x60;&#x60;handlebars
- {{#form-for model wrapper=&quot;bootstrap&quot;}}
- {{input author
- as=&#x27;select&#x27;
- data-placeholder=&quot;请选择作者&quot;
- collection=&quot;category&quot;
- optionLabelPath=&quot;content.value&quot;
- }}
- {{input tags as=&#x27;select&#x27;
- data-placeholder=&quot;请选标签&quot;
- multiple=true
- collection=&quot;category&quot;
- optionLabelPath=&quot;content.value&quot;
- }}
- {{/form-for}}
+
+ ####Ember国际化支持
+ #####[Ember.I18n更多内容查看...](https://github.com/jamesarosen/ember-i18n)
+ 在Ember.I18n.translations中存入你所需要的国际化信息键值对，&lt;br/&gt;
+ 对于值的类型为字符串的键值对，将会通过Ember.I18n.compile编译为模板&lt;br/&gt;
+ __*__默认使用Handlebars.compile进行模板编译(在项目中需要引入完整的Handlebars功能,换言之，需引入__Handlebar.js__
+ 而不是__Handlebar.runtime.js__)
+
+ ####Example
+ 给定以下的国际化信息
+
+ &#x60;&#x60;&#x60;javascript
+ Em.I18n.translations = {
+    &quot;user.edit.title&quot;: &quot;Edit User&quot;,
+    &quot;user.followers.title.one&quot;: &quot;One Follower&quot;,
+    &quot;user.followers.title.other&quot;: &quot;All {{count}} Followers&quot;,
+    &quot;button.add_user.title&quot;: &quot;Add a user&quot;,
+    &quot;button.add_user.text&quot;: &quot;Add&quot;,
+    &quot;button.add_user.disabled&quot;: &quot;Saving...&quot;
+  };
  &#x60;&#x60;&#x60;
- * @class Select
- * @namespace Ember.EasyForm
+ 在模板中只需引入
+ &#x60;&#x60;&#x60;handlebars
+ &lt;h2&gt;{{t &quot;user.edit.title&quot;}}&lt;/h2&gt;
+ &#x60;&#x60;&#x60;
+
+ 编译后结果
+ &#x60;&#x60;&#x60;html
+ &lt;h2&gt;&lt;span id=&quot;i18n-123&quot;&gt;Edit User&lt;/span&gt;&lt;/h2&gt;
+ &#x60;&#x60;&#x60;
+
+ 默认情况下，t助手将使用span作为标签作为渲染，如果需要进行标签进行自定义，只需特别声明标签
+ &#x60;&#x60;&#x60;handlebars
+ {{t &quot;user.edit.title&quot; tagName=&quot;h2&quot;}}
+ &#x60;&#x60;&#x60;
+ 编译后结果
+ &#x60;&#x60;&#x60;html
+ &lt;h2 id=&quot;i18n-123&quot;&gt;Edit User&lt;/h2&gt;
+ &#x60;&#x60;&#x60;
+
+ #####信息重载
+ 默认情况下，可为t助手绑定一个count属性，cout属性将在运行时替换I18n信息
+ ######EXample
+
+ 直接设置count的值
+ &#x60;&#x60;&#x60;handlebars
+ &lt;h2&gt;{{t &quot;user.followers.title&quot; count=&quot;2&quot;}}&lt;/h2&gt;
+ &#x60;&#x60;&#x60;
+
+ 编译结果为
+ &#x60;&#x60;&#x60;html
+ &lt;h2&gt;&lt;span id=&quot;i18n-123&quot;&gt;All 2 Followers&lt;/span&gt;&lt;/h2&gt;
+ &#x60;&#x60;&#x60;
+
+ 绑定Count的值
+ &#x60;&#x60;&#x60;handlebars
+ &lt;h2&gt;{{t &quot;user.followers.title&quot; count=&quot;2&quot;}}&lt;/h2&gt;
+ &#x60;&#x60;&#x60;
+
+ 编译结果为
+ &#x60;&#x60;&#x60;html
+ &lt;h2&gt;&lt;span id=&quot;i18n-123&quot;&gt;All 2 Followers&lt;/span&gt;&lt;/h2&gt;
+ &#x60;&#x60;&#x60;
+
+ ------------------------
+
+ 任意对象信息国际化
+
+ Ember.I18n.TranslateableProperties mixin 会转换所有以Translation开头的属性
+
+ &#x60;&#x60;&#x60;javascript
+ userButton = Em.Object.extend(Em.I18n.TranslateableProperties, {
+    labelTranslation: &#x27;button.add_user.title&#x27;
+  });
+
+ userButton.get(&#x27;label&#x27;);  // &quot;Add a user&quot;
+ &#x60;&#x60;&#x60;
+
+ ------------------------------
+
+ 对于html类型标签，可以使用TranslateAttr 助手进行语言字段绑定
+
+ &#x60;&#x60;&#x60;handlebars
+ &lt;a {{translateAttr title=&quot;button.add_user.title&quot; data-disable-with=&quot;button.add_user.disabled&quot;}}&gt;
+ {{t &quot;button.add_user.text&quot;}}
+ &lt;/a&gt;
+ &#x60;&#x60;&#x60;
+
+ 编译结果：
+
+ &#x60;&#x60;&#x60;html
+ &lt;a title=&quot;Add a user&quot; data-disable-with=&quot;Saving...&quot;&gt;
+ Add
+ &lt;/a&gt;
+ &#x60;&#x60;&#x60;
+
+ --------------------------------------
+ 复杂类型国际化语法
+ Em.I18n.translations同样支持复杂JSON对象的定义
+
+ &#x60;&#x60;&#x60;javascript
+ Em.I18n.translations = {
+    &#x27;user&#x27;: {
+      &#x27;edit&#x27;: {
+        &#x27;title&#x27;: &#x27;Edit User&#x27;
+      },
+      &#x27;followers&#x27;: {
+        &#x27;title&#x27;: {
+          &#x27;one&#x27;: &#x27;One Follower&#x27;,
+          &#x27;other&#x27;: &#x27;All {{count}} Followers&#x27;
+        }
+      }
+    },
+    &#x27;button&#x27;: {
+      &#x27;add_user&#x27;: {
+        &#x27;title&#x27;: &#x27;Add a user&#x27;,
+        &#x27;text&#x27;: &#x27;Add&#x27;,
+        &#x27;disabled&#x27;: &#x27;Saving...&#x27;
+      }
+    }
+  };
+ &#x60;&#x60;&#x60;
+
+ &#x60;&#x60;&#x60;handlebars
+ {{t &quot;button.edit.text&quot;}}
+ &#x60;&#x60;&#x60;
+
+ 编译结果：
+
+ &#x60;&#x60;&#x60;html
+ &lt;span id=&quot;i18n-123&quot;&gt;Edit User&lt;/span&gt;
+ &#x60;&#x60;&#x60;
+ @namespace Ember
+ @class I18n
  */
-var ChosenSelect = Ember.EasyForm.Select.reopen({
-
-  classNames: [&#x27;form-control&#x27;],
-  attributeBindings: [&#x27;data-placeholder&#x27;],
-
-  init: function () {
-    this._super();
-    this.set(&#x27;prompt&#x27;, &#x27; &#x27;);  //对于chosen组件，需要存在一个为空的promt
-
-    //once elements trigger blur event,the parentView will show validated result,
-    //aim to defer validation
-    var parentView = this.get(&#x27;parentView&#x27;);
-    parentView.focusOut = function () {
-      parentView.set(parentView.set(&#x27;hasFocusedOut&#x27;, true));
-    };
-
-  },
-
-  /**
-   * @private
-   * @method _elementDestroy
-   * @description 在收到通知需进行销毁后，销毁chsen组件
-   */
-  _elementDestroy: function () {
-    this.$().chosen(&#x27;destroy&#x27;);
-  }.on(&#x27;willDestroyElement&#x27;),
-
-
-  /**
-   * @private
-   * @method _updateItem
-   * @description 在select的context发生变化后，通知chosen进行视图更新
-   */
-  _updateItem: function () {
-    Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function () {
-      this.$().trigger(&#x27;chosen:updated&#x27;);
-    });
-  }.observes(&#x27;content.@each&#x27;),
-
-  _doShowFocus: function () {
-    this.get(&#x27;parentView&#x27;).showValidationError();
-  },
-
-  _validation: function () {
-    var callback = this._doShowFocus.bind(this);
-    this.get(&#x27;parentView.formForModel&#x27;).validate().then(callback, callback);
-  },
-
-  /**
-   * @description 在视图渲染完成后，将select组件转换为chosen组件
-   * @method _updateDom
-   * @private
-   */
-  _updateDom: function () {
-
-    Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function () {
-      //在select视图渲染成成后，将其转换为chosen下拉框，并监听change事件
-      this.$().chosen()
-        .on(&#x27;change chosen:hiding_dropdown&#x27;, function () {
-          //为了取得数组正确的变化，将validate推迟到下一生命周期运行
-          Ember.run.next(this, &#x27;_validation&#x27;);
-        }.bind(this))
-      ;
-    });
-  }.on(&#x27;didInsertElement&#x27;)
-});
-
-export default ChosenSelect;
     </pre>
 </div>
 

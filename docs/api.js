@@ -2,15 +2,21 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "BricksUI",
+        "BricksUI.BuTabs",
         "BricksUI.ENV",
         "BricksUI.I18n",
         "BricksUI.I18n.I18nableValidationMixin",
         "BricksUI.I18n.lang",
         "BricksUI.StateHandler",
+        "Ember.BuDatePicker",
         "Ember.BuEditor",
+        "Ember.EasyForm",
         "Ember.EasyForm.Checkbox",
+        "Ember.EasyForm.Config",
         "Ember.EasyForm.Radio",
-        "Ember.EasyForm.Select"
+        "Ember.EasyForm.Select",
+        "Ember.I18n",
+        "Ember.Validations"
     ],
     "modules": [
         "bricksui",

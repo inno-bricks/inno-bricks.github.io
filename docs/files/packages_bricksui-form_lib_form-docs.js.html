@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>packages/bricksui-form/lib/form-docs.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: packages/bricksui-form/lib/form-docs.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ @module bricksui
+ @submodule bricksui-form
+ */
+
+/**
+ #####[EMBER-EASYFORM](https://github.com/dockyard/ember-easyForm)
+ Ember-EasyForm提供对基础表单的封装，同时提供I18n以及字段校验的功能
+
+ #####formFor助手用法
+ &#x60;&#x60;&#x60;handlebars
+   {{#form-for model}}
+   {{input firstName}}
+   {{input lastName}}
+   {{input bio as=&quot;text&quot;}}
+   {{input country as=&#x27;select&#x27;
+        collection=&quot;App.countries&quot;
+        selection=&quot;country&quot;
+        optionValuePath=&quot;content.id&quot;
+        optionLabelPath=&quot;content.name&quot;
+        prompt=&quot;Select Country&quot;
+   }}
+   {{/form-for}}
+ &#x60;&#x60;&#x60;
+ 编译结果
+
+ &#x60;&#x60;&#x60;html
+ &lt;form&gt;
+   &lt;div class=&quot;input string&quot;&gt;
+     &lt;label for=&quot;ember1&quot;&gt;First name&lt;/label&gt;
+     &lt;input id=&quot;ember1&quot; type=&quot;text&quot;/&gt;
+     &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;input string&quot;&gt;
+     &lt;label for=&quot;ember2&quot;&gt;Last name&lt;/label&gt;
+     &lt;input id=&quot;ember2&quot; type=&quot;text&quot;/&gt;
+     &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+   &lt;/div&gt;
+     &lt;div class=&quot;input string&quot;&gt;
+     &lt;label for=&quot;ember3&quot;&gt;Bio&lt;/label&gt;
+     &lt;textarea id=&quot;ember3&quot;&gt;&lt;/textarea&gt;
+     &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;input string&quot;&gt;
+    &lt;label for=&quot;ember4&quot;&gt;Country&lt;/label&gt;
+   &lt;select id=&quot;ember4&quot;&gt;
+    xxx
+   &lt;/select&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;/form&gt;
+ &#x60;&#x60;&#x60;
+ --------------------------------------
+ Ember.EasyForm 允许通过设置input的as属性改变input组件的行为
+ &#x60;&#x60;&#x60;handlebars
+ {{input secret as=&quot;hidden&quot;}}
+ &#x60;&#x60;&#x60;
+ ----------------------------------------
+ Ember.EasyForm 可以根据传入的字段名称判断组件的行为，该行为可被as覆盖
+
+ &#x60;&#x60;&#x60;handlebars
+ {{input email}}
+ {{input password}}
+ &lt;em&gt;第一个输入框type=email 第二个输入框type=password&lt;/em&gt;
+ &#x60;&#x60;&#x60;
+ ------------------------------------------
+ 传入label属性可以设置对象属性的名称
+ &#x60;&#x60;&#x60;handlebars
+ {{input email label=&quot;电子邮箱...&quot;}}
+ &#x60;&#x60;&#x60;
+
+ label也可以为一个绑定属性
+ &#x60;&#x60;&#x60;handlebars
+ {{input email labelBinding=&quot;emailLabel&quot;}}
+ &#x60;&#x60;&#x60;
+
+ placeholder设置文本框的占位符
+ &#x60;&#x60;&#x60;handlebars
+ {{input firstName placeholder=&quot;Enter your first name&quot;}}
+ &lt;em&gt;placeholder也可以是一个绑定属性&lt;/em&gt;
+ &#x60;&#x60;&#x60;
+
+ 也可在input中设置hint的属性，该属性将在input校验失败时，进行友好的校验提示
+ &#x60;&#x60;&#x60;handlebars
+ {{input firstName hint=&quot;Enter your first name&quot;}}
+ &lt;em&gt;hint也可以是一个绑定属性&lt;/em&gt;
+ &#x60;&#x60;&#x60;
+
+ ------------------------------------------
+ 对于复杂的表单属性，也可以将input作为Block Helper使用,其中input-field指代html- input标签
+ &#x60;&#x60;&#x60;handlebars
+ {{#input firstName}}
+ {{input-field firstName}}{{label-field firstName}}
+ &lt;br/&gt;
+ {{error-field firstName}}
+ {{/input}}
+ &#x60;&#x60;&#x60;
+
+ Ember.EasyForm.InputField允许传入一个text作为input的Label
+
+ &#x60;&#x60;&#x60;handlebars
+ {{label-field firstName text=&quot;Your first name&quot;}}
+ &#x60;&#x60;&#x60;
+
+ input-field也可以制定as字段，as字段的可选值有
+ + text  -- textArea
+ + email -- type=email
+ + password -- type=password
+ + url
+ + color
+ + tel
+ + search
+ + hidden
+ + checkbox
+
+ &#x60;&#x60;&#x60;handlebars
+ {{input-field bio as=&quot;text&quot;}}
+ {{input-field email}}
+ &#x60;&#x60;&#x60;
+
+ ----------------------------
+
+ #####error-field
+ error-field指代校验失败后校验的信息
+ &#x60;&#x60;&#x60;handlebars
+ {{error-field firstName}}
+ &#x60;&#x60;&#x60;
+
+ ---------------------------------
+ #####hint-field
+ hint-field指代在表单校验失败后出现的用户提示信息（如：“用户名不能未空...”）
+ &#x60;&#x60;&#x60;handlebars
+ {{hint-field firstName text=&quot;Your first name&quot;}}
+ &#x60;&#x60;&#x60;
+
+
+ ----------------------------------
+ #####表单验证
+ 默认情况下，在表单元素触发了focus-out时，将触发表单的校验
+
+ ----------------------------------
+ #####i18n集成
+ 对于需要进行i18n的表单元素，Ember.EasyForm提供Translation后缀，进行表单国际化的工作
+
+ &#x60;&#x60;&#x60;handlebars
+ {{input firstName placeholderTranslation=&quot;users.attributes.firstname&quot;}}
+ {{input firstName labelTranslation=&quot;users.attributes.firstname&quot;}}
+ {{input firstName hintTranslation=&quot;users.hints.firstname&quot;}}
+ {{input-field firstName placeholderTranslation=&quot;users.attributes.firstname&quot;}}
+ {{label-field firstName textTranslation=&quot;users.attributes.firstname&quot;}}
+ {{hint-field firstName textTranslation=&quot;users.hints.firstname&quot;}}
+ &#x60;&#x60;&#x60;
+ __更多I18n内容，见Ember.I18n文档__
+
+
+ @namespace Ember
+ @class EasyForm
+ */
+
+
+
+/**
+  Ember.EasyForm配置项，可以向Config内注册自定义组件，注册自定义模板等
+  @class Config
+  @namespace Ember.EasyForm
+ */
+
+/**
+ ###Wrapper
+ Wrapper定义了EasyForm渲染视图时的样式与模板
+
+ 可定制项包括:
+ + fieldErrorClass - class used by the field containing errors
+ + formClass - class used by the form
+ + inputClass - class used by the div containing all elements of the input (label, input, error and hint)
+ + errorClass - class used by the error message
+ + hintClass - class used by the hint message
+ + labelClass - class used by the label
+ + inputTemplate - template used by {{input}}
+ + labelTemplate - template used by {{label-field}}
+ + errorTemplate - template used by {{error-field}}
+ + hintTemplate - template used by {{hint-field}}
+
+ ####默认Wrapper配置情况
+ + formClass - &quot;&quot; (empty)
+ + fieldErrorClass - &quot;fieldWithErrors&quot;
+ + inputClass - &quot;input&quot;
+ + errorClass - &quot;error&quot;
+ + hintClass - &quot;hint&quot;
+ + labelClass - &quot;&quot; (empty)
+ + inputTemplate - &quot;easyForm/input&quot;
+ + labelTemplate - &quot;easyForm/label&quot;
+ + errorTemplate - &quot;easyForm/error&quot;
+ + hintTemplate - &quot;easyForm/hint&quot;
+
+ @property Wrapper
+ @memberOf Ember.EasyForm
+ */
+
+
+
+
+/**
+ 向Ember.EasyForm Wrapper中注册一个Wraper
+ &#x60;&#x60;&#x60;javascript
+ Ember.EasyForm.Config.registerWrapper(&#x27;my-wrapper&#x27;, {
+  formClass: &#x27;my-form&#x27;,
+  errorClass: &#x27;my-error&#x27;,
+  hintClass: &#x27;my-hint&#x27;,
+  labelClass: &#x27;my-label&#x27;
+});
+ &#x60;&#x60;&#x60;
+
+ &#x60;&#x60;&#x60;handlebars
+ {{#form-for model wrapper=&quot;my-wrapper&quot;}}
+   {{input firstName}}
+   {{input lastName}}
+ {{/form-for}}
+ &#x60;&#x60;&#x60;
+ 编译结果为
+ &#x60;&#x60;&#x60;html
+   &lt;form class=&quot;my-form&quot;&gt;
+     &lt;div class=&quot;input string&quot;&gt;
+       &lt;label for=&quot;ember1&quot;&gt;First name&lt;/label&gt;
+       &lt;input id=&quot;ember1&quot; type=&quot;text&quot;/&gt;
+       &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;input string&quot;&gt;
+       &lt;label for=&quot;ember2&quot; class=&quot;my-label&quot;&gt;Last name&lt;/label&gt;
+       &lt;input id=&quot;ember2&quot; type=&quot;text&quot;/&gt;
+       &lt;span class=&quot;error my-error&quot;&gt;&lt;/span&gt;
+     &lt;/div&gt;
+   &lt;/form&gt;
+ &#x60;&#x60;&#x60;
+
+ ----------------------------------------
+ Ember.EasyForm也支持向Wrapper中注册模板
+ &#x60;&#x60;&#x60;javascript
+     Ember.EasyForm.Config.registerWrapper(&#x27;twitter-bootstrap&#x27;, {
+      // Define the custom template
+      inputTemplate: &#x27;bootstrap-input&#x27;,
+
+      // Define a custom config used by the template
+      controlsWrapperClass: &#x27;controls&#x27;,
+
+      // Define the classes for the form, label, error...
+      formClass: &#x27;form-horizontal&#x27;,
+      fieldErrorClass: &#x27;error&#x27;,
+      errorClass: &#x27;help-inline&#x27;,
+      hintClass: &#x27;help-block&#x27;,
+      labelClass: &#x27;control-label&#x27;,
+      inputClass: &#x27;control-group&#x27;
+    });
+ &#x60;&#x60;&#x60;
+ bootstrap-input模板
+ &#x60;&#x60;&#x60;handlebars
+   {{label-field propertyBinding=&quot;view.property&quot; textBinding=&quot;view.label&quot;}}
+       &lt;div class=&quot;{{unbound view.wrapperConfig.controlsWrapperClass}}&quot;&gt;
+   {{partial &quot;easyForm/inputControls&quot;}}
+ &lt;/div&gt;
+ &#x60;&#x60;&#x60;
+
+
+
+ @method registerWrapper
+ @for Ember.EasyForm.Config
+ */
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

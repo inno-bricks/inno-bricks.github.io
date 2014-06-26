@@ -41,6 +41,8 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
                 <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
@@ -51,13 +53,23 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
             
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
                 <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
             
             </ul>
 
@@ -133,22 +145,22 @@
 
 <h3>Summary</h3>
 <div class="intro">
-    <p>重置Ember.EasyForm下拉组建行为，将下拉框组件行为转换未chosen组建，用户通常无需直接使用该组建，
+    <p>重置Ember.EasyForm下拉组件行为，将下拉框组件行为转换为chosen组件，用户通常无需直接使用该组件，
 应通过Ember-EasyForm的方式使用该组件
-可选的参数有 data-placeholder，表示下拉组建的占位符
+可选的参数有 data-placeholder，表示下拉组件的占位符
 使用方式如</p>
-<pre class="code prettyprint"><code class="lang-handlebars">{{#form-for model wrapper="bootstrap"}}
+<pre class="code prettyprint"><code class="lang-handlebars">{{#form-for model wrapper=&quot;bootstrap&quot;}}
 {{input author
 as=&#39;select&#39;
-data-placeholder="请选择作者"
-collection="category"
-optionLabelPath="content.value"
+data-placeholder=&quot;请选择作者&quot;
+collection=&quot;category&quot;
+optionLabelPath=&quot;content.value&quot;
 }}
 {{input tags as=&#39;select&#39;
-data-placeholder="请选标签"
+data-placeholder=&quot;请选标签&quot;
 multiple=true
-collection="category"
-optionLabelPath="content.value"
+collection=&quot;category&quot;
+optionLabelPath=&quot;content.value&quot;
 }}
 {{/form-for}}</code></pre>
 
@@ -266,7 +278,7 @@ optionLabelPath="content.value"
   </div>
     <div class="description">
       <h3>Summary</h3>
-        <p>在收到通知需进行销毁后，销毁chsen组建</p>
+        <p>在收到通知需进行销毁后，销毁chsen组件</p>
 
     </div>
 

@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>packages/bricksui-form/lib/chosen-select.js</title>
+    <title>packages/bricksui-metal/lib/helper-support.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -118,107 +118,47 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: packages/bricksui-form/lib/chosen-select.js</h1>
+                        <h1 class="file-heading">File: packages/bricksui-metal/lib/helper-support.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /**
  @module bricksui
- @submodule bricksui-form
+ @submodule bricksui-metal
  */
-
 /**
- * 重置Ember.EasyForm下拉组件行为，将下拉框组件行为转换为chosen组件，用户通常无需直接使用该组件，
- * 应通过Ember-EasyForm的方式使用该组件
- * 可选的参数有 data-placeholder，表示下拉组件的占位符
- * 使用方式如
- &#x60;&#x60;&#x60;handlebars
- {{#form-for model wrapper=&quot;bootstrap&quot;}}
- {{input author
- as=&#x27;select&#x27;
- data-placeholder=&quot;请选择作者&quot;
- collection=&quot;category&quot;
- optionLabelPath=&quot;content.value&quot;
- }}
- {{input tags as=&#x27;select&#x27;
- data-placeholder=&quot;请选标签&quot;
- multiple=true
- collection=&quot;category&quot;
- optionLabelPath=&quot;content.value&quot;
- }}
- {{/form-for}}
+ 重命名已有的helper
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ BricksUI.swapHelpers(&quot;bs-tabs&quot;,&quot;bu-tabs&quot;);
+ BricksUI.swapHelper({
+    &quot;bs-tabs&quot;:&quot;bu-tabs&quot;,
+    &quot;bs-tas-panes&quot;:&quot;bu-tabs-panes&quot;
+ });
  &#x60;&#x60;&#x60;
- * @class Select
- * @namespace Ember.EasyForm
+
+ @for BricksUI
+ @method swapHelpers
+ @param hash {Object}
  */
-var ChosenSelect = Ember.EasyForm.Select.reopen({
-
-  classNames: [&#x27;form-control&#x27;],
-  attributeBindings: [&#x27;data-placeholder&#x27;],
-
-  init: function () {
-    this._super();
-    this.set(&#x27;prompt&#x27;, &#x27; &#x27;);  //对于chosen组件，需要存在一个为空的promt
-
-    //once elements trigger blur event,the parentView will show validated result,
-    //aim to defer validation
-    var parentView = this.get(&#x27;parentView&#x27;);
-    parentView.focusOut = function () {
-      parentView.set(parentView.set(&#x27;hasFocusedOut&#x27;, true));
-    };
-
-  },
-
-  /**
-   * @private
-   * @method _elementDestroy
-   * @description 在收到通知需进行销毁后，销毁chsen组件
-   */
-  _elementDestroy: function () {
-    this.$().chosen(&#x27;destroy&#x27;);
-  }.on(&#x27;willDestroyElement&#x27;),
-
-
-  /**
-   * @private
-   * @method _updateItem
-   * @description 在select的context发生变化后，通知chosen进行视图更新
-   */
-  _updateItem: function () {
-    Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function () {
-      this.$().trigger(&#x27;chosen:updated&#x27;);
-    });
-  }.observes(&#x27;content.@each&#x27;),
-
-  _doShowFocus: function () {
-    this.get(&#x27;parentView&#x27;).showValidationError();
-  },
-
-  _validation: function () {
-    var callback = this._doShowFocus.bind(this);
-    this.get(&#x27;parentView.formForModel&#x27;).validate().then(callback, callback);
-  },
-
-  /**
-   * @description 在视图渲染完成后，将select组件转换为chosen组件
-   * @method _updateDom
-   * @private
-   */
-  _updateDom: function () {
-
-    Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function () {
-      //在select视图渲染成成后，将其转换为chosen下拉框，并监听change事件
-      this.$().chosen()
-        .on(&#x27;change chosen:hiding_dropdown&#x27;, function () {
-          //为了取得数组正确的变化，将validate推迟到下一生命周期运行
-          Ember.run.next(this, &#x27;_validation&#x27;);
-        }.bind(this))
-      ;
-    });
-  }.on(&#x27;didInsertElement&#x27;)
-});
-
-export default ChosenSelect;
+export default function swapHelpers(hash)
+{
+    if (typeof hash === &quot;string&quot;) {
+        var value = arguments[1];
+        Ember.assert(&quot;must provide the corresponding helper to replace the older one&quot;, value &amp;&amp; typeof value === &quot;string&quot;);
+        var clone = {};
+        clone[hash] = value;
+        hash = clone;
+    }
+    var helpers = Ember.Handlebars.helpers;
+    for (var helper in hash) {
+        var tmp = helpers[helper];
+        Ember.assert(&quot;helper:&quot; + helper + &quot; does not exist !&quot;, tmp);
+        delete helpers[helper];
+        helpers[hash[helper]] = tmp;
+    }
+}
     </pre>
 </div>
 

@@ -41,6 +41,8 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
                 <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
@@ -51,13 +53,23 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
             
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
                 <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
             
             </ul>
 
@@ -114,8 +126,8 @@ import BricksUI from &#x27;bricksui-metal/core&#x27;;
 import &quot;bricksui-i18n/initializer&quot;;
 
 import {
-    setLang
-    } from &quot;bricksui-i18n/i18n-support&quot;;
+  setLang,getLang
+  } from &quot;bricksui-i18n/i18n-support&quot;;
 import i18nValidator from &quot;bricksui-i18n/i18n-validator&quot;;
 
 //BEGIN IMPORT LANGUAGE
@@ -126,8 +138,8 @@ import zhCN from &quot;bricksui-i18n/lang/zh-cn&quot;;
 
 
 import {
-    translationHelper
-    } from &quot;bricksui-i18n/helpers/translation&quot;;
+  translationHelper
+  } from &quot;bricksui-i18n/helpers/translation&quot;;
 /**
  @module bricksui
  @submodule bricksui-i18n
@@ -170,7 +182,7 @@ I18n.lang[&#x27;zh-cn&#x27;] = zhCN;
 I18n.I18nableValidationMixin = i18nValidator;
 
 I18n.setLang = setLang;
-
+I18n.getLang = getLang;
 Handlebars.registerHelper(&quot;t&quot;, translationHelper);
 
 

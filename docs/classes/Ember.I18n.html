@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>BricksUI.ENV</title>
+    <title>Ember.I18n</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -118,7 +118,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>BricksUI.ENV</h1>
+                        <h1>Ember.I18n</h1>
 <div class="meta">
     
 
@@ -126,13 +126,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-metal_lib_core.js.html#l51"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;core.js:51</code></a>
+            Defined in: <a href="../files/packages_bricksui-i18n_lib_i18n-docs.js.html#l6"><code>packages&#x2F;bricksui-i18n&#x2F;lib&#x2F;i18n-docs.js:6</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/bricksui-metal.html">bricksui-metal</a><br>
+            Module: <a href="../modules/bricksui-i18n.html">bricksui-i18n</a><br>
             Parent Module: <a href="../modules/bricksui.html">bricksui</a>
         
     
@@ -145,7 +145,83 @@
 
 <h3>Summary</h3>
 <div class="intro">
-    <p>Bricks变量配置</p>
+    <h4 id="ember-">Ember国际化支持</h4>
+<h5 id="-ember-i18n-https-github-com-jamesarosen-ember-i18n-"><a href="https://github.com/jamesarosen/ember-i18n">Ember.I18n更多内容查看...</a></h5>
+<p> 在Ember.I18n.translations中存入你所需要的国际化信息键值对，<br/>
+ 对于值的类型为字符串的键值对，将会通过Ember.I18n.compile编译为模板<br/>
+ <strong>*</strong>默认使用Handlebars.compile进行模板编译(在项目中需要引入完整的Handlebars功能,换言之，需引入<strong>Handlebar.js</strong>
+ 而不是<strong>Handlebar.runtime.js</strong>)</p>
+<h4 id="example">Example</h4>
+<p> 给定以下的国际化信息</p>
+<pre class="code prettyprint"><code class="lang-javascript"> Em.I18n.translations = {
+    &quot;user.edit.title&quot;: &quot;Edit User&quot;,
+    &quot;user.followers.title.one&quot;: &quot;One Follower&quot;,
+    &quot;user.followers.title.other&quot;: &quot;All {{count}} Followers&quot;,
+    &quot;button.add_user.title&quot;: &quot;Add a user&quot;,
+    &quot;button.add_user.text&quot;: &quot;Add&quot;,
+    &quot;button.add_user.disabled&quot;: &quot;Saving...&quot;
+  };</code></pre>
+<p> 在模板中只需引入</p>
+<pre class="code prettyprint"><code class="lang-handlebars"> &lt;h2&gt;{{t &quot;user.edit.title&quot;}}&lt;/h2&gt;</code></pre>
+<p>编译后结果</p>
+<pre class="code prettyprint"><code class="lang-html"> &lt;h2&gt;&lt;span id=&quot;i18n-123&quot;&gt;Edit User&lt;/span&gt;&lt;/h2&gt;</code></pre>
+<p>默认情况下，t助手将使用span作为标签作为渲染，如果需要进行标签进行自定义，只需特别声明标签</p>
+<pre class="code prettyprint"><code class="lang-handlebars"> {{t &quot;user.edit.title&quot; tagName=&quot;h2&quot;}}</code></pre>
+<p> 编译后结果</p>
+<pre class="code prettyprint"><code class="lang-html"> &lt;h2 id=&quot;i18n-123&quot;&gt;Edit User&lt;/h2&gt;</code></pre>
+<h5 id="-">信息重载</h5>
+<p> 默认情况下，可为t助手绑定一个count属性，cout属性将在运行时替换I18n信息</p>
+<h6 id="example">EXample</h6>
+<p>直接设置count的值</p>
+<pre class="code prettyprint"><code class="lang-handlebars"> &lt;h2&gt;{{t &quot;user.followers.title&quot; count=&quot;2&quot;}}&lt;/h2&gt;</code></pre>
+<p>编译结果为</p>
+<pre class="code prettyprint"><code class="lang-html"> &lt;h2&gt;&lt;span id=&quot;i18n-123&quot;&gt;All 2 Followers&lt;/span&gt;&lt;/h2&gt;</code></pre>
+<p>绑定Count的值</p>
+<pre class="code prettyprint"><code class="lang-handlebars"> &lt;h2&gt;{{t &quot;user.followers.title&quot; count=&quot;2&quot;}}&lt;/h2&gt;</code></pre>
+<p>编译结果为</p>
+<pre class="code prettyprint"><code class="lang-html"> &lt;h2&gt;&lt;span id=&quot;i18n-123&quot;&gt;All 2 Followers&lt;/span&gt;&lt;/h2&gt;</code></pre>
+<hr>
+<p>任意对象信息国际化
+Ember.I18n.TranslateableProperties mixin 会转换所有以Translation开头的属性</p>
+<pre class="code prettyprint"><code class="lang-javascript"> userButton = Em.Object.extend(Em.I18n.TranslateableProperties, {
+    labelTranslation: &#39;button.add_user.title&#39;
+  });
+userButton.get(&#39;label&#39;);  // &quot;Add a user&quot;</code></pre>
+<hr>
+<p>对于html类型标签，可以使用TranslateAttr 助手进行语言字段绑定</p>
+<pre class="code prettyprint"><code class="lang-handlebars"> &lt;a {{translateAttr title=&quot;button.add_user.title&quot; data-disable-with=&quot;button.add_user.disabled&quot;}}&gt;
+ {{t &quot;button.add_user.text&quot;}}
+ &lt;/a&gt;</code></pre>
+<p>编译结果：</p>
+<pre class="code prettyprint"><code class="lang-html"> &lt;a title=&quot;Add a user&quot; data-disable-with=&quot;Saving...&quot;&gt;
+ Add
+ &lt;/a&gt;</code></pre>
+<hr>
+<p> 复杂类型国际化语法
+ Em.I18n.translations同样支持复杂JSON对象的定义</p>
+<pre class="code prettyprint"><code class="lang-javascript"> Em.I18n.translations = {
+    &#39;user&#39;: {
+      &#39;edit&#39;: {
+        &#39;title&#39;: &#39;Edit User&#39;
+      },
+      &#39;followers&#39;: {
+        &#39;title&#39;: {
+          &#39;one&#39;: &#39;One Follower&#39;,
+          &#39;other&#39;: &#39;All {{count}} Followers&#39;
+        }
+      }
+    },
+    &#39;button&#39;: {
+      &#39;add_user&#39;: {
+        &#39;title&#39;: &#39;Add a user&#39;,
+        &#39;text&#39;: &#39;Add&#39;,
+        &#39;disabled&#39;: &#39;Saving...&#39;
+      }
+    }
+  };</code></pre>
+<pre class="code prettyprint"><code class="lang-handlebars"> {{t &quot;button.edit.text&quot;}}</code></pre>
+<p>编译结果：</p>
+<pre class="code prettyprint"><code class="lang-html"> &lt;span id=&quot;i18n-123&quot;&gt;Edit User&lt;/span&gt;</code></pre>
 
 </div>
 
@@ -156,8 +232,6 @@
         <li class="api-class-tab index"><a href="#index">Index</a></li>
 
         
-        
-            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
         
         
         
@@ -170,35 +244,6 @@
             
 
             
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                        
-                            <li class="index-item property">
-                                <a href="#property_LANG_FOLDER_NAME">LANG_FOLDER_NAME</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_MODULE_PREFIX">MODULE_PREFIX</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_PERSISTENT_I18N">PERSISTENT_I18N</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
 
             
 
@@ -207,183 +252,6 @@
 
         
 
-        
-            <div id="properties" class="api-class-tabpanel">
-                <h2 class="off-left">Properties</h2>
-
-                
-                    <div id="property_LANG_FOLDER_NAME" class="property item">
-
-  <h3 class="blue-method-name">LANG_FOLDER_NAME</h3>
-  <div class="meta method-meta">
-    
-      
-        
-      <p>
-        
-          Defined in
-        
-      
-    
-    
-      <a href="../files/packages_bricksui-metal_lib_core.js.html#l41"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;core.js:41</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>LANG_FOLDER_NAME</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>语言包存放路径</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> lang</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-                    <div id="property_MODULE_PREFIX" class="property item">
-
-  <h3 class="blue-method-name">MODULE_PREFIX</h3>
-  <div class="meta method-meta">
-    
-      
-        
-      <p>
-        
-          Defined in
-        
-      
-    
-    
-      <a href="../files/packages_bricksui-metal_lib_core.js.html#l33"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;core.js:33</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>MODULE_PREFIX</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>应用前缀</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> appkit</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-                    <div id="property_PERSISTENT_I18N" class="property item">
-
-  <h3 class="blue-method-name">PERSISTENT_I18N</h3>
-  <div class="meta method-meta">
-    
-      
-        
-      <p>
-        
-          Defined in
-        
-      
-    
-    
-      <a href="../files/packages_bricksui-metal_lib_core.js.html#l25"><code>packages&#x2F;bricksui-metal&#x2F;lib&#x2F;core.js:25</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>PERSISTENT_I18N</code></h3>
-    <span class="type">Boolean</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>是否将语言选择持久化到cookie中，如果设置为true，则将优先获取cookie设置的语言</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> true</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-            </div>
         
 
         

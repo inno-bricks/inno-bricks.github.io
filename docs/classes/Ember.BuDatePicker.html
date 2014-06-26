@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>Ember.EasyForm.Radio</title>
+    <title>Ember.BuDatePicker</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -118,19 +118,19 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Ember.EasyForm.Radio</h1>
+                        <h1>Ember.BuDatePicker</h1>
 <div class="meta">
     
 
     
         <div class="extends">
-            Extends <a href="../classes/Ember.EasyForm.Checkbox.html" class="crosslink">Ember.EasyForm.Checkbox</a>
+            Extends Ember.Component
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-form_lib_radio.js.html#l7"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;radio.js:7</code></a>
+            Defined in: <a href="../files/packages_bricksui-form_lib_bu-datepicker.js.html#l8"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;bu-datepicker.js:8</code></a>
         </div>
     
 
@@ -149,9 +149,35 @@
 
 <h3>Summary</h3>
 <div class="intro">
-    <p>拓展Ember.EasyForm.Input的Radio功能
-提供单选按钮组的功能</p>
-<pre class="code prettyprint"><code class="lang-handlebars">{{radio something modelBinding=&quot;model&quot; propertyPath=&quot;something&quot; elementsBinding=&quot;fruits&quot; labelPath=&quot;name&quot;}}</code></pre>
+    <p>Bootstrap时间日期选择插件，可配置的参数有</p>
+<pre class="code prettyprint"><code class="lang-javascript">var options={
+        minViewMode:null                //可选值为[&#39;months&#39;,&#39;years&#39;]纯月份选择/年选择
+        viewMode:null                   //可选值为[&#39;months&#39;,&#39;years&#39;]纯月份选择/年选择
+        pickDate: true,                 //是否启用日期选择
+        pickTime: true,                 //是否启用事件选择
+        useMinutes: true,               //是否启用分钟选择
+        useSeconds: true,               //是否启用秒钟选择
+        useCurrent: true,               //当useCurrent设置为true，该组件将默认选择当前日期
+        minuteStepping:1,               //分钟间隔设置(可选择的分钟间隔)
+        minDate:<code>1&#x2F;1&#x2F;1900</code>,             //最小可选择的时间
+        maxDate: ,                      //最大的可选择事件(默认为当天 100年后)
+        showToday: true,                 //shows the today indicator
+        language:&#39;en&#39;,                  //设置默认语言区
+        defaultDate:&quot;&quot;,                 //sets a default date, accepts js dates, strings and moment objects
+        disabledDates:[],               //an array of dates that cannot be selected
+        enabledDates:[],                //an array of dates that can be selected
+        icons = {
+               time: &#39;glyphicon glyphicon-time&#39;,
+               date: &#39;glyphicon glyphicon-calendar&#39;,
+               up:   &#39;glyphicon glyphicon-chevron-up&#39;,
+               down: &#39;glyphicon glyphicon-chevron-down&#39;
+           }
+        useStrict: false,               //use &quot;strict&quot; when validating dates
+        sideBySide: false,              //show the date and time picker side by side
+        daysOfWeekDisabled:[]          //for example use daysOfWeekDisabled: [0,6] to disable weekends
+   }</code></pre>
+<p>组件使用方式为</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{bu-datepicker value=value}}</code></pre>
 
 </div>
 
@@ -181,8 +207,29 @@
 
                     <ul class="index-list methods extends">
                         
-                            <li class="index-item method inherited">
-                                <a href="#method_init">init</a>
+                            <li class="index-item method private">
+                                <a href="#method__parseOptions">_parseOptions</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__updateDom">_updateDom</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method_attachI18nEvent">attachI18nEvent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method_change">change</a>
 
                                 
                                 
@@ -198,29 +245,15 @@
 
                     <ul class="index-list properties extends">
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_elements">elements</a>
+                            <li class="index-item property">
+                                <a href="#property_value">value</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_labelPath">labelPath</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_model">model</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_propertyPath">propertyPath</a>
+                            <li class="index-item property">
+                                <a href="#property_"></a>
 
                                 
                                 
@@ -240,18 +273,21 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_init" class="method item inherited">
-  <h3 class="blue-method-name">init</h3>
+                    <div id="method__parseOptions" class="method item private">
+  <h3 class="blue-method-name">_parseOptions</h3>
 
   <div class="meta method-meta">
     
       
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#method_init">Ember.EasyForm.Checkbox</a>:
+        
+      <p>
+        
+          Defined in
+        
       
     
     
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l17"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:17</code></a>
+      <a href="../files/packages_bricksui-form_lib_bu-datepicker.js.html#l102"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;bu-datepicker.js:102</code></a>
     
   </p>
 
@@ -263,7 +299,7 @@
 
   <h3>Syntax</h3>
   <div class="blue-method-syntax">
-  <h3 class="name"><code>init</code></h3>
+  <h3 class="name"><code>_parseOptions</code></h3>
 
     
         <span class="paren">()</span>
@@ -273,6 +309,8 @@
 
     
 
+    
+        <span class="flag private">private</span>
     
 
     
@@ -286,7 +324,205 @@
   </div>
     <div class="description">
       <h3>Summary</h3>
-        <p>初始化操作，模仿Ember.Component,将视图上下文设置为自身，并从Ember.EasyForm.Config中获取模板</p>
+        <p>对传入的options参数进行解析，如果传入的参数类型为string，则尝试转换为字符串</p>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+                
+                    <div id="method__updateDom" class="method item private">
+  <h3 class="blue-method-name">_updateDom</h3>
+
+  <div class="meta method-meta">
+    
+      
+        
+      <p>
+        
+          Defined in
+        
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_bu-datepicker.js.html#l155"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;bu-datepicker.js:155</code></a>
+    
+  </p>
+
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+  <h3 class="name"><code>_updateDom</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+    <div class="description">
+      <h3>Summary</h3>
+        <p>在视图渲染完成后，设置datetimepick组件</p>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+                
+                    <div id="method_attachI18nEvent" class="method item private">
+  <h3 class="blue-method-name">attachI18nEvent</h3>
+
+  <div class="meta method-meta">
+    
+      
+        
+      <p>
+        
+          Defined in
+        
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_bu-datepicker.js.html#l130"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;bu-datepicker.js:130</code></a>
+    
+  </p>
+
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+  <h3 class="name"><code>attachI18nEvent</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+    <div class="description">
+      <h3>Summary</h3>
+        <p>监听全局I18n改变事件，在所选择的语言改变后，重新渲染视图</p>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+                
+                    <div id="method_change" class="method item private">
+  <h3 class="blue-method-name">change</h3>
+
+  <div class="meta method-meta">
+    
+      
+        
+      <p>
+        
+          Defined in
+        
+      
+    
+    
+      <a href="../files/packages_bricksui-form_lib_bu-datepicker.js.html#l81"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;bu-datepicker.js:81</code></a>
+    
+  </p>
+
+
+    
+
+    
+  </div>
+
+  <h3>Syntax</h3>
+  <div class="blue-method-syntax">
+  <h3 class="name"><code>change</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+    <div class="description">
+      <h3>Summary</h3>
+        <p>绑定原始值,在输入框内容发生改变时，更新Value的值</p>
 
     </div>
 
@@ -309,18 +545,21 @@
                 <h2 class="off-left">Properties</h2>
 
                 
-                    <div id="property_elements" class="property item inherited">
+                    <div id="property_value" class="property item">
 
-  <h3 class="blue-method-name">elements</h3>
+  <h3 class="blue-method-name">value</h3>
   <div class="meta method-meta">
     
       
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_elements">Ember.EasyForm.Checkbox</a>:
+        
+      <p>
+        
+          Defined in
+        
       
     
     
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l52"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:52</code></a>
+      <a href="../files/packages_bricksui-form_lib_bu-datepicker.js.html#l51"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;bu-datepicker.js:51</code></a>
     
   </p>
 
@@ -331,7 +570,7 @@
 
   <h3>Syntax</h3>
   <div class="blue-method-syntax">
-    <h3 class="name"><code>elements</code></h3>
+    <h3 class="name"><code>value</code></h3>
     <span class="type">Object</span>
 
     
@@ -346,13 +585,10 @@
 
     <div class="description">
       <h3>Summary</h3>
-        <p>复选框的模型，必须为一个数组类型
-如 elements为 [{key:1,value:&quot;123&quot;},{key:2,value:&quot;234&quot;}]</p>
+        <p>外部所绑定的值</p>
 
     </div>
 
-    
-        <p><strong>Default:</strong> null</p>
     
 
     
@@ -364,18 +600,21 @@
 </div>
 
                 
-                    <div id="property_labelPath" class="property item inherited">
+                    <div id="property_" class="property item">
 
-  <h3 class="blue-method-name">labelPath</h3>
+  <h3 class="blue-method-name"></h3>
   <div class="meta method-meta">
     
       
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_labelPath">Ember.EasyForm.Checkbox</a>:
+        
+      <p>
+        
+          Defined in
+        
       
     
     
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l27"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:27</code></a>
+      <a href="../files/packages_bricksui-form_lib_bu-datepicker.js.html#l146"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;bu-datepicker.js:146</code></a>
     
   </p>
 
@@ -386,8 +625,8 @@
 
   <h3>Syntax</h3>
   <div class="blue-method-syntax">
-    <h3 class="name"><code>labelPath</code></h3>
-    <span class="type">String</span>
+    <h3 class="name"><code></code></h3>
+    <span class="type">Unknown</span>
 
     
 
@@ -401,121 +640,11 @@
 
     <div class="description">
       <h3>Summary</h3>
-        <p>标签属性
-如 elements为 [{key:1,value:&quot;123&quot;},{key:2,value:&quot;234&quot;}]需要将value值作为label展示，则只需设置labelPath为value</p>
+        <p>默认配置文件，为准确完成日期格式转换，将进行严格日期校验
+在所选择语言发生变化后，将进行视图重新渲染</p>
 
     </div>
 
-    
-        <p><strong>Default:</strong> null</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-                    <div id="property_model" class="property item inherited">
-
-  <h3 class="blue-method-name">model</h3>
-  <div class="meta method-meta">
-    
-      
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_model">Ember.EasyForm.Checkbox</a>:
-      
-    
-    
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l36"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:36</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>model</code></h3>
-    <span class="type">Object</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>绑定的Ember Data模型</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-                    <div id="property_propertyPath" class="property item inherited">
-
-  <h3 class="blue-method-name">propertyPath</h3>
-  <div class="meta method-meta">
-    
-      
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_propertyPath">Ember.EasyForm.Checkbox</a>:
-      
-    
-    
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l44"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:44</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>propertyPath</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>绑定模型中的hasMany属性，在elements复选框选中的对象将push到该属性中</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null</p>
     
 
     

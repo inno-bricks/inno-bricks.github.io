@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>Ember.EasyForm.Radio</title>
+    <title>Ember.EasyForm.Config</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -118,19 +118,15 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Ember.EasyForm.Radio</h1>
+                        <h1>Ember.EasyForm.Config</h1>
 <div class="meta">
     
 
     
-        <div class="extends">
-            Extends <a href="../classes/Ember.EasyForm.Checkbox.html" class="crosslink">Ember.EasyForm.Checkbox</a>
-        </div>
-    
 
     
         <div class="foundat">
-            Defined in: <a href="../files/packages_bricksui-form_lib_radio.js.html#l7"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;radio.js:7</code></a>
+            Defined in: <a href="../files/packages_bricksui-form_lib_form-docs.js.html#l162"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;form-docs.js:162</code></a>
         </div>
     
 
@@ -149,9 +145,7 @@
 
 <h3>Summary</h3>
 <div class="intro">
-    <p>拓展Ember.EasyForm.Input的Radio功能
-提供单选按钮组的功能</p>
-<pre class="code prettyprint"><code class="lang-handlebars">{{radio something modelBinding=&quot;model&quot; propertyPath=&quot;something&quot; elementsBinding=&quot;fruits&quot; labelPath=&quot;name&quot;}}</code></pre>
+    <p>Ember.EasyForm配置项，可以向Config内注册自定义组件，注册自定义模板等</p>
 
 </div>
 
@@ -179,10 +173,10 @@
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods extends">
+                    <ul class="index-list methods">
                         
-                            <li class="index-item method inherited">
-                                <a href="#method_init">init</a>
+                            <li class="index-item method">
+                                <a href="#method_registerWrapper">registerWrapper</a>
 
                                 
                                 
@@ -196,31 +190,10 @@
                 <div class="index-section properties">
                     <h3>Properties</h3>
 
-                    <ul class="index-list properties extends">
+                    <ul class="index-list properties">
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_elements">elements</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_labelPath">labelPath</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_model">model</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_propertyPath">propertyPath</a>
+                            <li class="index-item property">
+                                <a href="#property_Wrapper">Wrapper</a>
 
                                 
                                 
@@ -240,18 +213,21 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_init" class="method item inherited">
-  <h3 class="blue-method-name">init</h3>
+                    <div id="method_registerWrapper" class="method item">
+  <h3 class="blue-method-name">registerWrapper</h3>
 
   <div class="meta method-meta">
     
       
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#method_init">Ember.EasyForm.Checkbox</a>:
+        
+      <p>
+        
+          Defined in
+        
       
     
     
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l17"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:17</code></a>
+      <a href="../files/packages_bricksui-form_lib_form-docs.js.html#l203"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;form-docs.js:203</code></a>
     
   </p>
 
@@ -263,7 +239,7 @@
 
   <h3>Syntax</h3>
   <div class="blue-method-syntax">
-  <h3 class="name"><code>init</code></h3>
+  <h3 class="name"><code>registerWrapper</code></h3>
 
     
         <span class="paren">()</span>
@@ -286,7 +262,52 @@
   </div>
     <div class="description">
       <h3>Summary</h3>
-        <p>初始化操作，模仿Ember.Component,将视图上下文设置为自身，并从Ember.EasyForm.Config中获取模板</p>
+        <p>向Ember.EasyForm Wrapper中注册一个Wraper</p>
+<pre class="code prettyprint"><code class="lang-javascript">Ember.EasyForm.Config.registerWrapper(&#39;my-wrapper&#39;, {
+ formClass: &#39;my-form&#39;,
+ errorClass: &#39;my-error&#39;,
+ hintClass: &#39;my-hint&#39;,
+ labelClass: &#39;my-label&#39;
+});</code></pre>
+<pre class="code prettyprint"><code class="lang-handlebars">{{#form-for model wrapper=&quot;my-wrapper&quot;}}
+  {{input firstName}}
+  {{input lastName}}
+{{/form-for}}</code></pre>
+<p>编译结果为</p>
+<pre class="code prettyprint"><code class="lang-html">  &lt;form class=&quot;my-form&quot;&gt;
+    &lt;div class=&quot;input string&quot;&gt;
+      &lt;label for=&quot;ember1&quot;&gt;First name&lt;/label&gt;
+      &lt;input id=&quot;ember1&quot; type=&quot;text&quot;/&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input string&quot;&gt;
+      &lt;label for=&quot;ember2&quot; class=&quot;my-label&quot;&gt;Last name&lt;/label&gt;
+      &lt;input id=&quot;ember2&quot; type=&quot;text&quot;/&gt;
+      &lt;span class=&quot;error my-error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;</code></pre>
+<hr>
+<p>Ember.EasyForm也支持向Wrapper中注册模板</p>
+<pre class="code prettyprint"><code class="lang-javascript">    Ember.EasyForm.Config.registerWrapper(&#39;twitter-bootstrap&#39;, {
+     // Define the custom template
+     inputTemplate: &#39;bootstrap-input&#39;,
+
+     // Define a custom config used by the template
+     controlsWrapperClass: &#39;controls&#39;,
+
+     // Define the classes for the form, label, error...
+     formClass: &#39;form-horizontal&#39;,
+     fieldErrorClass: &#39;error&#39;,
+     errorClass: &#39;help-inline&#39;,
+     hintClass: &#39;help-block&#39;,
+     labelClass: &#39;control-label&#39;,
+     inputClass: &#39;control-group&#39;
+   });</code></pre>
+<p>bootstrap-input模板</p>
+<pre class="code prettyprint"><code class="lang-handlebars">  {{label-field propertyBinding=&quot;view.property&quot; textBinding=&quot;view.label&quot;}}
+      &lt;div class=&quot;{{unbound view.wrapperConfig.controlsWrapperClass}}&quot;&gt;
+  {{partial &quot;easyForm/inputControls&quot;}}
+&lt;/div&gt;</code></pre>
 
     </div>
 
@@ -309,18 +330,21 @@
                 <h2 class="off-left">Properties</h2>
 
                 
-                    <div id="property_elements" class="property item inherited">
+                    <div id="property_Wrapper" class="property item">
 
-  <h3 class="blue-method-name">elements</h3>
+  <h3 class="blue-method-name">Wrapper</h3>
   <div class="meta method-meta">
     
       
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_elements">Ember.EasyForm.Checkbox</a>:
+        
+      <p>
+        
+          Defined in
+        
       
     
     
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l52"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:52</code></a>
+      <a href="../files/packages_bricksui-form_lib_form-docs.js.html#l168"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;form-docs.js:168</code></a>
     
   </p>
 
@@ -331,8 +355,8 @@
 
   <h3>Syntax</h3>
   <div class="blue-method-syntax">
-    <h3 class="name"><code>elements</code></h3>
-    <span class="type">Object</span>
+    <h3 class="name"><code>Wrapper</code></h3>
+    <span class="type">Unknown</span>
 
     
 
@@ -346,176 +370,37 @@
 
     <div class="description">
       <h3>Summary</h3>
-        <p>复选框的模型，必须为一个数组类型
-如 elements为 [{key:1,value:&quot;123&quot;},{key:2,value:&quot;234&quot;}]</p>
+        <h3 id="wrapper">Wrapper</h3>
+<p>Wrapper定义了EasyForm渲染视图时的样式与模板</p>
+<p>可定制项包括:</p>
+<ul>
+<li>fieldErrorClass - class used by the field containing errors</li>
+<li>formClass - class used by the form</li>
+<li>inputClass - class used by the div containing all elements of the input (label, input, error and hint)</li>
+<li>errorClass - class used by the error message</li>
+<li>hintClass - class used by the hint message</li>
+<li>labelClass - class used by the label</li>
+<li>inputTemplate - template used by {{input}}</li>
+<li>labelTemplate - template used by {{label-field}}</li>
+<li>errorTemplate - template used by {{error-field}}</li>
+<li>hintTemplate - template used by {{hint-field}}</li>
+</ul>
+<h4 id="-wrapper-">默认Wrapper配置情况</h4>
+<ul>
+<li>formClass - &quot;&quot; (empty)</li>
+<li>fieldErrorClass - &quot;fieldWithErrors&quot;</li>
+<li>inputClass - &quot;input&quot;</li>
+<li>errorClass - &quot;error&quot;</li>
+<li>hintClass - &quot;hint&quot;</li>
+<li>labelClass - &quot;&quot; (empty)</li>
+<li>inputTemplate - &quot;easyForm/input&quot;</li>
+<li>labelTemplate - &quot;easyForm/label&quot;</li>
+<li>errorTemplate - &quot;easyForm/error&quot;</li>
+<li>hintTemplate - &quot;easyForm/hint&quot;</li>
+</ul>
 
     </div>
 
-    
-        <p><strong>Default:</strong> null</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-                    <div id="property_labelPath" class="property item inherited">
-
-  <h3 class="blue-method-name">labelPath</h3>
-  <div class="meta method-meta">
-    
-      
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_labelPath">Ember.EasyForm.Checkbox</a>:
-      
-    
-    
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l27"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:27</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>labelPath</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>标签属性
-如 elements为 [{key:1,value:&quot;123&quot;},{key:2,value:&quot;234&quot;}]需要将value值作为label展示，则只需设置labelPath为value</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-                    <div id="property_model" class="property item inherited">
-
-  <h3 class="blue-method-name">model</h3>
-  <div class="meta method-meta">
-    
-      
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_model">Ember.EasyForm.Checkbox</a>:
-      
-    
-    
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l36"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:36</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>model</code></h3>
-    <span class="type">Object</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>绑定的Ember Data模型</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null</p>
-    
-
-    
-
-  
-
-  
-
-</div>
-
-                
-                    <div id="property_propertyPath" class="property item inherited">
-
-  <h3 class="blue-method-name">propertyPath</h3>
-  <div class="meta method-meta">
-    
-      
-      <p>Inherited from
-        <a href="../classes/Ember.EasyForm.Checkbox.html#property_propertyPath">Ember.EasyForm.Checkbox</a>:
-      
-    
-    
-      <a href="../files/packages_bricksui-form_lib_checkbox.js.html#l44"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;checkbox.js:44</code></a>
-    
-  </p>
-
-    
-
-    
-  </div>
-
-  <h3>Syntax</h3>
-  <div class="blue-method-syntax">
-    <h3 class="name"><code>propertyPath</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    </div>
-
-    <div class="description">
-      <h3>Summary</h3>
-        <p>绑定模型中的hasMany属性，在elements复选框选中的对象将push到该属性中</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null</p>
     
 
     

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>packages/bricksui-form/lib/ember-validations.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: packages/bricksui-form/lib/ember-validations.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ @module bricksui
+ @submodule bricksui-form
+ */
+/**
+ ## 用法 ##
+
+ 需要将&#x60;Ember.Validations.Mixin&#x60;集成到任何你想要添加验证的控制器上
+
+ &#x60;&#x60;&#x60;javascript
+ var App.UserController = Ember.ObjectController.extend(Ember.Validations.Mixin);
+ &#x60;&#x60;&#x60;
+
+ 需要定义一个validations对象作为控制器的一个属性,用来标识当前模型的验证规则.
+ 对象的keys要一一映射模型的属性.如果你传入了一个JSON对象作为一个属性的值,则该值将被作为当前属性的验证规则.
+ 如果你传入了&#x60;true&#x60;,则该属性将被标记为需要被验证的.如下:
+
+ &#x60;&#x60;&#x60;javascript
+ App.UserController.reopen({
+      validations: {
+        firstName: {
+          presence: true,
+          length: { minimum: 5 }
+        },
+        age: {
+          numericality: true
+        },
+        profile: true
+      }
+ });
+ &#x60;&#x60;&#x60;
+
+ ## 校验器 ##
+
+ 当前已经支持的校验器如下所示
+
+ ### Absence ###
+ 验证属性值是&#x60;null&#x60;,&#x60;undefined&#x60; 或者是 &#x60;&#x27;&#x27;&#x60;.
+
+ #### Options ####
+ * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
+ * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ absence: true
+ absence: { message: &#x27;must be blank&#x27; }
+ &#x60;&#x60;&#x60;
+
+ ### Acceptance ###
+ 默认可被接受的值为&#x60;&#x27;1&#x27;&#x60;, &#x60;1&#x60;, and &#x60;true&#x60;.
+
+ #### Options ####
+ * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
+ * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
+ * &#x60;accept&#x60; - 可被接受的值
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ acceptance: true
+ acceptance: { message: &#x27;you must accept&#x27;, accept: &#x27;yes&#x27; }
+ &#x60;&#x60;&#x60;
+
+ ### Confirmation ###
+ 相同值校验
+
+ #### Options ####
+ * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
+ * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ confirmation: true
+ confirmation: { message: &#x27;you must confirm&#x27; }
+ &#x60;&#x60;&#x60;
+
+ ### Exclusion ###
+ 排除校验
+
+ #### Options ####
+ * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
+ * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
+ * &#x60;in&#x60; - 被允许的数组
+ * &#x60;range&#x60; - 区间
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ exclusion: { in: [&#x27;Yellow&#x27;, &#x27;Black&#x27;, &#x27;Red&#x27;] }
+ exclusion: { range: [5, 10], allowBlank: true, message: &#x27;cannot be between 5 and 10&#x27; }
+ &#x60;&#x60;&#x60;
+
+ ### Format ###
+ 正则,格式化校验
+
+ #### Options ####
+ * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
+ * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
+ * &#x60;with&#x60; - 正则表达式
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ format: { with: /^([a-zA-Z]|\d)+$/, allowBlank: true, message: &#x27;must be letters and numbers only&#x27;  }
+ &#x60;&#x60;&#x60;
+
+ ### Inclusion ###
+ 被允许的值
+ 熬过校验
+ #### Options ####
+ * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息.
+ * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
+ * &#x60;in&#x60; - 被允许的数组
+ * &#x60;range&#x60; - 区间
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ inclusion: { in: [&#x27;Yellow&#x27;, &#x27;Black&#x27;, &#x27;Red&#x27;] }
+ inclusion: { range: [5, 10], allowBlank: true, message: &#x27;must be between 5 and 10&#x27; }
+ &#x60;&#x60;&#x60;
+
+ ### Length ###
+ 定义属性的长度
+
+ #### Options ####
+ * &#x60;number&#x60; - 跟&#x60;is&#x60;作用一样,长度必须时指定值
+ * &#x60;array&#x60; - 数组里面有两个值,第一个元素代表最小值,第二个元素达标最大值,即长度的区间
+ * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
+ * &#x60;minimum&#x60; - 被允许的最小长度
+ * &#x60;maximum&#x60; - 被允许的最大长度
+ * &#x60;is&#x60; - 跟&#x60;number&#x60;作用一样,长度必须时指定值
+ * &#x60;tokenizer&#x60; - 校验时执行的自定以函数,返回一个代表长度的对象
+
+ ##### Messages #####
+ * &#x60;tooShort&#x60; - 当不满足最小长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;tooLong&#x60; - t当不满足最大长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;wrongLength&#x60; - 当校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ length: 5
+ length: [3, 5]
+ length: { is: 10, allowBlank: true }
+ length: { minimum: 3, maximum: 5, messages: { tooShort: &#x27;should be more than 3 characters&#x27;, tooLong: &#x27;should be less than 5 characters&#x27; } }
+ length: { is: 5, tokenizer: function(value) { return value.split(&#x27;&#x27;); } }
+ &#x60;&#x60;&#x60;
+
+ ### Numericality ###
+ 校验是否是一个数值
+
+ #### Options ####
+ * &#x60;true&#x60; -设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
+ * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
+ * &#x60;onlyInteger&#x60; - 只能是整数
+ * &#x60;greaterThan&#x60; - 一定要大于指定数
+ * &#x60;greaterThanOrEqualTo&#x60; - 一定要大于等于指定数
+ * &#x60;equalTo&#x60; - 一定要等于指定数
+ * &#x60;lessThan&#x60; - 一定要小于指定数
+ * &#x60;lessThanOrEqualTo&#x60; - 一定要小于等于指定数
+ * &#x60;odd&#x60; - 一定是奇数
+ * &#x60;even&#x60; - 一定是偶数
+
+ ##### Messages #####
+ * &#x60;greaterThan&#x60; -当大于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;greaterThanOrEqualTo&#x60; - 当大于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;equalTo&#x60; - 当等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;lessThan&#x60; - 当小于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;lessThanOrEqualTo&#x60; - 当小于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;odd&#x60; - 当奇数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+ * &#x60;even&#x60; - 当偶数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ numericality: true
+ numericality: { odd: true, messages: { odd: &#x27;must be an odd number&#x27; } }
+ numericality: { onlyInteger, greaterThan: 5, lessThanOrEqualTo : 10 }
+ &#x60;&#x60;&#x60;
+
+ ### Presence ###
+ 非空校验&#x60;null&#x60;, &#x60;undefined&#x60;, or &#x60;&#x27;&#x27;&#x60;
+
+ #### Options ####
+ * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
+ * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ presence: true
+ presence: { message: &#x27;must not be blank&#x27; }
+ &#x60;&#x60;&#x60;
+
+ ### Uniqueness ###
+
+ *尚未实现*
+
+ ### URL ##
+
+ 校验是否是一个URL.
+
+ #### Options ####
+ * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
+ * &#x60;allowIp&#x60; - 如果设置为&#x60;true&#x60;,将使用IP地址进行校验URL,IP地址默认是非法的
+ * &#x60;allowUserPass&#x60; - 如果设置为&#x60;true&#x60;,将校验URL是否有用户名和密码,默认情况是不允许用户名和密码
+ * &#x60;allowPort&#x60; - 如果设置为&#x60;true&#x60;,将校验URL是否带有端口号,默认情况是不允许有端口号
+ * &#x60;domainOnly&#x60; - 如果设置为&#x60;true&#x60;,将校验URL是否时主域名和子域名.
+ * &#x60;protocols&#x60; - 可被接受的协议数组,默认为&#x60;http&#x60;,&#x60;https&#x60;
+
+ &#x60;&#x60;&#x60;javascript
+ // Examples
+ url { allowUserPass: true }
+ url { allowBlank: true, allowIp: true, allowPort: true, protocols: [&#x27;http&#x27;, &#x27;https&#x27;, &#x27;ftp&#x27;] }
+ url { domainOnly: true }
+ &#x60;&#x60;&#x60;
+
+ ### Conditional Validators ##
+
+ 每个校验器都可以带有一个&#x60;if&#x60; 或者 一个&#x60;unless&#x60;.条件判断.
+
+ &#x60;&#x60;&#x60;javascript
+ // function form
+ firstName: {
+      presence: {
+        if: function(object, validator) {
+          return true;
+        }
+      }
+ }
+
+ // string form
+ // if &#x27;canValidate&#x27; is a function on the object it will be called
+ // if &#x27;canValidate&#x27; is a property object.get(&#x27;canValidate&#x27;) will be called
+ firstName: {
+      presence: {
+        unless: &#x27;canValidate&#x27;
+      }
+ }
+ &#x60;&#x60;&#x60;
+
+ ## Running Validations
+
+ 当对象被创建时,校验器将自动运行,以及每个属性改变时,也将自动校验.
+ &#x60;isValid&#x60; 状态将被冒泡,并且帮助确定直接父级的校验状态
+ &#x60;isInvalid&#x60; 状态同样可以被获取
+
+ 如果你想强制校验所有,只要在对象上调用&#x60;.validate()&#x60;方法.
+ &#x60;isValid&#x60; 将被设置为&#x60;true&#x60; 或者&#x60;false&#x60;.所有校验的运行将返回promise,所以不是调用完&#x60;validate&#x60;方法,就是马上校验完毕的.
+ &#x60;validate&#x60;方法返回一个promise,可以调用&#x60;then&#x60;方法添加完成后的回调
+
+ &#x60;&#x60;&#x60;javascript
+ user.validate().then(function() {
+      user.get(&#x27;isValid&#x27;); // true
+      user.get(&#x27;isInvalid&#x27;); // false
+ })
+ &#x60;&#x60;&#x60;
+
+ ## Inspecting Errors ##
+
+ 当一个对象集成&#x60;Ember.Validations.Mixin&#x60;后,该对象将同时拥有一个&#x60;errors&#x60;对象,所有校验的错误信息
+ 将被放置在该对象上.
+
+ &#x60;&#x60;&#x60;javascript
+ App.User = Ember.Object.extend(Ember.Validations.Mixin, {
+      validations: {
+        firstName: { presence: true }
+      }
+ });
+
+ user = App.User.create();
+ user.validate().then(null, function() {
+      user.get(&#x27;isValid&#x27;); // false
+      user.get(&#x27;errors.firstName&#x27;); // [&quot;can&#x27;t be blank&quot;]
+      user.set(&#x27;firstName&#x27;, &#x27;Brian&#x27;);
+      user.validate().then(function() {
+         user.get(&#x27;isValid&#x27;); // true
+         user.get(&#x27;errors.firstName&#x27;); // []
+      })
+ })
+
+ &#x60;&#x60;&#x60;
+
+ ## i18n ##
+
+ 国际化I18n默认包含以下的keys
+
+ &#x60;&#x60;&#x60;javascript
+ Ember.I18n.translations = {
+      errors:{
+        inclusion: &quot;is not included in the list&quot;,
+        exclusion: &quot;is reserved&quot;,
+        invalid: &quot;is invalid&quot;,
+        confirmation: &quot;doesn&#x27;t match {{attribute}}&quot;,
+        accepted: &quot;must be accepted&quot;,
+        empty: &quot;can&#x27;t be empty&quot;,
+        blank: &quot;can&#x27;t be blank&quot;,
+        present: &quot;must be blank&quot;,
+        tooLong: &quot;is too long (maximum is {{count}} characters)&quot;,
+        tooShort: &quot;is too short (minimum is {{count}} characters)&quot;,
+        wrongLength: &quot;is the wrong length (should be {{count}} characters)&quot;,
+        notANumber: &quot;is not a number&quot;,
+        notAnInteger: &quot;must be an integer&quot;,
+        greaterThan: &quot;must be greater than {{count}}&quot;,
+        greaterThanOrEqualTo: &quot;must be greater than or equal to {{count}}&quot;,
+        equalTo: &quot;must be equal to {{count}}&quot;,
+        lessThan: &quot;must be less than {{count}}&quot;,
+        lessThanOrEqualTo: &quot;must be less than or equal to {{count}}&quot;,
+        otherThan: &quot;must be other than {{count}}&quot;,
+        odd: &quot;must be odd&quot;,
+        even: &quot;must be even&quot;
+      }
+}
+ &#x60;&#x60;&#x60;
+ @namespace Ember
+ @class Validations
+ @extends Ember.Namespace
+ */
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

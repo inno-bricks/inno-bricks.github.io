@@ -29,6 +29,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "packages/bricksui-metal/lib/helper-support.js": {
+            "name": "packages/bricksui-metal/lib/helper-support.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "BricksUI": 1
+            },
+            "namespaces": {}
+        },
         "packages/bricksui-metal/lib/main.js": {
             "name": "packages/bricksui-metal/lib/main.js",
             "modules": {},
@@ -63,11 +72,22 @@
             "fors": {},
             "namespaces": {}
         },
-        "packages/bricksui-form/lib/bu-editor.js": {
-            "name": "packages/bricksui-form/lib/bu-editor.js",
+        "packages/bricksui-form/lib/bu-datepicker.js": {
+            "name": "packages/bricksui-form/lib/bu-datepicker.js",
             "modules": {
                 "bricksui-form": 1
             },
+            "classes": {
+                "Ember.BuDatePicker": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember": 1
+            }
+        },
+        "packages/bricksui-form/lib/bu-editor.js": {
+            "name": "packages/bricksui-form/lib/bu-editor.js",
+            "modules": {},
             "classes": {
                 "Ember.BuEditor": 1
             },
@@ -98,12 +118,38 @@
                 "Ember.EasyForm": 1
             }
         },
+        "packages/bricksui-form/lib/ember-validations.js": {
+            "name": "packages/bricksui-form/lib/ember-validations.js",
+            "modules": {},
+            "classes": {
+                "Ember.Validations": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember": 1
+            }
+        },
         "packages/bricksui-form/lib/form-config.js": {
             "name": "packages/bricksui-form/lib/form-config.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
+        },
+        "packages/bricksui-form/lib/form-docs.js": {
+            "name": "packages/bricksui-form/lib/form-docs.js",
+            "modules": {},
+            "classes": {
+                "Ember.EasyForm": 1,
+                "Ember.EasyForm.Config": 1
+            },
+            "fors": {
+                "Ember.EasyForm.Config": 1
+            },
+            "namespaces": {
+                "Ember": 1,
+                "Ember.EasyForm": 1
+            }
         },
         "packages/bricksui-form/lib/form-setup.js": {
             "name": "packages/bricksui-form/lib/form-setup.js",
@@ -137,11 +183,29 @@
                 "Ember.EasyForm": 1
             }
         },
-        "packages/bricksui-i18n/lib/i18n-support.js": {
-            "name": "packages/bricksui-i18n/lib/i18n-support.js",
+        "packages/bricksui-form/lib/swap-helpers.js": {
+            "name": "packages/bricksui-form/lib/swap-helpers.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "packages/bricksui-i18n/lib/i18n-docs.js": {
+            "name": "packages/bricksui-i18n/lib/i18n-docs.js",
             "modules": {
                 "bricksui-i18n": 1
             },
+            "classes": {
+                "Ember.I18n": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember": 1
+            }
+        },
+        "packages/bricksui-i18n/lib/i18n-support.js": {
+            "name": "packages/bricksui-i18n/lib/i18n-support.js",
+            "modules": {},
             "classes": {},
             "fors": {
                 "BricksUI.I18n": 1
@@ -171,6 +235,24 @@
                 "BricksUI": 1,
                 "BricksUI.I18n": 1
             }
+        },
+        "packages/bricksui-thirdpart/lib/bu-tabs.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-tabs.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuTabs": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/main.js": {
+            "name": "packages/bricksui-thirdpart/lib/main.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
         }
     },
     "modules": {
@@ -185,16 +267,24 @@
                 "BricksUI": 1,
                 "BricksUI.ENV": 1,
                 "BricksUI.StateHandler": 1,
+                "Ember.BuDatePicker": 1,
                 "Ember.BuEditor": 1,
                 "Ember.EasyForm.Checkbox": 1,
                 "Ember.EasyForm.Select": 1,
+                "Ember.Validations": 1,
+                "Ember.EasyForm": 1,
+                "Ember.EasyForm.Config": 1,
                 "Ember.EasyForm.Radio": 1,
+                "Ember.I18n": 1,
                 "BricksUI.I18n": 1,
                 "BricksUI.I18n.I18nableValidationMixin": 1,
-                "BricksUI.I18n.lang": 1
+                "BricksUI.I18n.lang": 1,
+                "BricksUI.BuTabs": 1
             },
             "fors": {
                 "BricksUI.ENV": 1,
+                "BricksUI": 1,
+                "Ember.EasyForm.Config": 1,
                 "BricksUI.I18n": 1
             },
             "namespaces": {
@@ -203,8 +293,8 @@
                 "Ember.EasyForm": 1,
                 "BricksUI.I18n": 1
             },
-            "file": "packages/bricksui-i18n/lib/main.js",
-            "line": 31
+            "file": "packages/bricksui-thirdpart/lib/bu-tabs.js",
+            "line": 5
         },
         "bricksui-metal": {
             "name": "bricksui-metal",
@@ -215,7 +305,8 @@
                 "BricksUI.StateHandler": 1
             },
             "fors": {
-                "BricksUI.ENV": 1
+                "BricksUI.ENV": 1,
+                "BricksUI": 1
             },
             "is_submodule": 1,
             "namespaces": {
@@ -232,27 +323,36 @@
             "name": "bricksui-form",
             "submodules": {},
             "classes": {
+                "Ember.BuDatePicker": 1,
                 "Ember.BuEditor": 1,
                 "Ember.EasyForm.Checkbox": 1,
                 "Ember.EasyForm.Select": 1,
-                "Ember.EasyForm.Radio": 1
+                "Ember.Validations": 1,
+                "Ember.EasyForm": 1,
+                "Ember.EasyForm.Config": 1,
+                "Ember.EasyForm.Radio": 1,
+                "BricksUI.BuTabs": 1
             },
-            "fors": {},
+            "fors": {
+                "Ember.EasyForm.Config": 1
+            },
             "is_submodule": 1,
             "namespaces": {
                 "Ember": 1,
-                "Ember.EasyForm": 1
+                "Ember.EasyForm": 1,
+                "BricksUI": 1
             },
             "module": "bricksui",
             "namespace": "",
-            "file": "packages/bricksui-form/lib/radio.js",
-            "line": 7,
+            "file": "packages/bricksui-thirdpart/lib/bu-tabs.js",
+            "line": 5,
             "description": "BricksUI表单支持模块，对Ember-Easy-Form进行功能拓展，整合Validation与I18n"
         },
         "bricksui-i18n": {
             "name": "bricksui-i18n",
             "submodules": {},
             "classes": {
+                "Ember.I18n": 1,
                 "BricksUI.I18n": 1,
                 "BricksUI.I18n.I18nableValidationMixin": 1,
                 "BricksUI.I18n.lang": 1
@@ -262,6 +362,7 @@
             },
             "is_submodule": 1,
             "namespaces": {
+                "Ember": 1,
                 "BricksUI.I18n": 1,
                 "BricksUI": 1
             },
@@ -321,6 +422,22 @@
             "file": "packages/bricksui-metal/lib/state_handler.js",
             "line": 32
         },
+        "Ember.BuDatePicker": {
+            "name": "Ember.BuDatePicker",
+            "shortname": "Ember.BuDatePicker",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember",
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 8,
+            "description": "Bootstrap时间日期选择插件，可配置的参数有\n```javascript\nvar options={\n        minViewMode:null                //可选值为['months','years']纯月份选择/年选择\n        viewMode:null                   //可选值为['months','years']纯月份选择/年选择\n        pickDate: true,                 //是否启用日期选择\n        pickTime: true,                 //是否启用事件选择\n        useMinutes: true,               //是否启用分钟选择\n        useSeconds: true,               //是否启用秒钟选择\n        useCurrent: true,               //当useCurrent设置为true，该组件将默认选择当前日期\n        minuteStepping:1,               //分钟间隔设置(可选择的分钟间隔)\n        minDate:`1/1/1900`,             //最小可选择的时间\n        maxDate: ,                      //最大的可选择事件(默认为当天 100年后)\n        showToday: true,                 //shows the today indicator\n        language:'en',                  //设置默认语言区\n        defaultDate:\"\",                 //sets a default date, accepts js dates, strings and moment objects\n        disabledDates:[],               //an array of dates that cannot be selected\n        enabledDates:[],                //an array of dates that can be selected\n        icons = {\n               time: 'glyphicon glyphicon-time',\n               date: 'glyphicon glyphicon-calendar',\n               up:   'glyphicon glyphicon-chevron-up',\n               down: 'glyphicon glyphicon-chevron-down'\n           }\n        useStrict: false,               //use \"strict\" when validating dates\n        sideBySide: false,              //show the date and time picker side by side\n        daysOfWeekDisabled:[]          //for example use daysOfWeekDisabled: [0,6] to disable weekends\n   }\n```\n\n组件使用方式为\n```handlebars\n{{bu-datepicker value=value}}\n```",
+            "extends": "Ember.Component"
+        },
         "Ember.BuEditor": {
             "name": "Ember.BuEditor",
             "shortname": "Ember.BuEditor",
@@ -369,7 +486,53 @@
             "namespace": "Ember.EasyForm",
             "file": "packages/bricksui-form/lib/chosen-select.js",
             "line": 6,
-            "description": "重置Ember.EasyForm下拉组建行为，将下拉框组件行为转换未chosen组建，用户通常无需直接使用该组建，\n应通过Ember-EasyForm的方式使用该组件\n可选的参数有 data-placeholder，表示下拉组建的占位符\n使用方式如\n```handlebars\n{{#form-for model wrapper=\"bootstrap\"}}\n{{input author\nas='select'\ndata-placeholder=\"请选择作者\"\ncollection=\"category\"\noptionLabelPath=\"content.value\"\n}}\n{{input tags as='select'\ndata-placeholder=\"请选标签\"\nmultiple=true\ncollection=\"category\"\noptionLabelPath=\"content.value\"\n}}\n{{/form-for}}\n```"
+            "description": "重置Ember.EasyForm下拉组件行为，将下拉框组件行为转换为chosen组件，用户通常无需直接使用该组件，\n应通过Ember-EasyForm的方式使用该组件\n可选的参数有 data-placeholder，表示下拉组件的占位符\n使用方式如\n```handlebars\n{{#form-for model wrapper=\"bootstrap\"}}\n{{input author\nas='select'\ndata-placeholder=\"请选择作者\"\ncollection=\"category\"\noptionLabelPath=\"content.value\"\n}}\n{{input tags as='select'\ndata-placeholder=\"请选标签\"\nmultiple=true\ncollection=\"category\"\noptionLabelPath=\"content.value\"\n}}\n{{/form-for}}\n```"
+        },
+        "Ember.Validations": {
+            "name": "Ember.Validations",
+            "shortname": "Ember.Validations",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember",
+            "file": "packages/bricksui-form/lib/ember-validations.js",
+            "line": 5,
+            "description": "## 用法 ##\n\n需要将`Ember.Validations.Mixin`集成到任何你想要添加验证的控制器上\n\n```javascript\nvar App.UserController = Ember.ObjectController.extend(Ember.Validations.Mixin);\n```\n\n需要定义一个validations对象作为控制器的一个属性,用来标识当前模型的验证规则.\n对象的keys要一一映射模型的属性.如果你传入了一个JSON对象作为一个属性的值,则该值将被作为当前属性的验证规则.\n如果你传入了`true`,则该属性将被标记为需要被验证的.如下:\n\n```javascript\nApp.UserController.reopen({\n     validations: {\n       firstName: {\n         presence: true,\n         length: { minimum: 5 }\n       },\n       age: {\n         numericality: true\n       },\n       profile: true\n     }\n});\n```\n\n## 校验器 ##\n\n当前已经支持的校验器如下所示\n\n### Absence ###\n验证属性值是`null`,`undefined` 或者是 `''`.\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\nabsence: true\nabsence: { message: 'must be blank' }\n```\n\n### Acceptance ###\n默认可被接受的值为`'1'`, `1`, and `true`.\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `accept` - 可被接受的值\n\n```javascript\n// Examples\nacceptance: true\nacceptance: { message: 'you must accept', accept: 'yes' }\n```\n\n### Confirmation ###\n相同值校验\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\nconfirmation: true\nconfirmation: { message: 'you must confirm' }\n```\n\n### Exclusion ###\n排除校验\n\n#### Options ####\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `in` - 被允许的数组\n* `range` - 区间\n\n```javascript\n// Examples\nexclusion: { in: ['Yellow', 'Black', 'Red'] }\nexclusion: { range: [5, 10], allowBlank: true, message: 'cannot be between 5 and 10' }\n```\n\n### Format ###\n正则,格式化校验\n\n#### Options ####\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `with` - 正则表达式\n\n```javascript\n// Examples\nformat: { with: /^([a-zA-Z]|\\d)+$/, allowBlank: true, message: 'must be letters and numbers only'  }\n```\n\n### Inclusion ###\n被允许的值\n熬过校验\n#### Options ####\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息.\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `in` - 被允许的数组\n* `range` - 区间\n\n```javascript\n// Examples\ninclusion: { in: ['Yellow', 'Black', 'Red'] }\ninclusion: { range: [5, 10], allowBlank: true, message: 'must be between 5 and 10' }\n```\n\n### Length ###\n定义属性的长度\n\n#### Options ####\n* `number` - 跟`is`作用一样,长度必须时指定值\n* `array` - 数组里面有两个值,第一个元素代表最小值,第二个元素达标最大值,即长度的区间\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `minimum` - 被允许的最小长度\n* `maximum` - 被允许的最大长度\n* `is` - 跟`number`作用一样,长度必须时指定值\n* `tokenizer` - 校验时执行的自定以函数,返回一个代表长度的对象\n\n##### Messages #####\n* `tooShort` - 当不满足最小长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `tooLong` - t当不满足最大长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `wrongLength` - 当校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n\n```javascript\n// Examples\nlength: 5\nlength: [3, 5]\nlength: { is: 10, allowBlank: true }\nlength: { minimum: 3, maximum: 5, messages: { tooShort: 'should be more than 3 characters', tooLong: 'should be less than 5 characters' } }\nlength: { is: 5, tokenizer: function(value) { return value.split(''); } }\n```\n\n### Numericality ###\n校验是否是一个数值\n\n#### Options ####\n* `true` -设置为`true`将激活控制校验并且使用默认提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `onlyInteger` - 只能是整数\n* `greaterThan` - 一定要大于指定数\n* `greaterThanOrEqualTo` - 一定要大于等于指定数\n* `equalTo` - 一定要等于指定数\n* `lessThan` - 一定要小于指定数\n* `lessThanOrEqualTo` - 一定要小于等于指定数\n* `odd` - 一定是奇数\n* `even` - 一定是偶数\n\n##### Messages #####\n* `greaterThan` -当大于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `greaterThanOrEqualTo` - 当大于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `equalTo` - 当等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `lessThan` - 当小于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `lessThanOrEqualTo` - 当小于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `odd` - 当奇数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `even` - 当偶数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n\n```javascript\n// Examples\nnumericality: true\nnumericality: { odd: true, messages: { odd: 'must be an odd number' } }\nnumericality: { onlyInteger, greaterThan: 5, lessThanOrEqualTo : 10 }\n```\n\n### Presence ###\n非空校验`null`, `undefined`, or `''`\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\npresence: true\npresence: { message: 'must not be blank' }\n```\n\n### Uniqueness ###\n\n*尚未实现*\n\n### URL ##\n\n校验是否是一个URL.\n\n#### Options ####\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `allowIp` - 如果设置为`true`,将使用IP地址进行校验URL,IP地址默认是非法的\n* `allowUserPass` - 如果设置为`true`,将校验URL是否有用户名和密码,默认情况是不允许用户名和密码\n* `allowPort` - 如果设置为`true`,将校验URL是否带有端口号,默认情况是不允许有端口号\n* `domainOnly` - 如果设置为`true`,将校验URL是否时主域名和子域名.\n* `protocols` - 可被接受的协议数组,默认为`http`,`https`\n\n```javascript\n// Examples\nurl { allowUserPass: true }\nurl { allowBlank: true, allowIp: true, allowPort: true, protocols: ['http', 'https', 'ftp'] }\nurl { domainOnly: true }\n```\n\n### Conditional Validators ##\n\n每个校验器都可以带有一个`if` 或者 一个`unless`.条件判断.\n\n```javascript\n// function form\nfirstName: {\n     presence: {\n       if: function(object, validator) {\n         return true;\n       }\n     }\n}\n\n// string form\n// if 'canValidate' is a function on the object it will be called\n// if 'canValidate' is a property object.get('canValidate') will be called\nfirstName: {\n     presence: {\n       unless: 'canValidate'\n     }\n}\n```\n\n## Running Validations\n\n当对象被创建时,校验器将自动运行,以及每个属性改变时,也将自动校验.\n`isValid` 状态将被冒泡,并且帮助确定直接父级的校验状态\n`isInvalid` 状态同样可以被获取\n\n如果你想强制校验所有,只要在对象上调用`.validate()`方法.\n`isValid` 将被设置为`true` 或者`false`.所有校验的运行将返回promise,所以不是调用完`validate`方法,就是马上校验完毕的.\n`validate`方法返回一个promise,可以调用`then`方法添加完成后的回调\n\n```javascript\nuser.validate().then(function() {\n     user.get('isValid'); // true\n     user.get('isInvalid'); // false\n})\n```\n\n## Inspecting Errors ##\n\n当一个对象集成`Ember.Validations.Mixin`后,该对象将同时拥有一个`errors`对象,所有校验的错误信息\n将被放置在该对象上.\n\n```javascript\nApp.User = Ember.Object.extend(Ember.Validations.Mixin, {\n     validations: {\n       firstName: { presence: true }\n     }\n});\n\nuser = App.User.create();\nuser.validate().then(null, function() {\n     user.get('isValid'); // false\n     user.get('errors.firstName'); // [\"can't be blank\"]\n     user.set('firstName', 'Brian');\n     user.validate().then(function() {\n        user.get('isValid'); // true\n        user.get('errors.firstName'); // []\n     })\n})\n\n```\n\n## i18n ##\n\n国际化I18n默认包含以下的keys\n\n```javascript\nEmber.I18n.translations = {\n     errors:{\n       inclusion: \"is not included in the list\",\n       exclusion: \"is reserved\",\n       invalid: \"is invalid\",\n       confirmation: \"doesn't match {{attribute}}\",\n       accepted: \"must be accepted\",\n       empty: \"can't be empty\",\n       blank: \"can't be blank\",\n       present: \"must be blank\",\n       tooLong: \"is too long (maximum is {{count}} characters)\",\n       tooShort: \"is too short (minimum is {{count}} characters)\",\n       wrongLength: \"is the wrong length (should be {{count}} characters)\",\n       notANumber: \"is not a number\",\n       notAnInteger: \"must be an integer\",\n       greaterThan: \"must be greater than {{count}}\",\n       greaterThanOrEqualTo: \"must be greater than or equal to {{count}}\",\n       equalTo: \"must be equal to {{count}}\",\n       lessThan: \"must be less than {{count}}\",\n       lessThanOrEqualTo: \"must be less than or equal to {{count}}\",\n       otherThan: \"must be other than {{count}}\",\n       odd: \"must be odd\",\n       even: \"must be even\"\n     }\n}\n```",
+            "extends": "Ember.Namespace"
+        },
+        "Ember.EasyForm": {
+            "name": "Ember.EasyForm",
+            "shortname": "Ember.EasyForm",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember",
+            "file": "packages/bricksui-form/lib/form-docs.js",
+            "line": 6,
+            "description": "#####[EMBER-EASYFORM](https://github.com/dockyard/ember-easyForm)\nEmber-EasyForm提供对基础表单的封装，同时提供I18n以及字段校验的功能\n\n#####formFor助手用法\n```handlebars\n  {{#form-for model}}\n  {{input firstName}}\n  {{input lastName}}\n  {{input bio as=\"text\"}}\n  {{input country as='select'\n       collection=\"App.countries\"\n       selection=\"country\"\n       optionValuePath=\"content.id\"\n       optionLabelPath=\"content.name\"\n       prompt=\"Select Country\"\n  }}\n  {{/form-for}}\n```\n编译结果\n\n```html\n<form>\n  <div class=\"input string\">\n    <label for=\"ember1\">First name</label>\n    <input id=\"ember1\" type=\"text\"/>\n    <span class=\"error\"></span>\n  </div>\n  <div class=\"input string\">\n    <label for=\"ember2\">Last name</label>\n    <input id=\"ember2\" type=\"text\"/>\n    <span class=\"error\"></span>\n  </div>\n    <div class=\"input string\">\n    <label for=\"ember3\">Bio</label>\n    <textarea id=\"ember3\"></textarea>\n    <span class=\"error\"></span>\n  </div>\n  <div class=\"input string\">\n   <label for=\"ember4\">Country</label>\n  <select id=\"ember4\">\n   xxx\n  </select>\n   <span class=\"error\"></span>\n  </div>\n  </form>\n```\n--------------------------------------\nEmber.EasyForm 允许通过设置input的as属性改变input组件的行为\n```handlebars\n{{input secret as=\"hidden\"}}\n```\n----------------------------------------\nEmber.EasyForm 可以根据传入的字段名称判断组件的行为，该行为可被as覆盖\n\n```handlebars\n{{input email}}\n{{input password}}\n<em>第一个输入框type=email 第二个输入框type=password</em>\n```\n------------------------------------------\n传入label属性可以设置对象属性的名称\n```handlebars\n{{input email label=\"电子邮箱...\"}}\n```\n\nlabel也可以为一个绑定属性\n```handlebars\n{{input email labelBinding=\"emailLabel\"}}\n```\n\nplaceholder设置文本框的占位符\n```handlebars\n{{input firstName placeholder=\"Enter your first name\"}}\n<em>placeholder也可以是一个绑定属性</em>\n```\n\n也可在input中设置hint的属性，该属性将在input校验失败时，进行友好的校验提示\n```handlebars\n{{input firstName hint=\"Enter your first name\"}}\n<em>hint也可以是一个绑定属性</em>\n```\n\n------------------------------------------\n对于复杂的表单属性，也可以将input作为Block Helper使用,其中input-field指代html- input标签\n```handlebars\n{{#input firstName}}\n{{input-field firstName}}{{label-field firstName}}\n<br/>\n{{error-field firstName}}\n{{/input}}\n```\n\nEmber.EasyForm.InputField允许传入一个text作为input的Label\n\n```handlebars\n{{label-field firstName text=\"Your first name\"}}\n```\n\ninput-field也可以制定as字段，as字段的可选值有\n+ text  -- textArea\n+ email -- type=email\n+ password -- type=password\n+ url\n+ color\n+ tel\n+ search\n+ hidden\n+ checkbox\n\n```handlebars\n{{input-field bio as=\"text\"}}\n{{input-field email}}\n```\n\n----------------------------\n\n#####error-field\nerror-field指代校验失败后校验的信息\n```handlebars\n{{error-field firstName}}\n```\n\n---------------------------------\n#####hint-field\nhint-field指代在表单校验失败后出现的用户提示信息（如：“用户名不能未空...”）\n```handlebars\n{{hint-field firstName text=\"Your first name\"}}\n```\n\n\n----------------------------------\n#####表单验证\n默认情况下，在表单元素触发了focus-out时，将触发表单的校验\n\n----------------------------------\n#####i18n集成\n对于需要进行i18n的表单元素，Ember.EasyForm提供Translation后缀，进行表单国际化的工作\n\n```handlebars\n{{input firstName placeholderTranslation=\"users.attributes.firstname\"}}\n{{input firstName labelTranslation=\"users.attributes.firstname\"}}\n{{input firstName hintTranslation=\"users.hints.firstname\"}}\n{{input-field firstName placeholderTranslation=\"users.attributes.firstname\"}}\n{{label-field firstName textTranslation=\"users.attributes.firstname\"}}\n{{hint-field firstName textTranslation=\"users.hints.firstname\"}}\n```\n__更多I18n内容，见Ember.I18n文档__"
+        },
+        "Ember.EasyForm.Config": {
+            "name": "Ember.EasyForm.Config",
+            "shortname": "Ember.EasyForm.Config",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm",
+            "file": "packages/bricksui-form/lib/form-docs.js",
+            "line": 162,
+            "description": "Ember.EasyForm配置项，可以向Config内注册自定义组件，注册自定义模板等"
         },
         "Ember.EasyForm.Radio": {
             "name": "Ember.EasyForm.Radio",
@@ -386,6 +549,21 @@
             "line": 7,
             "description": "拓展Ember.EasyForm.Input的Radio功能\n提供单选按钮组的功能\n```handlebars\n{{radio something modelBinding=\"model\" propertyPath=\"something\" elementsBinding=\"fruits\" labelPath=\"name\"}}\n```",
             "extends": "Ember.EasyForm.Checkbox"
+        },
+        "Ember.I18n": {
+            "name": "Ember.I18n",
+            "shortname": "Ember.I18n",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-i18n",
+            "namespace": "Ember",
+            "file": "packages/bricksui-i18n/lib/i18n-docs.js",
+            "line": 6,
+            "description": "####Ember国际化支持\n #####[Ember.I18n更多内容查看...](https://github.com/jamesarosen/ember-i18n)\n 在Ember.I18n.translations中存入你所需要的国际化信息键值对，<br/>\n 对于值的类型为字符串的键值对，将会通过Ember.I18n.compile编译为模板<br/>\n __*__默认使用Handlebars.compile进行模板编译(在项目中需要引入完整的Handlebars功能,换言之，需引入__Handlebar.js__\n 而不是__Handlebar.runtime.js__)\n####Example\n 给定以下的国际化信息\n```javascript\n Em.I18n.translations = {\n    \"user.edit.title\": \"Edit User\",\n    \"user.followers.title.one\": \"One Follower\",\n    \"user.followers.title.other\": \"All {{count}} Followers\",\n    \"button.add_user.title\": \"Add a user\",\n    \"button.add_user.text\": \"Add\",\n    \"button.add_user.disabled\": \"Saving...\"\n  };\n ```\n 在模板中只需引入\n ```handlebars\n <h2>{{t \"user.edit.title\"}}</h2>\n ```\n编译后结果\n ```html\n <h2><span id=\"i18n-123\">Edit User</span></h2>\n ```\n默认情况下，t助手将使用span作为标签作为渲染，如果需要进行标签进行自定义，只需特别声明标签\n ```handlebars\n {{t \"user.edit.title\" tagName=\"h2\"}}\n ```\n 编译后结果\n ```html\n <h2 id=\"i18n-123\">Edit User</h2>\n ```\n#####信息重载\n 默认情况下，可为t助手绑定一个count属性，cout属性将在运行时替换I18n信息\n ######EXample\n直接设置count的值\n ```handlebars\n <h2>{{t \"user.followers.title\" count=\"2\"}}</h2>\n ```\n编译结果为\n ```html\n <h2><span id=\"i18n-123\">All 2 Followers</span></h2>\n ```\n绑定Count的值\n ```handlebars\n <h2>{{t \"user.followers.title\" count=\"2\"}}</h2>\n ```\n编译结果为\n ```html\n <h2><span id=\"i18n-123\">All 2 Followers</span></h2>\n ```\n------------------------\n任意对象信息国际化\nEmber.I18n.TranslateableProperties mixin 会转换所有以Translation开头的属性\n```javascript\n userButton = Em.Object.extend(Em.I18n.TranslateableProperties, {\n    labelTranslation: 'button.add_user.title'\n  });\nuserButton.get('label');  // \"Add a user\"\n ```\n------------------------------\n对于html类型标签，可以使用TranslateAttr 助手进行语言字段绑定\n```handlebars\n <a {{translateAttr title=\"button.add_user.title\" data-disable-with=\"button.add_user.disabled\"}}>\n {{t \"button.add_user.text\"}}\n </a>\n ```\n编译结果：\n```html\n <a title=\"Add a user\" data-disable-with=\"Saving...\">\n Add\n </a>\n ```\n--------------------------------------\n 复杂类型国际化语法\n Em.I18n.translations同样支持复杂JSON对象的定义\n```javascript\n Em.I18n.translations = {\n    'user': {\n      'edit': {\n        'title': 'Edit User'\n      },\n      'followers': {\n        'title': {\n          'one': 'One Follower',\n          'other': 'All {{count}} Followers'\n        }\n      }\n    },\n    'button': {\n      'add_user': {\n        'title': 'Add a user',\n        'text': 'Add',\n        'disabled': 'Saving...'\n      }\n    }\n  };\n ```\n```handlebars\n {{t \"button.edit.text\"}}\n ```\n编译结果：\n```html\n <span id=\"i18n-123\">Edit User</span>\n ```"
         },
         "BricksUI.I18n": {
             "name": "BricksUI.I18n",
@@ -436,6 +614,22 @@
             "static": 1,
             "type": "{Object}",
             "default": "zh-cn"
+        },
+        "BricksUI.BuTabs": {
+            "name": "BricksUI.BuTabs",
+            "shortname": "BricksUI.BuTabs",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-tabs.js",
+            "line": 5,
+            "description": "一个`tab-pane`代表一个tab页签\n`bu-tabs-panes` 需要有一个`contentBinding` 属性,用来生成所有的tab标签页,\n`bu-tabs-panes`与`bu-tabs`是配套使用的,`bu-tabs`生成tab组件页签头,`bu-tabs-panes`生成内容,\n所以两者需要有一个关联,这就是`items-id`.\n\n``` html\n<div class=\"bs-example\">\n{{bu-tabs id=\"tabs1\" contentBinding=\"tabsMeta\" default=\"Foo\"}}\n{{bu-tabs-panes items-id=\"tabs1\" contentBinding=\"tabsMeta\"}}\n</div>\n```\n\n* `bu-tas`需要配置一个`id`属性\n* `bu-tabs-panes`根据content生成各个内容标签\n* `items-id` 必须要跟`bu-tabs`的id挂钩\n* `default`可以设置tab组件的默认标签页\n\n配置项如下:\n\n``` javascript\nSomeController = Ember.Controller.extend({\n   tabsMeta: Ember.A([\n           Ember.Object.create({ title: 'Foo', template: 'tabs/foo-tabpane', controller: 'ShowcaseComponentsTabsFoo'}),\n           Ember.Object.create({ title: 'Bar', template: 'tabs/bar-tabpane'})\n   ]);\n});\n\n`template` 指定tab内容页的模板\n`controller` 可以指定tabs标签页的控制器\n\n```",
+            "extends": "Ember.Namespace"
         }
     },
     "classitems": [
@@ -497,7 +691,7 @@
             "file": "packages/bricksui-metal/lib/event_manager.js",
             "line": 8,
             "description": "Ember.View 本身的实现过程就是一个状态机的流转过程\nEmber 事件绑定流程:\n Application.eventDispatcher\n Application.setupEventDispatcher\n     -->eventDispatcher.setup\n     -->eventDispatcher.setupHandler     //统一绑定在rootElement下\n\n Ember事件触发流程:\n jQuery.event.dispatch\n     -->Ember setupHandler\n     -->eventDispatcher._findNearestEventManager\n 在findNearestEventManager会查找视图是否具有事件管理器\n 属性名称为:eventManager\n     yes--> 事件统一交给事件管理器可处理的事件处理\n     no --> 逐级冒泡事件\n 为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成\n 将在View上新增eventManager属性,用于统一管理",
-            "class": "BricksUI.StateHandler",
+            "class": "BricksUI",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -506,7 +700,7 @@
             "line": 65,
             "description": "用户可进行扩展和修改",
             "type": "",
-            "class": "BricksUI.StateHandler",
+            "class": "BricksUI",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -515,7 +709,7 @@
             "line": 81,
             "description": "辅助键配合其他按键的修改操作",
             "type": "",
-            "class": "BricksUI.StateHandler",
+            "class": "BricksUI",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -523,7 +717,7 @@
             "file": "packages/bricksui-metal/lib/event_manager.js",
             "line": 98,
             "description": "当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响\n如果不是,则引用类型不应该放在这里,而应该直接实例化",
-            "class": "BricksUI.StateHandler",
+            "class": "BricksUI",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -532,7 +726,24 @@
             "line": 168,
             "description": "分开维护",
             "type": "{{}}",
-            "class": "BricksUI.StateHandler",
+            "class": "BricksUI",
+            "module": "bricksui",
+            "submodule": "bricksui-metal"
+        },
+        {
+            "file": "packages/bricksui-metal/lib/helper-support.js",
+            "line": 5,
+            "description": "重命名已有的helper\n\n```javascript\n// Examples\nBricksUI.swapHelpers(\"bs-tabs\",\"bu-tabs\");\nBricksUI.swapHelper({\n   \"bs-tabs\":\"bu-tabs\",\n   \"bs-tas-panes\":\"bu-tabs-panes\"\n});\n```",
+            "itemtype": "method",
+            "name": "swapHelpers",
+            "params": [
+                {
+                    "name": "hash",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "BricksUI",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -557,7 +768,7 @@
             "file": "packages/bricksui-metal/lib/stateable.js",
             "line": 6,
             "description": "有限状态机(Finite State Machine)\n  有限状态机对行为建模\n     1、事件：程序对事件进行响应\n     2、状态：程序在事件间的状态\n     3、转移：对应于事件，状态间的转移\n     4、动作：转移过程中采取动作\n     5、变量：变量保存事件间的动作所需的值\n  状态设计要点：\n     1、在该状态下，该事件是否可能发生\n     2、采取什么动作来处理事件\n     3、事件过后转移到什么状态\n     4、在事件之间需要记录什么变量（数据）\n\n 现代的UI组件大都是具有可交互性的,不再简单的支持输入输出,总是有内在的状态转换\n 事件触发,执行动作和行为转换\n 组件通常都是粗粒度的,有自己内部机制,组合机制等等,BricksUI采用FSM分离行为,作为默认的组合机制\n 当设计组件时,切面能够帮助有效地帮助切分组件的功能以及帮助开发者精心考虑组件的重用的可能性",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -565,7 +776,7 @@
             "file": "packages/bricksui-metal/lib/stateable.js",
             "line": 28,
             "type": "{void|*}",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -573,7 +784,7 @@
             "file": "packages/bricksui-metal/lib/stateable.js",
             "line": 33,
             "description": "初始状态",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -581,7 +792,7 @@
             "file": "packages/bricksui-metal/lib/stateable.js",
             "line": 37,
             "description": "公有属性,用户需要以此获得当前状态\n当前状态,",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -603,7 +814,7 @@
                 "description": "",
                 "type": "*"
             },
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -617,7 +828,7 @@
                     "description": ""
                 }
             ],
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -641,7 +852,7 @@
             ],
             "access": "private",
             "tagname": "",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -663,7 +874,7 @@
                 "description": "",
                 "type": "*"
             },
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -671,7 +882,7 @@
             "file": "packages/bricksui-metal/lib/stateable.js",
             "line": 122,
             "description": "由于状态机不止组件可以使用,其他可以拆分为各种状态的都可以使用,所以该方法需要是公开的API\n装配状态\n每个状态都添加parentState的引用\n每个状态都增加全状态路径名称\nroot\n    empty    -->root.empty\n    deleted  -->root.deleted",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui",
             "submodule": "bricksui-metal"
         },
@@ -679,22 +890,133 @@
             "file": "packages/bricksui-metal/lib/view.js",
             "line": 8,
             "description": "Ember.View的创建过程是一个状态机的流转过程,具体如下:\nEmber.View.states:\n  x: _default    默认方法集合,作为其他状态的基类,不作为具体状态使用\n    preRender   初始化状态,渲染之前\n    inBuffer    渲染状态,此时正在生成相应的html标签和属性\n    inDom       已经成为dom节点状态,已经生成并且插入到页面中\n    hasElement  一切准备就绪,等待接受用户操作\n    destroying  正在移除中,视图销毁\n以上状态是逐个向下的状态\n\n目前用于所使用的标签都是由W3C制定的,存在一定的局限性\nEmber Component提供了一种方式来增强自定义标签,增强HTML功能,\n而且Ember的这一实现与W3C目前的Custom Elements 工作一致,并且尽可能保持同步\n在未来的浏览器版本,一旦Custom Elements普及,则Ember实现的这一套机制本身就与标准看齐,所以可以方便地集成\n\nBricksUI View 要点\n1.FSM 分离用户行为和组件行为\n2.AOP进行事件切片,以及权限和操作行为控制\n3.与W3C Custom Elements (TODO 研究)\nTODO:制定组件的生命周期以及使用方式,及与外部交互的基础",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui-metal"
         },
         {
             "file": "packages/bricksui-metal/lib/view.js",
             "line": 31,
             "description": "基类具备状态机管理功能\n如何将事件传播到state中,执行对应的action\n在模板里面添加states的action-->{{action unfoldmenu target=\"states\"}}\n\nmouseDown(click)-> view.states[\"activeState\"][\"unfoldmenu\"]\nrecord.loadingData->record.currentState[\"loadingData\"]",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui-metal"
         },
         {
             "file": "packages/bricksui-metal/lib/view.js",
             "line": 41,
             "description": "TODO\n1.用Component来实现组件\n2.用模板和action结合来实现组件行为",
-            "class": "Ember.BuEditor",
+            "class": "Ember.BuDatePicker",
             "module": "bricksui-metal"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 51,
+            "description": "外部所绑定的值",
+            "itemtype": "property",
+            "name": "value",
+            "type": "Object",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 64,
+            "description": "input fix，根据在输入的格式校验失败后，尝试将输入项转换为Date类型，如果成功，则进行格式转换并输出",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 81,
+            "description": "绑定原始值,在输入框内容发生改变时，更新Value的值",
+            "itemtype": "method",
+            "name": "change",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 93,
+            "description": "在时间格式校验失败后，进行泛类型时间尝试",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 102,
+            "description": "对传入的options参数进行解析，如果传入的参数类型为string，则尝试转换为字符串",
+            "itemtype": "method",
+            "name": "_parseOptions",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 121,
+            "description": "在视图销毁时，清除datepicker Dom 对象",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 130,
+            "description": "监听全局I18n改变事件，在所选择的语言改变后，重新渲染视图",
+            "itemtype": "method",
+            "name": "attachI18nEvent",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 146,
+            "description": "默认配置文件，为准确完成日期格式转换，将进行严格日期校验\n在所选择语言发生变化后，将进行视图重新渲染",
+            "itemtype": "property",
+            "name": "",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-datepicker.js",
+            "line": 155,
+            "description": "在视图渲染完成后，设置datetimepick组件",
+            "itemtype": "method",
+            "name": "_updateDom",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
         },
         {
             "file": "packages/bricksui-form/lib/bu-editor.js",
@@ -781,7 +1103,7 @@
         {
             "file": "packages/bricksui-form/lib/bu-editor.js",
             "line": 122,
-            "description": "将textarea转换未UMeditor实例",
+            "description": "将textarea转换为UMeditor实例",
             "access": "private",
             "tagname": "",
             "itemtype": "method",
@@ -826,7 +1148,7 @@
         {
             "file": "packages/bricksui-form/lib/checkbox.js",
             "line": 17,
-            "description": "初始化操作，模仿Ember.Component,将视图上下文设置未自身，并从Ember.EasyForm.Config中获取模板",
+            "description": "初始化操作，模仿Ember.Component,将视图上下文设置为自身，并从Ember.EasyForm.Config中获取模板",
             "itemtype": "method",
             "name": "init",
             "class": "Ember.EasyForm.Checkbox",
@@ -903,7 +1225,7 @@
             "tagname": "",
             "itemtype": "method",
             "name": "_elementDestroy",
-            "description": "在收到通知需进行销毁后，销毁chsen组建",
+            "description": "在收到通知需进行销毁后，销毁chsen组件",
             "class": "Ember.EasyForm.Select",
             "module": "bricksui",
             "submodule": "bricksui-form",
@@ -939,37 +1261,68 @@
             "file": "packages/bricksui-form/lib/form-config.js",
             "line": 1,
             "description": "bootstrap横排样式\n布局分隔为100%撑满，\nLabel在input左方，验证信息在input下方",
-            "class": "Ember.EasyForm.Radio",
+            "class": "Ember.EasyForm",
             "module": "bricksui",
-            "namespace": "Ember.EasyForm"
+            "namespace": "Ember"
         },
         {
             "file": "packages/bricksui-form/lib/form-config.js",
             "line": 21,
             "description": "bootstrap默认样式\n布局分隔为100%撑满，\nLabel在input上方，验证信息在input下方",
-            "class": "Ember.EasyForm.Radio",
+            "class": "Ember.EasyForm",
             "module": "bricksui",
-            "namespace": "Ember.EasyForm"
+            "namespace": "Ember"
         },
         {
             "file": "packages/bricksui-form/lib/form-config.js",
             "line": 70,
             "description": "拓展校验字段",
-            "class": "Ember.EasyForm.Radio",
+            "class": "Ember.EasyForm",
             "module": "bricksui",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/form-docs.js",
+            "line": 168,
+            "description": "###Wrapper\nWrapper定义了EasyForm渲染视图时的样式与模板\n\n可定制项包括:\n+ fieldErrorClass - class used by the field containing errors\n+ formClass - class used by the form\n+ inputClass - class used by the div containing all elements of the input (label, input, error and hint)\n+ errorClass - class used by the error message\n+ hintClass - class used by the hint message\n+ labelClass - class used by the label\n+ inputTemplate - template used by {{input}}\n+ labelTemplate - template used by {{label-field}}\n+ errorTemplate - template used by {{error-field}}\n+ hintTemplate - template used by {{hint-field}}\n\n####默认Wrapper配置情况\n+ formClass - \"\" (empty)\n+ fieldErrorClass - \"fieldWithErrors\"\n+ inputClass - \"input\"\n+ errorClass - \"error\"\n+ hintClass - \"hint\"\n+ labelClass - \"\" (empty)\n+ inputTemplate - \"easyForm/input\"\n+ labelTemplate - \"easyForm/label\"\n+ errorTemplate - \"easyForm/error\"\n+ hintTemplate - \"easyForm/hint\"",
+            "itemtype": "property",
+            "name": "Wrapper",
+            "memberof": "Ember.EasyForm",
+            "class": "Ember.EasyForm.Config",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember.EasyForm"
+        },
+        {
+            "file": "packages/bricksui-form/lib/form-docs.js",
+            "line": 203,
+            "description": "向Ember.EasyForm Wrapper中注册一个Wraper\n```javascript\nEmber.EasyForm.Config.registerWrapper('my-wrapper', {\n formClass: 'my-form',\n errorClass: 'my-error',\n hintClass: 'my-hint',\n labelClass: 'my-label'\n});\n```\n\n```handlebars\n{{#form-for model wrapper=\"my-wrapper\"}}\n  {{input firstName}}\n  {{input lastName}}\n{{/form-for}}\n```\n编译结果为\n```html\n  <form class=\"my-form\">\n    <div class=\"input string\">\n      <label for=\"ember1\">First name</label>\n      <input id=\"ember1\" type=\"text\"/>\n      <span class=\"error\"></span>\n    </div>\n    <div class=\"input string\">\n      <label for=\"ember2\" class=\"my-label\">Last name</label>\n      <input id=\"ember2\" type=\"text\"/>\n      <span class=\"error my-error\"></span>\n    </div>\n  </form>\n```\n\n----------------------------------------\nEmber.EasyForm也支持向Wrapper中注册模板\n```javascript\n    Ember.EasyForm.Config.registerWrapper('twitter-bootstrap', {\n     // Define the custom template\n     inputTemplate: 'bootstrap-input',\n\n     // Define a custom config used by the template\n     controlsWrapperClass: 'controls',\n\n     // Define the classes for the form, label, error...\n     formClass: 'form-horizontal',\n     fieldErrorClass: 'error',\n     errorClass: 'help-inline',\n     hintClass: 'help-block',\n     labelClass: 'control-label',\n     inputClass: 'control-group'\n   });\n```\nbootstrap-input模板\n```handlebars\n  {{label-field propertyBinding=\"view.property\" textBinding=\"view.label\"}}\n      <div class=\"{{unbound view.wrapperConfig.controlsWrapperClass}}\">\n  {{partial \"easyForm/inputControls\"}}\n</div>\n```",
+            "itemtype": "method",
+            "name": "registerWrapper",
+            "class": "Ember.EasyForm.Config",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
             "namespace": "Ember.EasyForm"
         },
         {
             "file": "packages/bricksui-form/lib/form-setup.js",
-            "line": 5,
+            "line": 6,
             "description": "向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor",
             "class": "Ember.EasyForm.Radio",
             "module": "bricksui",
             "namespace": "Ember.EasyForm"
         },
         {
+            "file": "packages/bricksui-form/lib/swap-helpers.js",
+            "line": 1,
+            "description": "Created by jiangwy on 14-6-25.",
+            "class": "Ember.I18n",
+            "module": "bricksui",
+            "namespace": "Ember.EasyForm"
+        },
+        {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 9,
+            "line": 12,
             "description": "从cookie中获取已保留的语言选择情况",
             "return": {
                 "description": "如果语言选择已经保存在cookie中，则返回已保存的语言结构，如果不存在则返回空",
@@ -981,7 +1334,7 @@
         },
         {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 21,
+            "line": 24,
             "description": "获取并解析客户端语言",
             "return": {
                 "description": "}",
@@ -993,7 +1346,7 @@
         },
         {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 36,
+            "line": 53,
             "description": "根据命名约定，从项目文件中加载语言包",
             "params": [
                 {
@@ -1011,7 +1364,7 @@
         },
         {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 64,
+            "line": 84,
             "description": "持久化用户所保存的语言选择",
             "params": [
                 {
@@ -1026,7 +1379,7 @@
         },
         {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 74,
+            "line": 95,
             "description": "将语言对象合并到BricksUI.I18n.lang Hash下，并同步到Ember.I18n.translations对象下",
             "params": [
                 {
@@ -1041,7 +1394,7 @@
         },
         {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 86,
+            "line": 107,
             "description": "在项目载入时进行I18n的选择，并根据是否开启语言选择持久化，保存语言选择",
             "access": "private",
             "tagname": "",
@@ -1053,7 +1406,7 @@
         },
         {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 101,
+            "line": 119,
             "description": "语言切换,用户可以通过传入的语言标识符进行语言切换\n需要在对应的项目下有对应的语言包\napp\n     lang\n         en.js\n         zh-cn.js\n 传入的标识符即为lang下的对应的文件名",
             "itemtype": "method",
             "name": "setLang",
@@ -1064,6 +1417,18 @@
                     "type": "String"
                 }
             ],
+            "class": "BricksUI.I18n",
+            "module": "bricksui",
+            "submodule": "bricksui-i18n"
+        },
+        {
+            "file": "packages/bricksui-i18n/lib/i18n-support.js",
+            "line": 155,
+            "description": "获取语言内容，如果开启了Cookie语言持久化功能，则优先从cooie内查找语言对象",
+            "return": {
+                "description": "",
+                "type": "*"
+            },
             "class": "BricksUI.I18n",
             "module": "bricksui",
             "submodule": "bricksui-i18n"
@@ -1089,6 +1454,14 @@
             "module": "bricksui",
             "submodule": "bricksui-i18n",
             "namespace": "BricksUI.I18n"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/main.js",
+            "line": 1,
+            "description": "Created by jiangwy on 14-6-26.",
+            "class": "",
+            "module": "bricksui",
+            "namespace": "BricksUI"
         }
     ],
     "warnings": [
@@ -1105,16 +1478,24 @@
             "line": " packages/bricksui-metal/lib/stateable.js:109"
         },
         {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:9"
+            "message": "unknown tag: memberof",
+            "line": " packages/bricksui-form/lib/form-docs.js:168"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:21"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:12"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:36"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:24"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:53"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:155"
         },
         {
             "message": "Missing item type\n构建主入口文件",
@@ -1197,6 +1578,18 @@
             "line": " packages/bricksui-metal/lib/view.js:41"
         },
         {
+            "message": "Missing item type\ninput fix，根据在输入的格式校验失败后，尝试将输入项转换为Date类型，如果成功，则进行格式转换并输出",
+            "line": " packages/bricksui-form/lib/bu-datepicker.js:64"
+        },
+        {
+            "message": "Missing item type\n在时间格式校验失败后，进行泛类型时间尝试",
+            "line": " packages/bricksui-form/lib/bu-datepicker.js:93"
+        },
+        {
+            "message": "Missing item type\n在视图销毁时，清除datepicker Dom 对象",
+            "line": " packages/bricksui-form/lib/bu-datepicker.js:121"
+        },
+        {
             "message": "Missing item type",
             "line": " packages/bricksui-form/lib/checkbox.js:61"
         },
@@ -1214,27 +1607,39 @@
         },
         {
             "message": "Missing item type\n向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor",
-            "line": " packages/bricksui-form/lib/form-setup.js:5"
+            "line": " packages/bricksui-form/lib/form-setup.js:6"
+        },
+        {
+            "message": "Missing item type\nCreated by jiangwy on 14-6-25.",
+            "line": " packages/bricksui-form/lib/swap-helpers.js:1"
         },
         {
             "message": "Missing item type\n从cookie中获取已保留的语言选择情况",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:9"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:12"
         },
         {
             "message": "Missing item type\n获取并解析客户端语言",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:21"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:24"
         },
         {
             "message": "Missing item type\n根据命名约定，从项目文件中加载语言包",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:36"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:53"
         },
         {
             "message": "Missing item type\n持久化用户所保存的语言选择",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:64"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:84"
         },
         {
             "message": "Missing item type\n将语言对象合并到BricksUI.I18n.lang Hash下，并同步到Ember.I18n.translations对象下",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:74"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:95"
+        },
+        {
+            "message": "Missing item type\n获取语言内容，如果开启了Cookie语言持久化功能，则优先从cooie内查找语言对象",
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:155"
+        },
+        {
+            "message": "Missing item type\nCreated by jiangwy on 14-6-26.",
+            "line": " packages/bricksui-thirdpart/lib/main.js:1"
         }
     ]
 }

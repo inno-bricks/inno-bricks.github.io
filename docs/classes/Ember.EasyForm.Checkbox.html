@@ -41,6 +41,8 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
                 <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
@@ -51,13 +53,23 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
             
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
                 <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
             
             </ul>
 
@@ -140,7 +152,7 @@
     <p>拓展Ember.EasyForm.Input的CheckBox功能
 提供复选框按钮组的功能
 使用方式如:</p>
-<pre class="code prettyprint"><code class="lang-handlebars">{{checkbox something modelBinding="model" propertyPath="something" elementsBinding="fruits" labelPath="name"}}</code></pre>
+<pre class="code prettyprint"><code class="lang-handlebars">{{checkbox something modelBinding=&quot;model&quot; propertyPath=&quot;something&quot; elementsBinding=&quot;fruits&quot; labelPath=&quot;name&quot;}}</code></pre>
 
 </div>
 
@@ -278,7 +290,7 @@
   </div>
     <div class="description">
       <h3>Summary</h3>
-        <p>初始化操作，模仿Ember.Component,将视图上下文设置未自身，并从Ember.EasyForm.Config中获取模板</p>
+        <p>初始化操作，模仿Ember.Component,将视图上下文设置为自身，并从Ember.EasyForm.Config中获取模板</p>
 
     </div>
 
@@ -342,7 +354,7 @@
     <div class="description">
       <h3>Summary</h3>
         <p>复选框的模型，必须为一个数组类型
-如 elements为 [{key:1,value:"123"},{key:2,value:"234"}]</p>
+如 elements为 [{key:1,value:&quot;123&quot;},{key:2,value:&quot;234&quot;}]</p>
 
     </div>
 
@@ -400,7 +412,7 @@
     <div class="description">
       <h3>Summary</h3>
         <p>标签属性
-如 elements为 [{key:1,value:"123"},{key:2,value:"234"}]需要将value值作为label展示，则只需设置labelPath为value</p>
+如 elements为 [{key:1,value:&quot;123&quot;},{key:2,value:&quot;234&quot;}]需要将value值作为label展示，则只需设置labelPath为value</p>
 
     </div>
 
