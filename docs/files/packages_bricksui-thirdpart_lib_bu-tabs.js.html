@@ -41,7 +41,23 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
                 <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
             
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
@@ -53,9 +69,17 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
                 <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
             
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
             
@@ -82,6 +106,8 @@
                 <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
             
                 <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
             
             </ul>
         </div>
@@ -124,9 +150,10 @@
     <pre class="code prettyprint linenums">
 /**
  @module bricksui
- @submodule bricksui-form
+ @submodule bricksui-thirdpart
  */
 /**
+ ####&#x60;tabs&#x60; 组件基本用法
  一个&#x60;tab-pane&#x60;代表一个tab页签
  &#x60;bu-tabs-panes&#x60; 需要有一个&#x60;contentBinding&#x60; 属性,用来生成所有的tab标签页,
  &#x60;bu-tabs-panes&#x60;与&#x60;bu-tabs&#x60;是配套使用的,&#x60;bu-tabs&#x60;生成tab组件页签头,&#x60;bu-tabs-panes&#x60;生成内容,
@@ -143,6 +170,7 @@
  * &#x60;bu-tabs-panes&#x60;根据content生成各个内容标签
  * &#x60;items-id&#x60; 必须要跟&#x60;bu-tabs&#x60;的id挂钩
  * &#x60;default&#x60;可以设置tab组件的默认标签页
+ * &#x60;justified&#x60; 设定&#x60;tab&#x60;组件是否宽度自适应
 
  配置项如下:
 
@@ -156,12 +184,37 @@
 
  &#x60;template&#x60; 指定tab内容页的模板
  &#x60;controller&#x60; 可以指定tabs标签页的控制器
-
  &#x60;&#x60;&#x60;
+
+ ####&#x60;tabs&#x60; 组件与路由相结合
+ 定义路由:
+ &#x60;&#x60;&#x60;javascript
+     this.resource(&#x27;user&#x27;, function() {
+      this.route(&#x27;general&#x27;);
+      this.route(&#x27;privacy&#x27;);
+      return this.route(&#x27;activities&#x27;);
+    });
+ &#x60;&#x60;&#x60;
+ 在对应的user的template里面
+ &#x60;&#x60;&#x60;html
+ {{bs-tabs contentBinding=&quot;tabsMeta&quot;}}
+ {{outlet}}
+ &#x60;&#x60;&#x60;
+ 控制器
+ &#x60;&#x60;&#x60;javascript
+ App.UserController = Ember.Controller.extend({
+  tabsMeta: [
+    Ember.Object.create({title: &#x27;General&#x27;, linkTo: &#x27;user.general&#x27;}),
+    Ember.Object.create({title: &#x27;Privacy&#x27;, linkTo: &#x27;user.privacy&#x27;}),
+    Ember.Object.create({title: &#x27;Activities&#x27;, linkTo: &#x27;user.activities&#x27;})
+  ]
+});
+ &#x60;&#x60;&#x60;
+ 然后定义各个tab页签对应的模板
 
  @namespace BricksUI
  @class BuTabs
- @extends Ember.Namespace
+ @extends Ember.View
  */
     </pre>
 </div>

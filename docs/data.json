@@ -85,11 +85,33 @@
                 "Ember": 1
             }
         },
+        "packages/bricksui-form/lib/bu-daterange.js": {
+            "name": "packages/bricksui-form/lib/bu-daterange.js",
+            "modules": {},
+            "classes": {
+                "Ember.BuDateRange": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember": 1
+            }
+        },
         "packages/bricksui-form/lib/bu-editor.js": {
             "name": "packages/bricksui-form/lib/bu-editor.js",
             "modules": {},
             "classes": {
                 "Ember.BuEditor": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Ember": 1
+            }
+        },
+        "packages/bricksui-form/lib/bu-tree.js": {
+            "name": "packages/bricksui-form/lib/bu-tree.js",
+            "modules": {},
+            "classes": {
+                "Ember.BuTree": 1
             },
             "fors": {},
             "namespaces": {
@@ -183,13 +205,6 @@
                 "Ember.EasyForm": 1
             }
         },
-        "packages/bricksui-form/lib/swap-helpers.js": {
-            "name": "packages/bricksui-form/lib/swap-helpers.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
         "packages/bricksui-i18n/lib/i18n-docs.js": {
             "name": "packages/bricksui-i18n/lib/i18n-docs.js",
             "modules": {
@@ -236,11 +251,103 @@
                 "BricksUI.I18n": 1
             }
         },
+        "packages/bricksui-thirdpart/lib/mixins/pageable.js": {
+            "name": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "modules": {
+                "bricksui-thirdpart": 1
+            },
+            "classes": {
+                "BricksUI.StaticPageable": 1,
+                "BricksUI.DynamicPageable": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/bu-alert.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-alert.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuAlert": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/bu-growl-notifications.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-growl-notifications.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuGrowlNotifications": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/bu-modal.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-modal.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuModal": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/bu-pagination.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuPagination": 1,
+                "BricksUI.TableHeader": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/bu-panel.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-panel.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuPanel": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/bu-progress.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-progress.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuProgress": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
         "packages/bricksui-thirdpart/lib/bu-tabs.js": {
             "name": "packages/bricksui-thirdpart/lib/bu-tabs.js",
             "modules": {},
             "classes": {
                 "BricksUI.BuTabs": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "BricksUI": 1
+            }
+        },
+        "packages/bricksui-thirdpart/lib/bu-wizard.js": {
+            "name": "packages/bricksui-thirdpart/lib/bu-wizard.js",
+            "modules": {},
+            "classes": {
+                "BricksUI.BuWizard": 1
             },
             "fors": {},
             "namespaces": {
@@ -261,14 +368,17 @@
             "submodules": {
                 "bricksui-metal": 1,
                 "bricksui-form": 1,
-                "bricksui-i18n": 1
+                "bricksui-i18n": 1,
+                "bricksui-thirdpart": 1
             },
             "classes": {
                 "BricksUI": 1,
                 "BricksUI.ENV": 1,
                 "BricksUI.StateHandler": 1,
                 "Ember.BuDatePicker": 1,
+                "Ember.BuDateRange": 1,
                 "Ember.BuEditor": 1,
+                "Ember.BuTree": 1,
                 "Ember.EasyForm.Checkbox": 1,
                 "Ember.EasyForm.Select": 1,
                 "Ember.Validations": 1,
@@ -279,7 +389,17 @@
                 "BricksUI.I18n": 1,
                 "BricksUI.I18n.I18nableValidationMixin": 1,
                 "BricksUI.I18n.lang": 1,
-                "BricksUI.BuTabs": 1
+                "BricksUI.StaticPageable": 1,
+                "BricksUI.DynamicPageable": 1,
+                "BricksUI.BuAlert": 1,
+                "BricksUI.BuGrowlNotifications": 1,
+                "BricksUI.BuModal": 1,
+                "BricksUI.BuPagination": 1,
+                "BricksUI.TableHeader": 1,
+                "BricksUI.BuPanel": 1,
+                "BricksUI.BuProgress": 1,
+                "BricksUI.BuTabs": 1,
+                "BricksUI.BuWizard": 1
             },
             "fors": {
                 "BricksUI.ENV": 1,
@@ -293,7 +413,7 @@
                 "Ember.EasyForm": 1,
                 "BricksUI.I18n": 1
             },
-            "file": "packages/bricksui-thirdpart/lib/bu-tabs.js",
+            "file": "packages/bricksui-thirdpart/lib/bu-wizard.js",
             "line": 5
         },
         "bricksui-metal": {
@@ -324,14 +444,15 @@
             "submodules": {},
             "classes": {
                 "Ember.BuDatePicker": 1,
+                "Ember.BuDateRange": 1,
                 "Ember.BuEditor": 1,
+                "Ember.BuTree": 1,
                 "Ember.EasyForm.Checkbox": 1,
                 "Ember.EasyForm.Select": 1,
                 "Ember.Validations": 1,
                 "Ember.EasyForm": 1,
                 "Ember.EasyForm.Config": 1,
-                "Ember.EasyForm.Radio": 1,
-                "BricksUI.BuTabs": 1
+                "Ember.EasyForm.Radio": 1
             },
             "fors": {
                 "Ember.EasyForm.Config": 1
@@ -339,13 +460,12 @@
             "is_submodule": 1,
             "namespaces": {
                 "Ember": 1,
-                "Ember.EasyForm": 1,
-                "BricksUI": 1
+                "Ember.EasyForm": 1
             },
             "module": "bricksui",
             "namespace": "",
-            "file": "packages/bricksui-thirdpart/lib/bu-tabs.js",
-            "line": 5,
+            "file": "packages/bricksui-form/lib/radio.js",
+            "line": 7,
             "description": "BricksUI表单支持模块，对Ember-Easy-Form进行功能拓展，整合Validation与I18n"
         },
         "bricksui-i18n": {
@@ -372,6 +492,33 @@
             "line": 31,
             "description": "国际化支持",
             "is_constructor": 1
+        },
+        "bricksui-thirdpart": {
+            "name": "bricksui-thirdpart",
+            "submodules": {},
+            "classes": {
+                "BricksUI.StaticPageable": 1,
+                "BricksUI.DynamicPageable": 1,
+                "BricksUI.BuAlert": 1,
+                "BricksUI.BuGrowlNotifications": 1,
+                "BricksUI.BuModal": 1,
+                "BricksUI.BuPagination": 1,
+                "BricksUI.TableHeader": 1,
+                "BricksUI.BuPanel": 1,
+                "BricksUI.BuProgress": 1,
+                "BricksUI.BuTabs": 1,
+                "BricksUI.BuWizard": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "BricksUI": 1
+            },
+            "module": "bricksui",
+            "namespace": "",
+            "file": "packages/bricksui-thirdpart/lib/bu-wizard.js",
+            "line": 5,
+            "description": "基于Bootstrap的扩展组件"
         }
     },
     "classes": {
@@ -434,8 +581,24 @@
             "submodule": "bricksui-form",
             "namespace": "Ember",
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 8,
+            "line": 10,
             "description": "Bootstrap时间日期选择插件，可配置的参数有\n```javascript\nvar options={\n        minViewMode:null                //可选值为['months','years']纯月份选择/年选择\n        viewMode:null                   //可选值为['months','years']纯月份选择/年选择\n        pickDate: true,                 //是否启用日期选择\n        pickTime: true,                 //是否启用事件选择\n        useMinutes: true,               //是否启用分钟选择\n        useSeconds: true,               //是否启用秒钟选择\n        useCurrent: true,               //当useCurrent设置为true，该组件将默认选择当前日期\n        minuteStepping:1,               //分钟间隔设置(可选择的分钟间隔)\n        minDate:`1/1/1900`,             //最小可选择的时间\n        maxDate: ,                      //最大的可选择事件(默认为当天 100年后)\n        showToday: true,                 //shows the today indicator\n        language:'en',                  //设置默认语言区\n        defaultDate:\"\",                 //sets a default date, accepts js dates, strings and moment objects\n        disabledDates:[],               //an array of dates that cannot be selected\n        enabledDates:[],                //an array of dates that can be selected\n        icons = {\n               time: 'glyphicon glyphicon-time',\n               date: 'glyphicon glyphicon-calendar',\n               up:   'glyphicon glyphicon-chevron-up',\n               down: 'glyphicon glyphicon-chevron-down'\n           }\n        useStrict: false,               //use \"strict\" when validating dates\n        sideBySide: false,              //show the date and time picker side by side\n        daysOfWeekDisabled:[]          //for example use daysOfWeekDisabled: [0,6] to disable weekends\n   }\n```\n\n组件使用方式为\n```handlebars\n{{bu-datepicker value=value}}\n```",
+            "extends": "Ember.Component"
+        },
+        "Ember.BuDateRange": {
+            "name": "Ember.BuDateRange",
+            "shortname": "Ember.BuDateRange",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember",
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 9,
+            "description": "Bootstrap时间日期选择插件，可配置的参数有\n```javascript\n$('input[name=\"daterange\"]').daterangepicker(\n{\n  format: 'YYYY-MM-DD',\n  startDate: '2013-01-01',\n  endDate: '2013-12-31'\n},\nfunction(start, end, label) {\n         alert('A date range was chosen: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));\n       }\n);\n//第一个参数为DateRange组件的配置项，第二个参数为值改变后的回调函数，可利用该回调函数进行dom操作等\n```\n可选的options参数有\n```html\nstartDate: (Date object, moment object or string) 起始日期，值可以为一个Date类型对象或moment类型对象\n\nendDate: (Date object, moment object or string) 结束日期，值可以为一个Date类型对象或moment类型对象\n\nminDate: (Date object, moment object or string) 可供选择的最小日期，值可以为一个Date类型对象或moment类型对象\n\nmaxDate: (Date object, moment object or string) 可供选择的最大日期，值可以为一个Date类型对象或moment类型对象\n\ndateLimit: (object) 起始到结束最大的日期区间，(moment时间区间)\n\nshowDropdowns: (boolean) Show year and month select boxes above calendars to jump to a specific month and year\n\nshowWeekNumbers: (boolean) Show week numbers at the start of each week on the calendars\n\ntimePicker: (boolean) 是否允许具体时间选择\n\ntimePickerIncrement: (number) Increment of the minutes selection list for times (i.e. 30 to allow only selection of times ending in 0 or 30)\n\ntimePicker12Hour: (boolean) Use 12-hour instead of 24-hour times, adding an AM/PM select box\n\nranges: (object) Set predefined date ranges the user can select from. Each key is the label for the range, and its value an array with two dates representing the bounds of the range\n\nopens: (string: 'left'/'right') Whether the picker appears aligned to the left or to the right of the HTML element it's attached to\n\nbuttonClasses: (array) CSS class names that will be added to all buttons in the picker\n\napplyClass: (string) CSS class string that will be added to the apply button\n\ncancelClass: (string) CSS class string that will be added to the cancel button\n\nformat: (string) Date/time format string used by moment when parsing or displaying the selected dates\n\nseparator: (string) Separator string to display between the start and end date when populating a text input the picker is attached to\n\nlocale: (object) Allows you to provide localized strings for buttons and labels, and the first day of week for the calendars\n\nsingleDatePicker: (boolean) Show only a single calendar to choose one date, instead of a range picker with two calendars; the start and end dates provided to your callback will be the same single date chosen\n\nparentEl: (string) jQuery selector of the parent element that the date range picker will be added to, if not provided this will be 'body'\n```\n\n组件使用方式为\n```handlebars\n{{bu-daterange startDate=startDate endDate=endDate}}\n```",
             "extends": "Ember.Component"
         },
         "Ember.BuEditor": {
@@ -456,6 +619,22 @@
             "uses": [
                 "Ember.TextSupport"
             ]
+        },
+        "Ember.BuTree": {
+            "name": "Ember.BuTree",
+            "shortname": "Ember.BuTree",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember",
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 13,
+            "description": "树组件，对Jquery Ztree进行简单的封装\n\n使用方式\n```handlebars\n{{bu-tree options=view.treeOptions zNodes=view.zNodes}}\n```\n对应的View文件为\n```javascript\nTree View\nexport default Ember.View.extend({\n\n   init: function () {\n     this._super.apply(this,arguments);\n     this.set('treeOptions', {\n       onClick:function(component, event, treeId, treeNode, clickFlag){\n         //your code\n       }\n     });\n     this.set('zNodes', [\n         { name: \"父节点1 - 展开\", open: true,\n           children: [\n             { name: \"父节点11 - 折叠\",\n               children: [\n                 { name: \"叶子节点111\"},\n                 { name: \"叶子节点112\"},\n                 { name: \"叶子节点113\"},\n                 { name: \"叶子节点114\"}\n               ]},\n             { name: \"父节点12 - 折叠\",\n               children: [\n                 { name: \"叶子节点121\"},\n                 { name: \"叶子节点122\"},\n                 { name: \"叶子节点123\"},\n                 { name: \"叶子节点124\"}\n               ]},\n             { name: \"父节点13 - 没有子节点\", isParent: true}\n           ]},\n         { name: \"父节点2 - 折叠\",\n           children: [\n             { name: \"父节点21 - 展开\", open: true,\n               children: [\n                 { name: \"叶子节点211\"},\n                 { name: \"叶子节点212\"},\n                 { name: \"叶子节点213\"},\n                 { name: \"叶子节点214\"}\n               ]},\n             { name: \"父节点22 - 折叠\",\n               children: [\n                 { name: \"叶子节点221\"},\n                 { name: \"叶子节点222\"},\n                 { name: \"叶子节点223\"},\n                 { name: \"叶子节点224\"}\n               ]},\n             { name: \"父节点23 - 折叠\",\n               children: [\n                 { name: \"叶子节点231\"},\n                 { name: \"叶子节点232\"},\n                 { name: \"叶子节点233\"},\n                 { name: \"叶子节点234\"}\n               ]}\n           ]},\n         { name: \"父节点3 - 没有子节点\", isParent: true}\n       ]\n     );\n   }\n });\n```\n\n```html\nWarning: *组件重写了callback函数方法，加入了一层代理功能，第一个参数为component实例，用于与Ember交互，其他参数与zTree一致\n```\n\n###详细API DEMO 见 [Ztree查看更多...](http://www.ztree.me/v3/main.php#_zTreeInfo)",
+            "extends": "Ember.Component"
         },
         "Ember.EasyForm.Checkbox": {
             "name": "Ember.EasyForm.Checkbox",
@@ -501,7 +680,7 @@
             "namespace": "Ember",
             "file": "packages/bricksui-form/lib/ember-validations.js",
             "line": 5,
-            "description": "## 用法 ##\n\n需要将`Ember.Validations.Mixin`集成到任何你想要添加验证的控制器上\n\n```javascript\nvar App.UserController = Ember.ObjectController.extend(Ember.Validations.Mixin);\n```\n\n需要定义一个validations对象作为控制器的一个属性,用来标识当前模型的验证规则.\n对象的keys要一一映射模型的属性.如果你传入了一个JSON对象作为一个属性的值,则该值将被作为当前属性的验证规则.\n如果你传入了`true`,则该属性将被标记为需要被验证的.如下:\n\n```javascript\nApp.UserController.reopen({\n     validations: {\n       firstName: {\n         presence: true,\n         length: { minimum: 5 }\n       },\n       age: {\n         numericality: true\n       },\n       profile: true\n     }\n});\n```\n\n## 校验器 ##\n\n当前已经支持的校验器如下所示\n\n### Absence ###\n验证属性值是`null`,`undefined` 或者是 `''`.\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\nabsence: true\nabsence: { message: 'must be blank' }\n```\n\n### Acceptance ###\n默认可被接受的值为`'1'`, `1`, and `true`.\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `accept` - 可被接受的值\n\n```javascript\n// Examples\nacceptance: true\nacceptance: { message: 'you must accept', accept: 'yes' }\n```\n\n### Confirmation ###\n相同值校验\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\nconfirmation: true\nconfirmation: { message: 'you must confirm' }\n```\n\n### Exclusion ###\n排除校验\n\n#### Options ####\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `in` - 被允许的数组\n* `range` - 区间\n\n```javascript\n// Examples\nexclusion: { in: ['Yellow', 'Black', 'Red'] }\nexclusion: { range: [5, 10], allowBlank: true, message: 'cannot be between 5 and 10' }\n```\n\n### Format ###\n正则,格式化校验\n\n#### Options ####\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `with` - 正则表达式\n\n```javascript\n// Examples\nformat: { with: /^([a-zA-Z]|\\d)+$/, allowBlank: true, message: 'must be letters and numbers only'  }\n```\n\n### Inclusion ###\n被允许的值\n熬过校验\n#### Options ####\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息.\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `in` - 被允许的数组\n* `range` - 区间\n\n```javascript\n// Examples\ninclusion: { in: ['Yellow', 'Black', 'Red'] }\ninclusion: { range: [5, 10], allowBlank: true, message: 'must be between 5 and 10' }\n```\n\n### Length ###\n定义属性的长度\n\n#### Options ####\n* `number` - 跟`is`作用一样,长度必须时指定值\n* `array` - 数组里面有两个值,第一个元素代表最小值,第二个元素达标最大值,即长度的区间\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `minimum` - 被允许的最小长度\n* `maximum` - 被允许的最大长度\n* `is` - 跟`number`作用一样,长度必须时指定值\n* `tokenizer` - 校验时执行的自定以函数,返回一个代表长度的对象\n\n##### Messages #####\n* `tooShort` - 当不满足最小长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `tooLong` - t当不满足最大长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `wrongLength` - 当校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n\n```javascript\n// Examples\nlength: 5\nlength: [3, 5]\nlength: { is: 10, allowBlank: true }\nlength: { minimum: 3, maximum: 5, messages: { tooShort: 'should be more than 3 characters', tooLong: 'should be less than 5 characters' } }\nlength: { is: 5, tokenizer: function(value) { return value.split(''); } }\n```\n\n### Numericality ###\n校验是否是一个数值\n\n#### Options ####\n* `true` -设置为`true`将激活控制校验并且使用默认提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `onlyInteger` - 只能是整数\n* `greaterThan` - 一定要大于指定数\n* `greaterThanOrEqualTo` - 一定要大于等于指定数\n* `equalTo` - 一定要等于指定数\n* `lessThan` - 一定要小于指定数\n* `lessThanOrEqualTo` - 一定要小于等于指定数\n* `odd` - 一定是奇数\n* `even` - 一定是偶数\n\n##### Messages #####\n* `greaterThan` -当大于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `greaterThanOrEqualTo` - 当大于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `equalTo` - 当等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `lessThan` - 当小于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `lessThanOrEqualTo` - 当小于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `odd` - 当奇数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `even` - 当偶数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n\n```javascript\n// Examples\nnumericality: true\nnumericality: { odd: true, messages: { odd: 'must be an odd number' } }\nnumericality: { onlyInteger, greaterThan: 5, lessThanOrEqualTo : 10 }\n```\n\n### Presence ###\n非空校验`null`, `undefined`, or `''`\n\n#### Options ####\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\npresence: true\npresence: { message: 'must not be blank' }\n```\n\n### Uniqueness ###\n\n*尚未实现*\n\n### URL ##\n\n校验是否是一个URL.\n\n#### Options ####\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `allowIp` - 如果设置为`true`,将使用IP地址进行校验URL,IP地址默认是非法的\n* `allowUserPass` - 如果设置为`true`,将校验URL是否有用户名和密码,默认情况是不允许用户名和密码\n* `allowPort` - 如果设置为`true`,将校验URL是否带有端口号,默认情况是不允许有端口号\n* `domainOnly` - 如果设置为`true`,将校验URL是否时主域名和子域名.\n* `protocols` - 可被接受的协议数组,默认为`http`,`https`\n\n```javascript\n// Examples\nurl { allowUserPass: true }\nurl { allowBlank: true, allowIp: true, allowPort: true, protocols: ['http', 'https', 'ftp'] }\nurl { domainOnly: true }\n```\n\n### Conditional Validators ##\n\n每个校验器都可以带有一个`if` 或者 一个`unless`.条件判断.\n\n```javascript\n// function form\nfirstName: {\n     presence: {\n       if: function(object, validator) {\n         return true;\n       }\n     }\n}\n\n// string form\n// if 'canValidate' is a function on the object it will be called\n// if 'canValidate' is a property object.get('canValidate') will be called\nfirstName: {\n     presence: {\n       unless: 'canValidate'\n     }\n}\n```\n\n## Running Validations\n\n当对象被创建时,校验器将自动运行,以及每个属性改变时,也将自动校验.\n`isValid` 状态将被冒泡,并且帮助确定直接父级的校验状态\n`isInvalid` 状态同样可以被获取\n\n如果你想强制校验所有,只要在对象上调用`.validate()`方法.\n`isValid` 将被设置为`true` 或者`false`.所有校验的运行将返回promise,所以不是调用完`validate`方法,就是马上校验完毕的.\n`validate`方法返回一个promise,可以调用`then`方法添加完成后的回调\n\n```javascript\nuser.validate().then(function() {\n     user.get('isValid'); // true\n     user.get('isInvalid'); // false\n})\n```\n\n## Inspecting Errors ##\n\n当一个对象集成`Ember.Validations.Mixin`后,该对象将同时拥有一个`errors`对象,所有校验的错误信息\n将被放置在该对象上.\n\n```javascript\nApp.User = Ember.Object.extend(Ember.Validations.Mixin, {\n     validations: {\n       firstName: { presence: true }\n     }\n});\n\nuser = App.User.create();\nuser.validate().then(null, function() {\n     user.get('isValid'); // false\n     user.get('errors.firstName'); // [\"can't be blank\"]\n     user.set('firstName', 'Brian');\n     user.validate().then(function() {\n        user.get('isValid'); // true\n        user.get('errors.firstName'); // []\n     })\n})\n\n```\n\n## i18n ##\n\n国际化I18n默认包含以下的keys\n\n```javascript\nEmber.I18n.translations = {\n     errors:{\n       inclusion: \"is not included in the list\",\n       exclusion: \"is reserved\",\n       invalid: \"is invalid\",\n       confirmation: \"doesn't match {{attribute}}\",\n       accepted: \"must be accepted\",\n       empty: \"can't be empty\",\n       blank: \"can't be blank\",\n       present: \"must be blank\",\n       tooLong: \"is too long (maximum is {{count}} characters)\",\n       tooShort: \"is too short (minimum is {{count}} characters)\",\n       wrongLength: \"is the wrong length (should be {{count}} characters)\",\n       notANumber: \"is not a number\",\n       notAnInteger: \"must be an integer\",\n       greaterThan: \"must be greater than {{count}}\",\n       greaterThanOrEqualTo: \"must be greater than or equal to {{count}}\",\n       equalTo: \"must be equal to {{count}}\",\n       lessThan: \"must be less than {{count}}\",\n       lessThanOrEqualTo: \"must be less than or equal to {{count}}\",\n       otherThan: \"must be other than {{count}}\",\n       odd: \"must be odd\",\n       even: \"must be even\"\n     }\n}\n```",
+            "description": "#####[Ember.Validations更多内容查看...](https://github.com/dockyard/ember-validations)\n#### 用法\n\n需要将`Ember.Validations.Mixin`集成到任何你想要添加验证的控制器上\n\n```javascript\nvar App.UserController = Ember.ObjectController.extend(Ember.Validations.Mixin);\n```\n\n需要定义一个validations对象作为控制器的一个属性,用来标识当前模型的验证规则.\n对象的keys要一一映射模型的属性.如果你传入了一个JSON对象作为一个属性的值,则该值将被作为当前属性的验证规则.\n如果你传入了`true`,则该属性将被标记为需要被验证的.如下:\n\n```javascript\nApp.UserController.reopen({\n     validations: {\n       firstName: {\n         presence: true,\n         length: { minimum: 5 }\n       },\n       age: {\n         numericality: true\n       },\n       profile: true\n     }\n});\n```\n\n#### 校验器\n\n当前已经支持的校验器如下所示\n\n##### Absence\n验证属性值是`null`,`undefined` 或者是 `''`.\n\n###### Options\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\nabsence: true\nabsence: { message: 'must be blank' }\n```\n\n##### Acceptance\n默认可被接受的值为`'1'`, `1`, and `true`.\n\n###### Options\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `accept` - 可被接受的值\n\n```javascript\n// Examples\nacceptance: true\nacceptance: { message: 'you must accept', accept: 'yes' }\n```\n\n##### Confirmation\n相同值校验\n\n###### Options\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\nconfirmation: true\nconfirmation: { message: 'you must confirm' }\n```\n\n##### Exclusion\n排除校验\n\n###### Options\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `in` - 被允许的数组\n* `range` - 区间\n\n```javascript\n// Examples\nexclusion: { in: ['Yellow', 'Black', 'Red'] }\nexclusion: { range: [5, 10], allowBlank: true, message: 'cannot be between 5 and 10' }\n```\n\n##### Format\n正则,格式化校验\n\n###### Options\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `with` - 正则表达式\n\n```javascript\n// Examples\nformat: { with: /^([a-zA-Z]|\\d)+$/, allowBlank: true, message: 'must be letters and numbers only'  }\n```\n\n##### Inclusion\n被允许的值\n熬过校验\n###### Options\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息.\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `in` - 被允许的数组\n* `range` - 区间\n\n```javascript\n// Examples\ninclusion: { in: ['Yellow', 'Black', 'Red'] }\ninclusion: { range: [5, 10], allowBlank: true, message: 'must be between 5 and 10' }\n```\n\n##### Length\n定义属性的长度\n\n###### Options\n* `number` - 跟`is`作用一样,长度必须时指定值\n* `array` - 数组里面有两个值,第一个元素代表最小值,第二个元素达标最大值,即长度的区间\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `minimum` - 被允许的最小长度\n* `maximum` - 被允许的最大长度\n* `is` - 跟`number`作用一样,长度必须时指定值\n* `tokenizer` - 校验时执行的自定以函数,返回一个代表长度的对象\n\n###### Messages\n* `tooShort` - 当不满足最小长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `tooLong` - t当不满足最大长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `wrongLength` - 当校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n\n```javascript\n// Examples\nlength: 5\nlength: [3, 5]\nlength: { is: 10, allowBlank: true }\nlength: { minimum: 3, maximum: 5, messages: { tooShort: 'should be more than 3 characters', tooLong: 'should be less than 5 characters' } }\nlength: { is: 5, tokenizer: function(value) { return value.split(''); } }\n```\n\n##### Numericality\n校验是否是一个数值\n\n###### Options\n* `true` -设置为`true`将激活控制校验并且使用默认提示信息\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `onlyInteger` - 只能是整数\n* `greaterThan` - 一定要大于指定数\n* `greaterThanOrEqualTo` - 一定要大于等于指定数\n* `equalTo` - 一定要等于指定数\n* `lessThan` - 一定要小于指定数\n* `lessThanOrEqualTo` - 一定要小于等于指定数\n* `odd` - 一定是奇数\n* `even` - 一定是偶数\n\n###### Messages\n* `greaterThan` -当大于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `greaterThanOrEqualTo` - 当大于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `equalTo` - 当等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `lessThan` - 当小于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `lessThanOrEqualTo` - 当小于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `odd` - 当奇数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n* `even` - 当偶数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息\n\n```javascript\n// Examples\nnumericality: true\nnumericality: { odd: true, messages: { odd: 'must be an odd number' } }\nnumericality: { onlyInteger, greaterThan: 5, lessThanOrEqualTo : 10 }\n```\n\n##### Presence\n非空校验`null`, `undefined`, or `''`\n\n###### Options\n* `true` - 设置为`true`将激活控制校验并且使用默认提示信息\n* `message` - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息\n\n```javascript\n// Examples\npresence: true\npresence: { message: 'must not be blank' }\n```\n\n##### Uniqueness\n\n*尚未实现*\n\n##### URL\n\n校验是否是一个URL.\n\n###### Options\n* `allowBlank` - 如果设置为`true`,值为空将跳过校验\n* `allowIp` - 如果设置为`true`,将使用IP地址进行校验URL,IP地址默认是非法的\n* `allowUserPass` - 如果设置为`true`,将校验URL是否有用户名和密码,默认情况是不允许用户名和密码\n* `allowPort` - 如果设置为`true`,将校验URL是否带有端口号,默认情况是不允许有端口号\n* `domainOnly` - 如果设置为`true`,将校验URL是否时主域名和子域名.\n* `protocols` - 可被接受的协议数组,默认为`http`,`https`\n\n```javascript\n// Examples\nurl { allowUserPass: true }\nurl { allowBlank: true, allowIp: true, allowPort: true, protocols: ['http', 'https', 'ftp'] }\nurl { domainOnly: true }\n```\n\n##### Conditional Validators\n\n每个校验器都可以带有一个`if` 或者 一个`unless`.条件判断.\n\n```javascript\n// function form\nfirstName: {\n     presence: {\n       if: function(object, validator) {\n         return true;\n       }\n     }\n}\n\n// string form\n// if 'canValidate' is a function on the object it will be called\n// if 'canValidate' is a property object.get('canValidate') will be called\nfirstName: {\n     presence: {\n       unless: 'canValidate'\n     }\n}\n```\n\n##### Running Validations\n\n当对象被创建时,校验器将自动运行,以及每个属性改变时,也将自动校验.\n`isValid` 状态将被冒泡,并且帮助确定直接父级的校验状态\n`isInvalid` 状态同样可以被获取\n\n如果你想强制校验所有,只要在对象上调用`.validate()`方法.\n`isValid` 将被设置为`true` 或者`false`.所有校验的运行将返回promise,所以不是调用完`validate`方法,就是马上校验完毕的.\n`validate`方法返回一个promise,可以调用`then`方法添加完成后的回调\n\n```javascript\nuser.validate().then(function() {\n     user.get('isValid'); // true\n     user.get('isInvalid'); // false\n})\n```\n\n##### Inspecting Errors\n\n当一个对象集成`Ember.Validations.Mixin`后,该对象将同时拥有一个`errors`对象,所有校验的错误信息\n将被放置在该对象上.\n\n```javascript\nApp.User = Ember.Object.extend(Ember.Validations.Mixin, {\n     validations: {\n       firstName: { presence: true }\n     }\n});\n\nuser = App.User.create();\nuser.validate().then(null, function() {\n     user.get('isValid'); // false\n     user.get('errors.firstName'); // [\"can't be blank\"]\n     user.set('firstName', 'Brian');\n     user.validate().then(function() {\n        user.get('isValid'); // true\n        user.get('errors.firstName'); // []\n     })\n})\n\n```\n\n##### i18n\n\n国际化I18n默认包含以下的keys\n\n```javascript\nEmber.I18n.translations = {\n     errors:{\n       inclusion: \"is not included in the list\",\n       exclusion: \"is reserved\",\n       invalid: \"is invalid\",\n       confirmation: \"doesn't match {{attribute}}\",\n       accepted: \"must be accepted\",\n       empty: \"can't be empty\",\n       blank: \"can't be blank\",\n       present: \"must be blank\",\n       tooLong: \"is too long (maximum is {{count}} characters)\",\n       tooShort: \"is too short (minimum is {{count}} characters)\",\n       wrongLength: \"is the wrong length (should be {{count}} characters)\",\n       notANumber: \"is not a number\",\n       notAnInteger: \"must be an integer\",\n       greaterThan: \"must be greater than {{count}}\",\n       greaterThanOrEqualTo: \"must be greater than or equal to {{count}}\",\n       equalTo: \"must be equal to {{count}}\",\n       lessThan: \"must be less than {{count}}\",\n       lessThanOrEqualTo: \"must be less than or equal to {{count}}\",\n       otherThan: \"must be other than {{count}}\",\n       odd: \"must be odd\",\n       even: \"must be even\"\n     }\n}\n```",
             "extends": "Ember.Namespace"
         },
         "Ember.EasyForm": {
@@ -615,6 +794,152 @@
             "type": "{Object}",
             "default": "zh-cn"
         },
+        "BricksUI.StaticPageable": {
+            "name": "BricksUI.StaticPageable",
+            "shortname": "BricksUI.StaticPageable",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 67,
+            "description": "静态数据处理扩展,用于分页处理",
+            "type": "{Ember.Mixin}"
+        },
+        "BricksUI.DynamicPageable": {
+            "name": "BricksUI.DynamicPageable",
+            "shortname": "BricksUI.DynamicPageable",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 223,
+            "description": "基于Ember-Data的数据处理扩展,用于分页处理\n分页扩展,用于增强控制器的功能,使控制器具备分页管理功能\n* `modelName`  必须配置,当前分页组件所要请求的模型名称\n* `query` 要传入到后台的查询参数,是一个计算属性,需要返回`Object`\n```javascript\nApp.ApplicationController = Ember.ArrayController.extend(BricksUI.DynamicPageable,{\n   perPage: 5,\n   modelName:\"user\",\n   firstName:\"xx\",\n   selectedPageSize:5,\n   pageSizes: [\n      5,10,15,20\n   ],\n   query:function(){\n       return {\n           firstName:this.get('firstName'),\n           limit:this.get('selectedPageSize')\n       }\n   }.property(\"firstName\",\"city\").volatile()\n});\n```\n`BricksUI.DynamicPageable` 用于扩展控制器的分页功能\n`BricksUI.BuPagination` 用于分页组件视图的呈现,并且将`action`委托给控制器",
+            "type": "{Ember.Mixin}"
+        },
+        "BricksUI.BuAlert": {
+            "name": "BricksUI.BuAlert",
+            "shortname": "BricksUI.BuAlert",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-alert.js",
+            "line": 5,
+            "description": "对应Bootstrap alert组件，对Bootstrap alert进行轻量级封装\n\n\n####基本用法\n```handlebars\n{{bu-alert message=\"A warning alert with simple message.\" type=\"warning\"}}\n```\n\n####利用bootstrap的样式\n* type=`primary`\n* type=`success`\n* type=`info`\n* type=`warning`\n* type=`danger`\n\n```javascript\n{{#bu-alert message=\"Primary alert\" type=\"primary\"}}\n<p>Panel content.</p>\n{{/bu-alert}}\n{{#bu-alert message=\"Success alert\" type=\"success\"}}\n<p>Panel content.</p>\n{{/bu-alert}}\n{{#bu-alert message=\"Info alert\" type=\"info\"}}\n<p>Panel content.</p>\n{{/bu-alert}}\n{{#bu-alert message=\"Warning alert\" type=\"warning\"}}\n<p>Panel content.</p>\n{{/bu-alert}}\n{{#bu-alert message=\"Danger alert\" type=\"danger\"}}\n<p>Panel content.</p>\n{{/bu-alert}}\n```\n\n#### 更多可选配置\n* `message` alert内显示的信息\n* `dismiss` 设定panel是否可以被关闭,`true` `false`\n* `dismissAfter` 配置`dismissAfter` alert会在多少秒后消失 `number`\n* `fade` 配置`fade` ,则在关闭时，会显示淡出动画\n* `close` 在关闭时触发控制器对应的方法\n* `closed` 在关闭完成后触发控制器对应的方法（在淡出动画完成后）\n```javascript\n{{#bu-alert type=\"danger\"}}\n<h4 class=\"alert-heading\">Oh snap! You got an error!</h4>\n<p>Alert can also be used in a <strong>block form</strong>.</p>\n<p>\n<button class=\"btn btn-danger\" {{action \"submit\"}}>Take this action</button> <a class=\"btn btn-default\">Or do this</a>\n</p>\n{{/bu-alert}}\n```",
+            "extends": "Ember.View"
+        },
+        "BricksUI.BuGrowlNotifications": {
+            "name": "BricksUI.BuGrowlNotifications",
+            "shortname": "BricksUI.BuGrowlNotifications",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-growl-notifications.js",
+            "line": 5,
+            "description": "BuGrowlNotifications是一种标准的通知组件实现，可以实现信息提示的功能\n基本用法:在application Template中放入以下的占位符\n```handlebars\n{{bu-growl-notifications}}\n```\n在代码中调用Bootstrap.GNM.push()功能，传入相关的参数，即可实现消息的推送\n```javascript\n    Showcase.ShowComponentsGrowlNotifController = Ember.Controller.extend({\n     pushInfo: function() {\n       Bootstrap.GNM.push('INFO!', 'Hello, this is just an info message.', 'info');\n     },\n     pushSuccess: function() {\n       Bootstrap.GNM.push('SUCCESS!', 'Successfully performed operation!', 'success');\n     },\n     pushWarn: function() {\n       Bootstrap.GNM.push('WARN!', 'Could not perform operation!', 'warning');\n     },\n     pushDanger: function() {\n       Bootstrap.GNM.push('Danger!', 'System is halting!', 'danger');\n     }\n   });\n```\n\n----------------------\n可选参数有\n\n```html\nshowTime {number} 秒   信息提示显示的时间\n```",
+            "extends": "Ember.View"
+        },
+        "BricksUI.BuModal": {
+            "name": "BricksUI.BuModal",
+            "shortname": "BricksUI.BuModal",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-modal.js",
+            "line": 5,
+            "description": "对应Bootstrap modal组件，对Bootstrap modal进行轻量级封装\n\n\n####基本用法\n```handlebars\n{{bu-button title=\"Show Modal\" clicked=\"show\"}}\n{{#bu-modal name=\"myModal\" fade=true footerButtonsBinding=\"myModalButtons\" title=\"My Modal\"}}\n<p>Modal content!</p>\n{{/bu-modal}}\n```\n\n对应控制器\n```javascript\n    Showcase.ShowComponentsModalController = Ember.Controller.extend({\n     myModalButtons: [\n         Ember.Object.create({title: 'Submit', clicked:\"submit\"})\n         Ember.Object.create({title: 'Cancel', clicked:\"cancel\", dismiss: 'modal'})\n     ],\n\n     actions: {\n       //Submit the modal\n       submit: function() {\n         Bootstrap.NM.push('Successfully submitted modal', 'success');\n         return Bootstrap.ModalManager.hide('myModal');\n       },\n\n       //Cancel the modal, we don't need to hide the model manually because we set {..., dismiss: 'modal'} on the button meta data\n       cancel: function() {\n         return Bootstrap.NM.push('Modal was cancelled', 'info');\n       },\n\n       //Show the modal\n       show: function() {\n         return Bootstrap.ModalManager.show('myModal');\n       }\n     }\n   });\n```\n\n------------------\n#####确认型modal\n```handlebars\n{{bu-button title=\"Delete\" clicked=\"confirm\"}}\n```\n对应控制器\n```javascript\nShowcase.ShowComponentsModalController = Ember.Controller.extend({\n   confirm: {\n       confirm: {\n           Bootstrap.ModalManager.confirm(@);\n},\n//invoked when user press \"confirm\"\nmodalConfirmed: {\n           Bootstrap.NM.push('Confirmed!', 'success')\n       },\n//invoked when user press \"cancel\"\nmodalCanceled: {\n           Bootstrap.NM.push('Cancelled!', 'info')\n       }\n}\n})\n```\n\nBootstrap.ModalManager.confirm可接受的参数有\n\n```html\ncontroller 对应的控制器，可手动指定\ntitle\t    modal窗口标题\nmessage\tmodel的内容\nconfirmButtonTitle\t确定按钮的文本描述\ncancelButtonTitle\t取消按钮的文本描述\n```\n\n------------------------------\n#####通过编程方式调用modal\n\n```handlebars\n//we only render a button which will programatically create the modal\n{{bu-button title=\"Create Modal\" clicked=\"createModalProgramatically\"}}\n```\n\n对应控制器\n\n```javascript\n    Showcase.ShowComponentsModalController = Ember.Controller.extend({\n     manualButtons: [\n         Ember.Object.create({title: 'Submit', clicked:\"submitManual\"})\n         Ember.Object.create({title: 'Cancel', dismiss: 'modal'})\n     ],\n\n     actions: {\n       submitManual: function() {\n         Bootstrap.NM.push('Modal destroyed!', 'success');\n         return Bootstrap.ModalManager.close('manualModal');\n       },\n       createModalProgramatically: function() {\n            //@property {string} The name of the modal, required later to close the modal (see submitManual function above)\n            //@property {string} The title of the modal.\n            //@property {string} The template name to render within the modal body, a View class may also be specified.\n            //@property {array} Array of Button meta data\n            //@property {object} The controller instance that instantiate the modal.\n            Bootstrap.ModalManager.open('manualModal', 'Hello', 'demo-template', this.manualButtons, this);\n       }\n    }\n    });\n```",
+            "extends": "Ember.View"
+        },
+        "BricksUI.BuPagination": {
+            "name": "BricksUI.BuPagination",
+            "shortname": "BricksUI.BuPagination",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 6,
+            "description": "分页组件\n分页组件负责视图的呈现,按钮的点击全部委托给`pagerController`,所以必须给分页组件\n配置`pagerController`这个属性\n####用法\n* `numberOfPages`  显示的页码个数\n* `pagerController` 当前分页组件的控制器,必须配置,并且该控制器必须集成`BricksUI.DynamicPageable`\n```html\n{{bu-pagination numberOfPages=5 pagerControllerBinding=\"controller\"}}\n```",
+            "type": "{Ember.Component}",
+            "extends": "Ember.Component"
+        },
+        "BricksUI.TableHeader": {
+            "name": "BricksUI.TableHeader",
+            "shortname": "BricksUI.TableHeader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 198,
+            "description": "表格行头",
+            "type": "{Ember.View}",
+            "extends": "Ember.View"
+        },
+        "BricksUI.BuPanel": {
+            "name": "BricksUI.BuPanel",
+            "shortname": "BricksUI.BuPanel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-panel.js",
+            "line": 5,
+            "description": "容器组件,可以配置头部和脚注\n* `heading` 头部说明信息\n* `footer` 脚注说明信息\n\n####基本用法\n```javascript\n{{#bs-panel heading=\"Simple Panel\" footer=\"Panel Footer\"}}\n   <p>Panel content goes here...!</p>\n{{/bs-panel}}\n```\n\n####利用bootstrap的样式\n* type=`primary`\n* type=`success`\n* type=`info`\n* type=`warning`\n* type=`danger`\n\n```javascript\n{{#bs-panel heading=\"Primary Panel\" type=\"primary\"}}\n   <p>Panel content.</p>\n{{/bs-panel}}\n{{#bs-panel heading=\"Success Panel\" type=\"success\"}}\n   <p>Panel content.</p>\n{{/bs-panel}}\n{{#bs-panel heading=\"Info Panel\" type=\"info\"}}\n   <p>Panel content.</p>\n{{/bs-panel}}\n{{#bs-panel heading=\"Warning Panel\" type=\"warning\"}}\n   <p>Panel content.</p>\n{{/bs-panel}}\n{{#bs-panel heading=\"Danger Panel\" type=\"danger\"}}\n   <p>Panel content.</p>\n{{/bs-panel}}\n```\n\n#### 更多可选配置\n\n* `dismiss` 设定panel是否可以被关闭,`true` `false`\n* `onClose` 配置`onClose` 会触发响应controller的action\n* `clicked` panel被点击后的action\n* `collapsible` 设置为`true`,panel可以收起和展开\n* `open` 设置为`false`,panel默认为收起状态\n```javascript\n{{#bs-panel\n    heading=\"Primary Panel\"\n    type=\"primary\"\n    collapsible=true\n    open=false\n    dismiss=true\n    onClose=\"panelClosed\"\n    clicked=\"panelClicked\"}}\n   <p>Panel content.</p>\n{{/bs-panel}}\n```",
+            "extends": "Ember.View"
+        },
+        "BricksUI.BuProgress": {
+            "name": "BricksUI.BuProgress",
+            "shortname": "BricksUI.BuProgress",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-progress.js",
+            "line": 5,
+            "description": "对应Bootstrap progress组件，对Bootstrap progress组件进行轻量级封装\n\n\n####基本用法\n```handlebars\n{{bu-progress progress=60}}\n```\n\n------------------\n###type\n```handlebars\n    {{!--可根据type的类型，指定progress的呈现行为--}}\n    {{bu-progress progress=40 type=\"success\"}}\n    {{bu-progress progress=20 type=\"info\"}}\n    {{bu-progress progress=60 type=\"warning\"}}\n    {{bu-progress progress=80 type=\"danger\"}}\n```\n\n------------------------------\n\n###binding\n\n```handlebars\n{{bu-progress progressBinding=\"prog\"}}\n{{bu-button clicked=\"increment\" content=\"Increment!\"}}\n```\n\n也可以以对progress进行值的绑定\n```javascript\n    Showcase.ShowComponentsProgressbarController = Ember.Controller.extend({\n     prog: 0,\n     incrementBy: 20,\n     increment: function() {\n       if (this.prog < 100) {\n         return this.incrementProperty(\"prog\", this.incrementBy);\n       } else {\n         return this.set(\"prog\", this.incrementBy);\n       }\n     }\n   });\n```\n---------------------------\n\nprogressbar 堆叠\n\n```handlebars\n    {{#bu-progress}}\n    {{bu-progressbar type=\"success\" progress=\"35\"}}\n    {{bu-progressbar type=\"warning\" progress=\"20\"}}\n    {{bu-progressbar type=\"danger\" progress=\"10\"}}\n    {{/bu-progress}}\n```\n\n\n------------------------------------\n\n```html\n可选的参数有\n+ stripped 添加斜线样式 {boolean}\n+ animated 是否添加CSS3样式 {boolean}\n```",
+            "extends": "Ember.View"
+        },
         "BricksUI.BuTabs": {
             "name": "BricksUI.BuTabs",
             "shortname": "BricksUI.BuTabs",
@@ -624,12 +949,28 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "bricksui",
-            "submodule": "bricksui-form",
+            "submodule": "bricksui-thirdpart",
             "namespace": "BricksUI",
             "file": "packages/bricksui-thirdpart/lib/bu-tabs.js",
             "line": 5,
-            "description": "一个`tab-pane`代表一个tab页签\n`bu-tabs-panes` 需要有一个`contentBinding` 属性,用来生成所有的tab标签页,\n`bu-tabs-panes`与`bu-tabs`是配套使用的,`bu-tabs`生成tab组件页签头,`bu-tabs-panes`生成内容,\n所以两者需要有一个关联,这就是`items-id`.\n\n``` html\n<div class=\"bs-example\">\n{{bu-tabs id=\"tabs1\" contentBinding=\"tabsMeta\" default=\"Foo\"}}\n{{bu-tabs-panes items-id=\"tabs1\" contentBinding=\"tabsMeta\"}}\n</div>\n```\n\n* `bu-tas`需要配置一个`id`属性\n* `bu-tabs-panes`根据content生成各个内容标签\n* `items-id` 必须要跟`bu-tabs`的id挂钩\n* `default`可以设置tab组件的默认标签页\n\n配置项如下:\n\n``` javascript\nSomeController = Ember.Controller.extend({\n   tabsMeta: Ember.A([\n           Ember.Object.create({ title: 'Foo', template: 'tabs/foo-tabpane', controller: 'ShowcaseComponentsTabsFoo'}),\n           Ember.Object.create({ title: 'Bar', template: 'tabs/bar-tabpane'})\n   ]);\n});\n\n`template` 指定tab内容页的模板\n`controller` 可以指定tabs标签页的控制器\n\n```",
-            "extends": "Ember.Namespace"
+            "description": "####`tabs` 组件基本用法\n一个`tab-pane`代表一个tab页签\n`bu-tabs-panes` 需要有一个`contentBinding` 属性,用来生成所有的tab标签页,\n`bu-tabs-panes`与`bu-tabs`是配套使用的,`bu-tabs`生成tab组件页签头,`bu-tabs-panes`生成内容,\n所以两者需要有一个关联,这就是`items-id`.\n\n``` html\n<div class=\"bs-example\">\n{{bu-tabs id=\"tabs1\" contentBinding=\"tabsMeta\" default=\"Foo\"}}\n{{bu-tabs-panes items-id=\"tabs1\" contentBinding=\"tabsMeta\"}}\n</div>\n```\n\n* `bu-tas`需要配置一个`id`属性\n* `bu-tabs-panes`根据content生成各个内容标签\n* `items-id` 必须要跟`bu-tabs`的id挂钩\n* `default`可以设置tab组件的默认标签页\n* `justified` 设定`tab`组件是否宽度自适应\n\n配置项如下:\n\n``` javascript\nSomeController = Ember.Controller.extend({\n   tabsMeta: Ember.A([\n           Ember.Object.create({ title: 'Foo', template: 'tabs/foo-tabpane', controller: 'ShowcaseComponentsTabsFoo'}),\n           Ember.Object.create({ title: 'Bar', template: 'tabs/bar-tabpane'})\n   ]);\n});\n\n`template` 指定tab内容页的模板\n`controller` 可以指定tabs标签页的控制器\n```\n\n####`tabs` 组件与路由相结合\n定义路由:\n```javascript\n    this.resource('user', function() {\n     this.route('general');\n     this.route('privacy');\n     return this.route('activities');\n   });\n```\n在对应的user的template里面\n```html\n{{bs-tabs contentBinding=\"tabsMeta\"}}\n{{outlet}}\n```\n控制器\n```javascript\nApp.UserController = Ember.Controller.extend({\n tabsMeta: [\n   Ember.Object.create({title: 'General', linkTo: 'user.general'}),\n   Ember.Object.create({title: 'Privacy', linkTo: 'user.privacy'}),\n   Ember.Object.create({title: 'Activities', linkTo: 'user.activities'})\n ]\n});\n```\n然后定义各个tab页签对应的模板",
+            "extends": "Ember.View"
+        },
+        "BricksUI.BuWizard": {
+            "name": "BricksUI.BuWizard",
+            "shortname": "BricksUI.BuWizard",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI",
+            "file": "packages/bricksui-thirdpart/lib/bu-wizard.js",
+            "line": 5,
+            "description": "Bootstrap 向导组件，对向导功能提供封装\n\n\n####基本用法\n```handlebars\n{{bu-wizard contentBinding=\"steps\"}}\n```\n对应控制器\n```javascript\n    Showcase.ShowComponentsWizardController = Ember.Controller.extend({\n     init: function() {\n       this._super();\n       this.set('steps', Ember.A([\n         Ember.Object.create({title: 'Foo', template: 'tabu/foo-tabpane'}),\n         Ember.Object.create({title: 'Bar', template: 'tabu/bar-tabpane'}),\n         Ember.Object.create({title: 'Baz', template: 'tabu/baz-tabpane'})\n       ]));\n     }\n   });\n```\n\n------------------\n###禁用Step选择功能\n有些时候，需要特定步骤的Wizard，则可以指定 disabled=true ，禁止Step选择，只允许通过代码改变Step\n```handlebars\n{{bu-wizard prevAllowed=false contentBinding=\"stepsNoPrev\"}}\n```\n\n```javascript\n    Showcase.ShowComponentsWizardController = Ember.Controller.extend({\n     init: function() {\n       this._super();\n       this.set('steps', Ember.A([\n         Ember.Object.create({title: 'Step1', template: 'tabu/foo-tabpane', disabled=\"true\"}),\n         Ember.Object.create({title: 'Step2', template: 'tabu/bar-tabpane', disabled=\"true\"}),\n         Ember.Object.create({title: 'Step3', template: 'tabu/baz-tabpane', disabled=\"true\"})\n       ]));\n     }\n   });\n```\n\n------------------------------\n#####通过编程方式，创建Wizard视图\n```handlebars\n{{bu-button title=\"Start Wizard\" type=\"primary\" clicked=\"createWizard\"}}\n```\n\n```javascript\n    Showcase.ShowComponentsWizardController = Ember.Controller.extend({\n     actions: {\n       createWizard: function() {\n         var body;\n         body = Bootstrap.buWizardComponent.extend({\n           content: [\n             Ember.Object.create({title: 'Step1', template: 'wizard/step1', disabled: true}),\n             Ember.Object.create({title: 'Step2', template: 'wizard/step2', disabled: true}),\n             Ember.Object.create({title: 'Step3', template: 'wizard/step3', disabled: true})\n           ],\n           targetObject: this,\n           onNext: \"onNext\",\n           onPrev: \"onPrev\",\n           onFinish: 'onFinish'\n         });\n         Bootstrap.ModalManager.open('manualModal', 'Wizard Title...', body, null, this);\n       },\n       onNext: function() {\n         return console.log('NEXT');\n       },\n       onPrev: function() {\n         return console.log('PREV');\n       },\n       onFinish: function() {\n         Bootstrap.ModalManager.close('manualModal');\n         return Bootstrap.NM.push('Wizard completed!');\n       }\n     }\n   });\n```",
+            "extends": "Ember.View"
         }
     },
     "classitems": [
@@ -909,7 +1250,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 51,
+            "line": 53,
             "description": "外部所绑定的值",
             "itemtype": "property",
             "name": "value",
@@ -921,7 +1262,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 64,
+            "line": 66,
             "description": "input fix，根据在输入的格式校验失败后，尝试将输入项转换为Date类型，如果成功，则进行格式转换并输出",
             "params": [
                 {
@@ -937,7 +1278,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 81,
+            "line": 83,
             "description": "绑定原始值,在输入框内容发生改变时，更新Value的值",
             "itemtype": "method",
             "name": "change",
@@ -950,7 +1291,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 93,
+            "line": 95,
             "description": "在时间格式校验失败后，进行泛类型时间尝试",
             "access": "private",
             "tagname": "",
@@ -961,7 +1302,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 102,
+            "line": 104,
             "description": "对传入的options参数进行解析，如果传入的参数类型为string，则尝试转换为字符串",
             "itemtype": "method",
             "name": "_parseOptions",
@@ -974,7 +1315,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 121,
+            "line": 123,
             "description": "在视图销毁时，清除datepicker Dom 对象",
             "class": "Ember.BuDatePicker",
             "module": "bricksui",
@@ -983,7 +1324,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 130,
+            "line": 132,
             "description": "监听全局I18n改变事件，在所选择的语言改变后，重新渲染视图",
             "itemtype": "method",
             "name": "attachI18nEvent",
@@ -996,7 +1337,7 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 146,
+            "line": 148,
             "description": "默认配置文件，为准确完成日期格式转换，将进行严格日期校验\n在所选择语言发生变化后，将进行视图重新渲染",
             "itemtype": "property",
             "name": "",
@@ -1007,13 +1348,104 @@
         },
         {
             "file": "packages/bricksui-form/lib/bu-datepicker.js",
-            "line": 155,
+            "line": 157,
             "description": "在视图渲染完成后，设置datetimepick组件",
             "itemtype": "method",
             "name": "_updateDom",
             "access": "private",
             "tagname": "",
             "class": "Ember.BuDatePicker",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 79,
+            "description": "开始日期",
+            "type": "string",
+            "default": "null",
+            "itemtype": "property",
+            "name": "startDate",
+            "class": "Ember.BuDateRange",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 87,
+            "description": "结束日期",
+            "type": "string",
+            "default": "null",
+            "itemtype": "property",
+            "name": "endDate",
+            "class": "Ember.BuDateRange",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 101,
+            "description": "如果已经设置了开始日期和结束日期，则将值设置入options中",
+            "itemtype": "method",
+            "name": "_prepareDate",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDateRange",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 120,
+            "description": "如果options是模板中传入的字符串，尝试将字符串转换为options对象",
+            "itemtype": "method",
+            "name": "_parseOptions",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDateRange",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 143,
+            "description": "在对象发生改变时，设置开始日期与结束日期",
+            "itemtype": "method",
+            "name": "change",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDateRange",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 160,
+            "description": "添加事件监听",
+            "itemtype": "method",
+            "name": "_attachEvent",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDateRange",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-daterange.js",
+            "line": 169,
+            "description": "在视图渲染完成后将对象转换为DateRange组件",
+            "itemtype": "method",
+            "name": "_updateDom",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuDateRange",
             "module": "bricksui",
             "submodule": "bricksui-form",
             "namespace": "Ember"
@@ -1141,6 +1573,129 @@
             "itemtype": "method",
             "name": "_destroyEditor",
             "class": "Ember.BuEditor",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 96,
+            "description": "默认模板",
+            "default": "''",
+            "itemtype": "property",
+            "name": "defaultTemplate",
+            "type": "function",
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 104,
+            "description": "树所绑定的数据",
+            "itemtype": "property",
+            "name": "zNodes",
+            "type": "object",
+            "default": "null",
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 115,
+            "description": "elementId的别名",
+            "itemtype": "property",
+            "name": "treeId",
+            "default": "elementId",
+            "type": "string",
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 123,
+            "description": "ztree配置项",
+            "itemtype": "property",
+            "name": "options",
+            "default": "{}",
+            "type": "object",
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 138,
+            "description": "如果options是模板中传入的字符串，尝试将字符串转换为options对象",
+            "itemtype": "method",
+            "name": "_parseOptions",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 156,
+            "description": "对传入的callbacks进行切面，织入当前Compoennt对象，作为回调函数的第一个参数，\nwarn: this作用域保留为z-Tree插件作用域，如果需要获取当前的component作为回调函数的作用域，在回调函数中获取第一个参数进行操作",
+            "params": [
+                {
+                    "name": "options",
+                    "description": ""
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 182,
+            "description": "返回zTree实例",
+            "itemtype": "method",
+            "name": "getTree",
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 192,
+            "description": "在Component销毁时，销毁树的实例",
+            "itemtype": "method",
+            "name": "_destroyElement",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuTree",
+            "module": "bricksui",
+            "submodule": "bricksui-form",
+            "namespace": "Ember"
+        },
+        {
+            "file": "packages/bricksui-form/lib/bu-tree.js",
+            "line": 204,
+            "description": "在插入Dom后，生成Tree组件",
+            "itemtype": "method",
+            "name": "_updateDom",
+            "access": "private",
+            "tagname": "",
+            "class": "Ember.BuTree",
             "module": "bricksui",
             "submodule": "bricksui-form",
             "namespace": "Ember"
@@ -1306,17 +1861,9 @@
         },
         {
             "file": "packages/bricksui-form/lib/form-setup.js",
-            "line": 6,
-            "description": "向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor",
+            "line": 7,
+            "description": "向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor\n   bu-datepicker\n   bu-daterange\n   bu-tree",
             "class": "Ember.EasyForm.Radio",
-            "module": "bricksui",
-            "namespace": "Ember.EasyForm"
-        },
-        {
-            "file": "packages/bricksui-form/lib/swap-helpers.js",
-            "line": 1,
-            "description": "Created by jiangwy on 14-6-25.",
-            "class": "Ember.I18n",
             "module": "bricksui",
             "namespace": "Ember.EasyForm"
         },
@@ -1423,7 +1970,7 @@
         },
         {
             "file": "packages/bricksui-i18n/lib/i18n-support.js",
-            "line": 155,
+            "line": 156,
             "description": "获取语言内容，如果开启了Cookie语言持久化功能，则优先从cooie内查找语言对象",
             "return": {
                 "description": "",
@@ -1456,11 +2003,685 @@
             "namespace": "BricksUI.I18n"
         },
         {
-            "file": "packages/bricksui-thirdpart/lib/main.js",
-            "line": 1,
-            "description": "Created by jiangwy on 14-6-26.",
-            "class": "",
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 6,
+            "description": "Normalizes values to be used in a sort for natural sort",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "a",
+                    "description": "",
+                    "type": "Mixed"
+                },
+                {
+                    "name": "b",
+                    "description": "",
+                    "type": "Mixed"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "BricksUI.StaticPageable",
             "module": "bricksui",
+            "submodule": "bricksui-thirdpart"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 74,
+            "description": "当前页码",
+            "itemtype": "property",
+            "name": "currentPage",
+            "type": "{Number}",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 81,
+            "description": "每页显示条数",
+            "itemtype": "property",
+            "name": "perPage",
+            "type": "{Number}",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 88,
+            "description": "排序字段",
+            "itemtype": "property",
+            "name": "sortBy",
+            "type": "{String}",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 95,
+            "description": "排序方向",
+            "itemtype": "property",
+            "name": "sortDirection",
+            "type": "{String}",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 103,
+            "description": "静态数据本地数据存放的集合",
+            "itemtype": "property",
+            "name": "data",
+            "type": "{Array}",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 110,
+            "description": "Used for the collection view for which items to show",
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 123,
+            "description": "总页数",
+            "itemtype": "property",
+            "name": "totalPages",
+            "return": {
+                "description": "int Total Number of Pages"
+            },
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 133,
+            "description": "后一页",
+            "itemtype": "method",
+            "name": "nextPage",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 146,
+            "description": "前一页",
+            "itemtype": "method",
+            "name": "prevPage",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 158,
+            "description": "第一页",
+            "itemtype": "method",
+            "name": "firstPage",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 165,
+            "description": "尾页",
+            "itemtype": "method",
+            "name": "lastPage",
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 174,
+            "description": "Sorts the data by a property",
+            "params": [
+                {
+                    "name": "property",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "direction",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "BricksUI.StaticPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 253,
+            "description": "当前页码",
+            "itemtype": "property",
+            "name": "currentPage",
+            "type": "{Number}",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 260,
+            "description": "每页显示多少条",
+            "itemtype": "property",
+            "name": "perPage",
+            "type": "{Number}",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 267,
+            "description": "排序字段",
+            "itemtype": "property",
+            "name": "sortBy",
+            "type": "{String}",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 274,
+            "description": "排序方向,升序或者降序",
+            "itemtype": "property",
+            "name": "sortDirection",
+            "type": "{String}",
+            "default": "ascending",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 288,
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Null"
+            },
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 295,
+            "description": "查询参数,可覆盖`defaultParamNames`",
+            "itemtype": "property",
+            "name": "paramNames",
+            "type": "{Object}",
+            "default": "null",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 303,
+            "description": "默认的查询参数",
+            "itemtype": "property",
+            "name": "defaultParamNames",
+            "type": "{Object}",
+            "default": "{\n    start: 'start',\n    limit: 'limit',\n    sort: 'sort',\n    dir: 'dir'\n}",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 320,
+            "description": "数据加载中",
+            "itemtype": "property",
+            "name": "loading",
+            "type": "{Boolean}",
+            "default": "false",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 327,
+            "description": "用户的自定以查询参数",
+            "itemtype": "property",
+            "name": "query",
+            "type": "{Object}",
+            "default": "null",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 334,
+            "access": "private",
+            "tagname": "",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 338,
+            "access": "private",
+            "tagname": "",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 371,
+            "description": "总页数",
+            "itemtype": "property",
+            "name": "totalPages",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 380,
+            "description": "下一页",
+            "itemtype": "method",
+            "name": "nextPage",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 399,
+            "description": "上一页",
+            "itemtype": "method",
+            "name": "prevPage",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 418,
+            "description": "首页",
+            "itemtype": "method",
+            "name": "firstPage",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 426,
+            "description": "尾页",
+            "itemtype": "method",
+            "name": "lastPage",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 438,
+            "description": "总条数",
+            "itemtype": "method",
+            "name": "getTotalCount",
+            "return": {
+                "description": "",
+                "type": "*|number"
+            },
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/mixins/pageable.js",
+            "line": 447,
+            "description": "根据属性名称排序",
+            "itemtype": "method",
+            "name": "sortByProperty",
+            "class": "BricksUI.DynamicPageable",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 31,
+            "description": "默认的模板",
+            "itemtype": "property",
+            "name": "layoutName",
+            "type": "{[type]}",
+            "default": "bu-pagination",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 39,
+            "description": "分页组件可显示的页码个数",
+            "itemtype": "property",
+            "name": "numberOfPages",
+            "type": "{Number}",
+            "default": "10",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 47,
+            "description": "计算属性-->'`pagerController.totalPages` `agerController.currentPage`\n用于生成页码\n```html\n First Prev 8 9 10 11 12 |13| 14 15 16 17 Next Last\n First Prev 80 81 82 83 84 85 86 |87| 88 89 90 91 92 93 94 Next Last\n```",
+            "itemtype": "property",
+            "name": "pages",
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 93,
+            "description": "计算属性,首页按钮是否不可用",
+            "itemtype": "property",
+            "name": "disableFirst",
+            "type": "{Boolean}",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 99,
+            "description": "计算属性,前一页按钮是否不可用",
+            "itemtype": "property",
+            "name": "disableFirst",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 108,
+            "description": "计算属性,后一页按钮是否不可用",
+            "itemtype": "property",
+            "name": "disableFirst",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 116,
+            "description": "计算属性,尾页按钮是否不可用",
+            "itemtype": "property",
+            "name": "disableFirst",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 123,
+            "description": "第一页",
+            "itemtype": "method",
+            "name": "firstPage",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 132,
+            "description": "前一页",
+            "itemtype": "method",
+            "name": "prevPage",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 142,
+            "description": "后一页",
+            "itemtype": "method",
+            "name": "nextPage",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 151,
+            "description": "尾页",
+            "itemtype": "method",
+            "name": "lastPage",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 162,
+            "description": "按钮视图",
+            "itemtype": "property",
+            "name": "PageButton",
+            "type": "{Ember.View}",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 175,
+            "access": "private",
+            "tagname": "",
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 186,
+            "description": "Computed property to see if the button is active",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "BricksUI.BuPagination",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 206,
+            "access": "private",
+            "tagname": "",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 211,
+            "description": "It's a header, so render it as a th",
+            "type": "{String}",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 217,
+            "description": "Mark the view as clickable",
+            "type": "{Array}",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 223,
+            "description": "Define the bound classes.  Used to say if the header is the active sort\nand what direction the sort is.",
+            "type": "{Array}",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 230,
+            "description": "该行头所代表的属性名称",
+            "itemtype": "property",
+            "name": "propertyName",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 236,
+            "description": "Text to be rendered to the view",
+            "type": "{String}",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 242,
+            "description": "点击事件,用于调用controller进行排序",
+            "itemtype": "method",
+            "name": "click",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 250,
+            "description": "Computed property for checking to see if the header is the current sort\nor not.",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 260,
+            "description": "升序",
+            "itemtype": "property",
+            "name": "isAscending",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
+            "namespace": "BricksUI"
+        },
+        {
+            "file": "packages/bricksui-thirdpart/lib/bu-pagination.js",
+            "line": 268,
+            "description": "降序",
+            "itemtype": "property",
+            "name": "isAscending",
+            "class": "BricksUI.TableHeader",
+            "module": "bricksui",
+            "submodule": "bricksui-thirdpart",
             "namespace": "BricksUI"
         }
     ],
@@ -1476,6 +2697,10 @@
         {
             "message": "replacing incorrect tag: returns with return",
             "line": " packages/bricksui-metal/lib/stateable.js:109"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-form/lib/bu-tree.js:182"
         },
         {
             "message": "unknown tag: memberof",
@@ -1495,7 +2720,15 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:155"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:156"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:288"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:438"
         },
         {
             "message": "Missing item type\n构建主入口文件",
@@ -1579,15 +2812,19 @@
         },
         {
             "message": "Missing item type\ninput fix，根据在输入的格式校验失败后，尝试将输入项转换为Date类型，如果成功，则进行格式转换并输出",
-            "line": " packages/bricksui-form/lib/bu-datepicker.js:64"
+            "line": " packages/bricksui-form/lib/bu-datepicker.js:66"
         },
         {
             "message": "Missing item type\n在时间格式校验失败后，进行泛类型时间尝试",
-            "line": " packages/bricksui-form/lib/bu-datepicker.js:93"
+            "line": " packages/bricksui-form/lib/bu-datepicker.js:95"
         },
         {
             "message": "Missing item type\n在视图销毁时，清除datepicker Dom 对象",
-            "line": " packages/bricksui-form/lib/bu-datepicker.js:121"
+            "line": " packages/bricksui-form/lib/bu-datepicker.js:123"
+        },
+        {
+            "message": "Missing item type\n对传入的callbacks进行切面，织入当前Compoennt对象，作为回调函数的第一个参数，\nwarn: this作用域保留为z-Tree插件作用域，如果需要获取当前的component作为回调函数的作用域，在回调函数中获取第一个参数进行操作",
+            "line": " packages/bricksui-form/lib/bu-tree.js:156"
         },
         {
             "message": "Missing item type",
@@ -1606,12 +2843,8 @@
             "line": " packages/bricksui-form/lib/form-config.js:70"
         },
         {
-            "message": "Missing item type\n向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor",
-            "line": " packages/bricksui-form/lib/form-setup.js:6"
-        },
-        {
-            "message": "Missing item type\nCreated by jiangwy on 14-6-25.",
-            "line": " packages/bricksui-form/lib/swap-helpers.js:1"
+            "message": "Missing item type\n向模板中注册\n 控制器\n   checkboxItem\n   radioItem\n 组件\n   bu-editor\n   bu-datepicker\n   bu-daterange\n   bu-tree",
+            "line": " packages/bricksui-form/lib/form-setup.js:7"
         },
         {
             "message": "Missing item type\n从cookie中获取已保留的语言选择情况",
@@ -1635,11 +2868,63 @@
         },
         {
             "message": "Missing item type\n获取语言内容，如果开启了Cookie语言持久化功能，则优先从cooie内查找语言对象",
-            "line": " packages/bricksui-i18n/lib/i18n-support.js:155"
+            "line": " packages/bricksui-i18n/lib/i18n-support.js:156"
         },
         {
-            "message": "Missing item type\nCreated by jiangwy on 14-6-26.",
-            "line": " packages/bricksui-thirdpart/lib/main.js:1"
+            "message": "Missing item type\nNormalizes values to be used in a sort for natural sort",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:6"
+        },
+        {
+            "message": "Missing item type\nUsed for the collection view for which items to show",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:110"
+        },
+        {
+            "message": "Missing item type\nSorts the data by a property",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:174"
+        },
+        {
+            "message": "Missing item type",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:288"
+        },
+        {
+            "message": "Missing item type",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:334"
+        },
+        {
+            "message": "Missing item type",
+            "line": " packages/bricksui-thirdpart/lib/mixins/pageable.js:338"
+        },
+        {
+            "message": "Missing item type",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:175"
+        },
+        {
+            "message": "Missing item type\nComputed property to see if the button is active",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:186"
+        },
+        {
+            "message": "Missing item type",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:206"
+        },
+        {
+            "message": "Missing item type\nIt's a header, so render it as a th",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:211"
+        },
+        {
+            "message": "Missing item type\nMark the view as clickable",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:217"
+        },
+        {
+            "message": "Missing item type\nDefine the bound classes.  Used to say if the header is the active sort\nand what direction the sort is.",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:223"
+        },
+        {
+            "message": "Missing item type\nText to be rendered to the view",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:236"
+        },
+        {
+            "message": "Missing item type\nComputed property for checking to see if the header is the current sort\nor not.",
+            "line": " packages/bricksui-thirdpart/lib/bu-pagination.js:250"
         }
     ]
 }

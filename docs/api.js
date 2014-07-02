@@ -2,14 +2,26 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "BricksUI",
+        "BricksUI.BuAlert",
+        "BricksUI.BuGrowlNotifications",
+        "BricksUI.BuModal",
+        "BricksUI.BuPagination",
+        "BricksUI.BuPanel",
+        "BricksUI.BuProgress",
         "BricksUI.BuTabs",
+        "BricksUI.BuWizard",
+        "BricksUI.DynamicPageable",
         "BricksUI.ENV",
         "BricksUI.I18n",
         "BricksUI.I18n.I18nableValidationMixin",
         "BricksUI.I18n.lang",
         "BricksUI.StateHandler",
+        "BricksUI.StaticPageable",
+        "BricksUI.TableHeader",
         "Ember.BuDatePicker",
+        "Ember.BuDateRange",
         "Ember.BuEditor",
+        "Ember.BuTree",
         "Ember.EasyForm",
         "Ember.EasyForm.Checkbox",
         "Ember.EasyForm.Config",
@@ -22,7 +34,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "bricksui",
         "bricksui-form",
         "bricksui-i18n",
-        "bricksui-metal"
+        "bricksui-metal",
+        "bricksui-thirdpart"
     ],
     "allModules": [
         {
@@ -43,6 +56,11 @@ YUI.add("yuidoc-meta", function(Y) {
             "displayName": "bricksui-metal",
             "name": "bricksui-metal",
             "description": "BricksUI ,a widget library on ember.js"
+        },
+        {
+            "displayName": "bricksui-thirdpart",
+            "name": "bricksui-thirdpart",
+            "description": "基于Bootstrap的扩展组件"
         }
     ]
 } };

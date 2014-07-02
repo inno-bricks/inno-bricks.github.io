@@ -41,7 +41,23 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
                 <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
             
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
@@ -53,9 +69,17 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
                 <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
             
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
             
@@ -82,6 +106,8 @@
                 <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
             
                 <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
             
             </ul>
         </div>
@@ -127,7 +153,8 @@
  @submodule bricksui-form
  */
 /**
- ## 用法 ##
+ #####[Ember.Validations更多内容查看...](https://github.com/dockyard/ember-validations)
+ #### 用法
 
  需要将&#x60;Ember.Validations.Mixin&#x60;集成到任何你想要添加验证的控制器上
 
@@ -154,14 +181,14 @@
  });
  &#x60;&#x60;&#x60;
 
- ## 校验器 ##
+ #### 校验器
 
  当前已经支持的校验器如下所示
 
- ### Absence ###
+ ##### Absence
  验证属性值是&#x60;null&#x60;,&#x60;undefined&#x60; 或者是 &#x60;&#x27;&#x27;&#x60;.
 
- #### Options ####
+ ###### Options
  * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
  * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
 
@@ -171,10 +198,10 @@
  absence: { message: &#x27;must be blank&#x27; }
  &#x60;&#x60;&#x60;
 
- ### Acceptance ###
+ ##### Acceptance
  默认可被接受的值为&#x60;&#x27;1&#x27;&#x60;, &#x60;1&#x60;, and &#x60;true&#x60;.
 
- #### Options ####
+ ###### Options
  * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
  * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
  * &#x60;accept&#x60; - 可被接受的值
@@ -185,10 +212,10 @@
  acceptance: { message: &#x27;you must accept&#x27;, accept: &#x27;yes&#x27; }
  &#x60;&#x60;&#x60;
 
- ### Confirmation ###
+ ##### Confirmation
  相同值校验
 
- #### Options ####
+ ###### Options
  * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
  * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
 
@@ -198,10 +225,10 @@
  confirmation: { message: &#x27;you must confirm&#x27; }
  &#x60;&#x60;&#x60;
 
- ### Exclusion ###
+ ##### Exclusion
  排除校验
 
- #### Options ####
+ ###### Options
  * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
  * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
  * &#x60;in&#x60; - 被允许的数组
@@ -213,10 +240,10 @@
  exclusion: { range: [5, 10], allowBlank: true, message: &#x27;cannot be between 5 and 10&#x27; }
  &#x60;&#x60;&#x60;
 
- ### Format ###
+ ##### Format
  正则,格式化校验
 
- #### Options ####
+ ###### Options
  * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
  * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
  * &#x60;with&#x60; - 正则表达式
@@ -226,10 +253,10 @@
  format: { with: /^([a-zA-Z]|\d)+$/, allowBlank: true, message: &#x27;must be letters and numbers only&#x27;  }
  &#x60;&#x60;&#x60;
 
- ### Inclusion ###
+ ##### Inclusion
  被允许的值
  熬过校验
- #### Options ####
+ ###### Options
  * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息.
  * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
  * &#x60;in&#x60; - 被允许的数组
@@ -241,10 +268,10 @@
  inclusion: { range: [5, 10], allowBlank: true, message: &#x27;must be between 5 and 10&#x27; }
  &#x60;&#x60;&#x60;
 
- ### Length ###
+ ##### Length
  定义属性的长度
 
- #### Options ####
+ ###### Options
  * &#x60;number&#x60; - 跟&#x60;is&#x60;作用一样,长度必须时指定值
  * &#x60;array&#x60; - 数组里面有两个值,第一个元素代表最小值,第二个元素达标最大值,即长度的区间
  * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
@@ -253,7 +280,7 @@
  * &#x60;is&#x60; - 跟&#x60;number&#x60;作用一样,长度必须时指定值
  * &#x60;tokenizer&#x60; - 校验时执行的自定以函数,返回一个代表长度的对象
 
- ##### Messages #####
+ ###### Messages
  * &#x60;tooShort&#x60; - 当不满足最小长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息
  * &#x60;tooLong&#x60; - t当不满足最大长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息
  * &#x60;wrongLength&#x60; - 当校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
@@ -267,10 +294,10 @@
  length: { is: 5, tokenizer: function(value) { return value.split(&#x27;&#x27;); } }
  &#x60;&#x60;&#x60;
 
- ### Numericality ###
+ ##### Numericality
  校验是否是一个数值
 
- #### Options ####
+ ###### Options
  * &#x60;true&#x60; -设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
  * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
  * &#x60;onlyInteger&#x60; - 只能是整数
@@ -282,7 +309,7 @@
  * &#x60;odd&#x60; - 一定是奇数
  * &#x60;even&#x60; - 一定是偶数
 
- ##### Messages #####
+ ###### Messages
  * &#x60;greaterThan&#x60; -当大于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
  * &#x60;greaterThanOrEqualTo&#x60; - 当大于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
  * &#x60;equalTo&#x60; - 当等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息
@@ -298,10 +325,10 @@
  numericality: { onlyInteger, greaterThan: 5, lessThanOrEqualTo : 10 }
  &#x60;&#x60;&#x60;
 
- ### Presence ###
+ ##### Presence
  非空校验&#x60;null&#x60;, &#x60;undefined&#x60;, or &#x60;&#x27;&#x27;&#x60;
 
- #### Options ####
+ ###### Options
  * &#x60;true&#x60; - 设置为&#x60;true&#x60;将激活控制校验并且使用默认提示信息
  * &#x60;message&#x60; - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息
 
@@ -311,15 +338,15 @@
  presence: { message: &#x27;must not be blank&#x27; }
  &#x60;&#x60;&#x60;
 
- ### Uniqueness ###
+ ##### Uniqueness
 
  *尚未实现*
 
- ### URL ##
+ ##### URL
 
  校验是否是一个URL.
 
- #### Options ####
+ ###### Options
  * &#x60;allowBlank&#x60; - 如果设置为&#x60;true&#x60;,值为空将跳过校验
  * &#x60;allowIp&#x60; - 如果设置为&#x60;true&#x60;,将使用IP地址进行校验URL,IP地址默认是非法的
  * &#x60;allowUserPass&#x60; - 如果设置为&#x60;true&#x60;,将校验URL是否有用户名和密码,默认情况是不允许用户名和密码
@@ -334,7 +361,7 @@
  url { domainOnly: true }
  &#x60;&#x60;&#x60;
 
- ### Conditional Validators ##
+ ##### Conditional Validators
 
  每个校验器都可以带有一个&#x60;if&#x60; 或者 一个&#x60;unless&#x60;.条件判断.
 
@@ -358,7 +385,7 @@
  }
  &#x60;&#x60;&#x60;
 
- ## Running Validations
+ ##### Running Validations
 
  当对象被创建时,校验器将自动运行,以及每个属性改变时,也将自动校验.
  &#x60;isValid&#x60; 状态将被冒泡,并且帮助确定直接父级的校验状态
@@ -375,7 +402,7 @@
  })
  &#x60;&#x60;&#x60;
 
- ## Inspecting Errors ##
+ ##### Inspecting Errors
 
  当一个对象集成&#x60;Ember.Validations.Mixin&#x60;后,该对象将同时拥有一个&#x60;errors&#x60;对象,所有校验的错误信息
  将被放置在该对象上.
@@ -400,7 +427,7 @@
 
  &#x60;&#x60;&#x60;
 
- ## i18n ##
+ ##### i18n
 
  国际化I18n默认包含以下的keys
 

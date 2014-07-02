@@ -41,7 +41,23 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
                 <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
             
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
@@ -53,9 +69,17 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
                 <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
             
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
             
@@ -82,6 +106,8 @@
                 <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
             
                 <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
             
             </ul>
         </div>
@@ -127,6 +153,7 @@ import RadioItemController from &#x27;./controllers/radio_item&#x27;;
 import BuEditor from &#x27;./bu-editor&#x27;;
 import BuDatePicker from &#x27;./bu-datepicker&#x27;;
 import BuDateRange from &#x27;./bu-daterange&#x27;;
+import BuTree from &#x27;./bu-tree&#x27;;
 /**
  * 向模板中注册
  *  控制器
@@ -134,6 +161,9 @@ import BuDateRange from &#x27;./bu-daterange&#x27;;
  *    radioItem
  *  组件
  *    bu-editor
+ *    bu-datepicker
+ *    bu-daterange
+ *    bu-tree
  */
 export default
 function initFormController(container, application) {
@@ -142,6 +172,7 @@ function initFormController(container, application) {
     container.register(&#x27;component:bu-editor&#x27;,BuEditor);
     container.register(&#x27;component:bu-datepicker&#x27;,BuDatePicker);
     container.register(&#x27;component:bu-daterange&#x27;,BuDateRange);
+    container.register(&#x27;component:bu-tree&#x27;,BuTree);
 }
     </pre>
 </div>

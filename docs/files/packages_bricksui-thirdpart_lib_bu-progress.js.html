@@ -2,7 +2,7 @@
 <html lang="en" class="yui-overrride">
 <head>
     <meta charset="utf-8">
-    <title>packages/bricksui-form/lib/swap-helpers.js</title>
+    <title>packages/bricksui-thirdpart/lib/bu-progress.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
@@ -41,7 +41,23 @@
             
                 <li><a href="../classes/BricksUI.html">BricksUI</a></li>
             
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
                 <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
             
                 <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
             
@@ -53,9 +69,17 @@
             
                 <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
             
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
                 <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
             
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
                 <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
             
                 <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
             
@@ -82,6 +106,8 @@
                 <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
             
                 <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
             
             </ul>
         </div>
@@ -118,14 +144,81 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: packages/bricksui-form/lib/swap-helpers.js</h1>
+                        <h1 class="file-heading">File: packages/bricksui-thirdpart/lib/bu-progress.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /**
- * Created by jiangwy on 14-6-25.
+ @module bricksui
+ @submodule bricksui-thirdpart
  */
+/**
+ 对应Bootstrap progress组件，对Bootstrap progress组件进行轻量级封装
 
+
+ ####基本用法
+ &#x60;&#x60;&#x60;handlebars
+ {{bu-progress progress=60}}
+ &#x60;&#x60;&#x60;
+
+ ------------------
+ ###type
+ &#x60;&#x60;&#x60;handlebars
+     {{!--可根据type的类型，指定progress的呈现行为--}}
+     {{bu-progress progress=40 type=&quot;success&quot;}}
+     {{bu-progress progress=20 type=&quot;info&quot;}}
+     {{bu-progress progress=60 type=&quot;warning&quot;}}
+     {{bu-progress progress=80 type=&quot;danger&quot;}}
+ &#x60;&#x60;&#x60;
+
+ ------------------------------
+
+ ###binding
+
+ &#x60;&#x60;&#x60;handlebars
+ {{bu-progress progressBinding=&quot;prog&quot;}}
+ {{bu-button clicked=&quot;increment&quot; content=&quot;Increment!&quot;}}
+ &#x60;&#x60;&#x60;
+
+ 也可以以对progress进行值的绑定
+ &#x60;&#x60;&#x60;javascript
+     Showcase.ShowComponentsProgressbarController = Ember.Controller.extend({
+      prog: 0,
+      incrementBy: 20,
+      increment: function() {
+        if (this.prog &lt; 100) {
+          return this.incrementProperty(&quot;prog&quot;, this.incrementBy);
+        } else {
+          return this.set(&quot;prog&quot;, this.incrementBy);
+        }
+      }
+    });
+ &#x60;&#x60;&#x60;
+ ---------------------------
+
+ progressbar 堆叠
+
+ &#x60;&#x60;&#x60;handlebars
+     {{#bu-progress}}
+     {{bu-progressbar type=&quot;success&quot; progress=&quot;35&quot;}}
+     {{bu-progressbar type=&quot;warning&quot; progress=&quot;20&quot;}}
+     {{bu-progressbar type=&quot;danger&quot; progress=&quot;10&quot;}}
+     {{/bu-progress}}
+ &#x60;&#x60;&#x60;
+
+
+ ------------------------------------
+
+ &#x60;&#x60;&#x60;html
+ 可选的参数有
+ + stripped 添加斜线样式 {boolean}
+ + animated 是否添加CSS3样式 {boolean}
+ &#x60;&#x60;&#x60;
+
+ @namespace BricksUI
+ @class BuProgress
+ @extends Ember.View
+ */
     </pre>
 </div>
 
