@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>Ember.EasyForm</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Ember.EasyForm</h1>
+<div class="meta">
+    
+
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/packages_bricksui-form_lib_form-docs.js.html#l6"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;form-docs.js:6</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/bricksui-form.html">bricksui-form</a><br>
+            Parent Module: <a href="../modules/bricksui.html">bricksui</a>
+        
+    
+
+    
+    
+</div>
+
+
+
+<h3>Summary</h3>
+<div class="intro">
+    <h5 id="-ember-easyform-https-github-com-dockyard-ember-easyform-"><a href="https://github.com/dockyard/ember-easyForm">EMBER-EASYFORM</a></h5>
+<p>Ember-EasyForm提供对基础表单的封装，同时提供I18n以及字段校验的功能</p>
+<h5 id="formfor-">formFor助手用法</h5>
+<pre class="code prettyprint"><code class="lang-handlebars">  {{#form-for model}}
+  {{input firstName}}
+  {{input lastName}}
+  {{input bio as=&quot;text&quot;}}
+  {{input country as=&#39;select&#39;
+       collection=&quot;App.countries&quot;
+       selection=&quot;country&quot;
+       optionValuePath=&quot;content.id&quot;
+       optionLabelPath=&quot;content.name&quot;
+       prompt=&quot;Select Country&quot;
+  }}
+  {{/form-for}}</code></pre>
+<p>编译结果</p>
+<pre class="code prettyprint"><code class="lang-html">&lt;form&gt;
+  &lt;div class=&quot;input string&quot;&gt;
+    &lt;label for=&quot;ember1&quot;&gt;First name&lt;/label&gt;
+    &lt;input id=&quot;ember1&quot; type=&quot;text&quot;/&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;input string&quot;&gt;
+    &lt;label for=&quot;ember2&quot;&gt;Last name&lt;/label&gt;
+    &lt;input id=&quot;ember2&quot; type=&quot;text&quot;/&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+    &lt;div class=&quot;input string&quot;&gt;
+    &lt;label for=&quot;ember3&quot;&gt;Bio&lt;/label&gt;
+    &lt;textarea id=&quot;ember3&quot;&gt;&lt;/textarea&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;input string&quot;&gt;
+   &lt;label for=&quot;ember4&quot;&gt;Country&lt;/label&gt;
+  &lt;select id=&quot;ember4&quot;&gt;
+   xxx
+  &lt;/select&gt;
+   &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;/form&gt;</code></pre>
+<hr>
+<p>Ember.EasyForm 允许通过设置input的as属性改变input组件的行为</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input secret as=&quot;hidden&quot;}}</code></pre>
+<hr>
+<p>Ember.EasyForm 可以根据传入的字段名称判断组件的行为，该行为可被as覆盖</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input email}}
+{{input password}}
+&lt;em&gt;第一个输入框type=email 第二个输入框type=password&lt;/em&gt;</code></pre>
+<hr>
+<p>传入label属性可以设置对象属性的名称</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input email label=&quot;电子邮箱...&quot;}}</code></pre>
+<p>label也可以为一个绑定属性</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input email labelBinding=&quot;emailLabel&quot;}}</code></pre>
+<p>placeholder设置文本框的占位符</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input firstName placeholder=&quot;Enter your first name&quot;}}
+&lt;em&gt;placeholder也可以是一个绑定属性&lt;/em&gt;</code></pre>
+<p>也可在input中设置hint的属性，该属性将在input校验失败时，进行友好的校验提示</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input firstName hint=&quot;Enter your first name&quot;}}
+&lt;em&gt;hint也可以是一个绑定属性&lt;/em&gt;</code></pre>
+<hr>
+<p>对于复杂的表单属性，也可以将input作为Block Helper使用,其中input-field指代html- input标签</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{#input firstName}}
+{{input-field firstName}}{{label-field firstName}}
+&lt;br/&gt;
+{{error-field firstName}}
+{{/input}}</code></pre>
+<p>Ember.EasyForm.InputField允许传入一个text作为input的Label</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{label-field firstName text=&quot;Your first name&quot;}}</code></pre>
+<p>input-field也可以制定as字段，as字段的可选值有</p>
+<ul>
+<li>text  -- textArea</li>
+<li>email -- type=email</li>
+<li>password -- type=password</li>
+<li>url</li>
+<li>color</li>
+<li>tel</li>
+<li>search</li>
+<li>hidden</li>
+<li>checkbox</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input-field bio as=&quot;text&quot;}}
+{{input-field email}}</code></pre>
+<hr>
+<h5 id="error-field">error-field</h5>
+<p>error-field指代校验失败后校验的信息</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{error-field firstName}}</code></pre>
+<hr>
+<h5 id="hint-field">hint-field</h5>
+<p>hint-field指代在表单校验失败后出现的用户提示信息（如：“用户名不能未空...”）</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{hint-field firstName text=&quot;Your first name&quot;}}</code></pre>
+<hr>
+<h5 id="-">表单验证</h5>
+<p>默认情况下，在表单元素触发了focus-out时，将触发表单的校验</p>
+<hr>
+<h5 id="i18n-">i18n集成</h5>
+<p>对于需要进行i18n的表单元素，Ember.EasyForm提供Translation后缀，进行表单国际化的工作</p>
+<pre class="code prettyprint"><code class="lang-handlebars">{{input firstName placeholderTranslation=&quot;users.attributes.firstname&quot;}}
+{{input firstName labelTranslation=&quot;users.attributes.firstname&quot;}}
+{{input firstName hintTranslation=&quot;users.hints.firstname&quot;}}
+{{input-field firstName placeholderTranslation=&quot;users.attributes.firstname&quot;}}
+{{label-field firstName textTranslation=&quot;users.attributes.firstname&quot;}}
+{{hint-field firstName textTranslation=&quot;users.hints.firstname&quot;}}</code></pre>
+<p><strong>更多I18n内容，见Ember.I18n文档</strong></p>
+
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+
+            
+
+            
+
+            
+        </div>
+
+        
+
+        
+
+        
+
+        
+    </div>
+</div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

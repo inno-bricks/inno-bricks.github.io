@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>packages/bricksui-form/lib/bu-tree.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: packages/bricksui-form/lib/bu-tree.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+var get = Ember.get,
+  set = Ember.set,
+  forEach = Ember.EnumerableUtils.forEach,
+  slice = Array.prototype.slice
+  ;
+
+
+/**
+ @module bricksui
+ @submodule bricksui-form
+ */
+
+/**
+ 树组件，对Jquery Ztree进行简单的封装
+
+ 使用方式
+ &#x60;&#x60;&#x60;handlebars
+ {{bu-tree options=view.treeOptions zNodes=view.zNodes}}
+ &#x60;&#x60;&#x60;
+ 对应的View文件为
+ &#x60;&#x60;&#x60;javascript
+ Tree View
+ export default Ember.View.extend({
+
+    init: function () {
+      this._super.apply(this,arguments);
+      this.set(&#x27;treeOptions&#x27;, {
+        onClick:function(component, event, treeId, treeNode, clickFlag){
+          //your code
+        }
+      });
+      this.set(&#x27;zNodes&#x27;, [
+          { name: &quot;父节点1 - 展开&quot;, open: true,
+            children: [
+              { name: &quot;父节点11 - 折叠&quot;,
+                children: [
+                  { name: &quot;叶子节点111&quot;},
+                  { name: &quot;叶子节点112&quot;},
+                  { name: &quot;叶子节点113&quot;},
+                  { name: &quot;叶子节点114&quot;}
+                ]},
+              { name: &quot;父节点12 - 折叠&quot;,
+                children: [
+                  { name: &quot;叶子节点121&quot;},
+                  { name: &quot;叶子节点122&quot;},
+                  { name: &quot;叶子节点123&quot;},
+                  { name: &quot;叶子节点124&quot;}
+                ]},
+              { name: &quot;父节点13 - 没有子节点&quot;, isParent: true}
+            ]},
+          { name: &quot;父节点2 - 折叠&quot;,
+            children: [
+              { name: &quot;父节点21 - 展开&quot;, open: true,
+                children: [
+                  { name: &quot;叶子节点211&quot;},
+                  { name: &quot;叶子节点212&quot;},
+                  { name: &quot;叶子节点213&quot;},
+                  { name: &quot;叶子节点214&quot;}
+                ]},
+              { name: &quot;父节点22 - 折叠&quot;,
+                children: [
+                  { name: &quot;叶子节点221&quot;},
+                  { name: &quot;叶子节点222&quot;},
+                  { name: &quot;叶子节点223&quot;},
+                  { name: &quot;叶子节点224&quot;}
+                ]},
+              { name: &quot;父节点23 - 折叠&quot;,
+                children: [
+                  { name: &quot;叶子节点231&quot;},
+                  { name: &quot;叶子节点232&quot;},
+                  { name: &quot;叶子节点233&quot;},
+                  { name: &quot;叶子节点234&quot;}
+                ]}
+            ]},
+          { name: &quot;父节点3 - 没有子节点&quot;, isParent: true}
+        ]
+      );
+    }
+  });
+ &#x60;&#x60;&#x60;
+
+ &#x60;&#x60;&#x60;html
+ Warning: *组件重写了callback函数方法，加入了一层代理功能，第一个参数为component实例，用于与Ember交互，其他参数与zTree一致
+ &#x60;&#x60;&#x60;
+
+ ###详细API DEMO 见 [Ztree查看更多...](http://www.ztree.me/v3/main.php#_zTreeInfo)
+
+ @class BuTree
+ @namespace Ember
+ @extends Ember.Component
+ */
+export default Ember.Component.extend({
+
+  tagName: &#x27;ul&#x27;,
+
+  /**
+   * 默认模板
+   * @default &#x27;&#x27;
+   * @property defaultTemplate
+   * @type function
+   */
+  defaultTemplate: Ember.Handlebars.compile(&#x27;&#x27;),
+
+  /**
+   * 树所绑定的数据
+   * @property zNodes
+   * @type object
+   * @default null
+   */
+  zNodes: null,
+
+
+  classNames:[&#x27;ztree&#x27;],
+
+  /**
+   * elementId的别名
+   * @property treeId
+   * @default elementId
+   * @type string
+   */
+  treeId: Ember.computed.alias(&#x27;elementId&#x27;),
+
+  /**
+   * ztree配置项
+   * @property options
+   * @default {}
+   * @type object
+   */
+  options: {},
+
+
+  init: function () {
+    this._super.apply(this, arguments);
+    this._parseOptions();
+  },
+
+
+  /**
+   * 如果options是模板中传入的字符串，尝试将字符串转换为options对象
+   * @method _parseOptions
+   * @private
+   */
+  _parseOptions: function () {
+    var options = get(this, &#x27;options&#x27;);
+    if (Ember.typeOf(options) === &#x27;string&#x27;) {
+      try {
+        JSON.parse(options);
+        set(this, &#x27;options&#x27;, options);
+      } catch (e) {
+        throw e;
+      }
+    }
+    this._parseCallback(options);
+  },
+
+  /**
+   * 对传入的callbacks进行切面，织入当前Compoennt对象，作为回调函数的第一个参数，
+   * warn: this作用域保留为z-Tree插件作用域，如果需要获取当前的component作为回调函数的作用域，在回调函数中获取第一个参数进行操作
+   * @param options
+   * @private
+   */
+  _parseCallback: function (options) {
+    var k,
+      callbacks = options.callback;
+
+    if (!callbacks) return;
+
+    function curriedProxy(param, fn) {
+      param = [param];
+      return function () {
+        fn.apply(this, param.concat(slice.apply(arguments)));
+      };
+    }
+
+    for (k in callbacks) {
+      if (callbacks.hasOwnProperty(k)) {
+        callbacks[k] = curriedProxy(this, callbacks[k]);
+      }
+    }
+  },
+
+  /**
+   * 返回zTree实例
+   * @method getTree
+   * @returns {*}
+   */
+  getTree: function () {
+    var treeId = get(this, &#x27;treeId&#x27;);
+    return $.fn.zTree.getZTreeObj(treeId);
+  },
+
+  /**
+   * 在Component销毁时，销毁树的实例
+   * @method _destroyElement
+   * @private
+   */
+  _destroyElement: function () {
+    var treeId = get(this, &#x27;treeId&#x27;);
+
+    $.fn.zTree.destroy(treeId);
+  }.on(&#x27;destroyElement&#x27;),
+
+
+  /**
+   * 在插入Dom后，生成Tree组件
+   * @method _updateDom
+   * @private
+   */
+  _updateDom: function () {
+    Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function () {
+      var setting = get(this, &#x27;options&#x27;),
+        zNodes = get(this, &#x27;zNodes&#x27;);
+      $.fn.zTree.init(this.$(), setting, zNodes);
+    });
+  }.on(&#x27;didInsertElement&#x27;)
+
+});
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

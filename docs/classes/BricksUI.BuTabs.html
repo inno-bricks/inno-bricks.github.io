@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>BricksUI.BuTabs</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>BricksUI.BuTabs</h1>
+<div class="meta">
+    
+
+    
+        <div class="extends">
+            Extends Ember.View
+        </div>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/packages_bricksui-thirdpart_lib_bu-tabs.js.html#l5"><code>packages&#x2F;bricksui-thirdpart&#x2F;lib&#x2F;bu-tabs.js:5</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a><br>
+            Parent Module: <a href="../modules/bricksui.html">bricksui</a>
+        
+    
+
+    
+    
+</div>
+
+
+
+<h3>Summary</h3>
+<div class="intro">
+    <h4 id="-tabs-"><code>tabs</code> 组件基本用法</h4>
+<p>一个<code>tab-pane</code>代表一个tab页签
+<code>bu-tabs-panes</code> 需要有一个<code>contentBinding</code> 属性,用来生成所有的tab标签页,
+<code>bu-tabs-panes</code>与<code>bu-tabs</code>是配套使用的,<code>bu-tabs</code>生成tab组件页签头,<code>bu-tabs-panes</code>生成内容,
+所以两者需要有一个关联,这就是<code>items-id</code>.</p>
+<pre class="code prettyprint"><code class="lang-html">&lt;div class=&quot;bs-example&quot;&gt;
+{{bu-tabs id=&quot;tabs1&quot; contentBinding=&quot;tabsMeta&quot; default=&quot;Foo&quot;}}
+{{bu-tabs-panes items-id=&quot;tabs1&quot; contentBinding=&quot;tabsMeta&quot;}}
+&lt;/div&gt;</code></pre>
+<ul>
+<li><code>bu-tas</code>需要配置一个<code>id</code>属性</li>
+<li><code>bu-tabs-panes</code>根据content生成各个内容标签</li>
+<li><code>items-id</code> 必须要跟<code>bu-tabs</code>的id挂钩</li>
+<li><code>default</code>可以设置tab组件的默认标签页</li>
+<li><code>justified</code> 设定<code>tab</code>组件是否宽度自适应</li>
+</ul>
+<p>配置项如下:</p>
+<pre class="code prettyprint"><code class="lang-javascript">SomeController = Ember.Controller.extend({
+   tabsMeta: Ember.A([
+           Ember.Object.create({ title: &#39;Foo&#39;, template: &#39;tabs/foo-tabpane&#39;, controller: &#39;ShowcaseComponentsTabsFoo&#39;}),
+           Ember.Object.create({ title: &#39;Bar&#39;, template: &#39;tabs/bar-tabpane&#39;})
+   ]);
+});
+
+<code>template</code> 指定tab内容页的模板
+<code>controller</code> 可以指定tabs标签页的控制器</code></pre>
+<h4 id="-tabs-"><code>tabs</code> 组件与路由相结合</h4>
+<p>定义路由:</p>
+<pre class="code prettyprint"><code class="lang-javascript">    this.resource(&#39;user&#39;, function() {
+     this.route(&#39;general&#39;);
+     this.route(&#39;privacy&#39;);
+     return this.route(&#39;activities&#39;);
+   });</code></pre>
+<p>在对应的user的template里面</p>
+<pre class="code prettyprint"><code class="lang-html">{{bs-tabs contentBinding=&quot;tabsMeta&quot;}}
+{{outlet}}</code></pre>
+<p>控制器</p>
+<pre class="code prettyprint"><code class="lang-javascript">App.UserController = Ember.Controller.extend({
+ tabsMeta: [
+   Ember.Object.create({title: &#39;General&#39;, linkTo: &#39;user.general&#39;}),
+   Ember.Object.create({title: &#39;Privacy&#39;, linkTo: &#39;user.privacy&#39;}),
+   Ember.Object.create({title: &#39;Activities&#39;, linkTo: &#39;user.activities&#39;})
+ ]
+});</code></pre>
+<p>然后定义各个tab页签对应的模板</p>
+
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+
+            
+
+            
+
+            
+        </div>
+
+        
+
+        
+
+        
+
+        
+    </div>
+</div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

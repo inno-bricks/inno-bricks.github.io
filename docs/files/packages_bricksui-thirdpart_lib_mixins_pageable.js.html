@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>packages/bricksui-thirdpart/lib/mixins/pageable.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: packages/bricksui-thirdpart/lib/mixins/pageable.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*globals jQuery:true;Ember:true */
+/**
+ @module bricksui
+ @submodule bricksui-thirdpart
+ */
+/**
+ * Normalizes values to be used in a sort for natural sort
+ * @private
+ * @param  {Mixed} a
+ * @param  {Mixed} b
+ * @return {Array}
+ */
+var normalizeSortValues = function (a, b) {
+    // Set unsupported types.  May need to be made into a whitelist instead
+    var failTypes = [&#x27;function&#x27;, &#x27;object&#x27;, &#x27;array&#x27;, &#x27;date&#x27;, &#x27;regexp&#x27;];
+
+    // Check if &#x60;b&#x60; can be normalized
+    if (jQuery.inArray(jQuery.type(a), failTypes) !== -1) {
+        throw new Error(&#x27;Cannot normalize input &#x60;a&#x60;! &#x27; + jQuery.type(a) + &#x27; was passed!&#x27;);
+    }
+
+    // Check if &#x60;b&#x60; can be normalized
+    if (jQuery.inArray(jQuery.type(b), failTypes) !== -1) {
+        throw new Error(&#x27;Cannot normalize input &#x60;b&#x60;! &#x27; + jQuery.type(b) + &#x27; was passed!&#x27;);
+    }
+
+    // Function that does the normalizing
+    var norm = function (input) {
+        // Some setup
+        var ret,
+            tests = {
+                // Regex to detect if is number
+                number: /^([0-9]+?)$/
+            };
+
+        // Figure out what the value is return the normalized version
+        switch (jQuery.type(input)) {
+            case &#x27;string&#x27;:
+                if (tests.number.test(jQuery.trim(input))) {
+                    return parseInt(input, 10);
+                }
+                return jQuery.trim(input).toLowerCase();
+            case &#x27;null&#x27;:
+                return &#x27;&#x27;;
+            case &#x27;boolean&#x27;:
+                return input ? &#x27;0&#x27; : &#x27;1&#x27;;
+            default:
+                return input;
+        }
+    };
+
+    // Normalize variables
+    a = norm(a);
+    b = norm(b);
+
+    // If types differ, set them both to strings
+    if ((typeof a === &#x27;string&#x27; &amp;&amp; typeof b === &#x27;number&#x27;) || (typeof b === &#x27;string&#x27; &amp;&amp; typeof a === &#x27;number&#x27;)) {
+        a = String(a);
+        b = String(b);
+    }
+
+    // Return normalized values
+    return [a, b];
+};
+
+
+/**
+ 静态数据处理扩展,用于分页处理
+ @type {Ember.Mixin}
+ @namespace BricksUI
+ @class StaticPageable
+ */
+var StaticPageable = Ember.Mixin.create({
+    /**
+     * 当前页码
+     * @property currentPage
+     * @type {Number}
+     */
+    currentPage: 1,
+
+    /**
+     * 每页显示条数
+     * @property perPage
+     * @type {Number}
+     */
+    perPage: 100,
+
+    /**
+     * 排序字段
+     * @property sortBy
+     * @type {String}
+     */
+    sortBy: null,
+
+    /**
+     * 排序方向
+     * @property sortDirection
+     * @type {String}
+     */
+    sortDirection: &#x27;ascending&#x27;,
+
+
+    /**
+     * 静态数据本地数据存放的集合
+     * @property data
+     * @type {Array}
+     */
+    data: [],
+
+    /**
+     * Used for the collection view for which items to show
+     *
+     * @return {Array}
+     */
+    content: function () {
+        // Get the starting and ending point of the array to slice
+        var start = (this.get(&#x27;currentPage&#x27;) - 1) * this.get(&#x27;perPage&#x27;),
+            end = start + this.get(&#x27;perPage&#x27;);
+
+        return this.get(&#x27;data&#x27;).slice(start, end);
+    }.property(&#x27;currentPage&#x27;, &#x27;perPage&#x27;, &#x27;data.@each&#x27;),
+
+    /**
+     * 总页数
+     * @property totalPages
+     * @return int Total Number of Pages
+     */
+    totalPages: function () {
+        return Math.ceil(this.get(&#x27;data.length&#x27;) / this.get(&#x27;perPage&#x27;));
+    }.property(&#x27;data.@each&#x27;, &#x27;perPage&#x27;),
+
+    actions: {
+        /**
+         * 后一页
+         * @method nextPage
+         */
+        nextPage: function () {
+            // Make sure you can go forward first
+            if (this.get(&#x27;currentPage&#x27;) === this.get(&#x27;totalPages&#x27;))
+                return null; // NOOP
+
+            // Set the current page to the next page
+            this.set(&#x27;currentPage&#x27;, this.get(&#x27;currentPage&#x27;) + 1);
+        },
+
+        /**
+         * 前一页
+         * @method prevPage
+         */
+        prevPage: function () {
+            // Make sure you can go backwards first
+            if (this.get(&#x27;currentPage&#x27;) === 1)
+                return null; // NOOP
+
+            // Set the current page to the previous page
+            this.set(&#x27;currentPage&#x27;, this.get(&#x27;currentPage&#x27;) - 1);
+        },
+        /**
+         * 第一页
+         * @method firstPage
+         */
+        firstPage: function () {
+            this.set(&#x27;currentPage&#x27;, 1);
+        },
+        /**
+         * 尾页
+         * @method lastPage
+         */
+        lastPage: function () {
+            this.set(&#x27;currentPage&#x27;, this.get(&#x27;totalPages&#x27;));
+        }
+    },
+
+    /**
+     * Sorts the data by a property
+     * @param  {String} property
+     * @param  {String} direction
+     * @return {Void}
+     */
+    sortByProperty: function (property, direction) {
+        var data = this.get(&#x27;data&#x27;).slice();
+
+        // Set up sort direction
+        if (direction === undefined) {
+            if (this.get(&#x27;sortBy&#x27;) === property &amp;&amp; this.get(&#x27;sortDirection&#x27;) === &#x27;ascending&#x27;)
+                direction = &#x27;descending&#x27;;
+            else
+                direction = &#x27;ascending&#x27;;
+        }
+
+        // Custom sort to sort alphanumerically
+        data.sort(function (a, b) {
+            // Normalize values to make sort natural
+            var normalizedValues = normalizeSortValues(a.get(property), b.get(property)),
+                va = normalizedValues[0],
+                vb = normalizedValues[1];
+
+            // Do the sorting
+            if (va === vb)
+                return 0;
+            else {
+                // Reverse if necessary
+                if (direction === &#x27;ascending&#x27;)
+                    return va &gt; vb ? 1 : -1;
+                else
+                    return va &lt; vb ? 1 : -1;
+            }
+        });
+
+        // Now that sort is complete, set the controller
+        this.set(&#x27;sortBy&#x27;, property);
+
+        // Assign sort direction
+        this.set(&#x27;sortDirection&#x27;, direction);
+
+        // Assign the data
+        this.set(&#x27;data&#x27;, data);
+
+        // Reset the current page to 1
+        this.set(&#x27;currentPage&#x27;, 1);
+    }
+});
+/**
+ 基于Ember-Data的数据处理扩展,用于分页处理
+ 分页扩展,用于增强控制器的功能,使控制器具备分页管理功能
+ * &#x60;modelName&#x60;  必须配置,当前分页组件所要请求的模型名称
+ * &#x60;query&#x60; 要传入到后台的查询参数,是一个计算属性,需要返回&#x60;Object&#x60;
+ &#x60;&#x60;&#x60;javascript
+ App.ApplicationController = Ember.ArrayController.extend(BricksUI.DynamicPageable,{
+    perPage: 5,
+    modelName:&quot;user&quot;,
+    firstName:&quot;xx&quot;,
+    selectedPageSize:5,
+    pageSizes: [
+       5,10,15,20
+    ],
+    query:function(){
+        return {
+            firstName:this.get(&#x27;firstName&#x27;),
+            limit:this.get(&#x27;selectedPageSize&#x27;)
+        }
+    }.property(&quot;firstName&quot;,&quot;city&quot;).volatile()
+});
+ &#x60;&#x60;&#x60;
+ &#x60;BricksUI.DynamicPageable&#x60; 用于扩展控制器的分页功能
+ &#x60;BricksUI.BuPagination&#x60; 用于分页组件视图的呈现,并且将&#x60;action&#x60;委托给控制器
+
+ @namespace BricksUI
+ @type {Ember.Mixin}
+ @class DynamicPageable
+ */
+var DynamicPageable = Ember.Mixin.create({
+    /**
+     * 当前页码
+     * @property currentPage
+     * @type {Number}
+     */
+    currentPage: 1,
+
+    /**
+     * 每页显示多少条
+     * @property perPage
+     * @type {Number}
+     */
+    perPage: 10,
+
+    /**
+     * 排序字段
+     * @property sortBy
+     * @type {String}
+     */
+    sortBy: null,
+
+    /**
+     * 排序方向,升序或者降序
+     * @property sortDirection
+     * @type {String}
+     * @default ascending
+     */
+    sortDirection: &#x27;ascending&#x27;,
+
+    init: function () {
+        Ember.assert(&quot;the modelName must provided !&quot;, this.get(&#x27;modelName&#x27;));
+        this.paramNames = Ember.$.extend(this.paramNames || {}, this.defaultParamNames);
+        this._super.apply(this, arguments);
+        this.send(&quot;firstPage&quot;);
+    },
+    /**
+     * @private
+     * @returns {null}
+     */
+    getParams: function () {
+        return this.paramNames;
+    },
+    /**
+     *  查询参数,可覆盖&#x60;defaultParamNames&#x60;
+     *  @property paramNames
+     *  @type {Object}
+     *  @default null
+     */
+    paramNames: null,
+
+    /**
+     *  默认的查询参数
+     *  @property defaultParamNames
+     *  @type {Object}
+     *  @default {
+     *      start: &#x27;start&#x27;,
+     *      limit: &#x27;limit&#x27;,
+     *      sort: &#x27;sort&#x27;,
+     *      dir: &#x27;dir&#x27;
+     *  }
+     */
+    defaultParamNames: {
+        start: &#x27;start&#x27;,
+        limit: &#x27;limit&#x27;,
+        sort: &#x27;sort&#x27;,
+        dir: &#x27;dir&#x27;
+    },
+    /**
+     * 数据加载中
+     * @property loading
+     * @type {Boolean}
+     * @default false
+     */
+    loading: false,
+    /**
+     * 用户的自定以查询参数
+     * @property query
+     * @type {Object}
+     * @default null
+     */
+    query: null,
+    /**
+     * @private
+     */
+    cursor: 0,
+    /**
+     * @private
+     */
+    doLoad: function (start) {
+        if (!this.get(&#x27;store&#x27;)) {
+            return [];
+        }
+        var o = {}, pn = this.getParams(), that = this;
+        o[pn.start] = start;
+        o[pn.limit] = this.get(&#x27;perPage&#x27;);
+        o[pn.sort] = this.get(&quot;sortBy&quot;);
+        o[pn.dir] = this.get(&quot;sortDirection&quot;);
+
+        Ember.$.extend(o, this.get(&#x27;query&#x27;));
+
+        if (this.get(&#x27;loading&#x27;)) {
+            return false;
+        }
+        console.log(o);
+        var loadingPromise = this.store.find(this.get(&#x27;modelName&#x27;), o).then(function (models) {
+            var perPage = o.limit,
+                len = models.get(&#x27;length&#x27;);
+            Ember.assert(&quot;server return models length is &quot; + models.get(&#x27;length&#x27;) + &quot; but the config perPage is &quot; + perPage, len === perPage);
+            that.set(&quot;content&quot;, models);
+            that.set(&quot;cursor&quot;, start);
+            Ember.propertyDidChange(that, &quot;totalPages&quot;);
+            that.set(&quot;loading&quot;, false);
+        });
+        this.set(&quot;loading&quot;, true);
+        return loadingPromise;
+    },
+
+
+    /**
+     * 总页数
+     * @property totalPages
+     */
+    totalPages: function () {
+        return Math.ceil(this.getTotalCount() / this.get(&#x27;perPage&#x27;));
+    }.property(&#x27;perPage&#x27;),
+
+    actions: {
+        /**
+         * 下一页
+         * @method nextPage
+         */
+        nextPage: function () {
+            // Make sure you can go forward first
+            if (this.get(&#x27;currentPage&#x27;) === this.get(&#x27;totalPages&#x27;))
+                return null; // NOOP
+
+            // Set the current page to the next page
+            var promise = this.doLoad(this.cursor + this.get(&#x27;perPage&#x27;));
+            if (promise.then) {
+                var that = this;
+                promise.then(function () {
+                    that.set(&#x27;currentPage&#x27;, that.get(&#x27;currentPage&#x27;) + 1);
+                });
+            }
+        },
+
+        /**
+         * 上一页
+         * @method prevPage
+         */
+        prevPage: function () {
+            // Make sure you can go backwards first
+            if (this.get(&#x27;currentPage&#x27;) === 1)
+                return null; // NOOP
+
+            // Set the current page to the previous page
+
+            var promise = this.doLoad(Math.max(0, this.cursor - this.get(&#x27;perPage&#x27;)));
+            if (promise.then) {
+                var that = this;
+                promise.then(function () {
+                    that.set(&#x27;currentPage&#x27;, that.get(&#x27;currentPage&#x27;) - 1);
+                });
+            }
+        },
+        /**
+         * 首页
+         * @method firstPage
+         */
+        firstPage: function () {
+            this.set(&quot;currentPage&quot;, 1);
+            this.doLoad(0);
+        },
+        /**
+         * 尾页
+         * @method lastPage
+         */
+        lastPage: function () {
+            var total = this./**/getTotalCount(),
+                extra = total % this.get(&#x27;perPage&#x27;);
+
+            this.set(&quot;currentPage&quot;, this.get(&#x27;totalPages&#x27;));
+            this.doLoad(extra ? (total - extra) : total - this.get(&#x27;perPage&#x27;));
+        }
+    },
+    /**
+     * 总条数
+     * @method getTotalCount
+     * @returns {*|number}
+     */
+    getTotalCount: function () {
+        var meta = this.store.metadataFor(this.get(&#x27;modelName&#x27;));
+        return meta.total || 0;
+    },
+    /**
+     * 根据属性名称排序
+     * @method sortByProperty
+     */
+    sortByProperty: function (property, direction) {
+        var data = this.get(&#x27;content&#x27;).slice();
+
+        // Set up sort direction
+        if (direction === undefined) {
+            if (this.get(&#x27;sortBy&#x27;) === property &amp;&amp; this.get(&#x27;sortDirection&#x27;) === &#x27;ascending&#x27;)
+                direction = &#x27;descending&#x27;;
+            else
+                direction = &#x27;ascending&#x27;;
+        }
+
+        // Custom sort to sort alphanumerically
+        data.sort(function (a, b) {
+            // Normalize values to make sort natural
+            var normalizedValues = normalizeSortValues(a.get(property), b.get(property)),
+                va = normalizedValues[0],
+                vb = normalizedValues[1];
+
+            // Do the sorting
+            if (va === vb)
+                return 0;
+            else {
+                // Reverse if necessary
+                if (direction === &#x27;ascending&#x27;)
+                    return va &gt; vb ? 1 : -1;
+                else
+                    return va &lt; vb ? 1 : -1;
+            }
+        });
+
+        // Now that sort is complete, set the controller
+        this.set(&#x27;sortBy&#x27;, property);
+
+        // Assign sort direction
+        this.set(&#x27;sortDirection&#x27;, direction);
+
+        // Assign the data
+        this.set(&#x27;content&#x27;, data);
+
+        // Reset the current page to 1
+        //this.set(&#x27;currentPage&#x27;, 1);
+        this.send(&quot;firstPage&quot;);
+    }
+});
+
+export {
+    StaticPageable,
+    DynamicPageable
+    };
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

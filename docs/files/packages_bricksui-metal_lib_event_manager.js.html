@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>packages/bricksui-metal/lib/event_manager.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: packages/bricksui-metal/lib/event_manager.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * @module bricksui
+ * @submodule bricksui-metal
+ */
+
+import BricksUI from &quot;bricksui-metal/core&quot;;
+var Em = window.Ember;
+/**
+ * Ember.View 本身的实现过程就是一个状态机的流转过程
+ * Ember 事件绑定流程:
+ *  Application.eventDispatcher
+ *  Application.setupEventDispatcher
+ *      --&gt;eventDispatcher.setup
+ *      --&gt;eventDispatcher.setupHandler     //统一绑定在rootElement下
+ *
+ *  Ember事件触发流程:
+ *  jQuery.event.dispatch
+ *      --&gt;Ember setupHandler
+ *      --&gt;eventDispatcher._findNearestEventManager
+ *  在findNearestEventManager会查找视图是否具有事件管理器
+ *  属性名称为:eventManager
+ *      yes--&gt; 事件统一交给事件管理器可处理的事件处理
+ *      no --&gt; 逐级冒泡事件
+ *  为了统一管理事件,以及提供使用者统一的事件编码和调用,以及语义化事件变成
+ *  将在View上新增eventManager属性,用于统一管理
+ */
+
+var eventHandlers = {
+    interpreKeyEvents: function (event) {
+        //TODO 将mapping写成用户可以扩展的形式
+        var mapping = event.shiftKey ? ModifiedKeyBindings : KeyBindings;
+        var eventName = mapping[event.keyCode];
+        if (eventName &amp;&amp; this[eventName]) {
+            var handler = this[eventName];
+            if (Ember.typeOf(handler) === &quot;function&quot;) {
+                return handler.call(this, event, this);
+            }
+            return false;
+        }
+    },
+    handleKeyEvent: function (event, view) {
+        var emberEvent = null;
+        switch (event.type) {
+            case &quot;keydown&quot;:
+                emberEvent = &quot;keyDown&quot;;
+                break;
+            case &quot;keypress&quot;:
+                emberEvent = &quot;keyPress&quot;;
+                break;
+        }
+        var handler = emberEvent ? this.get(emberEvent) : null;
+        if (handler) {
+            return !handler.call(BricksUI.keyResponderStack.current(), event, BricksUI.keyResponderStack.current());
+        } else if (emberEvent === &quot;keyDown&quot; &amp;&amp; this.interpreKeyEvents(event)) {
+            return false;
+        } else if (this.get(&quot;parentView&quot;)) {
+            return this.get(&quot;parentView&quot;).handleKeyEvent(event, view);
+        }
+    }
+};
+//TODO 需要仔细研究Ember内部这个的相关机制,才好扩展,
+Ember.View.reopen(eventHandlers);
+Ember.TextSupport.reopen(eventHandlers);
+
+/**
+ * 用户可进行扩展和修改
+ * @type
+ */
+var KeyBindings = BricksUI.KeyBindings = {
+    8: &#x27;deleteBackward&#x27;,
+    9: &#x27;insertTab&#x27;,
+    13: &#x27;insertNewline&#x27;,
+    27: &#x27;cancel&#x27;,
+    32: &#x27;insertSpace&#x27;,
+    37: &#x27;moveLeft&#x27;,
+    38: &#x27;moveUp&#x27;,
+    39: &#x27;moveRight&#x27;,
+    40: &#x27;moveDown&#x27;,
+    46: &#x27;deleteForward&#x27;
+};
+/**
+ * 辅助键配合其他按键的修改操作
+ * @type
+ */
+var ModifiedKeyBindings = BricksUI.ModifiedKeyBindings = {
+    8: &#x27;deleteForward&#x27;,
+    9: &#x27;insertBacktab&#x27;,
+    37: &#x27;moveLeftAndModifySelection&#x27;,
+    38: &#x27;moveUpAndModifySelection&#x27;,
+    39: &#x27;moveRightAndModifySelection&#x27;,
+    40: &#x27;moveDownAndModifySelection&#x27;
+};
+
+
+Ember.mixin(BricksUI, {
+    mouseResponderView: null,
+    keyResponderStack: Em.Object.extend({
+        /**
+         * 当前构造器是匿名的,直接创建对象,所以这里直接属性是引用类型不会有影响
+         * 如果不是,则引用类型不应该放在这里,而应该直接实例化
+         */
+        _stack: [],
+        currentKeyResponder: function () {
+            return this.current();
+        }.property().volatile(),
+        current: function () {
+            var length = this._stack.get(&#x27;length&#x27;);
+            return length &gt; 0 ? this._stack.objectAt(length - 1) : null;
+        },
+        push: function (view) {
+            if (!Ember.none(view)) {
+                if (view.willBecomeKeyResponder) view.willBecomKeyResponder();
+                //TODO 需要兼容旧版本浏览器才用这种方式添加样式
+                if (view.set &amp;&amp; !view.isDestroyed) view.set(&#x27;isFocused&#x27;, true);
+                this._stack.push(view);
+                if (view.didBecomeKeyResponder) view.didBecomeKeyResponder();
+                this.propertyDidChange(&#x27;currentKeyResponder&#x27;);
+            }
+            return view;
+        },
+        pop: function () {
+            if (this._stack.get(&#x27;length&#x27;) &gt; 0) {
+                var current = this.current();
+                if (current &amp;&amp; current.willLoseKeyResponder) current.willLoseKeyResponder();
+                var view = this._stack.pop();
+
+                if (view.set &amp;&amp; !view.isDestroyed) view.set(&#x27;isFocused&#x27;, false);
+                if (view.didLoseKeyResponder) view.didLoseKeyResponder();
+                this.propertyDidChange(&#x27;currentKeyResponder&#x27;);
+                return view;
+            }
+            else return null;
+        },
+
+        replace: function (view) {
+            if (this.current() !== view) {
+                this.pop();
+                return this.push(view);
+            }
+        }
+    }).create()
+});
+
+
+var EventManager = {
+    acceptKeyResponder: false,
+
+    becomeKeyResponder: function (replace) {
+        if (this.get(&#x27;acceptsKeyResponder&#x27;) !== false &amp;&amp; !this.get(&#x27;isDisabled&#x27;)) {
+            if (replace === undefined || replace === true) {
+                BricksUI.keyResponderStack.replace(this);
+            } else {
+                BricksUI.keyResponderStack.push(this);
+            }
+        } else {
+            var parent = this.get(&#x27;parentView&#x27;);
+            if (parent &amp;&amp; parent.becomeKeyResponder) {
+                return parent.becomeKeyResponder(replace);
+            }
+        }
+    },
+
+    resignKeyResponder: function () {
+        BricksUI.keyResponderStack.pop();
+    }
+};
+BricksUI.ALLOW_BROWSER_DEFAULT_HANDLING = {};
+/**
+ * 分开维护
+ * @type {{}}
+ */
+EventManager[&quot;eventManager&quot;] = {
+    mouseDown: function (event, view) {
+        view.becomeKeyResponder();  // Becoming a key responder is independent of mouseDown handling
+        BricksUI.set(&#x27;mouseResponderView&#x27;, undefined);
+        var handlingView = this._dispatch(&#x27;mouseDown&#x27;, event, view);
+        if (handlingView) {
+            BricksUI.set(&#x27;mouseResponderView&#x27;, handlingView);
+        }
+        return !handlingView;
+    },
+
+    mouseUp: function (event, view) {
+        if (BricksUI.get(&#x27;mouseResponderView&#x27;) !== undefined) {
+            view = BricksUI.get(&#x27;mouseResponderView&#x27;);
+            BricksUI.set(&#x27;mouseResponderView&#x27;, undefined);
+        }
+        return !this._dispatch(&#x27;mouseUp&#x27;, event, view);
+    },
+
+    mouseMove: function (event, view) {
+        if (BricksUI.get(&#x27;mouseResponderView&#x27;) !== undefined) {
+            view = BricksUI.get(&#x27;mouseResponderView&#x27;);
+        }
+        return !this._dispatch(&#x27;mouseMove&#x27;, event, view);
+    },
+
+    doubleClick: function (event, view) {
+        if (BricksUI.get(&#x27;mouseResponderView&#x27;) !== undefined) {
+            view = BricksUI.get(&#x27;mouseResponderView&#x27;);
+        }
+        return !this._dispatch(&#x27;doubleClick&#x27;, event, view);
+    },
+
+    keyDown: function (event) {
+        if (BricksUI.keyResponderStack.current() !== undefined &amp;&amp; BricksUI.keyResponderStack.current().get(&#x27;isVisible&#x27;)) {
+            return BricksUI.keyResponderStack.current().handleKeyEvent(event, BricksUI.keyResponderStack.current());
+        }
+        return true;
+    },
+
+    keyPress: function (event) {
+        if (BricksUI.keyResponderStack.current() !== undefined &amp;&amp; BricksUI.keyResponderStack.current().get(&#x27;isVisible&#x27;)) {
+            return BricksUI.keyResponderStack.current().handleKeyEvent(event, BricksUI.keyResponderStack.current());
+        }
+        return true;
+    },
+
+    // For the passed in view, calls the method with the name of the event, if defined. If that method
+    // returns true, returns the view. If the method returns false, recurses on the parent view. If no
+    // view handles the event, returns false.
+    _dispatch: function (eventName, event, view) {
+        var handler = view.get(eventName);
+        if (handler) {
+            var result = handler.call(view, event, view);
+            //TODO
+            if (result === BricksUI.ALLOW_BROWSER_DEFAULT_HANDLING) return false;
+            else if (result) return view;
+        }
+        var parentView = view.get(&#x27;parentView&#x27;);
+        if (parentView) return this._dispatch(eventName, event, parentView);
+        else return false;
+    }
+};
+
+export default
+EventManager;
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

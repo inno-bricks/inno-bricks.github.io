@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>Ember.Validations</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Ember.Validations</h1>
+<div class="meta">
+    
+
+    
+        <div class="extends">
+            Extends Ember.Namespace
+        </div>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/packages_bricksui-form_lib_ember-validations.js.html#l5"><code>packages&#x2F;bricksui-form&#x2F;lib&#x2F;ember-validations.js:5</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/bricksui-form.html">bricksui-form</a><br>
+            Parent Module: <a href="../modules/bricksui.html">bricksui</a>
+        
+    
+
+    
+    
+</div>
+
+
+
+<h3>Summary</h3>
+<div class="intro">
+    <h5 id="-ember-validations-https-github-com-dockyard-ember-validations-"><a href="https://github.com/dockyard/ember-validations">Ember.Validations更多内容查看...</a></h5>
+<h4 id="-">用法</h4>
+<p>需要将<code>Ember.Validations.Mixin</code>集成到任何你想要添加验证的控制器上</p>
+<pre class="code prettyprint"><code class="lang-javascript">var App.UserController = Ember.ObjectController.extend(Ember.Validations.Mixin);</code></pre>
+<p>需要定义一个validations对象作为控制器的一个属性,用来标识当前模型的验证规则.
+对象的keys要一一映射模型的属性.如果你传入了一个JSON对象作为一个属性的值,则该值将被作为当前属性的验证规则.
+如果你传入了<code>true</code>,则该属性将被标记为需要被验证的.如下:</p>
+<pre class="code prettyprint"><code class="lang-javascript">App.UserController.reopen({
+     validations: {
+       firstName: {
+         presence: true,
+         length: { minimum: 5 }
+       },
+       age: {
+         numericality: true
+       },
+       profile: true
+     }
+});</code></pre>
+<h4 id="-">校验器</h4>
+<p>当前已经支持的校验器如下所示</p>
+<h5 id="absence">Absence</h5>
+<p>验证属性值是<code>null</code>,<code>undefined</code> 或者是 <code>&#39;&#39;</code>.</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>true</code> - 设置为<code>true</code>将激活控制校验并且使用默认提示信息</li>
+<li><code>message</code> - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+absence: true
+absence: { message: &#39;must be blank&#39; }</code></pre>
+<h5 id="acceptance">Acceptance</h5>
+<p>默认可被接受的值为<code>&#39;1&#39;</code>, <code>1</code>, and <code>true</code>.</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>true</code> - 设置为<code>true</code>将激活控制校验并且使用默认提示信息</li>
+<li><code>message</code> - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息</li>
+<li><code>accept</code> - 可被接受的值</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+acceptance: true
+acceptance: { message: &#39;you must accept&#39;, accept: &#39;yes&#39; }</code></pre>
+<h5 id="confirmation">Confirmation</h5>
+<p>相同值校验</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>true</code> - 设置为<code>true</code>将激活控制校验并且使用默认提示信息</li>
+<li><code>message</code> - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+confirmation: true
+confirmation: { message: &#39;you must confirm&#39; }</code></pre>
+<h5 id="exclusion">Exclusion</h5>
+<p>排除校验</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>message</code> - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息</li>
+<li><code>allowBlank</code> - 如果设置为<code>true</code>,值为空将跳过校验</li>
+<li><code>in</code> - 被允许的数组</li>
+<li><code>range</code> - 区间</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+exclusion: { in: [&#39;Yellow&#39;, &#39;Black&#39;, &#39;Red&#39;] }
+exclusion: { range: [5, 10], allowBlank: true, message: &#39;cannot be between 5 and 10&#39; }</code></pre>
+<h5 id="format">Format</h5>
+<p>正则,格式化校验</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>message</code> - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息</li>
+<li><code>allowBlank</code> - 如果设置为<code>true</code>,值为空将跳过校验</li>
+<li><code>with</code> - 正则表达式</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+format: { with: /^([a-zA-Z]|\d)+$/, allowBlank: true, message: &#39;must be letters and numbers only&#39;  }</code></pre>
+<h5 id="inclusion">Inclusion</h5>
+<p>被允许的值
+熬过校验</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>message</code> - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息.</li>
+<li><code>allowBlank</code> - 如果设置为<code>true</code>,值为空将跳过校验</li>
+<li><code>in</code> - 被允许的数组</li>
+<li><code>range</code> - 区间</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+inclusion: { in: [&#39;Yellow&#39;, &#39;Black&#39;, &#39;Red&#39;] }
+inclusion: { range: [5, 10], allowBlank: true, message: &#39;must be between 5 and 10&#39; }</code></pre>
+<h5 id="length">Length</h5>
+<p>定义属性的长度</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>number</code> - 跟<code>is</code>作用一样,长度必须时指定值</li>
+<li><code>array</code> - 数组里面有两个值,第一个元素代表最小值,第二个元素达标最大值,即长度的区间</li>
+<li><code>allowBlank</code> - 如果设置为<code>true</code>,值为空将跳过校验</li>
+<li><code>minimum</code> - 被允许的最小长度</li>
+<li><code>maximum</code> - 被允许的最大长度</li>
+<li><code>is</code> - 跟<code>number</code>作用一样,长度必须时指定值</li>
+<li><code>tokenizer</code> - 校验时执行的自定以函数,返回一个代表长度的对象</li>
+</ul>
+<h6 id="messages">Messages</h6>
+<ul>
+<li><code>tooShort</code> - 当不满足最小长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>tooLong</code> - t当不满足最大长度验证规则时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>wrongLength</code> - 当校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+length: 5
+length: [3, 5]
+length: { is: 10, allowBlank: true }
+length: { minimum: 3, maximum: 5, messages: { tooShort: &#39;should be more than 3 characters&#39;, tooLong: &#39;should be less than 5 characters&#39; } }
+length: { is: 5, tokenizer: function(value) { return value.split(&#39;&#39;); } }</code></pre>
+<h5 id="numericality">Numericality</h5>
+<p>校验是否是一个数值</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>true</code> -设置为<code>true</code>将激活控制校验并且使用默认提示信息</li>
+<li><code>allowBlank</code> - 如果设置为<code>true</code>,值为空将跳过校验</li>
+<li><code>onlyInteger</code> - 只能是整数</li>
+<li><code>greaterThan</code> - 一定要大于指定数</li>
+<li><code>greaterThanOrEqualTo</code> - 一定要大于等于指定数</li>
+<li><code>equalTo</code> - 一定要等于指定数</li>
+<li><code>lessThan</code> - 一定要小于指定数</li>
+<li><code>lessThanOrEqualTo</code> - 一定要小于等于指定数</li>
+<li><code>odd</code> - 一定是奇数</li>
+<li><code>even</code> - 一定是偶数</li>
+</ul>
+<h6 id="messages">Messages</h6>
+<ul>
+<li><code>greaterThan</code> -当大于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>greaterThanOrEqualTo</code> - 当大于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>equalTo</code> - 当等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>lessThan</code> - 当小于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>lessThanOrEqualTo</code> - 当小于等于校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>odd</code> - 当奇数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+<li><code>even</code> - 当偶数校验失败时,该错误信息将被应用显示,可覆盖默认的提示信息</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+numericality: true
+numericality: { odd: true, messages: { odd: &#39;must be an odd number&#39; } }
+numericality: { onlyInteger, greaterThan: 5, lessThanOrEqualTo : 10 }</code></pre>
+<h5 id="presence">Presence</h5>
+<p>非空校验<code>null</code>, <code>undefined</code>, or <code>&#39;&#39;</code></p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>true</code> - 设置为<code>true</code>将激活控制校验并且使用默认提示信息</li>
+<li><code>message</code> - 错误提示信息,可以如果提供了,将会覆盖默认的提示信息</li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+presence: true
+presence: { message: &#39;must not be blank&#39; }</code></pre>
+<h5 id="uniqueness">Uniqueness</h5>
+<p><em>尚未实现</em></p>
+<h5 id="url">URL</h5>
+<p>校验是否是一个URL.</p>
+<h6 id="options">Options</h6>
+<ul>
+<li><code>allowBlank</code> - 如果设置为<code>true</code>,值为空将跳过校验</li>
+<li><code>allowIp</code> - 如果设置为<code>true</code>,将使用IP地址进行校验URL,IP地址默认是非法的</li>
+<li><code>allowUserPass</code> - 如果设置为<code>true</code>,将校验URL是否有用户名和密码,默认情况是不允许用户名和密码</li>
+<li><code>allowPort</code> - 如果设置为<code>true</code>,将校验URL是否带有端口号,默认情况是不允许有端口号</li>
+<li><code>domainOnly</code> - 如果设置为<code>true</code>,将校验URL是否时主域名和子域名.</li>
+<li><code>protocols</code> - 可被接受的协议数组,默认为<code>http</code>,<code>https</code></li>
+</ul>
+<pre class="code prettyprint"><code class="lang-javascript">// Examples
+url { allowUserPass: true }
+url { allowBlank: true, allowIp: true, allowPort: true, protocols: [&#39;http&#39;, &#39;https&#39;, &#39;ftp&#39;] }
+url { domainOnly: true }</code></pre>
+<h5 id="conditional-validators">Conditional Validators</h5>
+<p>每个校验器都可以带有一个<code>if</code> 或者 一个<code>unless</code>.条件判断.</p>
+<pre class="code prettyprint"><code class="lang-javascript">// function form
+firstName: {
+     presence: {
+       if: function(object, validator) {
+         return true;
+       }
+     }
+}
+
+// string form
+// if &#39;canValidate&#39; is a function on the object it will be called
+// if &#39;canValidate&#39; is a property object.get(&#39;canValidate&#39;) will be called
+firstName: {
+     presence: {
+       unless: &#39;canValidate&#39;
+     }
+}</code></pre>
+<h5 id="running-validations">Running Validations</h5>
+<p>当对象被创建时,校验器将自动运行,以及每个属性改变时,也将自动校验.
+<code>isValid</code> 状态将被冒泡,并且帮助确定直接父级的校验状态
+<code>isInvalid</code> 状态同样可以被获取</p>
+<p>如果你想强制校验所有,只要在对象上调用<code>.validate()</code>方法.
+<code>isValid</code> 将被设置为<code>true</code> 或者<code>false</code>.所有校验的运行将返回promise,所以不是调用完<code>validate</code>方法,就是马上校验完毕的.
+<code>validate</code>方法返回一个promise,可以调用<code>then</code>方法添加完成后的回调</p>
+<pre class="code prettyprint"><code class="lang-javascript">user.validate().then(function() {
+     user.get(&#39;isValid&#39;); // true
+     user.get(&#39;isInvalid&#39;); // false
+})</code></pre>
+<h5 id="inspecting-errors">Inspecting Errors</h5>
+<p>当一个对象集成<code>Ember.Validations.Mixin</code>后,该对象将同时拥有一个<code>errors</code>对象,所有校验的错误信息
+将被放置在该对象上.</p>
+<pre class="code prettyprint"><code class="lang-javascript">App.User = Ember.Object.extend(Ember.Validations.Mixin, {
+     validations: {
+       firstName: { presence: true }
+     }
+});
+
+user = App.User.create();
+user.validate().then(null, function() {
+     user.get(&#39;isValid&#39;); // false
+     user.get(&#39;errors.firstName&#39;); // [&quot;can&#39;t be blank&quot;]
+     user.set(&#39;firstName&#39;, &#39;Brian&#39;);
+     user.validate().then(function() {
+        user.get(&#39;isValid&#39;); // true
+        user.get(&#39;errors.firstName&#39;); // []
+     })
+})</code></pre>
+<h5 id="i18n">i18n</h5>
+<p>国际化I18n默认包含以下的keys</p>
+<pre class="code prettyprint"><code class="lang-javascript">Ember.I18n.translations = {
+     errors:{
+       inclusion: &quot;is not included in the list&quot;,
+       exclusion: &quot;is reserved&quot;,
+       invalid: &quot;is invalid&quot;,
+       confirmation: &quot;doesn&#39;t match {{attribute}}&quot;,
+       accepted: &quot;must be accepted&quot;,
+       empty: &quot;can&#39;t be empty&quot;,
+       blank: &quot;can&#39;t be blank&quot;,
+       present: &quot;must be blank&quot;,
+       tooLong: &quot;is too long (maximum is {{count}} characters)&quot;,
+       tooShort: &quot;is too short (minimum is {{count}} characters)&quot;,
+       wrongLength: &quot;is the wrong length (should be {{count}} characters)&quot;,
+       notANumber: &quot;is not a number&quot;,
+       notAnInteger: &quot;must be an integer&quot;,
+       greaterThan: &quot;must be greater than {{count}}&quot;,
+       greaterThanOrEqualTo: &quot;must be greater than or equal to {{count}}&quot;,
+       equalTo: &quot;must be equal to {{count}}&quot;,
+       lessThan: &quot;must be less than {{count}}&quot;,
+       lessThanOrEqualTo: &quot;must be less than or equal to {{count}}&quot;,
+       otherThan: &quot;must be other than {{count}}&quot;,
+       odd: &quot;must be odd&quot;,
+       even: &quot;must be even&quot;
+     }
+}</code></pre>
+
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+
+            
+
+            
+
+            
+        </div>
+
+        
+
+        
+
+        
+
+        
+    </div>
+</div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

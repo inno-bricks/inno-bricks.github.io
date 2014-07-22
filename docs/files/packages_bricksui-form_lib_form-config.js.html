@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="yui-overrride">
+<head>
+    <meta charset="utf-8">
+    <title>packages/bricksui-form/lib/form-config.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1 class="blue-main-title"></h1>
+        </div>
+        <div class="yui3-u-1-4 version project-version">
+            API Docs for: 
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/BricksUI.html">BricksUI</a></li>
+            
+                <li><a href="../classes/BricksUI.BuAlert.html">BricksUI.BuAlert</a></li>
+            
+                <li><a href="../classes/BricksUI.BuGrowlNotifications.html">BricksUI.BuGrowlNotifications</a></li>
+            
+                <li><a href="../classes/BricksUI.BuModal.html">BricksUI.BuModal</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPagination.html">BricksUI.BuPagination</a></li>
+            
+                <li><a href="../classes/BricksUI.BuPanel.html">BricksUI.BuPanel</a></li>
+            
+                <li><a href="../classes/BricksUI.BuProgress.html">BricksUI.BuProgress</a></li>
+            
+                <li><a href="../classes/BricksUI.BuTabs.html">BricksUI.BuTabs</a></li>
+            
+                <li><a href="../classes/BricksUI.BuWizard.html">BricksUI.BuWizard</a></li>
+            
+                <li><a href="../classes/BricksUI.DynamicPageable.html">BricksUI.DynamicPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.ENV.html">BricksUI.ENV</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.html">BricksUI.I18n</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.I18nableValidationMixin.html">BricksUI.I18n.I18nableValidationMixin</a></li>
+            
+                <li><a href="../classes/BricksUI.I18n.lang.html">BricksUI.I18n.lang</a></li>
+            
+                <li><a href="../classes/BricksUI.StateHandler.html">BricksUI.StateHandler</a></li>
+            
+                <li><a href="../classes/BricksUI.StaticPageable.html">BricksUI.StaticPageable</a></li>
+            
+                <li><a href="../classes/BricksUI.TableHeader.html">BricksUI.TableHeader</a></li>
+            
+                <li><a href="../classes/Ember.BuDatePicker.html">Ember.BuDatePicker</a></li>
+            
+                <li><a href="../classes/Ember.BuDateRange.html">Ember.BuDateRange</a></li>
+            
+                <li><a href="../classes/Ember.BuEditor.html">Ember.BuEditor</a></li>
+            
+                <li><a href="../classes/Ember.BuTree.html">Ember.BuTree</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.html">Ember.EasyForm</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Checkbox.html">Ember.EasyForm.Checkbox</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Config.html">Ember.EasyForm.Config</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Radio.html">Ember.EasyForm.Radio</a></li>
+            
+                <li><a href="../classes/Ember.EasyForm.Select.html">Ember.EasyForm.Select</a></li>
+            
+                <li><a href="../classes/Ember.I18n.html">Ember.I18n</a></li>
+            
+                <li><a href="../classes/Ember.Validations.html">Ember.Validations</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/bricksui.html">bricksui</a></li>
+            
+                <li><a href="../modules/bricksui-form.html">bricksui-form</a></li>
+            
+                <li><a href="../modules/bricksui-i18n.html">bricksui-i18n</a></li>
+            
+                <li><a href="../modules/bricksui-metal.html">bricksui-metal</a></li>
+            
+                <li><a href="../modules/bricksui-thirdpart.html">bricksui-thirdpart</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: packages/bricksui-form/lib/form-config.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * @description bootstrap横排样式
+ * 布局分隔为100%撑满，
+ * Label在input左方，验证信息在input下方
+ */
+Ember.EasyForm.Config.registerWrapper(&#x27;bootstrap-horizontal&#x27;, {
+    inputTemplate: &#x27;bootstrap-input&#x27;,
+    checkboxTemplate: &quot;bootstrap-checkbox&quot;,
+    radioTemplate: &quot;bootstrap-radio&quot;,
+    controlsWrapperClass: &#x27;col-sm-6&#x27;,
+    formClass: &#x27;form-horizontal form-bordered&#x27;,
+    fieldErrorClass: &#x27;has-error&#x27;,
+    errorClass: &#x27;text-danger&#x27;,
+    hintClass: &#x27;help-block&#x27;,
+    labelClass: &#x27;col-sm-3 control-label&#x27;,
+    inputClass: &#x27;form-group&#x27;,
+    buttonClass: &#x27;btn btn-primary&#x27;,
+    validationLayout:&#x27;bootstrap-validation-input&#x27;
+});
+
+/**
+ * @description bootstrap默认样式
+ * 布局分隔为100%撑满，
+ * Label在input上方，验证信息在input下方
+ */
+Ember.EasyForm.Config.registerWrapper(&#x27;bootstrap&#x27;, {
+  checkboxTemplate: &quot;bootstrap-checkbox&quot;,
+  radioTemplate: &quot;bootstrap-radio&quot;,
+  labelClass: &#x27;control-label&#x27;,
+  inputClass: &#x27;form-group&#x27;,
+  buttonClass: &#x27;btn btn-primary&#x27;,
+  fieldErrorClass: &#x27;has-error&#x27;,
+  errorClass: &#x27;help-block&#x27;,
+  validationLayout:&#x27;bootstrap-validation-input&#x27;
+});
+
+
+//禁用submit 按钮的默认disabled属性
+//TODO 改用样式控制
+Ember.EasyForm.Submit.reopen({
+    disabled: function () {
+        return false;
+    }.property(&#x27;formForModel.isValid&#x27;)
+});
+//所有组件扩展validate方法,方便form表单submit时统一调度
+Ember.EasyForm.Input.reopen({
+    validate: function () {
+        this.focusOut();
+    }
+});
+//在默认form的submit方法调用完成后,统一调用各个组件的验证方法,先后顺序有待验证
+Ember.EasyForm.Form.reopen({
+    submit: function () {
+        this._super.apply(this, arguments);
+        this.forEachChildView(function (subview) {
+            if (subview.validate) {
+                subview.validate();
+            }
+        });
+    }
+});
+//TODO 这里需要根据控件进行修改
+Ember.EasyForm.TextField.reopen({
+    classNames: [&quot;form-control&quot;]
+});
+Ember.EasyForm.TextArea.reopen({
+    classNames: [&quot;form-control&quot;]
+});
+
+/**
+ * @description 拓展校验字段
+ */
+Ember.EasyForm.Input.reopen({
+  init:function(){
+    this._super();
+    if(this.isBlock &amp;&amp; this.get(&#x27;withValidation&#x27;)){
+      this.set(&#x27;layoutName&#x27;,this.get(&#x27;wrapperConfig.validationLayout&#x27;));
+    }
+  }
+});
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
