@@ -5,6 +5,7 @@
 /* ==== overwrite bootstrap standard ==== */
 @import url('overwrite.css');
 @import url('animate.css');
+@import url('docs.css');
 /*==========================================================================
   General
   ========================================================================== */
@@ -1061,7 +1062,119 @@ Add
     text-indent: -100000px;
     width: 149px;
 }
+.main{
+	margin:0;
+	padding: 2em 0;
+}
+.bg-gray{
+	background:#f4f4f4;
+}
+.wrap{
+	margin: 0 auto;
+	padding: 3em 0;
+    width: 80%;
+}
+.owl-carousel {
+    overflow: hidden;
+    padding: 1.2em 0;
+    position: relative;
+    width: 100%;
+}
+.item {
+    cursor: pointer;
+    margin: 0.5em;
+    padding: 1em;
+    transition: all 0.5s ease 0s;
+}
 
+.carousel {
+    margin: 0 0.7em;
+    transition: all 0.5s ease 0s;
+}
+
+.group_img {
+    float: left;
+	margin: 5% 0 0 6%;
+}
+.group_img .ui,.group_img .cli2 {
+    background:#79cdc0;
+    border-radius:100%;
+    color: #fff;
+    float: left;
+    font-size: 2.8em;
+    font-weight: 900;
+    padding: 1.5em 1.5em;
+    text-shadow: 0 0 2px #fff;
+	position: relative;
+	z-index:100;
+}
+
+.group_img .cli,.group_img .ui2 {
+    background:rgba(230, 231, 231, 0.56);
+    border-radius:100%;
+    color: #79cdc0;
+    float: left;
+    font-size: 2.8em;
+    font-weight: 900;
+    margin-left: -58px;
+    padding: 1.5em 1.5em;
+    text-shadow: 0 0 2px #5ec2e7;
+}
+.group_img .ui2{
+	margin-left:0px;
+}
+.group_img .cli2{
+	margin-left: -58px;
+}
+.clear{
+	clear:both;
+}
+
+.group_text {
+    float: right;
+    margin: 2% 0 3% 4%;
+    width: 45%;
+}
+.group_text h3 {
+    color: #333;
+    font-size: 1.6em;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+.group_text p {
+    color: #666666;
+    font-size: 1em;
+    line-height: 1.9em;
+	transition: all 0.5s ease 0s;
+}
+.group_text .pull-left{
+	margin:0 0 0 26px;
+}
+.con_left{
+	float:left;
+	margin: 2% 0 3% 6%;
+}
+.con_right{
+	float:right;
+	margin: 5% 6% 0 0;
+}
+.btn-outline-inverse{
+	border-radius: 6px;
+	border:1px solid #79cdc0;
+}
+.bs-docs-sidebar .nav > li > a{
+	line-height:1.42857;
+}
+.b-h1{
+    font-size: 100px;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0 0 15px;
+    text-shadow: 4px 3px 0 #79cdc0, 9px 8px 0 rgba(0, 0, 0, 0.15);
+}
+.bs-docs-masthead h1{
+	font-size:100px;
+}
 /* ========================================
 Media queries
 ========================================= */
