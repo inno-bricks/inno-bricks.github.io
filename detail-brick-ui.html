@@ -66,64 +66,459 @@
 		<div class="col-md-3">
 			<div class="bs-docs-sidebar">
 				<ul class="nav bs-docs-sidenav">
-					<li class="active"><a href="#download">内容第一部分</a></li>
-					<li><a href="#download">内容第一部分</a></li>
-					<li><a href="#download">内容第一部分</a></li>
-					<li><a href="#download">内容第一部分</a></li>
-					<li><a href="#download">内容第一部分</a></li>
-					<li><a href="#download">内容第一部分</a></li>
+					<li class="active"><a href="#about-buAlert">BuAlert</a></li>
+					<li><a href="#about-BuGrowlNotifications">BuGrowlNotifications</a></li>
+					<li><a href="#about-BuModal">BuModal</a></li>
+					<li><a href="#about-BuPagination">BuPagination</a></li>
+					<li><a href="#about-BuPanel">BuPanel</a></li>
+					<li><a href="#about-BuProgress">BuProgress</a></li>
+                    <li><a href="#about-BuTabs">BuTabs</a></li>
+                    <li><a href="#about-BuWizard">BuWizard</a></li>
+                    <li><a href="#about-DynamicPageable">DynamicPageable</a></li>
+                    <li><a href="#about-BuDatePicker">BuDatePicker</a></li>
+                    <li><a href="#about-BuDateRange">BuDateRange</a></li>
+                    <li><a href="#about-BuEditor">BuEditor</a></li>
+                    <li><a href="#about-BuTree">BuTree</a></li>
+                    <li><a href="#about-EasyForm">EasyForm</a></li>
+                    <li><a href="#about-EasyForm-Checkbox">EasyForm.Checkbox</a></li>
+                    <li><a href="#about-EasyForm-Radio">EasyForm.Radio</a></li>
+                    <li><a href="#about-EasyForm-Select">EasyForm.Select</a></li>
+                    <li><a href="#about-I18n">I18n</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="col-md-9">
-			<div class="bs-docs-section">
-			  <h1 class="page-header" id="whats-included">包含的内容</h1>
-			
-			  <p class="lead">Bootstrap 提供了两种形式的压缩包，在下载下来的压缩包内可以看到以下目录和文件，这些文件按照类别放到了不同的目录内，并且提供了压缩与未压缩两种版本。</p>
-			
-			  <div id="jquery-required" class="bs-callout bs-callout-warning">
-				<h4>Bootstrap 插件全部依赖 jQuery</h4>
-				<p>请注意，<strong>Bootstrap 的所有 JavaScript 插件都依赖 jQuery，</strong>因此 jQuery 必须在 Bootstrap 之前引入，就像在<a href="#template">基本模版</a>中所展示的一样。在<a href="https://github.com/twbs/bootstrap/blob/v3.2.0/bower.json"> <code>bower.json</code> 文件中</a> 列出了 Bootstrap 所支持的 jQuery 版本。</p>
-			  </div>
-			
-			  <h2 id="whats-included-precompiled">预编译版</h2>
-			  <p>下载压缩包之后，将其解压缩到任意目录即可看到以下（压缩版的）目录结构：</p>
-			<!-- NOTE: This info is intentionally duplicated in the README.
-			Copy any changes made here over to the README too. -->
-			<div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">bootstrap/
-			├── css/
-			│   ├── bootstrap.css
-			│   ├── bootstrap.min.css
-			│   ├── bootstrap-theme.css
-			│   └── bootstrap-theme.min.css
-			├── js/
-			│   ├── bootstrap.js
-			│   └── bootstrap.min.js
-			└── fonts/
-				├── glyphicons-halflings-regular.eot
-				├── glyphicons-halflings-regular.svg
-				├── glyphicons-halflings-regular.ttf
-				└── glyphicons-halflings-regular.woff
-			</code></pre></div>
-			
-			  <p>这是最基本的 Bootstrap 文件组织形式：未压缩版的文件可以在任意web项目中直接使用。我们同时提供了压缩（<code>bootstrap.min.*</code>）与未压缩 (<code>bootstrap.*</code>) 的 CSS 和 JS 文件。字体图标文件来自于 Glyphicons。</p>
-			
-			  <h2 id="whats-included-source">Bootstrap 源码</h2>
-			  <p>Bootstrap 源码包含了预先编译的 CSS、JavaScript 和图标字体文件，并且还有 LESS、JavaScript 和文档的源码。具体来说，主要文件组织结构如下：</p>
-			<div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">bootstrap/
-			├── less/
-			├── js/
-			├── fonts/
-			├── dist/
-			│   ├── css/
-			│   ├── js/
-			│   └── fonts/
-			└── docs/
-				└── examples/
-			</code></pre></div>
-			  <p><code>less/</code>、<code>js/</code> 和 <code>fonts/</code> 目录分别包含了 CSS、JS 和字体图标的源码。<code>dist/</code> 目录包含了上面所说的预编译 Bootstrap 包内的所有文件。<code>docs/</code> 包含了所有文档的源码文件，<code>examples/</code> 目录是 Bootstrap 官方提供的实例工程。除了这些，其他文件还包含 Bootstrap 安装包的定义文件、许可证文件和编译脚本等。</p>
-			</div>
-		</div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-buAlert">BricksUI.BuAlert</h1>
+                <p class="lead">对应Bootstrap alert组件，对Bootstrap alert进行轻量级封装。</p>
+                <h2 id="about-buAlert-example">实例</h2>
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{#bu-alert type="danger"}}
+&lt;h4 class="alert-heading"&gt;Oh snap! You got an error!&lt;/h4&gt;
+&lt;p&gt;Alert can also be used in a &lt;strong&gt;block form&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;
+&lt;button class="btn btn-danger" {{action "submit"}}&gt;Take this action&lt;/button&gt; &lt;a class="btn btn-default"&gt;Or do this&lt;/a&gt;
+&lt;/p&gt;
+{{/bu-alert}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuGrowlNotifications">BricksUI.BuGrowlNotifications</h1>
+                <p class="lead">BuGrowlNotifications是一种标准的通知组件实现，可以实现信息提示的功能。</p>
+                <h2 id="about-BuGrowlNotifications-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{bu-growl-notifications}}
+            </code></pre></div>
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+Showcase.ShowComponentsGrowlNotifController = Ember.Controller.extend({
+pushInfo: function() {
+Bootstrap.GNM.push('INFO!', 'Hello, this is just an info message.', 'info');
+},
+pushSuccess: function() {
+Bootstrap.GNM.push('SUCCESS!', 'Successfully performed operation!', 'success');
+},
+pushWarn: function() {
+Bootstrap.GNM.push('WARN!', 'Could not perform operation!', 'warning');
+},
+pushDanger: function() {
+Bootstrap.GNM.push('Danger!', 'System is halting!', 'danger');
+}
+});
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuModal">BricksUI.BuModal</h1>
+                <p class="lead">对应Bootstrap modal组件，对Bootstrap modal进行轻量级封装。</p>
+                <h2 id="about-BuModal-example">实例</h2>
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{bu-button title="Show Modal" clicked="show"}}
+{{#bu-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}
+&lt;p&gt;Modal content!&lt;/p&gt;
+{{/bu-modal}}
+            </code></pre></div>
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+Showcase.ShowComponentsModalController = Ember.Controller.extend({
+myModalButtons: [
+Ember.Object.create({title: 'Submit', clicked:"submit"})
+Ember.Object.create({title: 'Cancel', clicked:"cancel", dismiss: 'modal'})
+],
+
+actions: {
+//Submit the modal
+submit: function() {
+Bootstrap.NM.push('Successfully submitted modal', 'success');
+return Bootstrap.ModalManager.hide('myModal');
+},
+
+//Cancel the modal, we don't need to hide the model manually because we set {..., dismiss: 'modal'} on the button meta data
+cancel: function() {
+return Bootstrap.NM.push('Modal was cancelled', 'info');
+},
+
+//Show the modal
+show: function() {
+return Bootstrap.ModalManager.show('myModal');
+}
+}
+});
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuPagination">BricksUI.BuPagination</h1>
+                <p class="lead">分页组件。</p>
+                <h2 id="about-BuPagination-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+&lt;!-- numberOfPages 显示的页码个数 --&gt;
+&lt;!-- pagerController 当前分页组件的控制器,必须配置,并且该控制器必须集成BricksUI.DynamicPageable --&gt;
+{{bu-pagination numberOfPages=5 pagerControllerBinding="controller"}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuPanel">BricksUI.BuPanel</h1>
+                <p class="lead">容器组件,可以配置头部和脚注。</p>
+                <h2 id="about-BuPanel-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{#bs-panel
+heading="Primary Panel"
+type="primary"
+collapsible=true
+open=false
+dismiss=true
+onClose="panelClosed"
+clicked="panelClicked"}}
+&lt;p&gt;Panel content.&lt;/p&gt;
+{{/bs-panel}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuProgress">BricksUI.BuProgress</h1>
+                <p class="lead">对应Bootstrap progress组件，对Bootstrap progress组件进行轻量级封装。</p>
+                <h2 id="about-BuProgress-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{bu-progress progressBinding="prog"}}
+{{bu-button clicked="increment" content="Increment!"}}
+            </code></pre></div>
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+Showcase.ShowComponentsProgressbarController = Ember.Controller.extend({
+prog: 0,
+incrementBy: 20,
+increment: function() {
+if (this.prog < 100) {
+return this.incrementProperty("prog", this.incrementBy);
+} else {
+return this.set("prog", this.incrementBy);
+}
+}
+});
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuTabs">BricksUI.BuTabs</h1>
+                <p class="lead">Tab标签页组件。</p>
+                <h2 id="about-BuTabs-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+&lt;div class="bs-example"&gt;
+{{bu-tabs id="tabs1" contentBinding="tabsMeta" default="Foo"}}
+{{bu-tabs-panes items-id="tabs1" contentBinding="tabsMeta"}}
+&lt;/div&gt;
+            </code></pre></div>
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+SomeController = Ember.Controller.extend({
+tabsMeta: Ember.A([
+Ember.Object.create({ title: 'Foo', template: 'tabs/foo-tabpane', controller: 'ShowcaseComponentsTabsFoo'}),
+Ember.Object.create({ title: 'Bar', template: 'tabs/bar-tabpane'})
+]);
+});
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuWizard">BricksUI.BuWizard</h1>
+                <p class="lead">Bootstrap 向导组件，对向导功能提供封装。</p>
+                <h2 id="about-BuWizard-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{bu-wizard contentBinding="steps"}}
+            </code></pre></div>
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+Showcase.ShowComponentsWizardController = Ember.Controller.extend({
+init: function() {
+this._super();
+this.set('steps', Ember.A([
+Ember.Object.create({title: 'Foo', template: 'tabu/foo-tabpane'}),
+Ember.Object.create({title: 'Bar', template: 'tabu/bar-tabpane'}),
+Ember.Object.create({title: 'Baz', template: 'tabu/baz-tabpane'})
+]));
+}
+});
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-DynamicPageable">BricksUI.DynamicPageable</h1>
+                <p class="lead">基于Ember-Data的数据处理扩展,用于分页处理 分页扩展,用于增强控制器的功能,使控制器具备分页管理功能。</p>
+                <h2 id="about-DynamicPageable-example">实例</h2>
+
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+//modelName 必须配置,当前分页组件所要请求的模型名称
+//query 要传入到后台的查询参数,是一个计算属性,需要返回Object
+App.ApplicationController = Ember.ArrayController.extend(BricksUI.DynamicPageable,{
+perPage: 5,
+modelName:"user",
+firstName:"xx",
+selectedPageSize:5,
+pageSizes: [
+5,10,15,20
+],
+query:function(){
+return {
+firstName:this.get('firstName'),
+limit:this.get('selectedPageSize')
+}
+}.property("firstName","city").volatile()
+});
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuDatePicker">Ember.BuDatePicker</h1>
+                <p class="lead">Bootstrap时间日期选择插件。</p>
+                <h2 id="about-BuDatePicker-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+&lt;!-- 日期选择 --&gt;
+{{bu-datepicker value=d1 options='{"pickTime":false}'}}
+&lt;!-- 时间选择 --&gt;
+{{bu-datepicker value=d2 options='{"pickDate":false}'}}
+&lt;!-- 日期时间选择 --&gt;
+{{bu-datepicker value=d3}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuDateRange">Ember.BuDateRange</h1>
+                <p class="lead">Bootstrap时间日期范围选择插件。</p>
+                <h2 id="about-BuDateRange-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{bu-daterange startDate=startDate endDate=endDate}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuEditor">Ember.BuEditor</h1>
+                <p class="lead">基于ember与百度umeditor的富文本编辑器。</p>
+                <h2 id="about-BuEditor-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{bu-editor value=title valueType="contentTxt"}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-BuTree">Ember.BuTree</h1>
+                <p class="lead">树组件，对Jquery Ztree进行简单的封装。</p>
+                <h2 id="about-BuTree-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{bu-tree options=view.treeOptions zNodes=view.zNodes}}
+            </code></pre></div>
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+//Tree View
+export default Ember.View.extend({
+
+init: function () {
+this._super.apply(this,arguments);
+this.set('treeOptions', {
+onClick:function(component, event, treeId, treeNode, clickFlag){
+//your code
+}
+});
+this.set('zNodes', [
+{ name: "父节点1 - 展开", open: true,
+children: [
+{ name: "父节点11 - 折叠",
+children: [
+{ name: "叶子节点111"},
+{ name: "叶子节点112"},
+{ name: "叶子节点113"},
+{ name: "叶子节点114"}
+]},
+{ name: "父节点12 - 折叠",
+children: [
+{ name: "叶子节点121"},
+{ name: "叶子节点122"},
+{ name: "叶子节点123"},
+{ name: "叶子节点124"}
+]},
+{ name: "父节点13 - 没有子节点", isParent: true}
+]},
+{ name: "父节点2 - 折叠",
+children: [
+{ name: "父节点21 - 展开", open: true,
+children: [
+{ name: "叶子节点211"},
+{ name: "叶子节点212"},
+{ name: "叶子节点213"},
+{ name: "叶子节点214"}
+]},
+{ name: "父节点22 - 折叠",
+children: [
+{ name: "叶子节点221"},
+{ name: "叶子节点222"},
+{ name: "叶子节点223"},
+{ name: "叶子节点224"}
+]},
+{ name: "父节点23 - 折叠",
+children: [
+{ name: "叶子节点231"},
+{ name: "叶子节点232"},
+{ name: "叶子节点233"},
+{ name: "叶子节点234"}
+]}
+]},
+{ name: "父节点3 - 没有子节点", isParent: true}
+]
+);
+}
+});
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-EasyForm">Ember.EasyForm</h1>
+                <p class="lead">Ember-EasyForm提供对基础表单的封装，同时提供I18n以及字段校验的功能。</p>
+                <h2 id="about-EasyForm-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{#form-for model}}
+{{input firstName}}
+{{input lastName}}
+{{input bio as="text"}}
+{{input country as='select'
+collection="App.countries"
+selection="country"
+optionValuePath="content.id"
+optionLabelPath="content.name"
+prompt="Select Country"
+}}
+{{/form-for}}
+            </code></pre></div>
+                <p class="lead">编译后的代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+&lt;form&gt;
+&lt;div class="input string"&gt;
+&lt;label for="ember1"&gt;First name&lt;/label&gt;
+&lt;input id="ember1" type="text"/&gt;
+&lt;span class="error"&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="input string"&gt;
+&lt;label for="ember2"&gt;Last name&lt;/label&gt;
+&lt;input id="ember2" type="text"/&gt;
+&lt;span class="error"&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="input string"&gt;
+&lt;label for="ember3"&gt;Bio&lt;/label&gt;
+&lt;textarea id="ember3"&gt;&lt;/textarea&gt;
+&lt;span class="error"&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="input string"&gt;
+&lt;label for="ember4"&gt;Country&lt;/label&gt;
+&lt;select id="ember4"&gt;
+xxx
+&lt;/select&gt;
+&lt;span class="error"&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-EasyForm-Checkbox">Ember.EasyForm.Checkbox</h1>
+                <p class="lead">拓展Ember.EasyForm.Input的CheckBox功能 提供复选框按钮组的功能。</p>
+                <h2 id="about-EasyForm-Checkbox-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{checkbox something modelBinding="model" propertyPath="something" elementsBinding="fruits" labelPath="name"}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-EasyForm-Radio">Ember.EasyForm.Radio</h1>
+                <p class="lead">拓展Ember.EasyForm.Input的Radio功能 提供单选按钮组的功能。</p>
+                <h2 id="about-EasyForm-Radio-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{radio something modelBinding="model" propertyPath="something" elementsBinding="fruits" labelPath="name"}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-EasyForm-Select">Ember.EasyForm.Select</h1>
+                <p class="lead">重置Ember.EasyForm下拉组件行为，将下拉框组件行为转换为chosen组件。</p>
+                <h2 id="about-EasyForm-Select-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+{{#form-for model wrapper="bootstrap"}}
+{{input author
+as='select'
+data-placeholder="请选择作者"
+collection="category"
+optionLabelPath="content.value"
+}}
+{{input tags as='select'
+data-placeholder="请选标签"
+multiple=true
+collection="category"
+optionLabelPath="content.value"
+}}
+{{/form-for}}
+            </code></pre></div>
+            </div>
+            <div class="bs-docs-section">
+                <h1 class="page-header" id="about-I18n">Ember.I18n</h1>
+                <p class="lead">Ember国际化支持。</p>
+                <h2 id="about-I18n-example">实例</h2>
+
+                <p class="lead">Handlebars代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+&lt;h2&gt;{{t "user.edit.title"}}&lt;/h2&gt;
+            </code></pre></div>
+                <p class="lead">Js代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+Em.I18n.translations = {
+"user.edit.title": "Edit User",
+"user.followers.title.one": "One Follower",
+"user.followers.title.other": "All {{count}} Followers",
+"button.add_user.title": "Add a user",
+"button.add_user.text": "Add",
+"button.add_user.disabled": "Saving..."
+};
+            </code></pre></div>
+                <p class="lead">编译后的代码：</p>
+                <div class="zero-clipboard"><span class="btn-clipboard">复制</span></div><div class="highlight"><pre><code class="bash">
+&lt;h2&gt;&lt;span id="i18n-123"&gt;Edit User&lt;/span&gt;&lt;/h2&gt;
+            </code></pre></div>
+            </div>
+        </div>
 	</div>
   </div>
 </section>
