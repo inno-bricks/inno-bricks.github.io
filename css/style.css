@@ -1086,50 +1086,26 @@ Add
     padding: 1em;
     transition: all 0.5s ease 0s;
 }
-
 .carousel {
     margin: 0 0.7em;
     transition: all 0.5s ease 0s;
 }
-
-.group_img {
+.group_1_img,.group_2_img {
     float: left;
+	display: block;
+    background:url(../img/ui.png) no-repeat 50% 50%;
+    background-size: contain;
+    height:195px;
+    width: 338px;
 	margin: 5% 0 0 6%;
 }
-.group_img .ui,.group_img .cli2 {
-    background:#79cdc0;
-    border-radius:100%;
-    color: #fff;
-    float: left;
-    font-size: 2.8em;
-    font-weight: 900;
-    padding: 1.5em 1.5em;
-    text-shadow: 0 0 2px #fff;
-	position: relative;
-	z-index:100;
-}
-
-.group_img .cli,.group_img .ui2 {
-    background:rgba(230, 231, 231, 0.56);
-    border-radius:100%;
-    color: #79cdc0;
-    float: left;
-    font-size: 2.8em;
-    font-weight: 900;
-    margin-left: -58px;
-    padding: 1.5em 1.5em;
-    text-shadow: 0 0 2px #5ec2e7;
-}
-.group_img .ui2{
-	margin-left:0px;
-}
-.group_img .cli2{
-	margin-left: -58px;
+.group_2_img{
+	background:url(../img/cli.png) no-repeat 50% 50%;
+	background-size: contain;
 }
 .clear{
 	clear:both;
 }
-
 .group_text {
     float: right;
     margin: 2% 0 3% 4%;
@@ -1185,6 +1161,13 @@ Media queries
 	.logo{
 		width:100%;
 	}
+	.group_1_img,.group_2_img{
+		width:46%;
+		margin:5% 0 0 0;
+	}
+	.con_left{
+		margin:2% 0 3% 0;
+	}
 }
 
 @media only screen and (min-device-width : 979px) and (max-device-width : 1024px)  {
@@ -1205,6 +1188,20 @@ Media queries
 	}
 	.logo{
 		width:100%;
+	}
+	.group_1_img,.group_2_img{
+		width:40%;
+		margin:5% 0 0 0;
+	}
+	.con_left{
+		margin:2% 0 3% 0;
+	}
+	.wrap{
+		padding:2em 0;
+	}
+	.owl-carousel,.item,.carousel{
+		padding:0;
+		margin:0;
 	}
 }
 @media (max-width: 767px) {
@@ -1251,4 +1248,45 @@ Media queries
 		width:149px;
 		height:149px;
 	}
+	.wrap{
+		padding:0 0 0.5em 0;
+	}
+	.main{
+		padding:0 0 2em 0;
+	}
+	.owl-carousel,.item,.carousel{
+		padding:0;
+		margin:0 auto;
+	}
+	.carousel{
+		width:100%;
+		text-align:center;
+		margin:0 auto;
+		position:relative;
+	}
+	.group_1_img, .group_2_img{
+		float:none;
+		margin:0 auto;
+		text-align:center;
+		width:100%;
+	}
+	.group_text{
+		float:none;
+		width:100%;
+		text-align:center;
+		margin-bottom:15px;
+	}
+	.group_text ul li{
+		text-align:left;
+	}
+	.con_left{
+		padding:206px 0 0 0;
+	}
+	.con_right{
+		position:absolute;
+		top:0px;
+		left:50%;
+		margin-left:-50%;
+	}
+
 }
